@@ -1,0 +1,16 @@
+@import "variables";
+
+@mixin button {
+  height: 60px;
+  line-height: 60px;
+  width: auto;
+  background: $orange;
+  color: $white;
+  // font-family: "Aktiv Grotesk - Bold";
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+}

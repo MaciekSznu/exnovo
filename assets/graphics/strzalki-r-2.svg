@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="63px" height="63px" viewBox="0 0 63 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 33</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Copy" transform="translate(-184.000000, -4178.000000)">
+            <g id="Group-24-Copy-3" transform="translate(184.000000, 4178.000000)">
+                <g id="Group-33">
+                    <rect id="Rectangle" stroke="#E1E1E1" x="0.5" y="0.5" width="62" height="62" rx="31"></rect>
+                    <g id="Group-22" transform="translate(23.000000, 24.000000)" stroke="#F6893C" stroke-width="2">
+                        <polyline id="Path-14" transform="translate(9.427853, 7.500000) rotate(-315.000000) translate(-9.427853, -7.500000) " points="4.43220043 2.71304348 14.4235048 2.50434783 14.2148091 12.4956522"></polyline>
+                        <path d="M16.4927717,7.58600944 L0.630736407,7.58600944" id="Line" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

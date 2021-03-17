@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 35</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 10 0 10 20 0 20"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Copy" transform="translate(-1188.000000, -5150.000000)">
+            <g id="Group-35" transform="translate(1188.000000, 5150.000000)">
+                <rect id="Rectangle-Copy-4" stroke="#E1E2F4" x="0.5" y="0.5" width="59" height="59" rx="29.5"></rect>
+                <g id="Group-3" transform="translate(24.000000, 20.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M6.4906883,20 L6.4906883,10.877059 L9.43912002,10.877059 L9.88047266,7.32188052 L6.4906883,7.32188052 L6.4906883,5.05139625 C6.4906883,4.02234005 6.76595513,3.32103217 8.18721411,3.32103217 L10,3.31990103 L10,0.139978791 C9.68607057,0.0967126193 8.61032455,0 7.35841865,0 C4.74515356,0 2.95578305,1.65712266 2.95578305,4.69989396 L2.95578305,7.32188052 L0,7.32188052 L0,10.877059 L2.95578305,10.877059 L2.95578305,20 L6.4906883,20 Z" id="Fill-1" fill="#F5812E" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
