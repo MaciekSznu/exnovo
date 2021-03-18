@@ -3,14 +3,16 @@
 @mixin button {
   height: 60px;
   line-height: 60px;
+  padding: 0 32px;
   width: auto;
   background: $orange;
   color: $white;
-  // font-family: "Aktiv Grotesk - Bold";
+  font-family: $grotesk-bold;
   font-size: 16px;
-  font-weight: 700;
+  // font-weight: 700;
   font-style: normal;
   letter-spacing: normal;
   line-height: normal;
   text-align: center;
+  border: none;
 }

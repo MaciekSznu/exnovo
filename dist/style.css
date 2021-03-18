@@ -1,1 +1,167 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  background: #ffffff;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.header .logo {
+  height: 100%;
+  padding-top: 23px;
+  display: flex;
+  align-items: flex-start;
+}
+.header .logo .header-link {
+  height: 23px;
+  line-height: 23px;
+  margin: 0;
+  padding: 0;
+}
+.header .logo .header-link img {
+  height: 23px;
+  width: auto;
+}
+.header .nav {
+  display: none;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: #ffffff;
+  z-index: 10;
+  padding-bottom: 114px;
+}
+.header .nav-list {
+  padding: 0;
+  width: 100%;
+  margin-top: 34px;
+}
+.header .nav-list--item {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 38px;
+}
+.header .nav-list--item-link {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  color: #232740;
+}
+.header .nav-list--item.expandable .nav-list--secondary {
+  margin: 0 auto;
+  padding: 0;
+  width: calc(100% - 20px);
+  box-shadow: 0 2px 100px #e1e2f4;
+}
+.header .nav-list--item.expandable .nav-list--secondary .nav-list--item.secondary {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  height: 59px;
+  line-height: 59px;
+  margin-bottom: 0;
+  padding-left: calc((81 / 320) * 100%);
+}
+.header .nav-list--item.expandable .nav-list--secondary .nav-list--item.secondary:before {
+  content: "";
+  position: absolute;
+  left: calc((43 / 320) * 100%);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 16px;
+  background: url("../assets/graphics/submenu_home_icon.svg");
+  background-size: cover;
+}
+.header .nav-list--item.expandable .nav-list--secondary .nav-list--item.secondary .nav-list--item-link {
+  height: 100%;
+  font-size: 14px;
+}
+.header .nav-list--item.expandable .nav-list--item-link img {
+  margin-left: 7px;
+  margin-bottom: 1px;
+}
+.header .nav-list--item.expanded .nav-list--item-link {
+  display: block;
+  margin-bottom: 18px;
+}
+.header .nav-list--item.expanded .nav-list--item-link img {
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+.header .nav .button-header {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 32px;
+  width: auto;
+  background: #f5812e;
+  color: #ffffff;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  border: none;
+}
+.header .hamburger-wrapper {
+  width: 21px;
+  height: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 25px;
+}
+.header .hamburger-wrapper .hamburger-line {
+  width: 21px;
+  height: 3px;
+  background: #f5812e;
+  border: none;
+}
+.header .hamburger-wrapper .hamburger-line:not(:nth-of-type(2)) {
+  width: 16px;
+}
+
+@font-face {
+  font-family: Aktiv_Grotesk_Regular;
+  src: url(../assets/fonts/aktiv_grotesk/AktivGrotesk_Trial_Rg.ttf);
+}
+@font-face {
+  font-family: Aktiv_Grotesk_Bold;
+  src: url(../assets/fonts/aktiv_grotesk/AktivGrotesk_Trial_Bd.ttf);
+}
+html {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}

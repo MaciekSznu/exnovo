@@ -12,6 +12,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
+@font-face {
+  font-family: Aktiv_Grotesk_Regular;
+  src: url(../assets/fonts/aktiv_grotesk/AktivGrotesk_Trial_Rg.ttf);
+}
+
+@font-face {
+  font-family: Aktiv_Grotesk_Bold;
+  src: url(../assets/fonts/aktiv_grotesk/AktivGrotesk_Trial_Bd.ttf);
+}
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -31,6 +41,10 @@ html {
 }
 
 body {
+  position: relative;
   width: 100%;
   max-width: 1440px;
+  height: auto;
+  font-family: $poppins;
+  overflow-x: hidden;
 }
