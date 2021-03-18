@@ -1,4 +1,234 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);.header {
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);.hero {
+  width: 100%;
+  height: auto;
+}
+.hero .hero-wrapper .title-wrapper {
+  padding-left: calc((10 / 320) * 100%);
+}
+.hero .hero-wrapper .title-wrapper .hero-title {
+  font-family: Aktiv_Grotesk_Regular;
+  margin-bottom: -50px;
+}
+.hero .hero-wrapper .title-wrapper .hero-title .blue-text {
+  height: 27px;
+  color: #232740;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+.hero .hero-wrapper .title-wrapper .hero-title .orange-text {
+  color: #f5812e;
+  font-size: 36px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+}
+.hero .hero-wrapper .hero-text-wrapper {
+  height: auto;
+  min-height: calc(343px + 137px);
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper {
+  height: auto;
+  min-height: calc(343px + 137px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 10px;
+  overflow-x: hidden;
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper:before {
+  content: "";
+  position: absolute;
+  top: calc(343px - 201px);
+  left: 0;
+  width: 100%;
+  height: 201px;
+  background: linear-gradient(180deg, rgba(73, 79, 116, 0) 0%, #232740 100%);
+  z-index: 0;
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 138px;
+  background: #232740;
+  z-index: -1;
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper .hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(calc((200 / 1243) * 100%));
+  height: 343px;
+  min-height: 343px;
+  width: auto;
+  z-index: -1;
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper .hero-label-wrapper {
+  display: none;
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper .hero-text {
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 22px;
+  text-align: left;
+  margin-bottom: 24px;
+  z-index: 1;
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper .cta-lead-text {
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 25px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 38px;
+}
+.hero .hero-wrapper .hero-text-wrapper .image-wrapper .button-hero {
+  height: 60px;
+  line-height: 60px;
+  width: auto;
+  min-width: 170px;
+  padding: 19px 33px 20px;
+  width: auto;
+  background: #f5812e;
+  color: #ffffff;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  border: none;
+}
+
+.dev-100 {
+  background: #232740;
+  padding: 66px 10px 84px;
+  position: relative;
+}
+.dev-100:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 219px;
+  height: 362px;
+  background: url("../assets/graphics/dev_100_line_bottom_right.svg");
+}
+.dev-100:after {
+  content: "";
+  position: absolute;
+  bottom: -23px;
+  right: 10px;
+  width: 42px;
+  height: 58px;
+  background: url("../assets/graphics/triangles.svg");
+}
+.dev-100 .dev-100-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dev-100 .dev-100-wrapper .image-wrapper {
+  position: relative;
+  width: calc(100% - 29px);
+  height: auto;
+  min-height: 360px;
+  margin-left: 29px;
+  background: url("../assets/images/home/girl.png");
+  background-size: contain;
+}
+.dev-100 .dev-100-wrapper .image-wrapper:before {
+  content: "";
+  position: absolute;
+  left: -29px;
+  top: 0;
+  height: calc(100% - 39px);
+  width: auto;
+  min-width: 213px;
+  background: url("../assets/graphics/img_overlay_house.svg");
+  background-size: cover;
+  z-index: 2;
+}
+.dev-100 .dev-100-wrapper .image-wrapper:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 133px;
+  width: 109px;
+  background: url("../assets/graphics/dev_100_img_bottom_right.svg");
+  z-index: 2;
+}
+.dev-100 .dev-100-wrapper .text-wrapper {
+  margin-top: 48px;
+  z-index: 2;
+}
+.dev-100 .dev-100-wrapper .text-wrapper .article-title {
+  color: #ffffff;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 47px;
+  text-align: left;
+}
+.dev-100 .dev-100-wrapper .text-wrapper .article-text {
+  color: #ffffff;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.dev-100 .dev-100-wrapper .text-wrapper .cta-lead-text {
+  color: #ffffff;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  line-height: 20px;
+  text-align: left;
+  margin-bottom: 21px;
+}
+.dev-100 .dev-100-wrapper .text-wrapper .button-dev-100 {
+  height: 60px;
+  line-height: 60px;
+  width: auto;
+  min-width: 170px;
+  padding: 19px 33px 20px;
+  width: auto;
+  background: #f5812e;
+  color: #ffffff;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  border: none;
+}
+
+.header {
   position: sticky;
   top: 0;
   width: 100%;
@@ -8,6 +238,7 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 0 10px;
+  z-index: 5;
 }
 .header .logo {
   height: 100%;
@@ -103,7 +334,9 @@
 .header .nav .button-header {
   height: 60px;
   line-height: 60px;
-  padding: 0 32px;
+  width: auto;
+  min-width: 170px;
+  padding: 19px 33px 20px;
   width: auto;
   background: #f5812e;
   color: #ffffff;
@@ -129,6 +362,7 @@
   height: 3px;
   background: #f5812e;
   border: none;
+  border-radius: 2px;
 }
 .header .hamburger-wrapper .hamburger-line:not(:nth-of-type(2)) {
   width: 16px;

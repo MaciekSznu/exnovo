@@ -11,6 +11,7 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 0 10px;
+  z-index: 5;
 
   .logo {
     height: 100%;
@@ -141,6 +142,7 @@
       height: 3px;
       background: $orange;
       border: none;
+      border-radius: 2px;
 
       &:not(:nth-of-type(2)) {
         width: 16px;

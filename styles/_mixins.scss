@@ -3,7 +3,9 @@
 @mixin button {
   height: 60px;
   line-height: 60px;
-  padding: 0 32px;
+  width: auto;
+  min-width: 170px;
+  padding: 19px 33px 20px;
   width: auto;
   background: $orange;
   color: $white;
