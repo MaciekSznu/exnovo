@@ -6,6 +6,10 @@
   background: $footer-bg;
   padding: 0 10px;
 
+  @media (min-width: 768px) {
+    padding: 0 20px;
+  }
+
   .footer-wrapper {
     width: 100%;
     position: relative;
@@ -35,6 +39,17 @@
           text-align: left;
           display: inline-block;
           width: 100%;
+        }
+      }
+
+      @media (min-width: 768px) {
+        top: -75px;
+        .footer-title {
+          font-size: 33px;
+
+          span {
+            font-size: 56px;
+          }
         }
       }
     }
@@ -112,6 +127,18 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: -29px;
+          right: 60px;
+          width: 42px;
+          height: 58px;
+          background: url("../assets/graphics/triangles.svg");
+          z-index: 2;
+        }
 
         .box {
           flex-direction: column;

@@ -18,3 +18,15 @@
   text-align: center;
   border: none;
 }
+
+// header title mobile
+@media (min-width: 768px) {
+  // top: -75px;
+  .footer-title {
+    font-size: 33px;
+
+    span {
+      font-size: 56px;
+    }
+  }
+}

@@ -26,7 +26,7 @@
     background: url("../assets/graphics/triangles.svg");
   }
 
-  .dev-100-wrapper {
+  &-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,6 +107,32 @@
 
       .button-dev-100 {
         @include button;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 80px 20px 80px;
+
+    &:after {
+      right: 20px;
+    }
+
+    &-wrapper {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+
+      .image-wrapper {
+        margin-top: 13px;
+        width: 40%;
+        min-width: unset;
+      }
+
+      .text-wrapper {
+        margin-top: 0;
+        margin-left: 39px;
+        width: 340px;
       }
     }
   }

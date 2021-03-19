@@ -100,4 +100,62 @@
       margin: 0 8px;
     }
   }
+
+  @media (min-width: 768px) {
+    padding: 60px 20px 80px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 65% 35%;
+    gap: 20px 20px;
+    grid-template-areas:
+      "title opinions"
+      "arrows opinions";
+
+    .title-wrapper {
+      grid-area: title;
+      max-width: 345px;
+      margin-top: 45px;
+      padding-left: 20px;
+
+      .section-title {
+        color: $blue;
+        font-family: $poppins;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 40px;
+        text-align: left;
+        margin-bottom: 36px;
+
+        span {
+          color: inherit;
+          font-family: inherit;
+        }
+      }
+
+      .section-subtitle {
+        color: $blue;
+        font-family: $poppins;
+        font-size: 18px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 30px;
+        text-align: left;
+      }
+    }
+
+    .opinions-wrapper {
+      grid-area: opinions;
+      padding-right: 20px;
+
+      .opinion-box {
+        margin-top: 0;
+      }
+    }
+    .arrows-wrapper {
+      grid-area: arrows;
+      justify-content: flex-start;
+    }
+  }
 }
