@@ -3,7 +3,11 @@
 
 .opinions {
   padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .title-wrapper {
+    max-width: 320px;
     .section-title {
       color: $orange;
       font-family: $grotesk-bold;
@@ -32,9 +36,14 @@
   }
 
   .opinions-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .opinion-box {
       position: relative;
       width: 100%;
+      max-width: 378px;
       height: 300px;
       box-shadow: 0 2px 99px #edeefb;
       display: flex;

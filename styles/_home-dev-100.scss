@@ -33,12 +33,13 @@
 
     .image-wrapper {
       position: relative;
-      width: calc(100% - 29px);
+      min-width: calc(100% - 29px);
       height: auto;
       min-height: 360px;
       margin-left: 29px;
       background: url("../assets/images/home/girl.png");
-      background-size: contain;
+      background-size: cover;
+      background-position: center center;
 
       &:before {
         content: "";
@@ -68,6 +69,8 @@
     .text-wrapper {
       margin-top: 48px;
       z-index: 2;
+      max-width: 300px;
+      align-self: flex-start;
 
       .article-title {
         color: $white;

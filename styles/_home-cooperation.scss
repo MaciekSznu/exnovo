@@ -12,6 +12,7 @@
 
     .text-wrapper {
       width: 100%;
+      max-width: 378px;
       margin-bottom: 42px;
 
       .section-title {
@@ -76,6 +77,7 @@
     }
 
     .image-wrapper {
+      max-width: 378px;
       width: 100%;
       background: url("../assets/images/home/sylwetka-pracownika.png");
       background-size: contain;
