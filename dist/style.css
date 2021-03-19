@@ -1,4 +1,146 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);.hero {
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap);.footer {
+  width: 100%;
+  background: #f5f6fc;
+  padding: 0 10px;
+}
+.footer .footer-wrapper {
+  width: 100%;
+  position: relative;
+}
+.footer .footer-wrapper .title-wrapper {
+  position: absolute;
+  top: -55px;
+  left: 0;
+  width: 100%;
+}
+.footer .footer-wrapper .title-wrapper .footer-title {
+  color: #232740;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+}
+.footer .footer-wrapper .title-wrapper .footer-title span {
+  color: #f5812e;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+.footer .footer-wrapper .contact-wrapper {
+  padding-top: 55px;
+}
+.footer .footer-wrapper .contact-wrapper .box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 5px;
+  margin-top: 25px;
+}
+.footer .footer-wrapper .contact-wrapper .box .box-icon {
+  width: 70px;
+  height: auto;
+  margin-right: 35px;
+}
+.footer .footer-wrapper .contact-wrapper .box .box-text-wrapper .box-text {
+  color: #232740;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 18px;
+  text-align: left;
+}
+.footer .footer-wrapper .contact-wrapper .box .box-text-wrapper .box-text span {
+  display: inline-block;
+  width: 100%;
+}
+.footer .footer-wrapper .contact-wrapper .box .box-text-wrapper .box-text-link {
+  color: #232740;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 18px;
+  text-align: left;
+  text-decoration: none;
+}
+.footer .footer-wrapper .contact-wrapper .box .box-text-wrapper .box-text-link.direction {
+  color: #232740;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  text-decoration: underline;
+}
+.footer .footer-wrapper .contact-wrapper .box:first-of-type .box-text-wrapper .box-text {
+  margin-bottom: 15px;
+}
+.footer .footer-wrapper .contact-wrapper .social-links-wrapper {
+  margin-top: 38px;
+  margin-bottom: 22px;
+}
+.footer .footer-wrapper .contact-wrapper .social-links-wrapper .social-link {
+  margin-right: 16px;
+}
+.footer .disclaimer-wrapper {
+  border-top: 1px solid #d5d8ec;
+  border-bottom: 1px solid #d5d8ec;
+  padding-top: 12px;
+}
+.footer .disclaimer-wrapper .disclaimer-text {
+  opacity: 0.34;
+  color: #232740;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  margin-bottom: 12px;
+}
+.footer .disclaimer-wrapper .logos-wrapper a {
+  display: inline-block;
+  background-color: transparent;
+  height: 51px;
+  margin-right: 17px;
+}
+.footer .copyrights {
+  padding-top: 16px;
+}
+.footer .copyrights .copyrights-text,
+.footer .copyrights .copyrights-text-link {
+  opacity: 0.4;
+  color: #232740;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-decoration: none;
+  margin-bottom: 12px;
+  display: inline-block;
+  width: 100%;
+}
+.footer .copyrights .copyrights-text.copyrights-text-link,
+.footer .copyrights .copyrights-text-link.copyrights-text-link {
+  color: #232740;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-decoration: none;
+  margin-bottom: 12px;
+  display: inline;
+}
+
+.hero {
   width: 100%;
   height: auto;
 }
@@ -6,7 +148,7 @@
   padding-left: calc((10 / 320) * 100%);
 }
 .hero .hero-wrapper .title-wrapper .hero-title {
-  font-family: Aktiv_Grotesk_Regular;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
   margin-bottom: -50px;
 }
 .hero .hero-wrapper .title-wrapper .hero-title .blue-text {

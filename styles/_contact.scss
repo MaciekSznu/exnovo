@@ -1,0 +1,169 @@
+@import "variables";
+@import "mixins";
+
+.footer {
+  width: 100%;
+  background: $footer-bg;
+  padding: 0 10px;
+
+  .footer-wrapper {
+    width: 100%;
+    position: relative;
+
+    .title-wrapper {
+      position: absolute;
+      top: -55px;
+      left: 0;
+      width: 100%;
+
+      .footer-title {
+        color: $dark-blue;
+        font-family: $grotesk-reg;
+        font-size: 22px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+
+        span {
+          color: $orange;
+          font-family: $grotesk-reg;
+          font-size: 36px;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+          text-align: left;
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
+
+    .contact-wrapper {
+      padding-top: 55px;
+
+      .box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 5px;
+        margin-top: 25px;
+
+        .box-icon {
+          width: 70px;
+          height: auto;
+          margin-right: 35px;
+        }
+
+        .box-text-wrapper {
+          .box-text {
+            color: $dark-blue;
+            font-family: $grotesk-reg;
+            font-size: 15px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 18px;
+            text-align: left;
+
+            span {
+              display: inline-block;
+              width: 100%;
+            }
+          }
+
+          .box-text-link {
+            color: $dark-blue;
+            font-family: $grotesk-bold;
+            font-size: 15px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 18px;
+            text-align: left;
+            text-decoration: none;
+
+            &.direction {
+              color: $dark-blue;
+              font-family: $grotesk-reg;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        &:first-of-type {
+          .box-text-wrapper .box-text {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      .social-links-wrapper {
+        margin-top: 38px;
+        margin-bottom: 22px;
+
+        .social-link {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+
+  .disclaimer-wrapper {
+    border-top: 1px solid #d5d8ec;
+    border-bottom: 1px solid #d5d8ec;
+    padding-top: 12px;
+
+    .disclaimer-text {
+      opacity: 0.34;
+      color: $dark-blue;
+      font-family: $grotesk-reg;
+      font-size: 10px;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+
+    .logos-wrapper {
+      a {
+        display: inline-block;
+        background-color: transparent;
+        height: 51px;
+        margin-right: 17px;
+      }
+    }
+  }
+
+  .copyrights {
+    padding-top: 16px;
+
+    .copyrights-text,
+    .copyrights-text-link {
+      opacity: 0.4;
+      color: $dark-blue;
+      font-family: $grotesk-reg;
+      font-size: 13px;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-decoration: none;
+      margin-bottom: 12px;
+      display: inline-block;
+      width: 100%;
+
+      &.copyrights-text-link {
+        color: $dark-blue;
+        font-family: $grotesk-reg;
+        font-size: 13px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-decoration: none;
+        margin-bottom: 12px;
+        display: inline;
+      }
+    }
+  }
+}
