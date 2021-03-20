@@ -117,4 +117,60 @@
       }
     }
   }
+
+  @media (min-width: 1280px) {
+    padding: 155px 0 60px;
+
+    .section-title {
+      max-width: 620px;
+      font-size: 34px;
+      line-height: 47px;
+    }
+
+    .section-subtitle {
+      max-width: 770px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .boxes-wrapper {
+      max-width: 1084px;
+
+      .box {
+        width: 427px;
+        max-width: 427px;
+        margin-top: 0;
+        margin-bottom: 54px;
+
+        .box-icon {
+          height: 97px;
+          width: auto;
+          margin-bottom: 58px;
+        }
+
+        .box-title {
+          font-size: 24px;
+          line-height: 47px;
+          margin-bottom: 13px;
+        }
+
+        .box-text {
+          font-size: 14px;
+          line-height: 30px;
+        }
+
+        &:nth-of-type(odd) {
+          margin-right: 230px;
+
+          &:after {
+            top: 24px;
+            right: (-362px + 230px);
+            width: 362px;
+            height: 51px;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
 }

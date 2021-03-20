@@ -9,6 +9,13 @@
     padding: 20px 20px 162px;
   }
 
+  @media (min-width: 1280px) {
+    padding: 20px 0 162px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .cooperation-wrapper {
     display: flex;
     flex-direction: column;
@@ -148,6 +155,89 @@
 
       .image-wrapper {
         margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 1244px;
+
+      .text-wrapper {
+        width: 50%;
+        max-width: 50%;
+        max-height: 535px;
+        align-self: center;
+
+        .section-title {
+          font-size: 34px;
+          line-height: 45px;
+
+          &:nth-of-type(2) {
+            color: $orange;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            margin-bottom: 47px;
+          }
+        }
+
+        .list-item {
+          font-size: 18px;
+          max-width: 100%;
+
+          &:last-of-type {
+            margin-bottom: 33px;
+          }
+        }
+
+        .contact-wrapper {
+          display: flex;
+          align-items: center;
+          .button-contact {
+            margin-right: 56px;
+          }
+          .tel {
+            display: block;
+            color: $orange;
+            font-family: $grotesk-bold;
+            font-size: 16px;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .image-wrapper {
+        width: 50%;
+        max-width: 50%;
+        max-height: 535px;
+        background-position-x: right;
+        background-repeat: no-repeat;
+
+        .image-text-wrapper {
+          margin-top: 340px;
+          padding-top: 28px;
+          padding-left: 50px;
+
+          .image-text--header {
+            font-size: 18px;
+            line-height: 30px;
+          }
+
+          .image-text--name {
+            color: $dark-blue;
+            font-size: 18px;
+            line-height: 30px;
+          }
+
+          .image-text--data {
+            font-size: 18px;
+            line-height: 30px;
+          }
+        }
       }
     }
   }
