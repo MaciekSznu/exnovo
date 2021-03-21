@@ -1,19 +1,226 @@
 @import "variables";
 @import "mixins";
 
+// .hero {
+//   width: 100%;
+//   height: auto;
+
+//   .hero-wrapper {
+//     .title-wrapper {
+//       padding-left: calc((10 / 320) * 100%);
+//       margin-top: 48px;
+
+//       .hero-title {
+//         font-family: $grotesk-reg;
+//         margin-bottom: -50px;
+//         max-width: 190px;
+
+//         .blue-text {
+//           height: 27px;
+//           color: $dark-blue;
+//           font-size: 22px;
+//           font-weight: 400;
+//           font-style: normal;
+//           letter-spacing: normal;
+//           line-height: normal;
+//           text-align: left;
+//           display: inline-block;
+//           width: 100%;
+//         }
+
+//         .orange-text {
+//           color: $orange;
+//           font-size: 36px;
+//           font-weight: 400;
+//           font-style: normal;
+//           letter-spacing: normal;
+//           line-height: normal;
+//           text-align: left;
+//         }
+//       }
+//     }
+
+//     .hero-text-wrapper {
+//       height: auto;
+//       min-height: calc(343px + 137px);
+//       position: relative;
+
+//       &:before {
+//         content: "";
+//         position: absolute;
+//         top: 0;
+//         right: 10px;
+//         width: 42px;
+//         height: 58px;
+//         background: url("../assets/graphics/triangles.svg");
+//         z-index: 2;
+//       }
+
+//       .image-wrapper {
+//         height: auto;
+//         min-height: calc(343px + 137px);
+//         position: relative;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: flex-start;
+//         justify-content: flex-end;
+//         padding: 0 10px;
+//         overflow-x: hidden;
+//         z-index: -1;
+
+//         &:after {
+//           content: "";
+//           position: absolute;
+//           bottom: 0;
+//           left: 0;
+//           width: 100%;
+//           // height: 138px;
+//           height: 300px;
+//           background: $dark-blue;
+//           z-index: -2;
+//         }
+
+//         .hero-image {
+//           position: absolute;
+//           top: 0;
+//           right: 0;
+//           transform: translateX(calc((180 / 1243) * 100%));
+//           height: 343px;
+//           min-height: 343px;
+//           width: auto;
+//         }
+
+//         .hero-label-wrapper {
+//           display: none;
+//         }
+
+//         .hero-text {
+//           max-width: 300px;
+//           font-family: $grotesk-reg;
+//           color: $white;
+//           font-size: 15px;
+//           font-style: normal;
+//           letter-spacing: normal;
+//           line-height: 22px;
+//           text-align: left;
+//           margin-bottom: 24px;
+//           z-index: 1;
+//         }
+
+//         .cta-lead-text {
+//           max-width: 300px;
+//           font-family: $grotesk-bold;
+//           color: $white;
+//           font-size: 15px;
+//           line-height: 25px;
+//           font-style: normal;
+//           letter-spacing: normal;
+//           line-height: normal;
+//           margin-bottom: 38px;
+//         }
+
+//         .button-hero {
+//           @include button;
+//         }
+//       }
+//     }
+//   }
+
+//   @media (min-width: 768px) {
+//     .hero-wrapper {
+//       .title-wrapper {
+//         .hero-title {
+//           max-width: 700px;
+//           margin-bottom: -57px;
+
+//           .blue-text {
+//             height: 36px;
+//             font-size: 30px;
+//           }
+
+//           .orange-text {
+//             height: 50px;
+//             font-size: 40px;
+//           }
+//         }
+//       }
+
+//       .hero-text-wrapper {
+//         .image-wrapper {
+//           min-height: calc(403px + 137px);
+
+//           .hero-image {
+//             transform: translateX(0);
+//             right: unset;
+//             left: 80px;
+//             height: 403px;
+//             min-height: 403px;
+//           }
+
+//           .hero-text {
+//             position: absolute;
+//             bottom: calc(137px + 100px);
+//             top: 0;
+//             max-width: 500px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
 .hero {
+  margin-top: 48px;
   width: 100%;
-  height: auto;
+  max-width: 1440px;
+  position: relative;
 
-  .hero-wrapper {
-    .title-wrapper {
-      padding-left: calc((10 / 320) * 100%);
-      margin-top: 48px;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 136px;
+    background: $dark-blue;
+    z-index: -1;
+  }
 
+  @media (min-width: 768px) {
+    margin-top: 115px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 367px;
+      background: $dark-blue;
+      z-index: -1;
+    }
+  }
+
+  @media (min-width: 1243px) {
+    margin-bottom: -30px;
+  }
+
+  &-wrapper {
+    width: 100%;
+    max-width: calc(1243px + 99px);
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+
+    .hero-title-wrapper {
+      justify-self: flex-start;
+      align-self: flex-start;
+      z-index: 3;
       .hero-title {
         font-family: $grotesk-reg;
-        margin-bottom: -50px;
         max-width: 190px;
+        margin-left: 10px;
+        margin-bottom: -50px;
 
         .blue-text {
           height: 27px;
@@ -38,64 +245,54 @@
           text-align: left;
         }
       }
+
+      @media (min-width: 768px) {
+        .hero-title {
+          max-width: 700px;
+          margin-bottom: -77px;
+          margin-left: 5%;
+
+          .blue-text {
+            height: 36px;
+            font-size: 30px;
+          }
+
+          .orange-text {
+            height: 50px;
+            font-size: 40px;
+          }
+        }
+      }
+      @media (min-width: 1342px) {
+        .hero-title {
+          margin-left: 0;
+        }
+      }
     }
 
-    .hero-text-wrapper {
-      height: auto;
-      min-height: calc(343px + 137px);
+    .hero-image-wrapper {
+      height: 356px;
       position: relative;
+      justify-self: flex-end;
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      margin-bottom: 136px;
+      width: 100%;
+      background: url("../assets/images/home/hero_gradient_mobile.png") bottom right no-repeat,
+        url("../assets/images/home/hero_mobile.png") top right -100px no-repeat;
 
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 10px;
-        width: 42px;
-        height: 58px;
-        background: url("../assets/graphics/triangles.svg");
-        z-index: 2;
+      .hero-label-wrapper {
+        display: none;
       }
 
-      .image-wrapper {
-        height: auto;
-        min-height: calc(343px + 137px);
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-end;
-        padding: 0 10px;
-        overflow-x: hidden;
-        z-index: -1;
-
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          // height: 138px;
-          height: 300px;
-          background: $dark-blue;
-          z-index: -2;
-        }
-
-        .hero-image {
-          position: absolute;
-          top: 0;
-          right: 0;
-          transform: translateX(calc((180 / 1243) * 100%));
-          height: 343px;
-          min-height: 343px;
-          width: auto;
-        }
-
-        .hero-label-wrapper {
-          display: none;
-        }
-
+      .hero-text-wrapper {
+        max-width: 300px;
+        margin-left: 10px;
+        margin-bottom: -136px;
         .hero-text {
-          max-width: 300px;
           font-family: $grotesk-reg;
           color: $white;
           font-size: 15px;
@@ -108,7 +305,6 @@
         }
 
         .cta-lead-text {
-          max-width: 300px;
           font-family: $grotesk-bold;
           color: $white;
           font-size: 15px;
@@ -122,48 +318,87 @@
         .button-hero {
           @include button;
         }
-      }
-    }
-  }
 
-  @media (min-width: 768px) {
-    .hero-wrapper {
-      .title-wrapper {
-        .hero-title {
-          max-width: 700px;
-          margin-bottom: -57px;
-
-          .blue-text {
-            height: 36px;
-            font-size: 30px;
-          }
-
-          .orange-text {
-            height: 50px;
-            font-size: 40px;
-          }
+        @media (min-width: 768px) {
+          max-width: 500px;
+          margin-left: 76px;
+          margin-bottom: 76px;
+          margin-top: unset;
         }
-      }
 
-      .hero-text-wrapper {
-        .image-wrapper {
-          min-height: calc(403px + 137px);
-
-          .hero-image {
-            transform: translateX(0);
-            right: unset;
-            left: 80px;
-            height: 403px;
-            min-height: 403px;
-          }
+        @media (min-width: 1024px) {
+          max-width: 662px;
+          margin-bottom: 80px;
 
           .hero-text {
-            position: absolute;
-            bottom: calc(137px + 100px);
-            top: 0;
-            max-width: 500px;
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 30px;
+          }
+
+          .cta-lead-text {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 30px;
           }
         }
+
+        @media (min-width: 1243px) {
+          margin-bottom: 280px;
+          margin-left: calc(100vw - 1243px + 76px);
+        }
+      }
+
+      @media (min-width: 768px) {
+        margin-bottom: unset;
+        height: 645px;
+        background: url("../assets/images/home/hero_gradient.png") bottom right no-repeat,
+          url("../assets/images/home/hero_tablet.png") top right -150px no-repeat;
+
+        .hero-label-wrapper {
+          display: block;
+          position: absolute;
+          right: 273px;
+          top: 93px;
+          height: 147px;
+          width: 200px;
+          transform: translate(100%, -100%);
+
+          background: url("../assets/graphics/label_bg_01.svg") bottom 0px left 10px no-repeat,
+            url("../assets/graphics/label_bg_02.svg") bottom left no-repeat;
+
+          .invest-name,
+          .invest-price {
+            margin-left: 31px;
+            color: $dark-blue;
+            font-family: $poppins;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+          }
+
+          .invest-price {
+            color: $orange;
+          }
+        }
+      }
+
+      @media (min-width: 1024px) {
+        height: 645px;
+        background: url("../assets/images/home/hero_gradient.png") bottom right no-repeat,
+          url("../assets/images/home/hero_tablet.png") top right no-repeat;
+
+        .hero-label-wrapper {
+          right: 423px;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        height: 745px;
       }
     }
   }
