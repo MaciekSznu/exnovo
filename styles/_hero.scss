@@ -1,45 +1,6 @@
 @import "variables";
 @import "mixins";
 
-// .hero {
-//   width: 100%;
-//   height: auto;
-
-//   .hero-wrapper {
-//     .title-wrapper {
-//       padding-left: calc((10 / 320) * 100%);
-//       margin-top: 48px;
-
-//       .hero-title {
-//         font-family: $grotesk-reg;
-//         margin-bottom: -50px;
-//         max-width: 190px;
-
-//         .blue-text {
-//           height: 27px;
-//           color: $dark-blue;
-//           font-size: 22px;
-//           font-weight: 400;
-//           font-style: normal;
-//           letter-spacing: normal;
-//           line-height: normal;
-//           text-align: left;
-//           display: inline-block;
-//           width: 100%;
-//         }
-
-//         .orange-text {
-//           color: $orange;
-//           font-size: 36px;
-//           font-weight: 400;
-//           font-style: normal;
-//           letter-spacing: normal;
-//           line-height: normal;
-//           text-align: left;
-//         }
-//       }
-//     }
-
 //     .hero-text-wrapper {
 //       height: auto;
 //       min-height: calc(343px + 137px);
@@ -284,6 +245,17 @@
       background: url("../assets/images/home/hero_gradient_mobile.png") bottom right no-repeat,
         url("../assets/images/home/hero_mobile.png") top right -100px no-repeat;
 
+      &:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        width: 42px;
+        height: 58px;
+        background: url("../assets/graphics/triangles.svg");
+        z-index: 2;
+      }
+
       .hero-label-wrapper {
         display: none;
       }
@@ -355,6 +327,11 @@
         background: url("../assets/images/home/hero_gradient.png") bottom right no-repeat,
           url("../assets/images/home/hero_tablet.png") top right -150px no-repeat;
 
+        &:before {
+          top: 25px;
+          right: 30px;
+        }
+
         .hero-label-wrapper {
           display: block;
           position: absolute;
@@ -392,6 +369,14 @@
         background: url("../assets/images/home/hero_gradient.png") bottom right no-repeat,
           url("../assets/images/home/hero_tablet.png") top right no-repeat;
 
+        &:before {
+          top: 20px;
+          right: 96px;
+          width: 53px;
+          height: 73px;
+          background: url("../assets/graphics/triangles_big.svg");
+        }
+
         .hero-label-wrapper {
           right: 423px;
         }
@@ -399,6 +384,26 @@
 
       @media (min-width: 1280px) {
         height: 745px;
+
+        &:before {
+          top: 20px;
+          right: 104px;
+          width: 53px;
+          height: 73px;
+          background: url("../assets/graphics/triangles_big.svg");
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 100px;
+          right: 1243px;
+          transform: translateX(50%);
+          width: 53px;
+          height: 73px;
+          background: url("../assets/graphics/triangles_big.svg");
+          z-index: 2;
+        }
       }
     }
   }
