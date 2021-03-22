@@ -284,14 +284,36 @@
       background: $orange;
       border: none;
       border-radius: 2px;
+      transition: background-color 0.5s 0.5s ease-in-out;
 
       &:not(:nth-of-type(2)) {
+        transition: transform 0.5s 0.2s ease-in-out;
         width: 16px;
       }
     }
 
     @media (min-width: 1280px) {
       display: none;
+    }
+
+    &.hamburger-active {
+      .hamburger-line {
+        transition: transform 0.5s 0.2s ease-in-out;
+
+        &:nth-of-type(1) {
+          // transform: rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        &:nth-of-type(2) {
+          transition: background-color 0.5s ease-in-out;
+          background: transparent;
+        }
+
+        &:nth-of-type(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+      }
     }
   }
 

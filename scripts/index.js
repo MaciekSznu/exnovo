@@ -16,7 +16,7 @@ const showMainMenu = () => {
 };
 
 const hamburgerActive = () => {
-  hamburgerButton.classList.toggle("hamburger--active");
+  hamburgerButton.classList.toggle("hamburger-active");
 };
 
 hamburgerButton.addEventListener("click", (e) => {
