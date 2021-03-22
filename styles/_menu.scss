@@ -121,6 +121,19 @@
                 background-size: cover;
               }
 
+              &:not(:last-of-type) {
+                &:after {
+                  content: "";
+                  position: absolute;
+                  left: calc((300px - 226px) / 2);
+                  bottom: 0;
+                  width: 226px;
+                  height: 1px;
+                  border: none;
+                  border-bottom: 1px dashed #e1e2f4;
+                }
+              }
+
               .nav-list--item-link {
                 height: 100%;
                 font-size: 14px;
@@ -232,6 +245,9 @@
               .nav-list--item.secondary {
                 width: 220px;
                 padding-left: 81px;
+                &:not(:first-of-type) {
+                  margin-top: 0;
+                }
 
                 .nav-list--item-link {
                   width: 220px;
