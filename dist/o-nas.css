@@ -964,7 +964,7 @@ body {
     font-size: 56px;
   }
 }
-.page-title {
+.page-title-wrapper {
   margin-top: 48px;
   width: 100%;
   max-width: 1440px;
@@ -972,21 +972,20 @@ body {
   z-index: 3;
 }
 @media (min-width: 768px) {
-  .page-title {
+  .page-title-wrapper {
     margin-top: 115px;
   }
 }
-.page-title .hero-title {
+.page-title-wrapper .page-title {
   font-family: Aktiv_Grotesk_Regular, sans-serif;
   max-width: 190px;
   margin-left: 10px;
   margin-bottom: -16px;
 }
-.page-title .hero-title .blue-text {
+.page-title-wrapper .page-title .blue-text {
   height: 27px;
   color: #232740;
   font-size: 22px;
-  font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
   line-height: normal;
@@ -994,37 +993,37 @@ body {
   display: inline-block;
   width: 100%;
 }
-.page-title .hero-title .orange-text {
+.page-title-wrapper .page-title .orange-text {
   color: #f5812e;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
   font-size: 36px;
-  font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
   line-height: normal;
   text-align: left;
 }
 @media (min-width: 768px) {
-  .page-title .hero-title {
+  .page-title-wrapper .page-title {
     max-width: 700px;
     margin-bottom: -77px;
     margin-left: 5%;
   }
-  .page-title .hero-title .blue-text {
+  .page-title-wrapper .page-title .blue-text {
     height: 36px;
     font-size: 30px;
   }
-  .page-title .hero-title .orange-text {
+  .page-title-wrapper .page-title .orange-text {
     height: 50px;
     font-size: 40px;
   }
 }
 @media (min-width: 1280px) {
-  .page-title {
+  .page-title-wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 61px;
   }
-  .page-title .hero-title {
+  .page-title-wrapper .page-title {
     justify-self: flex-start;
     width: 1244px;
     max-width: 1244px;
@@ -1521,6 +1520,15 @@ body {
   .hands:before {
     display: none;
   }
+  .hands:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 603px;
+    height: 370px;
+    background: url("../assets/graphics/hands_overlay_bottom_left.svg");
+  }
   .hands-wrapper {
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -1752,100 +1760,39 @@ body {
   }
 }
 .offers {
-  background: #232740;
   padding: 66px 10px 84px;
   position: relative;
-}
-.offers:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 219px;
-  height: 362px;
-  background: url("../assets/graphics/dev_100_line_bottom_right.svg");
-}
-.offers:after {
-  content: "";
-  position: absolute;
-  bottom: -23px;
-  right: 10px;
-  width: 42px;
-  height: 58px;
-  background: url("../assets/graphics/triangles.svg");
 }
 .offers-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.offers-wrapper .image-wrapper {
-  position: relative;
-  min-width: calc(100% - 29px);
-  height: auto;
-  min-height: 360px;
-  margin-left: 29px;
-  background: url("../assets/images/home/girl.png");
-  background-size: cover;
-  background-position: center center;
-}
-.offers-wrapper .image-wrapper:before {
-  content: "";
-  position: absolute;
-  left: -29px;
-  top: 0;
-  height: calc(100% - 39px);
-  width: auto;
-  min-width: 213px;
-  background: url("../assets/graphics/img_overlay_house.svg");
-  background-size: cover;
-  z-index: 2;
-}
-.offers-wrapper .image-wrapper:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 133px;
-  width: 109px;
-  background: url("../assets/graphics/dev_100_img_bottom_right.svg");
-  z-index: 2;
-}
 .offers-wrapper .text-wrapper {
-  margin-top: 48px;
+  margin-top: 73px;
   z-index: 2;
   max-width: 300px;
   align-self: flex-start;
 }
 .offers-wrapper .text-wrapper .article-title {
-  color: #ffffff;
+  color: #232740;
   font-family: Aktiv_Grotesk_Bold, sans-serif;
   font-size: 24px;
   font-style: normal;
   letter-spacing: normal;
-  line-height: 47px;
+  line-height: 40px;
   text-align: left;
+  margin-bottom: 21px;
 }
 .offers-wrapper .text-wrapper .article-text {
-  color: #ffffff;
+  color: #232740;
   font-family: Aktiv_Grotesk_Regular, sans-serif;
   font-size: 13px;
   font-style: normal;
   letter-spacing: normal;
   line-height: 20px;
   text-align: left;
-  margin-bottom: 20px;
-}
-.offers-wrapper .text-wrapper .cta-lead-text {
-  color: #ffffff;
-  font-family: Aktiv_Grotesk_Bold, sans-serif;
-  font-size: 13px;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: normal;
-  line-height: 20px;
-  text-align: left;
-  margin-bottom: 21px;
+  margin-bottom: 33px;
 }
 .offers-wrapper .text-wrapper .button-offers {
   height: 60px;
@@ -1863,6 +1810,96 @@ body {
   line-height: normal;
   text-align: center;
   border: none;
+  display: none;
+}
+.offers-wrapper .offer-wrapper {
+  width: 283px;
+  height: 350px;
+  background: url("../assets/images/o-nas/offer_mobile_bg_shape.png") no-repeat;
+  background-position: top left;
+  padding-top: 37px;
+  padding-left: 39px;
+}
+.offers-wrapper .offer-wrapper .offer-item {
+  width: 244px;
+  height: 313px;
+  box-shadow: 0 2px 64px #e1e2f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.offers-wrapper .offer-wrapper .offer-item .offer-image {
+  width: 244px;
+  height: 178px;
+}
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 13px 17px;
+  height: 136px;
+}
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .offer-title {
+  width: 100%;
+  color: #232740;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  margin-bottom: 11px;
+}
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .area-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 39px;
+  width: 100%;
+}
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper .rooms-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper .prices-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper .area-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper .rooms-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper .prices-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper .area-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .area-wrapper .rooms-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .area-wrapper .prices-description,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .area-wrapper .area-description {
+  color: #9ea2b0;
+  font-family: Aktiv_Grotesk_Regular, sans-serif;
+  font-size: 8px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 19px;
+  text-align: left;
+}
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper .rooms-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper .prices-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper .area-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper .rooms-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper .prices-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper .area-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .area-wrapper .rooms-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .area-wrapper .prices-value,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .area-wrapper .area-value {
+  color: #232740;
+  font-family: Aktiv_Grotesk_Bold, sans-serif;
+  font-size: 8px;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 19px;
+  text-align: right;
+}
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .rooms-wrapper,
+.offers-wrapper .offer-wrapper .offer-item .offer-text-wrapper .prices-wrapper {
+  border-bottom: 1px dashed #e1e2f4;
 }
 @media (min-width: 768px) {
   .offers {

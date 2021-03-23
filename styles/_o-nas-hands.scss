@@ -149,6 +149,16 @@
       display: none;
     }
 
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 603px;
+      height: 370px;
+      background: url("../assets/graphics/hands_overlay_bottom_left.svg");
+    }
+
     &-wrapper {
       justify-content: space-between;
       flex-wrap: nowrap;

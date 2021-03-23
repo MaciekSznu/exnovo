@@ -2,113 +2,186 @@
 @import "mixins";
 
 .offers {
-  background: $dark-blue;
   padding: 66px 10px 84px;
   position: relative;
 
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 219px;
-    height: 362px;
-    background: url("../assets/graphics/dev_100_line_bottom_right.svg");
-  }
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+  //   width: 219px;
+  //   height: 362px;
+  //   background: url("../assets/graphics/dev_100_line_bottom_right.svg");
+  // }
 
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -23px;
-    right: 10px;
-    width: 42px;
-    height: 58px;
-    background: url("../assets/graphics/triangles.svg");
-  }
+  // &:after {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: -23px;
+  //   right: 10px;
+  //   width: 42px;
+  //   height: 58px;
+  //   background: url("../assets/graphics/triangles.svg");
+  // }
 
   &-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .image-wrapper {
-      position: relative;
-      min-width: calc(100% - 29px);
-      height: auto;
-      min-height: 360px;
-      margin-left: 29px;
-      background: url("../assets/images/home/girl.png");
-      background-size: cover;
-      background-position: center center;
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: -29px;
-        top: 0;
-        height: calc(100% - 39px);
-        width: auto;
-        min-width: 213px;
-        background: url("../assets/graphics/img_overlay_house.svg");
-        background-size: cover;
-        z-index: 2;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 133px;
-        width: 109px;
-        background: url("../assets/graphics/dev_100_img_bottom_right.svg");
-        z-index: 2;
-      }
-    }
-
     .text-wrapper {
-      margin-top: 48px;
+      margin-top: 73px;
       z-index: 2;
       max-width: 300px;
       align-self: flex-start;
 
       .article-title {
-        color: $white;
+        color: $dark-blue;
         font-family: $grotesk-bold;
         font-size: 24px;
         font-style: normal;
         letter-spacing: normal;
-        line-height: 47px;
+        line-height: 40px;
         text-align: left;
+        margin-bottom: 21px;
       }
 
       .article-text {
-        color: $white;
+        color: $dark-blue;
         font-family: $grotesk-reg;
         font-size: 13px;
         font-style: normal;
         letter-spacing: normal;
         line-height: 20px;
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 33px;
       }
-
-      .cta-lead-text {
-        color: $white;
-        font-family: $grotesk-bold;
-        font-size: 13px;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-        line-height: 20px;
-        text-align: left;
-        margin-bottom: 21px;
-      }
-
       .button-offers {
         @include button;
+        display: none;
       }
     }
+
+    .offer-wrapper {
+      width: 283px;
+      height: 350px;
+      background: url("../assets/images/o-nas/offer_mobile_bg_shape.png") no-repeat;
+      background-position: top left;
+      padding-top: 37px;
+      padding-left: 39px;
+
+      .offer-item {
+        width: 244px;
+        height: 313px;
+        box-shadow: 0 2px 64px #e1e2f4;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .offer-image {
+          width: 244px;
+          height: 178px;
+        }
+
+        .offer-text-wrapper {
+          background: $white;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 13px 17px;
+          height: 136px;
+
+          .offer-title {
+            width: 100%;
+            color: $dark-blue;
+            font-family: $grotesk-bold;
+            font-size: 13px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            margin-bottom: 11px;
+          }
+
+          .rooms-wrapper,
+          .prices-wrapper,
+          .area-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            height: 39px;
+            width: 100%;
+
+            .rooms-description,
+            .prices-description,
+            .area-description {
+              color: $light-blue;
+              font-family: $grotesk-reg;
+              font-size: 8px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: 19px;
+              text-align: left;
+            }
+
+            .rooms-value,
+            .prices-value,
+            .area-value {
+              color: $dark-blue;
+              font-family: $grotesk-bold;
+              font-size: 8px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: 19px;
+              text-align: right;
+            }
+          }
+          .rooms-wrapper,
+          .prices-wrapper {
+            border-bottom: 1px dashed #e1e2f4;
+          }
+        }
+      }
+    }
+
+    // .image-wrapper {
+    //   position: relative;
+    //   min-width: calc(100% - 29px);
+    //   height: auto;
+    //   min-height: 360px;
+    //   margin-left: 29px;
+    //   background: url("../assets/images/home/girl.png");
+    //   background-size: cover;
+    //   background-position: center center;
+
+    //   &:before {
+    //     content: "";
+    //     position: absolute;
+    //     left: -29px;
+    //     top: 0;
+    //     height: calc(100% - 39px);
+    //     width: auto;
+    //     min-width: 213px;
+    //     background: url("../assets/graphics/img_overlay_house.svg");
+    //     background-size: cover;
+    //     z-index: 2;
+    //   }
+
+    //   &:after {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 0;
+    //     right: 0;
+    //     height: 133px;
+    //     width: 109px;
+    //     background: url("../assets/graphics/dev_100_img_bottom_right.svg");
+    //     z-index: 2;
+    //   }
+    // }
   }
 
   @media (min-width: 768px) {
