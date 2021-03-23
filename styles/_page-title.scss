@@ -6,23 +6,17 @@
   width: 100%;
   max-width: 1440px;
   position: relative;
+  z-index: 3;
 
   @media (min-width: 768px) {
     margin-top: 115px;
   }
 
-  // @media (min-width: 1243px) {
-  //   margin-bottom: -30px;
-  // }
-  // .hero-title-wrapper {
-  //   justify-self: flex-start;
-  //   align-self: flex-start;
-  //   z-index: 3;
   .hero-title {
     font-family: $grotesk-reg;
     max-width: 190px;
     margin-left: 10px;
-    margin-bottom: -50px;
+    margin-bottom: -16px;
 
     .blue-text {
       height: 27px;
@@ -65,8 +59,15 @@
       }
     }
   }
-  @media (min-width: 1342px) {
+  @media (min-width: 1280px) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 61px;
+
     .hero-title {
+      justify-self: flex-start;
+      width: 1244px;
+      max-width: 1244px;
       margin-left: 0;
     }
   }
