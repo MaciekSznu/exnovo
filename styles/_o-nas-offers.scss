@@ -2,28 +2,8 @@
 @import "mixins";
 
 .offers {
-  padding: 66px 10px 84px;
+  padding: 66px 10px 62px;
   position: relative;
-
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   bottom: 0;
-  //   right: 0;
-  //   width: 219px;
-  //   height: 362px;
-  //   background: url("../assets/graphics/dev_100_line_bottom_right.svg");
-  // }
-
-  // &:after {
-  //   content: "";
-  //   position: absolute;
-  //   bottom: -23px;
-  //   right: 10px;
-  //   width: 42px;
-  //   height: 58px;
-  //   background: url("../assets/graphics/triangles.svg");
-  // }
 
   &-wrapper {
     display: flex;
@@ -31,7 +11,6 @@
     align-items: center;
 
     .text-wrapper {
-      margin-top: 73px;
       z-index: 2;
       max-width: 300px;
       align-self: flex-start;
@@ -147,150 +126,140 @@
         }
       }
     }
-
-    // .image-wrapper {
-    //   position: relative;
-    //   min-width: calc(100% - 29px);
-    //   height: auto;
-    //   min-height: 360px;
-    //   margin-left: 29px;
-    //   background: url("../assets/images/home/girl.png");
-    //   background-size: cover;
-    //   background-position: center center;
-
-    //   &:before {
-    //     content: "";
-    //     position: absolute;
-    //     left: -29px;
-    //     top: 0;
-    //     height: calc(100% - 39px);
-    //     width: auto;
-    //     min-width: 213px;
-    //     background: url("../assets/graphics/img_overlay_house.svg");
-    //     background-size: cover;
-    //     z-index: 2;
-    //   }
-
-    //   &:after {
-    //     content: "";
-    //     position: absolute;
-    //     bottom: 0;
-    //     right: 0;
-    //     height: 133px;
-    //     width: 109px;
-    //     background: url("../assets/graphics/dev_100_img_bottom_right.svg");
-    //     z-index: 2;
-    //   }
-    // }
   }
 
   @media (min-width: 768px) {
-    padding: 80px 20px 80px;
+    padding: 0 40px;
 
     &:after {
-      right: 20px;
+      content: "";
+      position: absolute;
+      bottom: -23px;
+      left: 62px;
+      width: 42px;
+      height: 58px;
+      background: url("../assets/graphics/triangles.svg");
     }
 
     &-wrapper {
       flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
-
-      .image-wrapper {
-        margin-top: 13px;
-        width: 40%;
-        min-width: unset;
-      }
+      justify-content: space-between;
+      align-items: center;
 
       .text-wrapper {
         margin-top: 0;
-        margin-left: 39px;
-        width: 340px;
+        margin-left: 0;
+        max-width: 380px;
+        align-self: unset;
+
+        .article-title {
+          margin-bottom: 15px;
+        }
+
+        .article-text {
+          margin-bottom: 31px;
+        }
+
+        .button-offers {
+          display: flex;
+        }
       }
     }
   }
 
   @media (min-width: 1280px) {
-    height: 568px;
-    padding: 0 57px;
+    height: 574px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    &:before {
-      width: 462px;
-      height: 568px;
-      background: url("../assets/graphics/dev_100_line_bottom_right_big.svg");
-    }
+    flex-direction: row;
+    justify-content: center;
 
     &:after {
-      bottom: -36px;
-      right: 104px;
-      width: 53px;
-      height: 73px;
-      background: url("../assets/graphics/triangles_big.svg");
+      display: none;
     }
 
     &-wrapper {
-      max-width: 1280px;
-      display: grid;
-      grid-template-columns: 533px auto;
-      grid-template-rows: minmax(568px, auto);
-      gap: 0px 50px;
-      grid-template-areas: "image text";
+      max-width: 1180px;
+      height: 100%;
 
-      .image-wrapper {
-        margin-top: 0;
-        grid-area: image;
-        min-width: calc(100% - 51px);
-        margin-left: 51px;
-        height: 637px;
-
-        &:before {
-          left: -51px;
-          height: 565px;
-          width: 378px;
-          background: url("../assets/graphics/img_overlay_house_big.svg");
-        }
-
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          height: 236px;
-          width: 192px;
-          background: url("../assets/graphics/dev_100_img_bottom_right_big.svg");
-        }
+      &:after {
+        display: none;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 62px;
+        width: 58px;
+        height: 73px;
+        background: url("../assets/graphics/triangles_big.svg");
       }
 
       .text-wrapper {
-        grid-area: text;
-        margin-top: 30px;
+        margin-top: 0;
         margin-left: 0;
-        width: 100%;
-        max-width: 688px;
+        max-width: 638px;
 
         .article-title {
           font-size: 34px;
-          line-height: 46px;
-          margin-bottom: 23px;
+          line-height: 47px;
+          margin-bottom: 15px;
         }
 
         .article-text {
           font-size: 16px;
-          line-height: 29px;
-          margin-bottom: 22px;
-        }
-
-        .cta-lead-text {
-          font-size: 18px;
           line-height: 30px;
-          margin-bottom: 35px;
+          margin-bottom: 31px;
         }
 
         .button-offers {
-          margin-bottom: 72px;
+          display: flex;
+        }
+      }
+
+      .offer-wrapper {
+        width: 440px;
+        height: 546px;
+        background: url("../assets/images/o-nas/offer_desktop_bg_shape.png") no-repeat;
+        background-position: top left;
+        padding-top: 58px;
+        padding-left: 60px;
+
+        .offer-item {
+          width: 380px;
+          height: 488px;
+
+          .offer-image {
+            width: 380px;
+            height: 277px;
+          }
+
+          .offer-text-wrapper {
+            padding: 21px 28px;
+            height: 211px;
+
+            .offer-title {
+              font-size: 20px;
+              margin-bottom: 17px;
+            }
+
+            .rooms-wrapper,
+            .prices-wrapper,
+            .area-wrapper {
+              height: 47px;
+
+              .rooms-description,
+              .prices-description,
+              .area-description {
+                font-size: 13px;
+                line-height: 30px;
+              }
+
+              .rooms-value,
+              .prices-value,
+              .area-value {
+                font-size: 13px;
+                line-height: 30px;
+              }
+            }
+          }
         }
       }
     }

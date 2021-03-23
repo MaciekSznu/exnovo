@@ -61,13 +61,23 @@
   @media (min-width: 1280px) {
     display: flex;
     justify-content: center;
-    margin-bottom: 61px;
+    margin-bottom: 56px;
 
     .page-title {
       justify-self: flex-start;
       width: 1244px;
       max-width: 1244px;
       margin-left: 0;
+
+      .blue-text {
+        font-size: 45px;
+        line-height: normal;
+      }
+
+      .orange-text {
+        font-size: 45px;
+        line-height: normal;
+      }
     }
   }
 }
