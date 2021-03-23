@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "common";
 @import "contact";
 @import "hero";
 @import "home-cooperation";
@@ -8,42 +9,3 @@
 @import "home-help";
 @import "home-opinions";
 @import "menu";
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
-@font-face {
-  font-family: Aktiv_Grotesk_Regular;
-  src: url(../assets/fonts/aktiv_grotesk/AktivGrotesk_Trial_Rg.ttf);
-}
-
-@font-face {
-  font-family: Aktiv_Grotesk_Bold;
-  src: url(../assets/fonts/aktiv_grotesk/AktivGrotesk_Trial_Bd.ttf);
-}
-
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  height: auto;
-  font-family: $poppins;
-  overflow-x: hidden;
-}

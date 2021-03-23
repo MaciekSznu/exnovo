@@ -16,7 +16,9 @@ mix
     processCssUrls: false,
   })
   .js("scripts/index.js", "dist/")
-  .sass("styles/style.scss", "dist/style.css");
+  .sass("styles/style.scss", "dist/style.css")
+  .sass("styles/o-nas.scss", "dist/o-nas.css");
+;
 // .minify('dist/app.css');
 
 // Full API
