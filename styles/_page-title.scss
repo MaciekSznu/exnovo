@@ -32,7 +32,7 @@
 
     .orange-text {
       color: $orange;
-      font-family: $grotesk-bold;
+      font-family: $grotesk-reg;
       font-size: 36px;
       font-style: normal;
       letter-spacing: normal;
@@ -75,6 +75,7 @@
       }
 
       .orange-text {
+        font-family: $grotesk-bold;
         font-size: 45px;
         line-height: normal;
       }
