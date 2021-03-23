@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "../variables";
+@import "../mixins";
 
 .dev-100 {
   background: $dark-blue;
@@ -13,7 +13,7 @@
     right: 0;
     width: 219px;
     height: 362px;
-    background: url("../assets/graphics/dev_100_line_bottom_right.svg");
+    background: url("../../assets/graphics/dev_100_line_bottom_right.svg");
   }
 
   &:after {
@@ -23,7 +23,7 @@
     right: 10px;
     width: 42px;
     height: 58px;
-    background: url("../assets/graphics/triangles.svg");
+    background: url("../../assets/graphics/triangles.svg");
   }
 
   &-wrapper {
@@ -37,7 +37,7 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../assets/images/home/girl.png");
+      background: url("../../assets/images/home/girl.png");
       background-size: cover;
       background-position: center center;
 
@@ -49,7 +49,7 @@
         height: calc(100% - 39px);
         width: auto;
         min-width: 213px;
-        background: url("../assets/graphics/img_overlay_house.svg");
+        background: url("../../assets/graphics/img_overlay_house.svg");
         background-size: cover;
         z-index: 2;
       }
@@ -61,7 +61,7 @@
         right: 0;
         height: 133px;
         width: 109px;
-        background: url("../assets/graphics/dev_100_img_bottom_right.svg");
+        background: url("../../assets/graphics/dev_100_img_bottom_right.svg");
         z-index: 2;
       }
     }
@@ -147,7 +147,7 @@
     &:before {
       width: 462px;
       height: 568px;
-      background: url("../assets/graphics/dev_100_line_bottom_right_big.svg");
+      background: url("../../assets/graphics/dev_100_line_bottom_right_big.svg");
     }
 
     &:after {
@@ -155,7 +155,7 @@
       right: 104px;
       width: 53px;
       height: 73px;
-      background: url("../assets/graphics/triangles_big.svg");
+      background: url("../../assets/graphics/triangles_big.svg");
     }
 
     &-wrapper {
@@ -177,7 +177,7 @@
           left: -51px;
           height: 565px;
           width: 378px;
-          background: url("../assets/graphics/img_overlay_house_big.svg");
+          background: url("../../assets/graphics/img_overlay_house_big.svg");
         }
 
         &:after {
@@ -187,7 +187,7 @@
           right: 0;
           height: 236px;
           width: 192px;
-          background: url("../assets/graphics/dev_100_img_bottom_right_big.svg");
+          background: url("../../assets/graphics/dev_100_img_bottom_right_big.svg");
         }
       }
 

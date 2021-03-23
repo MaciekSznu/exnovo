@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "../variables";
+@import "../mixins";
 
 .opinions {
   padding: 0 10px;
@@ -61,7 +61,7 @@
         left: 29px;
         width: 63px;
         height: 63px;
-        background: url("../assets/graphics/quote.svg");
+        background: url("../../assets/graphics/quote.svg");
         z-index: 2;
       }
 

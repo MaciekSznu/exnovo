@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "../variables";
+@import "../mixins";
 
 .offers {
   padding: 66px 10px 62px;
@@ -45,7 +45,7 @@
     .offer-wrapper {
       width: 283px;
       height: 350px;
-      background: url("../assets/images/o-nas/offer_mobile_bg_shape.png") no-repeat;
+      background: url("../../assets/images/o-nas/offer_mobile_bg_shape.png") no-repeat;
       background-position: top left;
       padding-top: 37px;
       padding-left: 39px;
@@ -138,7 +138,7 @@
       left: 62px;
       width: 42px;
       height: 58px;
-      background: url("../assets/graphics/triangles.svg");
+      background: url("../../assets/graphics/triangles.svg");
     }
 
     &-wrapper {
@@ -189,7 +189,7 @@
         left: 62px;
         width: 58px;
         height: 73px;
-        background: url("../assets/graphics/triangles_big.svg");
+        background: url("../../assets/graphics/triangles_big.svg");
       }
 
       .text-wrapper {
@@ -217,7 +217,7 @@
       .offer-wrapper {
         width: 440px;
         height: 546px;
-        background: url("../assets/images/o-nas/offer_desktop_bg_shape.png") no-repeat;
+        background: url("../../assets/images/o-nas/offer_desktop_bg_shape.png") no-repeat;
         background-position: top left;
         padding-top: 58px;
         padding-left: 60px;
