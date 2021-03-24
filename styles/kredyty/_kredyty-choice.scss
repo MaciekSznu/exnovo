@@ -1,2 +1,164 @@
 @import "../variables";
 @import "../mixins";
+
+.choice {
+  padding: 60px 10px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .section-title {
+    max-width: 270px;
+    color: $dark-blue;
+    font-family: $grotesk-bold;
+    font-size: 24px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 35px;
+    text-align: center;
+    margin-bottom: 17px;
+    span {
+      color: $orange;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+    }
+  }
+
+  .section-subtitle {
+    max-width: 284px;
+    color: $dark-blue;
+    font-family: $grotesk-reg;
+    font-size: 15px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 23px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .choice-boxes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .box {
+      width: 100%;
+      max-width: 203px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 36px;
+      padding: 0 10px;
+      .box-icon {
+        height: 77px;
+        width: auto;
+        margin-bottom: 13px;
+      }
+      .box-title {
+        color: $dark-blue;
+        font-family: $grotesk-bold;
+        font-size: 24px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 47px;
+        text-align: center;
+      }
+      .box-text {
+        color: $dark-blue;
+        font-family: $grotesk-reg;
+        font-size: 13px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 60px 20px 60px;
+
+    .section-title {
+      max-width: 500px;
+      font-size: 30px;
+      line-height: 40px;
+      text-align: center;
+      margin-bottom: 19px;
+    }
+
+    .section-subtitle {
+      max-width: calc(100vw - 80px);
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 64px;
+    }
+
+    .choice-boxes-wrapper {
+      max-width: 880px;
+      .box {
+        padding: 0;
+        margin-bottom: 40px;
+
+        &:not(:nth-of-type(3n)) {
+          margin-right: 24px;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 71px;
+    padding: 0;
+
+    .section-title {
+      max-width: 620px;
+      font-size: 34px;
+      line-height: 47px;
+    }
+
+    .section-subtitle {
+      max-width: 770px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .choice-boxes-wrapper {
+      max-width: 1000px;
+
+      .box {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 57px;
+
+        .box-title {
+          font-size: 24px;
+          line-height: 47px;
+        }
+
+        .box-text {
+          font-size: 13px;
+          line-height: 30px;
+        }
+
+        &:not(:nth-of-type(3n)) {
+          margin-right: 182px;
+          position: relative;
+
+          &:before {
+            content: "";
+            position: absolute;
+            top: 94px;
+            right: calc(-50px - 81px);
+            width: 81px;
+            height: 11px;
+            z-index: 2;
+            background: url("../../assets/graphics/experience_wave.svg") no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+}
