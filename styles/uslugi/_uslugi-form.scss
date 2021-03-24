@@ -1,2 +1,300 @@
 @import "../variables";
 @import "../mixins";
+
+.form {
+  width: 100%;
+  padding: 0 10px;
+
+  @media (min-width: 768px) {
+    padding: 20px 20px 30px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 20px 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text-wrapper {
+      width: 100%;
+      max-width: 378px;
+      margin-bottom: 42px;
+
+      .section-title {
+        color: $dark-blue;
+        font-family: $grotesk-bold;
+        font-size: 24px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 35px;
+        text-align: left;
+        span {
+          color: $orange;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+          margin-bottom: 12px;
+        }
+      }
+
+      .section-subtitle {
+        color: $dark-blue;
+        font-family: $grotesk-reg;
+        font-size: 15px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 23px;
+        text-align: left;
+      }
+
+      .contact-form {
+        background: $white;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+
+        .input-wrapper {
+          width: 100%;
+          position: relative;
+          margin-top: 23px;
+
+          &:not(:first-of-type) {
+            margin-top: 13px;
+          }
+
+          &:last-of-type {
+            margin-bottom: 23px;
+          }
+
+          .contact-form--input-name,
+          .contact-form--input-email,
+          .contact-form--input-phone {
+            width: 100%;
+            margin-top: 0;
+            padding: 22px 23px;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            border: 1px solid #e1e2f4;
+            position: relative;
+            color: $mid-blue;
+            font-family: $grotesk-reg;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+
+            &:focus {
+              background: transparent;
+              outline: 1px solid $mid-blue;
+            }
+          }
+          .contact-form--input-name::placeholder,
+          .contact-form--input-email::placeholder,
+          .contact-form--input-phone::placeholder {
+            color: $mid-blue;
+            font-family: $grotesk-reg;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+          }
+
+          &::before {
+            position: absolute;
+            bottom: -8px;
+            left: 0px;
+            height: 20px;
+            line-height: 20px;
+            width: auto;
+            padding: 0 1rem;
+            color: rgba($orange, 0.75);
+            visibility: hidden;
+            background-color: #ffffff;
+            z-index: 5;
+            font-family: $grotesk-reg;
+            font-size: 0.9rem;
+          }
+          &:nth-of-type(1)::before {
+            content: "Proszę podać Imię";
+          }
+          &:nth-of-type(2)::before {
+            content: "Proszę podać poprawny adres email";
+          }
+          &:nth-of-type(3)::before {
+            content: "Proszę podać poprawny numer telefonu";
+          }
+          &.incorrect::before {
+            visibility: visible;
+          }
+          &.incorrect input {
+            border-bottom: 1px solid rgba($orange, 0.75);
+          }
+        }
+        .disclaimers-wrapper {
+          .disclaimer {
+            display: flex;
+            justify-content: stretch;
+            margin-top: 23px;
+            position: relative;
+
+            @include rodo-checkbox;
+
+            &:nth-of-type(2) {
+              margin-top: 12px;
+              margin-bottom: 23px;
+
+              @include rodo-checkbox;
+            }
+          }
+        }
+
+        &--input-submit {
+          @include button;
+        }
+      }
+    }
+
+    .image-wrapper {
+      max-width: 378px;
+      width: 100%;
+      background: url("../../assets/images/home/sylwetka-pracownika.png");
+      background-size: contain;
+      background-position-y: top;
+      margin-bottom: 123px;
+
+      .image-text-wrapper {
+        width: 100%;
+        height: 196px;
+        background: $white;
+        box-shadow: 0 2px 100px #e1e2f4;
+        padding: 27px;
+        margin-top: 191px;
+
+        .image-text--header {
+          color: $blue;
+          font-family: $poppins;
+          font-size: 13px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 20px;
+          text-align: left;
+          margin-bottom: 10px;
+        }
+
+        .image-text--name,
+        .image-text--data {
+          color: $light-blue;
+          font-family: $poppins;
+          font-size: 13px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 20px;
+          text-align: left;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .text-wrapper {
+        margin-bottom: 0;
+        margin-right: 50px;
+        .section-title {
+          span {
+            color: $orange;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            margin-bottom: 21px;
+          }
+        }
+
+        .contact-form {
+          max-width: 426px;
+        }
+      }
+
+      .image-wrapper {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 1244px;
+      margin-top: 110px;
+
+      .text-wrapper {
+        width: 50%;
+        max-width: 50%;
+        max-height: 535px;
+        align-self: center;
+
+        .section-title {
+          font-size: 34px;
+          line-height: 45px;
+
+          span {
+            color: $orange;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            margin-bottom: 47px;
+          }
+        }
+
+        .contact-form {
+          max-width: 426px;
+        }
+      }
+
+      .image-wrapper {
+        width: 50%;
+        max-width: 50%;
+        max-height: 535px;
+        background-position-x: right;
+        background-repeat: no-repeat;
+
+        .image-text-wrapper {
+          margin-top: 340px;
+          padding-top: 28px;
+          padding-left: 50px;
+
+          .image-text--header {
+            font-size: 18px;
+            line-height: 30px;
+          }
+
+          .image-text--name {
+            color: $dark-blue;
+            font-size: 18px;
+            line-height: 30px;
+          }
+
+          .image-text--data {
+            font-size: 18px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

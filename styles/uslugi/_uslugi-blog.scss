@@ -1,2 +1,190 @@
 @import "../variables";
 @import "../mixins";
+
+.blog {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .section-title {
+    max-width: 320px;
+    color: $dark-blue;
+    font-family: $grotesk-bold;
+    font-size: 24px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 35px;
+    text-align: center;
+    margin-bottom: 17px;
+    span {
+      color: $orange;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+    }
+  }
+
+  .section-subtitle {
+    max-width: 320px;
+    color: $dark-blue;
+    font-family: $grotesk-reg;
+    font-size: 15px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 23px;
+    text-align: center;
+  }
+
+  .blog-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 145px;
+
+    .blog-item {
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 42px;
+      background: $white;
+      box-shadow: 0 2px 100px #e1e2f4;
+      .blog-image {
+        height: 222px;
+        width: 300;
+      }
+      .blog-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 300px;
+        height: 193px;
+        padding: 25px 24px;
+        .blog-title {
+          color: $dark-blue;
+          font-family: $grotesk-bold;
+          font-size: 16px;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+          text-align: left;
+          margin-bottom: 15px;
+        }
+        .blog-summary {
+          color: $light-blue;
+          font-family: $grotesk-reg;
+          font-size: 13px;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 18px;
+          text-align: left;
+          margin-bottom: 15px;
+        }
+        .blog-link {
+          color: $dark-blue;
+          font-family: $grotesk-reg;
+          font-size: 13px;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 24px;
+          text-align: left;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 60px 20px 60px;
+
+    .section-title {
+      max-width: 500px;
+      font-size: 30px;
+      line-height: 40px;
+      text-align: center;
+      margin-bottom: 19px;
+    }
+
+    .section-subtitle {
+      max-width: calc(100vw - 80px);
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 64px;
+    }
+
+    .blog-wrapper {
+      .blog-item {
+        &:nth-of-type(3) {
+          display: none;
+        }
+        &:first-of-type {
+          margin-right: 46px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding: 155px 0 0;
+    margin-bottom: 230px;
+
+    .section-title {
+      max-width: 620px;
+      font-size: 34px;
+      line-height: 47px;
+    }
+
+    .section-subtitle {
+      max-width: 770px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .blog-wrapper {
+      max-width: 1232px;
+
+      .blog-item {
+        width: 380px;
+        max-width: 380px;
+        margin-top: 0;
+        height: 488px;
+
+        .blog-image {
+          height: 277px;
+          width: 380px;
+        }
+
+        .blog-text-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          width: 300px;
+          height: 193px;
+          padding-top: 25px;
+          padding-left: 34px;
+          .blog-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+          }
+          .blog-summary {
+            margin-bottom: 24px;
+          }
+          .blog-link {
+            color: $dark-blue;
+          }
+        }
+
+        &:nth-of-type(2) {
+          margin-right: 46px;
+        }
+        &:nth-of-type(3) {
+          display: flex;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

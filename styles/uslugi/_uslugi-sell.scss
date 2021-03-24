@@ -71,7 +71,48 @@
         line-height: normal;
         line-height: normal;
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
+      }
+
+      .cta-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        .cta-img {
+          border-radius: 50%;
+          box-shadow: 0 2px 30px #e1e2f4;
+          margin-right: 24px;
+        }
+
+        .cta-text-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+          .cta-text {
+            color: $mid-blue;
+            font-family: $grotesk-bold;
+            font-size: 16px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            margin-bottom: 5px;
+          }
+          .cta-link {
+            color: $orange;
+            font-family: $grotesk-bold;
+            font-size: 16px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            text-decoration: none;
+          }
+        }
       }
     }
 
@@ -82,9 +123,10 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../../assets/images/o-nas/hands_image_mobile.png");
+      background: url("../../assets/images/uslugi/sell_img_mobile.png");
       background-size: cover;
       background-position: top left;
+      box-shadow: 0 2px 100px #e1e2f4;
 
       &:before {
         content: "";
@@ -149,16 +191,6 @@
       display: none;
     }
 
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 603px;
-      height: 370px;
-      background: url("../../assets/graphics/hands_overlay_bottom_left.svg");
-    }
-
     &-wrapper {
       justify-content: space-between;
       flex-wrap: nowrap;
@@ -196,7 +228,7 @@
         margin-top: 0;
         width: 566px;
         height: 596px;
-        background: url("../../assets/images/o-nas/hands_image.png");
+        background: url("../../assets/images/uslugi/sell_img_desktop.png");
         background-size: cover;
         background-position: top left;
         margin-left: 47px;

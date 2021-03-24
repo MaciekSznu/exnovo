@@ -65,9 +65,11 @@
           </h3>
           <!-- DODANE -->
           <div class="cta-wrapper">
-            <img src="" alt="" />
-            <p>Masz pytanie? Zadzwoń.</p>
-            <a href="tel:+48510912123">+ 48 510 912 123</a>
+            <img class="cta-img" src="./assets/images/uslugi/cta-image.png" alt="" />
+            <div class="cta-text-wrapper">
+              <p class="cta-text">Masz pytanie? Zadzwoń.</p>
+              <a class="cta-link" href="tel:+48510912123">+ 48 510 912 123</a>
+            </div>
           </div>
         </article>
         <div class="image-wrapper"></div>
@@ -75,24 +77,22 @@
     </section>
     <section class="buy">
       <div class="buy-wrapper">
-        <div class="image-wrapper"></div>
         <article class="text-wrapper">
-          <p class="page-adress">Home> Uslugi</p>
-          <h2 class="article-title">Sprzedaż mieszkania w Trójmieście</h2>
+          <h2 class="article-title">Zakup mieszkania w Trójmieście</h2>
           <p class="article-text">
-            Chcesz sprzedać mieszkanie w Gdańsku, Gdyni lub Sopocie? Pewnie zależy Ci, aby transakcja została
-            przeprowadzona szybko i skutecznie? Tak właśnie będzie! Jak to możliwe? Wieloletnie doświadczenie, pozwala
-            nam stosować najlepsze metody promocji. Wiemy, też jak szybko znaleźć potencjalnego klienta i bezpiecznie
-            załatwić formalności. Mamy świadomość, że chcesz na sprzedaży mieszkania jak najwięcej zarobić. Doskonale to
-            rozumiemy, więc powtórzymy to jeszcze raz – będzie tak jak chcesz!
+            Chcesz w końcu spełnić marzenie o nowym miejscu do życia w Gdańsku, Gdyni lub Sopocie? U nas znajdziesz
+            bogatą ofertę sprzedaży wszystkich rodzajów nieruchomości. Za punkt honoru stawiamy sobie Twój komfort i
+            staramy się maksymalnie ograniczyć Twoje zaangażowanie i czas. Nasze doświadczenie, w połączeniu z
+            umiejętnością negocjacji warunków i znajomość kształtowania się cen na trójmiejskim rynku - potrafią
+            zdziałać cuda!
           </p>
           <h3 class="cta-lead-text">
             Poprowadzimy Cię za rękę aż do finału, czyli przeniesienia prawa własności na kupującego, abyś jak
             najszybciej mógł cieszyć się gotówką. Nie czekaj - skontaktuj się z naszym agentem już dziś.
           </h3>
-          <!-- DODANE -->
           <button class="cta-button">Przejdź do oferty</button>
         </article>
+        <div class="image-wrapper"></div>
       </div>
     </section>
     <section class="experience">
@@ -123,16 +123,86 @@
             kupionych nieruchomości w Trójmieście
           </p>
         </div>
-        <div class="box">
-          <img class="box-icon" src="./assets/graphics/experience_icon_desktop.svg" alt="" />
-          <h4 class="box-title">1500</h4>
-          <p class="box-text">
-            sprzedanych nieruchomości w Trójmieście
-          </p>
+      </div>
+    </section>
+    <section class="form">
+      <div class="form-wrapper">
+        <div class="text-wrapper">
+          <h2 class="section-title">Mam dla Ciebie <span>propozycję!</span></h2>
+          <h3 class="section-subtitle">
+            Bogata baza nieruchomości, pozwoli mi przedstawić Ci ofertę, skrojoną na miarę Twoich potrzeb! Jedyne co
+            musisz zrobić, to dać znać, że tego chcesz.
+          </h3>
+          <form action="" id="contact-form" class="contact-form" method="post">
+            <div class="input-wrapper">
+              <input
+                id="input-name"
+                class="contact-form--input-name"
+                type="text"
+                name="imie"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="Imię i nazwisko"
+              />
+            </div>
+            <div class="input-wrapper">
+              <input
+                id="input-email"
+                class="contact-form--input-email"
+                type="email"
+                name="email"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="E-mail"
+              />
+            </div>
+            <div class="input-wrapper">
+              <input
+                id="input-phone"
+                class="contact-form--input-phone"
+                type="tel"
+                name="telefon"
+                aria-required="true"
+                aria-invalid="false"
+                placeholder="Telefon"
+              />
+            </div>
+            <div class="disclaimers-wrapper">
+              <div class="disclaimer">
+                <input class="rodo-checkbox" type="checkbox" id="rodo-01" name="rodo-01" />
+                <div class="rodo-custom-checkbox"></div>
+                <label class="rodo-checkbox-label" for="rodo-01">
+                  TAK, zgadzam się na przetwarzanie moich danych osobowych przez podmioty z Grupy Kapitałowej J.W.
+                  Construction Holding S.A. w celu przesyłania informacji handlowych w drodze korespondencji e-mail
+                  zgodnie z art. 6 ust. 1 lit a RODO w zw. z art. 10 ust. 2 ustawy o świadczeniu usług drogą
+                  elektroniczną.
+                </label>
+              </div>
+              <div class="disclaimer">
+                <input class="rodo-checkbox" type="checkbox" id="rodo-02" name="rodo-02" />
+                <div class="rodo-custom-checkbox"></div>
+                <label class="rodo-checkbox-label" for="rodo-02">
+                  TAK, zgadzam się na przetwarzanie moich danych osobowych przez podmioty z Grupy Kapitałowej J.W.
+                  Construction Holding S.A. w celu przesyłania informacji handlowych w drodze korespondencji e-mail
+                  zgodnie z art. 6 ust. 1 lit a RODO w zw. z art. 10 ust. 2 ustawy o świadczeniu usług drogą
+                  elektroniczną.
+                </label>
+              </div>
+            </div>
+            <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
+          </form>
+        </div>
+        <div class="image-wrapper">
+          <div class="image-text-wrapper">
+            <p class="image-text--header">
+              W trakcie 15-letniej pracy w branży nieruchomości, pośredniczył w ponad tysiącu transakcji sprzedaży.
+            </p>
+            <p class="image-text--name">Marcin Fałek</p>
+            <p class="image-text--data">licencjonowany pośrednik nieruchomości, nr licencji: XYZ</p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="form">FORMULARZ</section>
     <section class="blog">
       <h2 class="section-title">Nasz <span>blog</span></h2>
       <h3 class="section-subtitle">

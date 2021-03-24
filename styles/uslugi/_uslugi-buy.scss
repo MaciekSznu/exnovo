@@ -71,18 +71,22 @@
         line-height: normal;
         line-height: normal;
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
+      }
+
+      .cta-button {
+        @include button;
       }
     }
 
     .image-wrapper {
-      margin-top: 49px;
+      margin-top: 41px;
       position: relative;
       min-width: calc(100% - 29px);
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../../assets/images/o-nas/hands_image_mobile.png");
+      background: url("../../assets/images/uslugi/buy_img_desktop.png");
       background-size: cover;
       background-position: top left;
 
@@ -113,25 +117,39 @@
   }
 
   @media (min-width: 768px) {
-    padding: 80px 20px 80px;
+    padding: 0 20px 80px;
 
     &:before {
       right: 20px;
     }
 
     &-wrapper {
-      flex-direction: row;
+      flex-direction: row-reverse;
       justify-content: center;
       align-items: flex-start;
 
       .text-wrapper {
+        margin-left: 49px;
         margin-top: 0;
         width: 340px;
+
+        .article-title {
+          line-height: 32px;
+          margin-bottom: 20px;
+        }
+
+        .article-text {
+          line-height: 18px;
+          margin-bottom: 16px;
+        }
+
+        .cta-lead-text {
+          margin-bottom: 25px;
+        }
       }
 
       .image-wrapper {
-        margin-top: 111px;
-        margin-left: 49px;
+        margin-top: 0;
         width: 40%;
         min-width: unset;
       }
@@ -139,7 +157,7 @@
   }
 
   @media (min-width: 1280px) {
-    height: 714px;
+    height: 806px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -149,23 +167,14 @@
       display: none;
     }
 
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 603px;
-      height: 370px;
-      background: url("../../assets/graphics/hands_overlay_bottom_left.svg");
-    }
-
     &-wrapper {
+      margin-top: 92px;
       justify-content: space-between;
       flex-wrap: nowrap;
 
       .text-wrapper {
         margin-top: 0px;
-        margin-left: 0;
+        margin-left: 75px;
         width: 100%;
         max-width: 593px;
 
@@ -196,7 +205,7 @@
         margin-top: 0;
         width: 566px;
         height: 596px;
-        background: url("../../assets/images/o-nas/hands_image.png");
+        background: url("../../assets/images/uslugi/buy_img_desktop.png");
         background-size: cover;
         background-position: top left;
         margin-left: 47px;
@@ -208,17 +217,6 @@
           height: 596px;
           width: 378px;
           background: url("../../assets/graphics/img_overlay_house_big.svg");
-        }
-
-        &:after {
-          content: "";
-          position: absolute;
-          top: -36px;
-          right: 0;
-          width: 53px;
-          height: 73px;
-          transform: translateX(50%);
-          background: url("../../assets/graphics/triangles_big.svg");
         }
       }
     }

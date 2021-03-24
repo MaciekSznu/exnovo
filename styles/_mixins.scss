@@ -19,14 +19,44 @@
   border: none;
 }
 
-// header title mobile
-@media (min-width: 768px) {
-  // top: -75px;
-  .footer-title {
-    font-size: 33px;
+@mixin rodo-checkbox {
+  .rodo-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 
-    span {
-      font-size: 56px;
-    }
+  .rodo-custom-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 17px;
+    border: 1px solid #e1e2f4;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .rodo-checkbox-label {
+    padding-top: 4px;
+    padding-left: 37px;
+    color: $mid-blue;
+    font-family: $grotesk-reg;
+    font-size: 10px;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 12px;
+    text-align: left;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  & .rodo-checkbox:checked ~ .rodo-custom-checkbox {
+    background-image: url(../assets/graphics/checkbox-checked.svg);
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
