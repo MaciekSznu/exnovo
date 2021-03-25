@@ -19,7 +19,9 @@ mix
   .sass("styles/home/style.scss", "dist/style.css")
   .sass("styles/o-nas/o-nas.scss", "dist/o-nas.css")
   .sass("styles/kredyty/kredyty.scss", "dist/kredyty.css")
-  .sass("styles/uslugi/uslugi.scss", "dist/uslugi.css");
+  .sass("styles/uslugi/uslugi.scss", "dist/uslugi.css")
+  .sass("styles/oferty/oferty.scss", "dist/oferty.css")
+  .sass("styles/pierwotny/pierwotny.scss", "dist/pierwotny.css");
 
 // .minify('dist/app.css');
 

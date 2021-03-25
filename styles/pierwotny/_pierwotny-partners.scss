@@ -1,0 +1,219 @@
+@import "../variables";
+@import "../mixins";
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 10px 19px;
+
+  @media (min-width: 768px) {
+    padding: 600px 20px 19px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 94px 0 98px;
+  }
+
+  .title-wrapper {
+    max-width: 320px;
+    .section-title {
+      color: $orange;
+      font-family: $grotesk-bold;
+      font-size: 24px;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 35px;
+      text-align: center;
+      margin-bottom: 16px;
+      span {
+        color: $dark-blue;
+        font-family: $grotesk-bold;
+        font-size: 24px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 35px;
+      }
+    }
+
+    .section-subtitle {
+      color: $dark-blue;
+      font-family: $grotesk-reg;
+      font-size: 15px;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 23px;
+      text-align: center;
+      padding: 0 10px;
+      margin-bottom: 39px;
+    }
+
+    @media (min-width: 768px) {
+      max-width: calc(100vw - 80px);
+      position: relative;
+      margin-bottom: 40px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -9px;
+        left: -42px;
+        width: 42px;
+        height: 58px;
+        background: url("../../assets/graphics/triangles.svg");
+        z-index: 2;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -9px;
+        right: -42px;
+        width: 42px;
+        height: 58px;
+        background: url("../../assets/graphics/triangles.svg");
+        transform: rotate(180deg);
+        transform-origin: center;
+        z-index: 2;
+      }
+
+      .section-title {
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+        span {
+          font-size: 30px;
+          line-height: 40px;
+        }
+      }
+
+      .section-subtitle {
+        max-width: 600px;
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      width: 1114px;
+      max-width: 1114px;
+      margin-bottom: 55px;
+
+      &:before {
+        left: 0;
+        top: -38px;
+        width: 53px;
+        height: 73px;
+        background: url("../../assets/graphics/triangles_big.svg");
+      }
+
+      &:after {
+        right: 0;
+        bottom: 0;
+        width: 53px;
+        height: 73px;
+        background: url("../../assets/graphics/triangles_big.svg");
+      }
+
+      .section-title {
+        font-size: 34px;
+        line-height: 47px;
+
+        span {
+          font-size: 34px;
+          line-height: 47px;
+        }
+      }
+
+      .section-subtitle {
+        max-width: 690px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .partners-logos-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .partner-logo {
+      height: 58px;
+      width: 145px;
+      margin-left: 30;
+      background: url("../../assets/images/pierwotny/expander-logo.png");
+      background-size: cover;
+
+      &:nth-of-type(2) {
+        width: 127px;
+        background: url("../../assets/images/pierwotny/dekpol-logo.png");
+        background-size: cover;
+      }
+      &:nth-of-type(3) {
+        width: 145px;
+        background: url("../../assets/images/pierwotny/eurostyl-logo.png");
+        background-size: cover;
+      }
+      &:nth-of-type(4) {
+        width: 174px;
+        background: url("../../assets/images/pierwotny/northstar-logo.png");
+        background-size: cover;
+      }
+      &:nth-of-type(5) {
+        width: 174px;
+        background: url("../../assets/images/pierwotny/develia-logo.png");
+        background-size: cover;
+      }
+      &:nth-of-type(6) {
+        width: 145px;
+        background: url("../../assets/images/pierwotny/allcon-logo.png");
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: 768px) {
+      max-width: 80%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 30px 30px;
+      grid-template-areas:
+        "logo_01 logo_02 logo_03"
+        "logo_04 logo_05 logo_06";
+
+      .partner-logo {
+        grid-area: logo_01;
+        justify-self: center;
+        margin-left: 0;
+
+        &:nth-of-type(2) {
+          grid-area: logo_02;
+        }
+
+        &:nth-of-type(3) {
+          grid-area: logo_03;
+        }
+        &:nth-of-type(4) {
+          grid-area: logo_04;
+        }
+        &:nth-of-type(5) {
+          grid-area: logo_05;
+        }
+        &:nth-of-type(6) {
+          grid-area: logo_06;
+        }
+      }
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 1024px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 30px 30px;
+      grid-template-areas: "logo_01 logo_02 logo_03 logo_04 logo_05 logo_06";
+    }
+  }
+}

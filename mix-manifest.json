@@ -3,5 +3,7 @@
     "/dist/style.css": "/dist/style.css",
     "/dist/o-nas.css": "/dist/o-nas.css",
     "/dist/kredyty.css": "/dist/kredyty.css",
-    "/dist/uslugi.css": "/dist/uslugi.css"
+    "/dist/uslugi.css": "/dist/uslugi.css",
+    "/dist/oferty.css": "/dist/oferty.css",
+    "/dist/pierwotny.css": "/dist/pierwotny.css"
 }

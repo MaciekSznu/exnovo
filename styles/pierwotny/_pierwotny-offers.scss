@@ -1,0 +1,324 @@
+@import "../variables";
+@import "../mixins";
+
+.offers {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $light-bg;
+
+  .offers-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    .offer-wrapper {
+      width: 300px;
+      height: 357px;
+      margin-bottom: 17px;
+      position: relative;
+
+      .offer-item {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 2px 76px #e1e2f4;
+        display: flex;
+        flex-direction: column;
+        justify-content: flexstart;
+
+        .offer-image {
+          width: 100%;
+          height: 186px;
+        }
+
+        .offer-text-wrapper {
+          background: $white;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 14px 22px 0;
+          height: 171px;
+
+          .offer-title {
+            width: 100%;
+            color: $dark-blue;
+            font-family: $grotesk-bold;
+            font-size: 16px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            margin-bottom: 17px;
+          }
+
+          .rooms-wrapper,
+          .prices-wrapper,
+          .area-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            height: 39px;
+            width: 100%;
+
+            .rooms-description,
+            .prices-description,
+            .area-description {
+              color: $light-blue;
+              font-family: $grotesk-reg;
+              font-size: 10px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: 23px;
+              text-align: left;
+              padding-left: 24px;
+              position: relative;
+
+              &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 12px;
+                width: 15px;
+                height: 15px;
+                background: url("../../assets/graphics/single_offer_row_icon.svg");
+              }
+            }
+
+            .rooms-value,
+            .prices-value,
+            .area-value {
+              color: $dark-blue;
+              font-family: $grotesk-bold;
+              font-size: 12px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: 23px;
+              text-align: right;
+            }
+          }
+          .rooms-wrapper,
+          .prices-wrapper {
+            border-bottom: 1px dashed #e1e2f4;
+          }
+        }
+      }
+
+      .show-offer-button {
+        @include button;
+
+        position: absolute;
+        left: 50%;
+        bottom: 16.2%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .pagination-wrapper {
+    width: 100%;
+    padding: 48px 0 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .offers-amount {
+      display: none;
+
+      @media (min-width: 934px) {
+        display: block;
+        margin-right: auto;
+        color: $dark-blue;
+        font-family: $poppins;
+        font-size: 13px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+      }
+    }
+
+    .pagination-item {
+      height: 41px;
+      width: 41px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &.back {
+        margin-right: 9px;
+        background: url("../../assets/graphics/page_back_mobile.svg");
+      }
+
+      &.forward {
+        margin-left: 9px;
+        background: url("../../assets/graphics/page_next_mobile.svg");
+      }
+
+      &.present {
+        border-radius: 20px;
+        border: 1px solid $orange;
+      }
+
+      &.dots {
+        margin: 0 15px;
+        border-radius: 20px;
+        border: 1px solid #e1e2f4;
+      }
+
+      &.last {
+        border-radius: 20px;
+        border: 1px solid #e1e2f4;
+      }
+
+      &.present,
+      &.dots,
+      &.last {
+        span {
+          color: $orange;
+          font-family: $poppins;
+          font-size: 16px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+          text-align: center;
+        }
+      }
+
+      @media (min-width: 934px) {
+        height: 63px;
+        width: 63px;
+
+        &.back {
+          margin-right: 16px;
+          background: url("../../assets/graphics/page_back_desktop.svg");
+        }
+
+        &.forward {
+          margin-left: 16px;
+          background: url("../../assets/graphics/page_next_desktop.svg");
+        }
+
+        &.present {
+          border-radius: 32px;
+          border: 1px solid $orange;
+        }
+
+        &.dots {
+          margin: 0 25px;
+          border-radius: 32px;
+          border: 1px solid #e1e2f4;
+        }
+
+        &.last {
+          border-radius: 32px;
+          border: 1px solid #e1e2f4;
+        }
+
+        &.present,
+        &.dots,
+        &.last {
+          span {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 934px) {
+      padding: 48px 20px 52px;
+      justify-content: flex-end;
+    }
+
+    @media (min-width: 1280px) {
+      width: 1234px;
+      padding: 48px 0 52px;
+    }
+  }
+
+  @media (min-width: 617px) {
+    padding: 0 20px;
+    .offers-wrapper {
+      justify-content: space-between;
+      width: 617px;
+    }
+  }
+
+  @media (min-width: 934px) {
+    padding: 0 20px;
+    .offers-wrapper {
+      width: 934px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding: 0;
+    .offers-wrapper {
+      width: 1234px;
+
+      .offer-wrapper {
+        width: 380px;
+        height: 488px;
+
+        .offer-item {
+          width: 100%;
+          height: 100%;
+
+          .offer-image {
+            height: 277px;
+          }
+
+          .offer-text-wrapper {
+            padding: 21px 28px 0;
+            height: 211px;
+
+            .offer-title {
+              font-size: 20px;
+              margin-bottom: 16px;
+            }
+
+            .rooms-wrapper,
+            .prices-wrapper,
+            .area-wrapper {
+              height: 48px;
+
+              .rooms-description,
+              .prices-description,
+              .area-description {
+                font-size: 13px;
+                line-height: 30px;
+                padding-left: 31px;
+                position: relative;
+
+                &:before {
+                  top: 15px;
+                  width: 18px;
+                  height: 18px;
+                  background: url("../../assets/graphics/single_offer_row_icon_desktop.svg");
+                }
+              }
+
+              .rooms-value,
+              .prices-value,
+              .area-value {
+                font-size: 13px;
+                line-height: 30px;
+              }
+            }
+            .rooms-wrapper,
+            .prices-wrapper {
+              border-bottom: 1px dashed #e1e2f4;
+            }
+          }
+        }
+      }
+    }
+  }
+}
