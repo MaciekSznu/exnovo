@@ -114,6 +114,10 @@
         left: 50%;
         bottom: 16.2%;
         transform: translateX(-50%);
+
+        @media (max-width: 934px) {
+          font-size: 15px;
+        }
       }
     }
   }
