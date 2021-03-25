@@ -1,2 +1,252 @@
 @import "../variables";
 @import "../mixins";
+
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .search-wrapper {
+    width: 1234px;
+
+    .page-adress {
+      color: $light-blue;
+      font-family: $poppins;
+      font-size: 13px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+    }
+
+    .search-form {
+      display: grid;
+      margin-top: 28px;
+      margin-bottom: 40px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 47px;
+      grid-template-areas: "column_01 column_02 column_03";
+
+      .column-wrapper-01 {
+        grid-area: column_01;
+        display: grid;
+        grid-template-columns: minmax(140px, 180px) minmax(140px, 180px);
+        grid-template-rows: 60px 56px 60px 56px 60px;
+        gap: 0px 20px;
+        grid-template-areas:
+          "property property"
+          "price_label price_label"
+          "price_from price_to"
+          "floor_label floor_label"
+          "floor_from floor_to";
+
+        .property {
+          grid-area: property;
+        }
+
+        .price_label {
+          grid-area: price_label;
+        }
+
+        .price_from {
+          grid-area: price_from;
+        }
+
+        .price_to {
+          grid-area: price_to;
+        }
+
+        .floor_label {
+          grid-area: floor_label;
+        }
+
+        .floor_from {
+          grid-area: floor_from;
+        }
+
+        .floor_to {
+          grid-area: floor_to;
+        }
+      }
+
+      .column-wrapper-02 {
+        grid-area: column_02;
+        display: grid;
+        grid-template-columns: minmax(140px, 180px) minmax(140px, 180px);
+        grid-template-rows: 60px 56px 60px 56px 60px;
+        gap: 0px 20px;
+        grid-template-areas:
+          "market market"
+          "area_label area_label"
+          "area_from area_to"
+          "rooms_label rooms_label"
+          "rooms_from rooms_to";
+
+        .market {
+          grid-area: market;
+        }
+
+        .area_label {
+          grid-area: area_label;
+        }
+
+        .area_from {
+          grid-area: area_from;
+        }
+
+        .area_to {
+          grid-area: area_to;
+        }
+
+        .rooms_label {
+          grid-area: rooms_label;
+        }
+
+        .rooms_from {
+          grid-area: rooms_from;
+        }
+
+        .rooms_to {
+          grid-area: rooms_to;
+        }
+      }
+
+      .column-wrapper-03 {
+        grid-area: column_03;
+        display: grid;
+        grid-template-columns: minmax(140px, 180px) minmax(140px, 180px);
+        grid-template-rows: 60px 56px 60px 56px 60px;
+        gap: 0px 20px;
+        grid-template-areas:
+          "transaction transaction"
+          "year_label year_label"
+          "year_from year_to"
+          ". ."
+          "submit submit";
+
+        .transaction {
+          grid-area: transaction;
+        }
+
+        .year_label {
+          grid-area: year_label;
+        }
+
+        .year_from {
+          grid-area: year_from;
+        }
+
+        .year_to {
+          grid-area: year_to;
+        }
+
+        .submit {
+          grid-area: submit;
+        }
+      }
+
+      .column-wrapper-01,
+      .column-wrapper-02,
+      .column-wrapper-03 {
+        .input-wrapper {
+          height: 100%;
+          width: 100%;
+
+          input {
+            height: 100%;
+            width: 100%;
+            background-color: $white;
+            border: 1px solid #e1e2f4;
+            padding: 22px 32px;
+            color: $mid-blue;
+            font-family: $grotesk-reg;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+
+            &::placeholder {
+              color: $mid-blue;
+              font-family: $grotesk-reg;
+              font-size: 14px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: normal;
+              text-align: left;
+            }
+
+            &[type="submit"] {
+              border: 1px solid $orange;
+              background: $orange;
+              color: $white;
+              font-family: $grotesk-bold;
+              font-size: 16px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: normal;
+              text-align: center;
+              padding-top: 19px;
+              cursor: pointer;
+              outline: $orange;
+            }
+          }
+        }
+
+        p {
+          width: 100%;
+          height: 56px;
+          padding-top: 20px;
+          color: $mid-blue;
+          font-family: $grotesk-reg;
+          font-size: 16px;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+          text-align: left;
+        }
+      }
+    }
+
+    .sort-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .sort-text {
+        color: $light-blue;
+        font-family: $poppins;
+        font-size: 13px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+        margin-right: 46px;
+      }
+
+      .sort-button {
+        color: $dark-blue;
+        font-family: $poppins;
+        font-size: 13px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+        margin-right: 39px;
+        border: none;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    height: 505px;
+    background-color: #fbfbff;
+    padding-top: 51px;
+  }
+}

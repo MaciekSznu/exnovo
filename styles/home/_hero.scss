@@ -95,6 +95,21 @@
           }
         }
       }
+
+      @media (min-width: 1280px) {
+        .hero-title {
+          margin-bottom: -90px;
+          .blue-text {
+            height: 54px;
+            font-size: 45px;
+          }
+
+          .orange-text {
+            height: 90px;
+            font-size: 76px;
+          }
+        }
+      }
       @media (min-width: 1342px) {
         .hero-title {
           margin-left: 0;
