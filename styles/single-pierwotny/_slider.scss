@@ -1,0 +1,61 @@
+@import "../variables";
+@import "../mixins";
+
+.slider {
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+
+  .slider-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .prev-slide,
+    .next-slide {
+      position: absolute;
+      top: 50%;
+      width: 63px;
+      height: 63px;
+      transform: translateY(-50%);
+    }
+
+    .prev-slide {
+      left: 34px;
+      background: url("../../assets/graphics/strzalka-l-2.svg");
+      background-size: cover;
+    }
+
+    .next-slide {
+      right: 34px;
+      background: url("../../assets/graphics/strzalka-r-2.svg");
+      background-size: cover;
+    }
+
+    .slide {
+      background: url("../../assets/images/single-pierwotny/single_pierwotny_slide_01.png");
+      background-size: cover;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 0;
+    .slider-wrapper {
+      width: 100%;
+      max-width: 1234px;
+      height: auto;
+      min-height: 596px;
+
+      .slide {
+        width: 100%;
+        height: 100%;
+        background: url("../../assets/images/single-pierwotny/single_pierwotny_slide_01.png");
+        background-size: cover;
+      }
+    }
+  }
+}

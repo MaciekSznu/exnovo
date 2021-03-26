@@ -21,7 +21,8 @@ mix
   .sass("styles/kredyty/kredyty.scss", "dist/kredyty.css")
   .sass("styles/uslugi/uslugi.scss", "dist/uslugi.css")
   .sass("styles/oferty/oferty.scss", "dist/oferty.css")
-  .sass("styles/pierwotny/pierwotny.scss", "dist/pierwotny.css");
+  .sass("styles/pierwotny/pierwotny.scss", "dist/pierwotny.css")
+  .sass("styles/single-pierwotny/single-pierwotny.scss", "dist/single-pierwotny.css");
 
 // .minify('dist/app.css');
 

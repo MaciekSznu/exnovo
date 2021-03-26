@@ -41,4 +41,10 @@ body {
     border-radius: 0;
     -webkit-border-radius: 0;
   }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
 }
