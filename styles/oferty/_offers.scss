@@ -176,12 +176,14 @@
 
       &.back {
         margin-right: 9px;
-        background: url("../../assets/graphics/page_back_mobile.svg");
+        background: url("../../assets/graphics/strzalka-l-2.svg");
+        background-size: cover;
       }
 
       &.forward {
         margin-left: 9px;
-        background: url("../../assets/graphics/page_next_mobile.svg");
+        background: url("../../assets/graphics/strzalka-r-2.svg");
+        background-size: cover;
       }
 
       &.present {
@@ -221,12 +223,12 @@
 
         &.back {
           margin-right: 16px;
-          background: url("../../assets/graphics/page_back_desktop.svg");
+          background: url("../../assets/graphics/strzalka-l-2.svg");
         }
 
         &.forward {
           margin-left: 16px;
-          background: url("../../assets/graphics/page_next_desktop.svg");
+          background: url("../../assets/graphics/strzalka-r-2.svg");
         }
 
         &.present {

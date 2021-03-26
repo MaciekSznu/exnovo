@@ -24,11 +24,29 @@ hamburgerButton.addEventListener("click", (e) => {
   hamburgerActive();
 });
 
-// const menuItems = document.querySelectorAll(".menu__item--link");
+const menuItems = document.querySelectorAll(".nav-list--item-link");
 
-// menuItems.forEach((menuItem) => {
-//   menuItem.addEventListener("click", (e) => {
-//     showMainMenu();
-//     hamburgerActive();
-//   });
-// });
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener("click", (e) => {
+    showMainMenu();
+    hamburgerActive();
+  });
+});
+
+const menuItemExpandable = document.querySelector(".nav-list--item.expandable");
+
+const secondaryMenu = document.querySelector(".nav-list--secondary");
+
+const showSecondaryMenu = () => {
+  menuItemExpandable.classList.toggle("expanded");
+};
+
+menuItemExpandable.addEventListener("click", (e) => {
+  e.preventDefault();
+  showSecondaryMenu();
+});
+
+secondaryMenu.addEventListener("click", (e) => {
+  e.stopPropagation();
+  showSecondaryMenu();
+});

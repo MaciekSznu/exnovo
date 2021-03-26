@@ -85,7 +85,8 @@
         text-align: center;
         margin-bottom: 38px;
 
-        &-link {
+        &-link,
+        &-link-expandable {
           font-size: 16px;
           font-weight: 400;
           text-decoration: none;
@@ -95,6 +96,7 @@
 
         &.expandable {
           .nav-list--secondary {
+            display: none;
             margin: 0 auto;
             padding: 0;
             width: calc(100% - 20px);
@@ -142,7 +144,7 @@
             }
           }
 
-          .nav-list--item-link {
+          .nav-list--item-link-expandable {
             img {
               margin-left: 7px;
               margin-bottom: 1px;
@@ -151,8 +153,13 @@
         }
 
         &.expanded {
-          .nav-list--item-link {
+          .nav-list--secondary {
+            margin-top: 18px;
             display: block;
+          }
+
+          .nav-list--item-link-expandable {
+            color: $orange;
             margin-bottom: 18px;
 
             img {
@@ -191,7 +198,7 @@
 
       &-list {
         width: auto;
-        min-width: 640px;
+        min-width: 650px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -212,8 +219,10 @@
           }
 
           &.expandable {
+            cursor: pointer;
+            min-width: 130px;
             .nav-list--secondary {
-              width: 300px;
+              width: 100%;
               margin-left: -60px;
 
               .nav-list--item.secondary {
@@ -228,7 +237,8 @@
           }
 
           &.expanded {
-            .nav-list--item-link {
+            .nav-list--item-link-expandable {
+              color: $dark-blue;
               display: block;
               margin-bottom: 0;
 
@@ -245,6 +255,7 @@
 
               .nav-list--item.secondary {
                 width: 220px;
+                max-width: 220px;
                 padding-left: 81px;
                 &:not(:first-of-type) {
                   margin-top: 0;

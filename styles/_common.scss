@@ -35,4 +35,11 @@ body {
   height: auto;
   font-family: $poppins;
   overflow-x: hidden;
+
+  input[type="text"],
+  input[type="button"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
 }
