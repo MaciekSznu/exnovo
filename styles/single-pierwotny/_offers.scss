@@ -6,78 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: $light-bg;
-
-  .offers-header {
-    width: 100%;
-    height: auto;
-    margin-top: 59px;
-    margin-bottom: 49px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    .offers-text-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-
-      .offers-title {
-        color: $dark-blue;
-        font-family: $grotesk-bold;
-        font-size: 34px;
-        font-weight: 700;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 47px;
-        text-align: left;
-        margin-bottom: 27px;
-        span {
-          color: $orange;
-        }
-      }
-
-      .offers-text {
-        color: $dark-blue;
-        font-family: $grotesk-reg;
-        font-size: 18px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 30px;
-        text-align: left;
-      }
-    }
-
-    .offers-sort {
-      width: 247px;
-      height: 60px;
-      border: 1px solid #e1e2f4;
-      background-color: #ffffff;
-      padding: 20px;
-      cursor: pointer;
-      outline: 1px solid #e1e2f4;
-      color: $blue;
-      font-family: $grotesk-reg;
-      display: block;
-
-      option {
-        color: $blue;
-        font-family: $grotesk-reg;
-        font-size: 14px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-        text-align: left;
-        cursor: pointer;
-        height: 34px;
-      }
-    }
-  }
+  background: $white;
 
   .offers-wrapper {
     display: flex;
@@ -103,77 +32,93 @@
           height: 186px;
         }
 
+        // .offer-text-wrapper {
+        //   background: $white;
+        //   display: flex;
+        //   flex-direction: column;
+        //   align-items: center;
+        //   justify-content: flex-start;
+        //   padding: 14px 22px 0;
+        //   height: 171px;
+        // }
+
         .offer-text-wrapper {
-          background: $white;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
           padding: 14px 22px 0;
           height: 171px;
 
           .offer-title {
-            width: 100%;
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 16px;
             color: $dark-blue;
             font-family: $grotesk-bold;
-            font-size: 16px;
             font-style: normal;
             letter-spacing: normal;
             line-height: normal;
             text-align: left;
-            margin-bottom: 17px;
+            margin-bottom: 7px;
           }
 
-          .rooms-wrapper,
-          .prices-wrapper,
-          .area-wrapper {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: space-between;
-            height: 39px;
-            width: 100%;
+          .offer-transaction {
+            color: $light-blue;
+            font-family: $grotesk-reg;
+            font-size: 13px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 30px;
+            text-align: left;
+            margin-bottom: 14px;
+            align-self: flex-start;
+          }
 
-            .rooms-description,
-            .prices-description,
-            .area-description {
+          .offer-price {
+            height: 21px;
+            color: $orange;
+            font-family: $grotesk-bold;
+            font-size: 18px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            margin-bottom: 2px;
+            align-self: flex-start;
+          }
+
+          .offer-parameters {
+            width: 100%;
+            height: 22px;
+            display: flex;
+            justify-content: space-between;
+
+            .offer-area {
+              height: 22px;
+              font-size: 13px;
+              line-height: 22px;
               color: $light-blue;
               font-family: $grotesk-reg;
-              font-size: 10px;
+              font-weight: 400;
               font-style: normal;
               letter-spacing: normal;
-              line-height: 23px;
               text-align: left;
-              padding-left: 24px;
-              position: relative;
+            }
 
-              &:before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 4px;
-                width: 15px;
-                height: 15px;
-                background: url("../../assets/graphics/single_offer_row_icon.svg");
+            .offer-rooms {
+              height: 22px;
+              font-size: 13px;
+              line-height: 22px;
+              color: $light-blue;
+              font-family: $grotesk-reg;
+              font-weight: 400;
+              font-style: normal;
+              letter-spacing: normal;
+              text-align: right;
+
+              span {
+                color: $dark-blue;
+                font-family: $grotesk-bold;
+                text-align: right;
               }
             }
-
-            .rooms-value,
-            .prices-value,
-            .area-value {
-              color: $dark-blue;
-              font-family: $grotesk-bold;
-              font-size: 12px;
-              font-style: normal;
-              letter-spacing: normal;
-              line-height: 23px;
-              text-align: right;
-            }
-          }
-          .rooms-wrapper,
-          .prices-wrapper {
-            border-bottom: 1px dashed #e1e2f4;
           }
         }
       }
@@ -322,21 +267,6 @@
 
   @media (min-width: 617px) {
     padding: 0 20px;
-    .offers-header {
-      width: 100%;
-      height: auto;
-      margin-top: 59px;
-      margin-bottom: 49px;
-
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-
-      .offers-text-wrapper {
-        max-width: 50%;
-      }
-    }
     .offers-wrapper {
       justify-content: space-between;
       width: 617px;
@@ -351,11 +281,8 @@
   }
 
   @media (min-width: 1280px) {
+    margin-top: 63px;
     padding: 0;
-
-    .offers-header {
-      width: 1234px;
-    }
     .offers-wrapper {
       width: 1234px;
 
@@ -376,41 +303,78 @@
             height: 211px;
 
             .offer-title {
-              font-size: 20px;
+              font-size: 18px;
+              line-height: 20px;
               margin-bottom: 16px;
+              color: $dark-blue;
+              font-family: $grotesk-bold;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: normal;
+              text-align: left;
+              margin-bottom: 7px;
             }
 
-            .rooms-wrapper,
-            .prices-wrapper,
-            .area-wrapper {
-              height: 48px;
+            .offer-transaction {
+              color: $light-blue;
+              font-family: $grotesk-reg;
+              font-size: 13px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: 30px;
+              text-align: left;
+              margin-bottom: 27px;
+              align-self: flex-start;
+            }
 
-              .rooms-description,
-              .prices-description,
-              .area-description {
+            .offer-price {
+              height: 21px;
+              color: $orange;
+              font-family: $grotesk-bold;
+              font-size: 18px;
+              font-style: normal;
+              letter-spacing: normal;
+              line-height: normal;
+              text-align: left;
+              margin-bottom: 2px;
+              align-self: flex-start;
+            }
+
+            .offer-parameters {
+              width: 100%;
+              height: 29px;
+              display: flex;
+              justify-content: space-between;
+
+              .offer-area {
+                height: 29px;
                 font-size: 13px;
                 line-height: 30px;
-                padding-left: 31px;
-                position: relative;
+                color: $light-blue;
+                font-family: $grotesk-reg;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: normal;
+                text-align: left;
+              }
 
-                &:before {
-                  top: 6px;
-                  width: 18px;
-                  height: 18px;
-                  background: url("../../assets/graphics/single_offer_row_icon_desktop.svg");
+              .offer-rooms {
+                height: 29px;
+                font-size: 13px;
+                line-height: 30px;
+                color: $light-blue;
+                font-family: $grotesk-reg;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: normal;
+                text-align: right;
+
+                span {
+                  color: $dark-blue;
+                  font-family: $grotesk-bold;
+                  text-align: right;
                 }
               }
-
-              .rooms-value,
-              .prices-value,
-              .area-value {
-                font-size: 13px;
-                line-height: 30px;
-              }
-            }
-            .rooms-wrapper,
-            .prices-wrapper {
-              border-bottom: 1px dashed #e1e2f4;
             }
           }
         }
