@@ -203,7 +203,9 @@
 
         @media (min-width: 1243px) {
           margin-bottom: 280px;
-          margin-left: calc(100vw - 1243px + 76px);
+          margin-left: unset;
+          margin-right: 505px;
+          align-self: flex-end;
         }
       }
 
