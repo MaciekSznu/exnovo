@@ -270,6 +270,8 @@
 
       @media (min-width: 1280px) {
         height: 745px;
+        background: url("../../assets/images/home/hero_gradient.png") bottom 136px right no-repeat,
+          url("../../assets/images/home/hero_tablet.png") top right no-repeat;
 
         &:before {
           top: 20px;
