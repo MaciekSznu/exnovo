@@ -60,3 +60,49 @@
     background-repeat: no-repeat;
   }
 }
+
+@mixin input-number-arrows {
+  position: relative;
+  .step-up,
+  .step-down {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 50%;
+    background: $white;
+    outline: transparent;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #e1e2f4;
+    border-left: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    img {
+      width: 10px;
+      height: 7px;
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+  }
+
+  .step-up {
+    border-bottom: none;
+    padding-bottom: 3px;
+  }
+
+  .step-down {
+    border-top: none;
+    top: unset;
+    bottom: 0;
+    align-items: flex-start;
+    padding-top: 3px;
+
+    img {
+      transform: none;
+    }
+  }
+}

@@ -52,6 +52,7 @@
 
         .price_from {
           grid-area: price_from;
+          @include input-number-arrows;
         }
 
         .price_to {
@@ -167,6 +168,7 @@
             letter-spacing: normal;
             line-height: normal;
             text-align: left;
+            position: relative;
 
             &::placeholder {
               color: $mid-blue;
@@ -191,6 +193,11 @@
               padding-top: 19px;
               cursor: pointer;
               outline: $orange;
+            }
+
+            &[type="number"] {
+              width: 100%;
+              outline: none;
             }
           }
         }
