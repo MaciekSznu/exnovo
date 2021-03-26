@@ -320,14 +320,15 @@
           max-width: 100%;
           font-size: 18px;
           line-height: 30px;
+          margin-bottom: 47px;
         }
 
         .offers-boxes-wrapper {
-          max-width: 100%;
-          justify-content: space-between;
+          max-width: 600px;
+          justify-content: flex-start;
 
           .offers-box {
-            min-width: 240px;
+            min-width: 260px;
             flex-direction: row;
             justify-content: flex-start;
             align-items: flex-start;
@@ -338,6 +339,10 @@
               font-size: 16px;
               line-height: 30px;
               margin-left: 31px;
+            }
+
+            &:nth-of-type(odd) {
+              margin-right: 40px;
             }
           }
         }

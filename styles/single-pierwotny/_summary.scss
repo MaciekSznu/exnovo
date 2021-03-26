@@ -7,12 +7,12 @@
   align-items: center;
   background: $light-bg;
   .summary-wrapper {
-    max-width: 1206px;
+    width: 1234px;
     display: grid;
     margin-bottom: 49px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 42px 1fr;
-    gap: 0px 33px;
+    gap: 0px 47px;
     grid-template-areas:
       "title title title"
       "column_01 column_02 column_03";
