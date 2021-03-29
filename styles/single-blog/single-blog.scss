@@ -1,0 +1,67 @@
+@import "../variables";
+@import "../mixins";
+@import "../common";
+@import "../contact";
+@import "../menu";
+@import "../page-title";
+
+@import "single-blog-hero";
+@import "single-blog-form";
+@import "single-blog-content";
+
+.page-title-wrapper {
+  .page-title {
+    .blue-text {
+      height: 27px;
+      color: $dark-blue;
+      font-family: $grotesk-reg;
+      font-weight: 400;
+      font-size: 22px;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: left;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .orange-text {
+      color: $dark-blue;
+      font-family: $grotesk-bold;
+      font-weight: 700;
+      font-size: 36px;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: left;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .page-title {
+      .blue-text {
+        height: 36px;
+        font-size: 30px;
+      }
+
+      .orange-text {
+        height: 50px;
+        font-size: 40px;
+      }
+    }
+  }
+  @media (min-width: 1280px) {
+    .page-title {
+      .blue-text {
+        font-size: 45px;
+        line-height: normal;
+      }
+
+      .orange-text {
+        font-family: $grotesk-bold;
+        font-size: 45px;
+        line-height: normal;
+      }
+    }
+  }
+}

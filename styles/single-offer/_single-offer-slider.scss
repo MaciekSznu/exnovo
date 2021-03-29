@@ -1,0 +1,71 @@
+@import "../variables";
+@import "../mixins";
+
+.single-offer-slider {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: $light-bg;
+
+  .single-offer-slider-img-wrapper {
+    width: 100vw;
+    height: 100vw;
+    min-height: 360px;
+    max-height: 552px;
+    max-width: 1232px;
+    position: relative;
+    margin: 0 0 24px;
+    overflow: hidden;
+
+    .single-offer-slider-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: auto;
+      transform: translate(-50%, -50%);
+    }
+
+    .slider-button-next,
+    .slider-button-prev {
+      position: absolute;
+      top: 50%;
+      width: 63px;
+      height: 63px;
+      border: 1px solid #e1e1e1;
+      border-radius: 50%;
+      background: url("../../assets/graphics/strzalka-l.svg") no-repeat;
+      background-size: 17px 15px;
+      background-position: center;
+      cursor: pointer;
+
+      &:hover {
+        background: url("../../assets/graphics/strzalka-l-white.svg") no-repeat;
+        background-size: 17px 15px;
+        background-position: center;
+      }
+    }
+
+    .slider-button-prev {
+      left: 46px;
+      transform: translateY(-50%);
+    }
+
+    .slider-button-next {
+      right: 46px;
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .single-offer-slider-img-wrapper {
+      // margin: 82px 0 100px;
+    }
+  }
+  @media (min-width: 1232px) {
+    .single-offer-slider-img-wrapper {
+      max-width: 1232px;
+    }
+  }
+}

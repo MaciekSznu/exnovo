@@ -1,0 +1,359 @@
+@import "../variables";
+@import "../mixins";
+
+.single-offer-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: $light-bg;
+  padding-bottom: 74px;
+
+  .single-offer-table-wrapper {
+    width: 100%;
+    max-width: 1234px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      "header employee"
+      "data employee";
+
+    .single-offer-header-wrapper {
+      grid-area: header;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      .single-offer-title-wrapper {
+        max-width: 440px;
+        .single-offer-title {
+          height: 96px;
+          color: $dark-blue;
+          font-family: $grotesk-reg;
+          font-size: 28px;
+          font-weight: 700;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 35px;
+          text-align: left;
+        }
+
+        .single-offer-type {
+          height: 30px;
+          color: $dark-blue;
+          font-family: $grotesk-reg;
+          font-size: 16px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 30px;
+          text-align: left;
+        }
+      }
+      .single-offer-price-wrapper {
+        .single-offer-price {
+          height: 47px;
+          color: $orange;
+          font-family: $grotesk-bold;
+          font-size: 28px;
+          font-weight: 700;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 47px;
+          text-align: right;
+          text-transform: uppercase;
+        }
+
+        .single-offer-price-sqm {
+          height: 30px;
+          color: $dark-blue;
+          font-family: $grotesk-reg;
+          font-size: 16px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 30px;
+          text-align: right;
+        }
+      }
+    }
+
+    .single-offer-data-wrapper {
+      grid-area: data;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      grid-template-rows: 90px 265px;
+      gap: 0;
+      grid-template-areas:
+        "area rooms year offer_id"
+        "data_01 data_01 data_02 data_02";
+      border-top: 1px dashed $light-blue;
+      border-bottom: 1px dashed $light-blue;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 89px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        border: none;
+        border-bottom: 1px dashed $light-blue;
+      }
+
+      .data-cell-data_01 {
+        grid-area: data_01;
+      }
+
+      .data-cell-data_02 {
+        grid-area: data_02;
+      }
+
+      .data-cell.area {
+        grid-area: area;
+      }
+
+      .data-cell.rooms {
+        grid-area: rooms;
+      }
+
+      .data-cell.year {
+        grid-area: year;
+      }
+
+      .data-cell.offer_id {
+        grid-area: offer_id;
+      }
+
+      .data-cell {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-top: 20px;
+
+        .icon-wrapper {
+          width: 26px;
+          height: 26px;
+          margin-right: 26px;
+          background: url("../../assets/graphics/single_offer_data_icon.svg") no-repeat;
+          background-size: cover;
+        }
+        .data-wrapper {
+          .data-name {
+            color: $light-blue;
+            font-family: $grotesk-reg;
+            font-size: 18px;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 25px;
+            text-align: left;
+          }
+
+          .data-value {
+            color: $darker-blue;
+            font-family: $grotesk-bold;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+          }
+        }
+
+        &.area,
+        &.rooms {
+          width: 215px;
+        }
+
+        &.year {
+          width: 240px;
+        }
+
+        &.offer_id {
+          justify-self: end;
+        }
+      }
+      .data-cell-data_01,
+      .data-cell-data_02 {
+        padding-top: 37px;
+        .data-row {
+          display: flex;
+          justify-content: space-between;
+
+          .data-name {
+            color: $light-blue;
+            font-family: $grotesk-reg;
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 39px;
+            text-align: left;
+          }
+
+          .data-value {
+            color: $darker-blue;
+            font-family: $grotesk-reg;
+            font-size: 16px;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 39px;
+            text-align: left;
+          }
+        }
+      }
+      .data-cell-data_01 {
+        width: 430px;
+        .data-row {
+          .data-name {
+            width: 155px;
+          }
+
+          .data-value {
+            width: 155px;
+          }
+        }
+      }
+
+      .data-cell-data_02 {
+        width: 376px;
+        padding-left: 95px;
+
+        .data-row {
+          .data-value {
+            width: 64px;
+          }
+        }
+      }
+    }
+
+    .single-offer-employee-wrapper {
+      grid-area: employee;
+      .member {
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 36px;
+        padding: 0 10px;
+        .member-image {
+          height: 324px;
+          width: 281px;
+          margin-bottom: -133px;
+        }
+        .member-contact-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          width: 300px;
+          padding-bottom: 31px;
+          background: $white;
+          box-shadow: 0 2px 100px #e1e2f4;
+          .member-name {
+            margin-top: 33px;
+            color: $blue;
+            font-family: $poppins;
+            font-weight: 400;
+            font-size: 20px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 30px;
+            text-align: center;
+          }
+          .member-function {
+            margin-top: 0;
+            color: $light-blue;
+            font-family: $poppins;
+            font-weight: 400;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 30px;
+            text-align: center;
+          }
+          .member-phone {
+            margin-top: 24px;
+            color: $mid-blue;
+            font-family: $poppins;
+            font-weight: 400;
+            font-size: 20px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+          }
+          .member-email {
+            margin-top: 2px;
+            color: $light-blue;
+            font-family: $poppins;
+            font-weight: 400;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+          }
+          .member-offers {
+            margin-top: 38px;
+            color: $orange;
+            font-family: $grotesk-bold;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            text-align: center;
+          }
+
+          .member-text {
+            color: $dark-blue;
+            font-family: $grotesk-reg;
+            font-size: 13px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 20px;
+            text-align: center;
+          }
+        }
+      }
+
+      @media (min-width: 1280px) {
+        justify-self: end;
+        .member {
+          width: 380px;
+          max-width: 380px;
+          height: 486px;
+
+          .member-image {
+            height: 362px;
+            width: 347px;
+            margin-bottom: -125px;
+          }
+          .member-contact-wrapper {
+            width: 380px;
+            padding-bottom: 25px;
+            .member-name {
+              margin-top: 24px;
+            }
+            .member-function {
+              margin-top: 0;
+            }
+            .member-phone {
+              margin-top: 24px;
+            }
+            .member-email {
+              margin-top: 2px;
+            }
+            .member-offers {
+              margin-top: 38px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

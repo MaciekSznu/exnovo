@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exnovo - oferty</title>
-    <link rel="stylesheet" href="./dist/oferty.css" />
+    <title>Exnovo - wpis bloga</title>
+    <link rel="stylesheet" href="./dist/single-blog.css" />
   </head>
   <body>
     <header class="header">
@@ -45,143 +45,68 @@
     </header>
     <section class="page-title-wrapper">
       <h2 class="page-title">
-        <span class="blue-text">Znajdź najlepszą</span>
-        <span class="orange-text">dla siebie i rodziny</span>
+        <span class="blue-text">Jak przygotować ofertę</span>
+        <span class="orange-text">sprzedaży nieruchomości?</span>
       </h2>
     </section>
-    <section class="search">
-      <div class="search-wrapper">
-        <p class="page-adress">Home> Nieruchomosci> Oferta</p>
-        <form action="" id="search-form" class="search-form" method="post">
-          <div class="column-wrapper-01">
-            <div class="input-wrapper property">
-              <input
-                id="input-property"
-                class="input-property"
-                type="select"
-                name="property"
-                placeholder="Rodzaj nieruchomości"
-              />
-            </div>
-            <p class="price_label">Cena</p>
-            <div class="input-wrapper price_from">
-              <input id="input-price_from" class="input-price_from" type="number" name="price_from" placeholder="Od" />
-              <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-              <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            </div>
-            <div class="input-wrapper price_to">
-              <input id="input-price_to" class="input-price_to" type="number" name="price_to" placeholder="Do" />
-            </div>
-            <p class="floor_label">Piętro</p>
-            <div class="input-wrapper floor_from">
-              <input id="input-floor_from" class="input-floor_from" type="number" name="floor_from" placeholder="Od" />
-            </div>
-            <div class="input-wrapper floor_to">
-              <input id="input-floor_to" class="input-floor_to" type="number" name="floor_to" placeholder="Do" />
-            </div>
-          </div>
-          <div class="column-wrapper-02">
-            <div class="input-wrapper market">
-              <input id="input-market" class="input-market" type="select" name="market" placeholder="Rynek" />
-            </div>
-            <p class="area_label">Powierzchnia</p>
-
-            <div class="input-wrapper area_from">
-              <input id="input-area_from" class="input-area_from" type="number" name="area_from" placeholder="Od" />
-            </div>
-            <div class="input-wrapper area_to">
-              <input id="input-area_to" class="input-area_to" type="number" name="area_to" placeholder="Do" />
-            </div>
-            <p class="rooms_label">Liczba pokoi</p>
-
-            <div class="input-wrapper rooms_from">
-              <input id="input-rooms_from" class="input-rooms_from" type="number" name="rooms_from" placeholder="Od" />
-            </div>
-            <div class="input-wrapper rooms_to">
-              <input id="input-rooms_to" class="input-rooms_to" type="number" name="rooms_to" placeholder="Do" />
-            </div>
-          </div>
-          <div class="column-wrapper-03">
-            <div class="input-wrapper transaction">
-              <input
-                id="input-transaction"
-                class="input-transaction"
-                type="select"
-                name="transaction"
-                placeholder="Typ transakcji"
-              />
-            </div>
-            <p class="year_label">Rok budowy</p>
-            <div class="input-wrapper year_from">
-              <input id="input-year_from" class="input-year_from" type="number" name="year_from" placeholder="Od" />
-            </div>
-            <div class="input-wrapper year_to">
-              <input id="input-year_to" class="input-year_to" type="number" name="year_to" placeholder="Do" />
-            </div>
-            <div class="input-wrapper submit">
-              <input name="submit" class="submit-search" type="submit" value="Szukaj oferty" />
-            </div>
-          </div>
-        </form>
-        <div class="sort-wrapper">
-          <p class="sort-text">Sortuj:</p>
-          <button class="sort-button">Cena rosnąco</button>
-          <button class="sort-button">Cena malejąco</button>
-        </div>
+    <section class="single-blog-hero">
+      <p class="page-adress">Home> Nieruchomosci> Oferta</p>
+      <div class="single-blog-hero-img-wrapper">
+        <img class="single-blog-hero-img" src="./assets/images/single-blog/single_blog_hero_img.png" alt="" srcset="" />
       </div>
     </section>
-    <section class="offers">
-      <div class="offers-wrapper">
-        <div class="offer-wrapper">
-          <div class="offer-item">
-            <img class="offer-image" src="./assets/images/oferty/offer_img.png" alt="" />
-            <div class="offer-text-wrapper">
-              <h4 class="offer-title">Apartament 3-pokojowy, Gdańsk <span>Tarasy Bałtyku</span></h4>
-              <h5 class="offer-transaction">Mieszkanie na Sprzedaż</h5>
-              <h6 class="offer-price">1 200 000 zł</h6>
-              <div class="offer-parameters">
-                <p class="offer-area">32,27 m<sup>2</sup></p>
-                <p class="offer-rooms">liczba pokoi: &nbsp;<span>3</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="offer-wrapper">
-          <div class="offer-item">
-            <img class="offer-image" src="./assets/images/oferty/offer_img.png" alt="" />
-            <div class="offer-text-wrapper">
-              <h4 class="offer-title">Apartament 3-pokojowy, Gdańsk <span>Tarasy Bałtyku</span></h4>
-              <h5 class="offer-transaction">Mieszkanie na Sprzedaż</h5>
-              <h6 class="offer-price">1 200 000 zł</h6>
-              <div class="offer-parameters">
-                <p class="offer-area">32,27 m<sup>2</sup></p>
-                <p class="offer-rooms">liczba pokoi: &nbsp;<span>3</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="offer-wrapper">
-          <div class="offer-item">
-            <img class="offer-image" src="./assets/images/oferty/offer_img.png" alt="" />
-            <div class="offer-text-wrapper">
-              <h4 class="offer-title">Apartament 3-pokojowy, Gdańsk <span>Tarasy Bałtyku</span></h4>
-              <h5 class="offer-transaction">Mieszkanie na Sprzedaż</h5>
-              <h6 class="offer-price">1 200 000 zł</h6>
-              <div class="offer-parameters">
-                <p class="offer-area">32,27 m<sup>2</sup></p>
-                <p class="offer-rooms">liczba pokoi: &nbsp;<span>3</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="pagination-wrapper">
-        <p class="offers-amount">ilość ofert: &nbsp;<span> 1 000</span></p>
-        <div class="pagination-item back"></div>
-        <div class="pagination-item present"><span>1</span></div>
-        <div class="pagination-item dots"><span>...</span></div>
-        <div class="pagination-item last"><span>10</span></div>
-        <div class="pagination-item forward"></div>
+    <section class="single-blog-content">
+      <article class="single-blog-article">
+        <h3 class="single-blog-article-header">Jak sprzedać mieszkanie – poradnik krok po kroku</h3>
+        <p class="single-blog-article-paragraph">
+          Każdemu właścicielowi nieruchomości zależy na tym, aby szybko sfinalizować transakcję sprzedaży – jednak
+          często to żmudny i czasochłonny proces. Szacuje się, że w Polsce sprzedaż nieruchomości zajmuje od 3 miesięcy
+          do nawet 2 lat. Chcąc uniknąć niepotrzebnych błędów, warto odpowiednio się przygotować, zanim wystawimy
+          ogłoszenie. Jak sprzedać mieszkanie z zyskiem i bez problemów? Czy można sprzedać mieszkanie z kredytem
+          hipotecznym? Co z ubezpieczeniem po sprzedaży mieszkania?
+        </p>
+        <h3 class="single-blog-article-header">Błędy przy sprzedaży nieruchomości</h3>
+        <p class="single-blog-article-paragraph">
+          Osoby, które zastanawiają się, jak sprzedać mieszkanie, powinny przede wszystkim wiedzieć, w jaki sposób tego
+          nie robić. Jakie błędy mogą skutecznie zniechęcić kupujących? Jednym z głównych „grzechów” jest
+          nieprzygotowanie nieruchomości do sprzedaży – nieuporządkowane wnętrza, rozrzucone przedmioty osobiste
+          właścicieli, nieprzyjemny zapach, brudne ściany i okna nie robią dobrego wrażenia ani na zdjęciach, ani na
+          żywo. Często wiele do życzenia pozostawiają też ogłoszenia, które są chaotyczne i nie zawierają wszystkich
+          istotnych dla potencjalnego nabywcy informacji (np. zdjęć). Innym problemem są nieuregulowane formalności, np.
+          niejasny stan prawny mieszkania oraz wąski przedział czasowy, w którym możliwe jest umawianie spotkań z
+          zainteresowanymi. Częstym błędem, jaki popełniają niedoświadczeni inwestorzy, jest udostępnienie oferty zbyt
+          dużej ilości agencji nieruchomości. Kolejny błąd to zawyżona oferta cenowa oraz brak otwartości na negocjacje
+          – co sprawia, że lokal nie sprzedaje się miesiącami, a nawet latami. Jak więc wycenić nieruchomość, aby
+          mieszkanie na sprzedaż szybko znalazło nowego właściciela?
+        </p>
+        <h3 class="single-blog-article-header">Błędy przy sprzedaży nieruchomości</h3>
+        <p class="single-blog-article-paragraph">
+          Jak sprzedać mieszkanie? Sprzedaż nieruchomości powinna przebiegać zgodnie z ustalonym wcześniej planem,
+          którego główne punkty to:
+        </p>
+        <ul class="single-blog-article-ul">
+          <li class="single-blog-article-li">
+            decyzja o sprzedaży,
+          </li>
+          <li class="single-blog-article-li">kompletowanie dokumentów potrzebnych do transakcji,</li>
+          <li class="single-blog-article-li">wycena nieruchomości,</li>
+          <li class="single-blog-article-li">przygotowanie mieszkania do sprzedaży,</li>
+          <li class="single-blog-article-li">stworzenie oferty sprzedaży,</li>
+          <li class="single-blog-article-li">prezentowanie lokalu potencjalnym nabywcom,</li>
+          <li class="single-blog-article-li">negocjacje warunków i zawarcie umowy sprzedaży,</li>
+          <li class="single-blog-article-li">przekazanie nieruchomości nabywcy.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="bottom-img">
+      <div class="single-blog-bottom-img-wrapper">
+        <img
+          class="single-blog-bottom-img"
+          src="./assets/images/single-blog/single_blog_hero_img.png"
+          alt=""
+          srcset=""
+        />
       </div>
     </section>
     <section class="form">

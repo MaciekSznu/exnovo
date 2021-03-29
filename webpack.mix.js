@@ -22,7 +22,9 @@ mix
   .sass("styles/uslugi/uslugi.scss", "dist/uslugi.css")
   .sass("styles/oferty/oferty.scss", "dist/oferty.css")
   .sass("styles/pierwotny/pierwotny.scss", "dist/pierwotny.css")
-  .sass("styles/single-pierwotny/single-pierwotny.scss", "dist/single-pierwotny.css");
+  .sass("styles/single-pierwotny/single-pierwotny.scss", "dist/single-pierwotny.css")
+  .sass("styles/single-blog/single-blog.scss", "dist/single-blog.css")
+  .sass("styles/single-offer/single-offer.scss", "dist/single-offer.css");
 
 // .minify('dist/app.css');
 
