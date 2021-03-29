@@ -33,20 +33,24 @@ menuItems.forEach((menuItem) => {
   });
 });
 
-const menuItemExpandable = document.querySelector(".nav-list--item.expandable");
+const menuItemsExpandable = document.querySelectorAll(".nav-list--item.expandable");
 
-const secondaryMenu = document.querySelector(".nav-list--secondary");
+const secondaryMenus = document.querySelectorAll(".nav-list--secondary");
 
-const showSecondaryMenu = () => {
+const showSecondaryMenus = () => {
   menuItemExpandable.classList.toggle("expanded");
 };
 
-menuItemExpandable.addEventListener("click", (e) => {
-  e.preventDefault();
-  showSecondaryMenu();
+menuItemsExpandable.forEach((menuItemExpandable) => {
+  menuItemExpandable.addEventListener("click", (e) => {
+    e.preventDefault();
+    menuItemExpandable.classList.toggle("expanded");
+  });
 });
 
-secondaryMenu.addEventListener("click", (e) => {
-  e.stopPropagation();
-  showSecondaryMenu();
+secondaryMenus.forEach((secondaryMenu) => {
+  secondaryMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    secondaryMenu.classList.toggle("expanded");
+  });
 });

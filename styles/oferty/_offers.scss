@@ -32,16 +32,6 @@
           height: 186px;
         }
 
-        // .offer-text-wrapper {
-        //   background: $white;
-        //   display: flex;
-        //   flex-direction: column;
-        //   align-items: center;
-        //   justify-content: flex-start;
-        //   padding: 14px 22px 0;
-        //   height: 171px;
-        // }
-
         .offer-text-wrapper {
           padding: 14px 22px 0;
           height: 171px;
@@ -122,17 +112,19 @@
           }
         }
       }
+      a {
+        text-decoration: none;
+        .show-offer-button {
+          @include button;
 
-      .show-offer-button {
-        @include button;
+          position: absolute;
+          left: 50%;
+          bottom: 16.2%;
+          transform: translateX(-50%);
 
-        position: absolute;
-        left: 50%;
-        bottom: 16.2%;
-        transform: translateX(-50%);
-
-        @media (max-width: 934px) {
-          font-size: 15px;
+          @media (max-width: 934px) {
+            font-size: 15px;
+          }
         }
       }
     }
