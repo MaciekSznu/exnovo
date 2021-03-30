@@ -49,6 +49,13 @@
         text-align: left;
         margin-bottom: 25px;
       }
+
+      @media (max-width: 767px) {
+        .description-paragraph {
+          font-size: 13px;
+          line-height: 25px;
+        }
+      }
     }
 
     .form-wrapper {
@@ -244,6 +251,10 @@
             max-width: 380px;
           }
         }
+      }
+
+      @media (min-width: 768px) and (max-width: 1234px) {
+        display: none;
       }
     }
   }

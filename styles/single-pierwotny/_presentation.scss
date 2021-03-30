@@ -109,12 +109,13 @@
 
     &-wrapper {
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: flex-start;
 
       .text-wrapper {
         margin-top: 0;
-        width: 340px;
+        width: 40%;
+        max-width: 40%;
       }
 
       .image-wrapper {

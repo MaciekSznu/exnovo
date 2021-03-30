@@ -48,19 +48,27 @@
     }
 
     .slider-button-prev {
-      left: 46px;
-      transform: translateY(-50%);
+      left: 10px;
+      transform: translateY(-50%) scale(0.75);
     }
 
     .slider-button-next {
-      right: 46px;
-      transform: rotate(180deg) translateY(50%);
+      right: 10px;
+      transform: rotate(180deg) translateY(50%) scale(0.75);
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     .single-offer-slider-img-wrapper {
-      // margin: 82px 0 100px;
+      .slider-button-prev {
+        left: 46px;
+        transform: translateY(-50%);
+      }
+
+      .slider-button-next {
+        right: 46px;
+        transform: rotate(180deg) translateY(50%);
+      }
     }
   }
   @media (min-width: 1232px) {

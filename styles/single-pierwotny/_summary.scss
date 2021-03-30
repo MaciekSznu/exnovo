@@ -81,5 +81,37 @@
     .summary-column-03 {
       grid-area: column_03;
     }
+
+    @media (max-width: 939px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0 10px;
+      grid-template-columns: auto;
+      grid-template-rows: 42px 1fr 1fr 1fr;
+      gap: 0;
+      grid-template-areas:
+        "title"
+        "column_01"
+        "column_02"
+        "column_03";
+
+      .summary-column-01,
+      .summary-column-02,
+      .summary-column-03 {
+        .summary-row {
+          &:nth-of-type(3) {
+            border-bottom: 1px dashed #e1e2f4;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 940px) and (max-width: 1233px) {
+      width: 100%;
+      padding: 0 20px;
+      gap: 0 20px;
+    }
   }
 }
