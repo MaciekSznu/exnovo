@@ -211,8 +211,7 @@
       @media (min-width: 768px) {
         margin-bottom: unset;
         height: 645px;
-        background: url("../../assets/images/home/hero_gradient.png") bottom right no-repeat,
-          url("../../assets/images/home/hero_tablet.png") top right -150px no-repeat;
+        background: url("../../assets/images/home/hero_home_complete_desktop.png") top right -150px no-repeat;
 
         &:before {
           top: 25px;
@@ -253,8 +252,7 @@
 
       @media (min-width: 1024px) {
         height: 645px;
-        background: url("../../assets/images/home/hero_gradient.png") bottom right no-repeat,
-          url("../../assets/images/home/hero_tablet.png") top right no-repeat;
+        background: url("../../assets/images/home/hero_home_complete_desktop.png") top right no-repeat;
 
         &:before {
           top: 20px;

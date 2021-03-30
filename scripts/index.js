@@ -48,9 +48,23 @@ menuItemsExpandable.forEach((menuItemExpandable) => {
   });
 });
 
-secondaryMenus.forEach((secondaryMenu) => {
-  secondaryMenu.addEventListener("click", (e) => {
-    e.stopPropagation();
-    secondaryMenu.classList.toggle("expanded");
-  });
-});
+// secondaryMenus.forEach((secondaryMenu) => {
+//   secondaryMenu.addEventListener("click", (e) => {
+//     e.stopPropagation();
+//     secondaryMenu.classList.toggle("expanded");
+//   });
+// });
+
+// navigation AOS
+// const nav = document.querySelector(".nav");
+// const windowWidth = window.innerWidth;
+
+// window.document.addEventListener('DOMContentLoaded', () => {
+//   windowWidth >= 1280 ? nav.dataset.aos = 'fade-down' : nav.dataset.aos = '';
+// });
+
+// window.addEventListener('resize', (e) => {
+
+//   windowWidth >= 1280 ? nav.dataset.aos = 'fade-down' : nav.dataset.aos = '';
+
+// })
