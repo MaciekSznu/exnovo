@@ -35,15 +35,20 @@
       height: 63px;
       border: 1px solid #e1e1e1;
       border-radius: 50%;
-      background: url("../../assets/graphics/strzalka-l.svg") no-repeat;
+      background-image: url("../../assets/graphics/strzalka-l.svg");
+      background-repeat: no-repeat;
       background-size: 17px 15px;
       background-position: center;
       cursor: pointer;
+      transition: background-color 0.5s ease-in-out, background-image 0.5s ease-in-out, border-color 0.5s ease-in-out;
 
       &:hover {
-        background: url("../../assets/graphics/strzalka-l-white.svg") no-repeat;
+        background-color: $orange;
+        background-image: url("../../assets/graphics/strzalka-l-white.svg");
+        background-repeat: no-repeat;
         background-size: 17px 15px;
         background-position: center;
+        border-color: $orange;
       }
     }
 

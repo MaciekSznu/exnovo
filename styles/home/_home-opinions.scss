@@ -100,9 +100,30 @@
     margin-bottom: 42px;
 
     .arrow {
-      border: none;
-      background: transparent;
       margin: 0 8px;
+      width: 63px;
+      height: 63px;
+      border: 1px solid #e1e1e1;
+      border-radius: 50%;
+      background-image: url("../../assets/graphics/strzalka-l.svg");
+      background-repeat: no-repeat;
+      background-size: 17px 15px;
+      background-position: center;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out, background-image 0.5s ease-in-out, border-color 0.5s ease-in-out;
+
+      &:hover {
+        background-color: $orange;
+        background-image: url("../../assets/graphics/strzalka-l-white.svg");
+        background-repeat: no-repeat;
+        background-size: 17px 15px;
+        background-position: center;
+        border-color: $orange;
+      }
+
+      &:nth-last-of-type(1) {
+        transform: rotate(180deg);
+      }
     }
   }
 

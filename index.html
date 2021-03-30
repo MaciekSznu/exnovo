@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exnovo</title>
+    <link rel="stylesheet" href="./dist/libs/aos.css" />
     <link rel="stylesheet" href="./dist/style.css" />
   </head>
   <body>
-    <header class="header">
+    <header data-aos="fade-down" class="header">
       <h1 class="logo">
         <a href="./index.html" class="header-link"><img src="./assets/graphics/logo.svg" alt="Exnovo"/></a>
       </h1>
@@ -64,7 +65,7 @@
             <span class="orange-text">większe możliwości</span>
           </h2>
         </div>
-        <div class="hero-image-wrapper">
+        <div data-aos="fade-up" class="hero-image-wrapper">
           <div class="hero-text-wrapper">
             <p class="hero-text">
               Trójmiejski rynek nieruchomości charakteryzuje się bogactwem ofert! Gdańsk, Gdynia, Sopot – to najlepsze
@@ -84,7 +85,7 @@
       </div>
     </section>
     <section class="dev-100">
-      <div class="dev-100-wrapper">
+      <div data-aos="fade-up" class="dev-100-wrapper">
         <div class="image-wrapper"></div>
         <article class="text-wrapper">
           <h2 class="article-title">Deweloperska setka</h2>
@@ -115,7 +116,7 @@
       </h3>
       <div class="boxes-wrapper">
         <div class="box">
-          <img class="box-icon" src="./assets/graphics/base_icon.svg" alt="" />
+          <img data-aos="zoom-in" class="box-icon" src="./assets/graphics/base_icon.svg" alt="" />
           <h4 class="box-title">Twoja lista 100 ofert</h4>
           <p class="box-text">
             Każdego dnia aktualizujemy bazę ofert, dostosowując ją do preferencji naszych klientów. Wystarczy, że
@@ -124,7 +125,7 @@
           </p>
         </div>
         <div class="box">
-          <img class="box-icon" src="./assets/graphics/house_time_icon.svg" alt="" />
+          <img data-aos="zoom-in" class="box-icon" src="./assets/graphics/house_time_icon.svg" alt="" />
           <h4 class="box-title">Powiedz, o której marzysz?</h4>
           <p class="box-text">
             Zastanów się, które z przesłanych ofert najbardziej odpowiadają Twoim potrzebom. Pomożemy Ci dokonać
@@ -133,7 +134,7 @@
           </p>
         </div>
         <div class="box">
-          <img class="box-icon" src="./assets/graphics/home_accepted_icon.svg" alt="" />
+          <img data-aos="zoom-in" class="box-icon" src="./assets/graphics/home_accepted_icon.svg" alt="" />
           <h4 class="box-title">My to marzenie spełnimy!</h4>
           <p class="box-text">
             Będziemy Ci towarzyszyć i wspierać na każdym etapie, aż do momentu podpisania aktu notarialnego i odbioru
@@ -141,7 +142,7 @@
           </p>
         </div>
         <div class="box">
-          <img class="box-icon" src="./assets/graphics/home_details_icon.svg" alt="" />
+          <img data-aos="zoom-in" class="box-icon" src="./assets/graphics/home_details_icon.svg" alt="" />
           <h4 class="box-title">Szczęściu trzeba pomóc?</h4>
           <p class="box-text">
             Pomożemy Ci w wyborze najkorzystniejszego kredytu hipotecznego. Takiego, który będzie dostosowany do twoich
@@ -182,7 +183,6 @@
       </div>
       <div class="opinions-wrapper">
         <div class="opinion-box">
-          <!-- quote as before -->
           <p class="opinion-box--text">
             Po raz pierwszy zdecydowałem się skorzystać z usług pośrednika nieruchomości i jestem zadowolony z końcowego
             efektu. Udało mi się szybko kupić mieszkanie w Gdańsku w dobrej cenie i lokalizacji
@@ -196,17 +196,10 @@
           </p>
           <h4 class="opinion-box--author">Pan Marek</h4>
         </div>
-        <!-- <div class="opinion-box">
-          <p class="opinion-box-text">
-            Po raz pierwszy zdecydowałem się skorzystać z usług pośrednika nieruchomości i jestem zadowolony z końcowego
-            efektu. Udało mi się szybko kupić mieszkanie w Gdańsku w dobrej cenie i lokalizacji
-          </p>
-          <h4 class="opinion-box-author">Pan Marek</h4>
-        </div> -->
       </div>
       <div class="arrows-wrapper">
-        <button class="arrow"><img src="./assets/graphics/strzalka-l-2.svg" /></button>
-        <button class="arrow"><img src="./assets/graphics/strzalka-r-2.svg" /></button>
+        <div role="button" class="arrow"></div>
+        <div role="button" class="arrow"></div>
       </div>
     </section>
     <section class="cooperation">
@@ -318,6 +311,16 @@
       </div>
     </footer>
 
+    <script src="./dist/libs/aos.js"></script>
     <script src="./dist/index.js"></script>
+    <script>
+      AOS.init({
+        offset: 100,
+        duration: 750,
+        easing: "ease-in-sine",
+        delay: 100,
+        once: true,
+      });
+    </script>
   </body>
 </html>
