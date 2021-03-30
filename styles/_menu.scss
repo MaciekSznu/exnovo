@@ -20,11 +20,10 @@
   }
 
   @media (min-width: 1280px) {
-    margin: 0 auto;
     width: 1234px;
+    width: 100%;
+    padding: 32px calc((100% - 1234px) / 2) 0;
     height: 124px;
-    padding: 0;
-    padding-top: 32px;
     overflow-x: unset;
     overflow-y: visible;
   }
@@ -345,6 +344,16 @@
     @media (min-width: 1280px) {
       transform: unset;
       position: relative;
+
+      // &:before {
+      //   content: "";
+      //   position: absolute;
+      //   left: 0;
+      //   top: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: $white;
+      // }
     }
   }
 }
