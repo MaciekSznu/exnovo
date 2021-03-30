@@ -10,7 +10,7 @@
   }
 
   @media (min-width: 1280px) {
-    padding: 20px 0 162px;
+    padding: 0 0 162px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,6 +160,7 @@
 
     @media (min-width: 1280px) {
       max-width: 1244px;
+      align-items: center;
 
       .text-wrapper {
         width: 50%;
