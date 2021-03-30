@@ -48,21 +48,6 @@ menuItemsExpandable.forEach((menuItemExpandable) => {
   });
 });
 
-const desktopMenuItemsExpandable = document.querySelectorAll(".nav-desktop-list--item.expandable");
-
-const desktopSecondaryMenus = document.querySelectorAll(".nav-desktop-list--secondary");
-
-const showDesktopSecondaryMenus = () => {
-  menuItemExpandable.classList.toggle("expanded");
-};
-
-desktopMenuItemsExpandable.forEach((desktopMenuItemExpandable) => {
-  desktopMenuItemExpandable.addEventListener("click", (e) => {
-    e.preventDefault();
-    desktopMenuItemExpandable.classList.toggle("expanded");
-  });
-});
-
 // secondaryMenus.forEach((secondaryMenu) => {
 //   secondaryMenu.addEventListener("click", (e) => {
 //     e.stopPropagation();
