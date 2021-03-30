@@ -200,16 +200,19 @@
         }
       }
 
-      .show-offer-button {
-        @include button;
+      a {
+        text-decoration: none;
+        .show-offer-button {
+          @include button;
 
-        position: absolute;
-        left: 50%;
-        bottom: 16.2%;
-        transform: translateX(-50%);
+          position: absolute;
+          left: 50%;
+          bottom: 16.2%;
+          transform: translateX(-50%);
 
-        @media (max-width: 934px) {
-          font-size: 15px;
+          @media (max-width: 934px) {
+            font-size: 15px;
+          }
         }
       }
     }
