@@ -128,8 +128,7 @@
       justify-content: flex-end;
       margin-bottom: 136px;
       width: 100%;
-      background: url("../../assets/images/home/hero_gradient_mobile.png") bottom right no-repeat,
-        url("../../assets/images/home/hero_mobile.png") top right -100px no-repeat;
+      background: url("../../assets/images/home/hero_home_complete_mobile.png") top right -100px no-repeat;
 
       &:before {
         content: "";
@@ -272,8 +271,7 @@
 
       @media (min-width: 1280px) {
         height: 745px;
-        background: url("../../assets/images/home/hero_gradient.png") bottom 136px right no-repeat,
-          url("../../assets/images/home/hero_tablet.png") top right no-repeat;
+        background: url("../../assets/images/home/hero_home_complete_desktop.png") top right no-repeat;
 
         &:before {
           top: 20px;

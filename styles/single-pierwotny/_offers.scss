@@ -8,6 +8,83 @@
   align-items: center;
   background: $white;
 
+  .offers-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 18px;
+
+    .offers-text-wrapper {
+      .offers-title {
+        color: $dark-blue;
+        font-family: $grotesk-bold;
+        font-size: 24px;
+        font-weight: 700;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 40px;
+        text-align: left;
+        margin-bottom: 12px;
+
+        span {
+          color: $orange;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+        }
+      }
+
+      .offers-text {
+        color: $dark-blue;
+        font-family: $grotesk-reg;
+        font-size: 13px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 20px;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+    }
+
+    .offers-sort {
+      width: 100%;
+      max-width: 320px;
+      height: 60px;
+      background-color: $white;
+      border: 1px solid #e1e2f4;
+      padding: 21px 28px;
+
+      color: $mid-blue;
+      font-family: $grotesk-reg;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: left;
+
+      &::placeholder {
+        color: $mid-blue;
+        font-family: $grotesk-reg;
+        font-size: 14px;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+      }
+
+      background: url("../../assets/graphics/menu-item-expander.png") no-repeat;
+      background-size: 10px 7px;
+      background-position-y: center;
+      background-position-x: calc(100% - 28px);
+      cursor: pointer;
+    }
+  }
+
   .offers-wrapper {
     display: flex;
     align-items: flex-start;
@@ -267,6 +344,17 @@
 
   @media (min-width: 617px) {
     padding: 0 20px;
+    .offers-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 49px;
+      .offers-text-wrapper {
+        .offers-text {
+          margin-bottom: 0;
+        }
+      }
+    }
     .offers-wrapper {
       justify-content: space-between;
       width: 617px;
@@ -275,6 +363,31 @@
 
   @media (min-width: 934px) {
     padding: 0 20px;
+    .offers-header {
+      .offers-text-wrapper {
+        max-width: 550px;
+
+        .offers-title {
+          font-size: 34px;
+          line-height: 47px;
+
+          span {
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+          }
+        }
+
+        .offers-text {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 30px;
+        }
+      }
+      .offers-sort {
+        margin-top: 26px;
+      }
+    }
     .offers-wrapper {
       width: 934px;
     }
@@ -283,6 +396,10 @@
   @media (min-width: 1280px) {
     margin-top: 63px;
     padding: 0;
+
+    .offers-header {
+      width: 1234px;
+    }
     .offers-wrapper {
       width: 1234px;
 
