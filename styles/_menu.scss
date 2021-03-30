@@ -20,8 +20,11 @@
   }
 
   @media (min-width: 1280px) {
+    margin: 0 auto;
+    width: 1234px;
     height: 124px;
-    padding: 32px 40px;
+    padding: 0;
+    padding-top: 32px;
     overflow-x: unset;
     overflow-y: visible;
   }
@@ -340,6 +343,7 @@
     transition: transform 1s ease-out;
 
     @media (min-width: 1280px) {
+      transform: unset;
       position: relative;
     }
   }
