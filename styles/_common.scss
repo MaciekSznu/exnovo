@@ -36,21 +36,6 @@ body {
   font-family: $poppins;
   overflow-x: hidden;
 
-  .preloader {
-    align-items: center;
-    background: $white;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    left: 0;
-    position: fixed;
-    top: 0;
-    transition: opacity 0.3s linear;
-    width: 100%;
-    z-index: 9999;
-    pointer-events: none;
-  }
-
   input {
     -webkit-appearance: none;
     border-radius: 0;
