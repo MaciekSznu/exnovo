@@ -8,10 +8,6 @@
   position: relative;
   z-index: 3;
 
-  @media (min-width: 768px) {
-    margin-top: 115px;
-  }
-
   .page-title {
     font-family: $grotesk-reg;
     font-weight: 400;
@@ -46,6 +42,7 @@
   }
 
   @media (min-width: 768px) {
+    margin-top: 115px;
     .page-title {
       max-width: 700px;
       margin-bottom: -77px;
@@ -63,15 +60,16 @@
     }
   }
   @media (min-width: 1280px) {
+    margin-top: 84px;
     display: flex;
     justify-content: center;
     margin-bottom: 56px;
 
     .page-title {
       justify-self: flex-start;
-      width: 1244px;
+      width: 1234px;
       max-width: 1244px;
-      margin-left: 40px;
+      margin-left: 0;
 
       .blue-text {
         font-size: 45px;

@@ -44,6 +44,7 @@ const showSecondaryMenus = () => {
 menuItemsExpandable.forEach((menuItemExpandable) => {
   menuItemExpandable.addEventListener("click", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     menuItemExpandable.classList.toggle("expanded");
   });
 });

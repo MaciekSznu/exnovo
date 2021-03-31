@@ -171,6 +171,7 @@
       margin-top: 92px;
       justify-content: space-between;
       flex-wrap: nowrap;
+      width: 1234px;
 
       .text-wrapper {
         margin-top: 0px;
@@ -204,7 +205,6 @@
       .image-wrapper {
         margin-top: 0;
         width: 566px;
-        height: 596px;
         background: url("../../assets/images/uslugi/buy_img_desktop.png");
         background-size: cover;
         background-position: top left;

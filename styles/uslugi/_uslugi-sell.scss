@@ -18,7 +18,8 @@
 
   &-wrapper {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     background-color: $light-bg;
 
@@ -194,6 +195,7 @@
     &-wrapper {
       justify-content: space-between;
       flex-wrap: nowrap;
+      width: 1234px;
 
       .text-wrapper {
         margin-top: 0px;
