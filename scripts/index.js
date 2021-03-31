@@ -7,6 +7,23 @@ const click = (target, callback) => {
   });
 };
 
+/* PRELOADER */
+
+const preloader = document.querySelector(".preloader");
+
+const fadeEffect = setInterval(() => {
+  if (!preloader.style.opacity) {
+    preloader.style.opacity = 1;
+  }
+  if (preloader.style.opacity > 0) {
+    preloader.style.opacity -= 0.1;
+  } else {
+    clearInterval(fadeEffect);
+  }
+}, 100);
+
+window.addEventListener("load", fadeEffect);
+
 /* BURGER MENU */
 const hamburgerButton = document.querySelector(".hamburger-wrapper");
 const mainMenu = document.querySelector(".nav");
