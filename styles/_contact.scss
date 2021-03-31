@@ -98,6 +98,7 @@
           .box-text {
             color: $dark-blue;
             font-family: $grotesk-reg;
+            font-weight: 400;
             font-size: 15px;
             font-style: normal;
             letter-spacing: normal;
@@ -113,6 +114,7 @@
           .box-text-link {
             color: $dark-blue;
             font-family: $grotesk-bold;
+            font-weight: 700;
             font-size: 15px;
             font-style: normal;
             letter-spacing: normal;
@@ -123,6 +125,7 @@
             &.direction {
               color: $dark-blue;
               font-family: $grotesk-reg;
+              font-weight: 400;
               text-decoration: underline;
             }
           }
@@ -245,6 +248,7 @@
       opacity: 0.34;
       color: $dark-blue;
       font-family: $grotesk-reg;
+      font-weight: 400;
       font-size: 10px;
       font-style: normal;
       letter-spacing: normal;
@@ -301,6 +305,7 @@
       opacity: 0.4;
       color: $dark-blue;
       font-family: $grotesk-reg;
+      font-weight: 400;
       font-size: 13px;
       font-style: normal;
       letter-spacing: normal;
@@ -313,6 +318,7 @@
       &.copyrights-text-link {
         color: $dark-blue;
         font-family: $grotesk-reg;
+        font-weight: 400;
         font-size: 13px;
         font-style: normal;
         letter-spacing: normal;

@@ -19,7 +19,7 @@
   }
 
   @media (min-width: 768px) {
-    margin-top: 115px;
+    margin-top: 42px;
 
     &:after {
       content: "";
@@ -151,6 +151,7 @@
         margin-bottom: -136px;
         .hero-text {
           font-family: $grotesk-reg;
+          font-weight: 400;
           color: $white;
           font-size: 15px;
           font-style: normal;
@@ -163,6 +164,7 @@
 
         .cta-lead-text {
           font-family: $grotesk-bold;
+          font-weight: 700;
           color: $white;
           font-size: 15px;
           line-height: 25px;

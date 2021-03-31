@@ -11,6 +11,7 @@
     .section-title {
       color: $orange;
       font-family: $grotesk-bold;
+      font-weight: 700;
       font-size: 24px;
       font-style: normal;
       letter-spacing: normal;
@@ -27,6 +28,7 @@
     .section-subtitle {
       color: $dark-blue;
       font-family: $grotesk-reg;
+      font-weight: 400;
       font-size: 15px;
       font-style: normal;
       letter-spacing: normal;
@@ -68,6 +70,7 @@
       &--text {
         color: $blue;
         font-family: $poppins;
+        font-weight: 400;
         font-size: 13px;
         font-style: italic;
         letter-spacing: normal;
@@ -201,6 +204,17 @@
       .opinion-box {
         &:nth-of-type(2) {
           display: flex;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: -33px;
+          left: -32px;
+          width: 63px;
+          height: 63px;
+          background: url("../../assets/graphics/quote.svg");
+          z-index: 2;
         }
       }
     }

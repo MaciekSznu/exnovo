@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../mixins";
+
 .dreams {
   padding: 60px 10px 0;
   display: flex;
@@ -10,6 +11,7 @@
     max-width: 320px;
     color: $dark-blue;
     font-family: $grotesk-bold;
+    font-weight: 700;
     font-size: 24px;
     font-style: normal;
     letter-spacing: normal;
@@ -28,6 +30,7 @@
     max-width: 320px;
     color: $dark-blue;
     font-family: $grotesk-reg;
+    font-weight: 400;
     font-size: 15px;
     font-style: normal;
     letter-spacing: normal;
@@ -56,6 +59,7 @@
       .box-title {
         color: $dark-blue;
         font-family: $grotesk-bold;
+        font-weight: 700;
         font-size: 20px;
         font-style: normal;
         letter-spacing: normal;
@@ -65,6 +69,7 @@
       .box-text {
         color: $dark-blue;
         font-family: $grotesk-reg;
+        font-weight: 400;
         font-size: 13px;
         font-style: normal;
         letter-spacing: normal;

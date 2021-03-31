@@ -20,6 +20,7 @@
     .section-title {
       color: $orange;
       font-family: $grotesk-bold;
+      font-weight: 700;
       font-size: 24px;
       font-style: normal;
       letter-spacing: normal;
@@ -29,6 +30,7 @@
       span {
         color: $dark-blue;
         font-family: $grotesk-bold;
+        font-weight: 700;
         font-size: 24px;
         font-style: normal;
         letter-spacing: normal;
@@ -39,6 +41,7 @@
     .section-subtitle {
       color: $dark-blue;
       font-family: $grotesk-reg;
+      font-weight: 400;
       font-size: 15px;
       font-style: normal;
       letter-spacing: normal;
@@ -180,6 +183,7 @@
         max-width: 220px;
         color: $white;
         font-family: $grotesk-bold;
+        font-weight: 700;
         font-size: 24px;
         font-style: normal;
         letter-spacing: normal;
@@ -231,6 +235,7 @@
           left: 25px;
           max-width: calc(100% - (2 * 25px));
           font-family: $grotesk-bold;
+          font-weight: 700;
           font-size: 20px;
           line-height: 26px;
         }
@@ -257,6 +262,7 @@
           left: 60px;
           max-width: calc(100% - (2 * 60px));
           font-family: $grotesk-bold;
+          font-weight: 700;
           font-size: 32px;
           line-height: 40px;
         }
