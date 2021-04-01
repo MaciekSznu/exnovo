@@ -35,24 +35,16 @@ menuItems.forEach((menuItem) => {
 
 const menuItemsExpandable = document.querySelectorAll(".nav-list--item.expandable");
 
-const secondaryMenus = document.querySelectorAll(".nav-list--secondary");
-
-const showSecondaryMenus = () => {
-  menuItemExpandable.classList.toggle("expanded");
-};
-
 menuItemsExpandable.forEach((menuItemExpandable) => {
   menuItemExpandable.addEventListener("click", (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    menuItemExpandable.classList.toggle("expanded");
   });
 });
 
-const desktopMenuExpandableLinks = document.querySelectorAll(".nav-desktop-list--item-link-expandable");
+const secondaryMenuItems = document.querySelectorAll(".nav-list--item.secondary");
 
-desktopMenuExpandableLinks.forEach((desktopMenuExpandableLink) => {
-  desktopMenuExpandableLink.addEventListener("click", (e) => {
-    e.preventDefault();
+secondaryMenuItems.forEach((secondaryMenuItem) => {
+  secondaryMenuItem.addEventListener("click", (e) => {
+    e.stopPropagation();
   });
 });

@@ -95,7 +95,7 @@
         list-style: none;
         width: 100%;
         text-align: center;
-        margin-bottom: 38px;
+        padding-bottom: 38px;
 
         &-link,
         &-link-expandable {
@@ -104,6 +104,7 @@
           text-decoration: none;
           font-family: $grotesk-reg;
           color: $dark-blue;
+          transition: color 0.25s ease-in-out;
 
           &:hover {
             transition: color 0.25s ease-in-out;
@@ -112,13 +113,28 @@
         }
 
         &.expandable {
+          cursor: pointer;
+          min-width: unset;
+          position: relative;
           .nav-list--secondary {
-            display: none;
-            margin: 0 auto;
+            margin: 18px auto 0;
             padding: 0;
-            width: calc(100% - 20px);
-            max-width: 300px;
+            width: 300px;
+            visibility: hidden;
+            opacity: 0;
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            width: 300px;
+            height: auto;
+            transform: translate(-50%, 100%);
+            background: $white;
+            margin-left: 0;
             box-shadow: 0 2px 100px #e1e2f4;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1;
+            pointer-events: none;
 
             .nav-list--item.secondary {
               position: relative;
@@ -163,25 +179,45 @@
 
           .nav-list--item-link-expandable {
             img {
+              transition: transform 0.25s ease-in-out;
               margin-left: 7px;
               margin-bottom: 1px;
             }
           }
-        }
 
-        &.expanded {
-          .nav-list--secondary {
-            margin-top: 18px;
-            display: block;
-          }
+          &:hover {
+            .nav-list--secondary {
+              transition: opacity 0.5s ease-in-out;
+              visibility: visible;
+              opacity: 1;
+              z-index: 10;
+              pointer-events: initial;
 
-          .nav-list--item-link-expandable {
-            color: $orange;
-            margin-bottom: 18px;
+              .nav-list--item.secondary {
+                width: 220px;
+                max-width: 220px;
+                padding-left: 81px;
+                margin-top: 0;
 
-            img {
-              transform: rotate(180deg);
-              transform-origin: center center;
+                .nav-list--item-link {
+                  width: 220px;
+                  height: 59px;
+                  line-height: 59px;
+                  cursor: pointer;
+                }
+              }
+            }
+            .nav-list--item-link-expandable {
+              color: $orange;
+              display: block;
+              padding-top: 2px;
+              height: 25px;
+
+              img {
+                transition: transform 0.25s ease-in-out;
+                transform: rotate(180deg);
+                transform-origin: center center;
+              }
             }
           }
         }
@@ -346,45 +382,6 @@
                   transition: transform 0.25s ease-in-out;
                   transform: rotate(180deg);
                   transform-origin: center center;
-                }
-              }
-            }
-          }
-
-          &.expanded {
-            .nav-desktop-list--item-link-expandable {
-              color: $orange;
-              display: block;
-              margin-bottom: 0;
-
-              img {
-                transform: rotate(180deg);
-                transform-origin: center center;
-              }
-            }
-
-            .nav-desktop-list--secondary {
-              display: block;
-              position: absolute;
-              left: 0;
-              bottom: -18px;
-              transform: translate(-20px, 100%);
-              width: 300px;
-              height: auto;
-
-              background: $white;
-
-              .nav-desktop-list--item.secondary {
-                width: 220px;
-                max-width: 220px;
-                padding-left: 81px;
-                margin-top: 0;
-
-                .nav-desktop-list--item-link {
-                  width: 220px;
-                  height: 59px;
-                  line-height: 59px;
-                  cursor: pointer;
                 }
               }
             }
