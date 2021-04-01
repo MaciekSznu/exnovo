@@ -208,7 +208,7 @@
         background: url("../../assets/images/uslugi/buy_img_desktop.png");
         background-size: cover;
         background-position: top left;
-        margin-left: 47px;
+        margin-left: 23px;
         height: 637px;
 
         &:before {
@@ -216,7 +216,7 @@
           top: -38px;
           height: 596px;
           width: 378px;
-          background: url("../../assets/graphics/img_overlay_house_big.svg");
+          background: url("../../assets/graphics/img_overlay_house_big.svg") no-repeat;
         }
       }
     }

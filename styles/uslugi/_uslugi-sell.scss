@@ -235,13 +235,14 @@
         background-position: top left;
         margin-left: 47px;
         height: 637px;
+        margin-right: 26px;
 
         &:before {
           left: -23px;
           top: -38px;
           height: 596px;
           width: 378px;
-          background: url("../../assets/graphics/img_overlay_house_big.svg");
+          background: url("../../assets/graphics/img_overlay_house_big.svg") no-repeat;
         }
 
         &:after {

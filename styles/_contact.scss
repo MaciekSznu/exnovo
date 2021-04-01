@@ -21,7 +21,7 @@
     width: 100%;
     position: relative;
     @media (min-width: 1280px) {
-      max-width: 1244px;
+      max-width: 1234px;
     }
 
     .title-wrapper {
@@ -158,7 +158,7 @@
           content: "";
           position: absolute;
           top: -29px;
-          right: 60px;
+          right: 0;
           width: 42px;
           height: 58px;
           background: url("../assets/graphics/triangles.svg");
@@ -284,7 +284,7 @@
     }
 
     @media (min-width: 1280px) {
-      max-width: 1236px;
+      max-width: 1234px;
       padding-top: 24px;
       padding-bottom: 33px;
 
@@ -347,7 +347,7 @@
 
     @media (min-width: 1280px) {
       width: 100%;
-      max-width: 1236px;
+      max-width: 1234px;
       justify-content: space-between;
     }
   }

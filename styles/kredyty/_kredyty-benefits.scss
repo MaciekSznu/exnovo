@@ -103,7 +103,7 @@
   }
 
   @media (min-width: 1280px) {
-    margin-top: 71px;
+    margin-top: 86px;
     padding: 0;
 
     .section-title {
@@ -119,7 +119,7 @@
     }
 
     .benefits-boxes-wrapper {
-      max-width: 1280px;
+      max-width: 1234px;
       justify-content: space-between;
 
       .box {
@@ -138,7 +138,7 @@
             content: "";
             position: absolute;
             top: 16px;
-            right: -81px;
+            right: -91px;
             width: 81px;
             height: 11px;
             z-index: 2;
