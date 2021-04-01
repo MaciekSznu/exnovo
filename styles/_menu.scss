@@ -20,12 +20,22 @@
   }
 
   @media (min-width: 1280px) {
-    width: 1234px;
     width: 100%;
     padding: 32px calc((100% - 1234px) / 2) 0;
     height: 124px;
     overflow-x: unset;
     overflow-y: visible;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $white;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
   }
 
   .logo {

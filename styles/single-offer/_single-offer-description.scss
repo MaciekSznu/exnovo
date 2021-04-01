@@ -2,7 +2,7 @@
 @import "../mixins";
 
 .single-offer-description {
-  margin-top: 53px;
+  margin-top: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,7 @@
   padding: 0 10px;
 
   @media (min-width: 768px) {
+    margin-top: 53px;
     padding: 0 20px;
   }
   @media (min-width: 1234px) {
