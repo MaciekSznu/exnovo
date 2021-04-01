@@ -19,7 +19,7 @@
     font-style: normal;
     letter-spacing: normal;
     line-height: normal;
-    margin-bottom: 33px;
+    margin-top: 33px;
   }
 
   .blog-wrapper {
@@ -111,6 +111,11 @@
       height: calc(100% - 505px);
       background: $white;
       z-index: -1;
+    }
+
+    .page-adress {
+      margin-top: 0px;
+      margin-bottom: 33px;
     }
 
     .blog-wrapper {
