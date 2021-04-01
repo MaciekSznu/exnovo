@@ -14,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 
     .offers-text-wrapper {
       .offers-title {
@@ -109,16 +109,6 @@
           height: 186px;
         }
 
-        // .offer-text-wrapper {
-        //   background: $white;
-        //   display: flex;
-        //   flex-direction: column;
-        //   align-items: center;
-        //   justify-content: flex-start;
-        //   padding: 14px 22px 0;
-        //   height: 171px;
-        // }
-
         .offer-text-wrapper {
           padding: 14px 22px 0;
           height: 171px;
@@ -129,6 +119,7 @@
             margin-bottom: 16px;
             color: $dark-blue;
             font-family: $grotesk-bold;
+            font-weight: 700;
             font-style: normal;
             letter-spacing: normal;
             line-height: normal;
@@ -139,6 +130,7 @@
           .offer-transaction {
             color: $light-blue;
             font-family: $grotesk-reg;
+            font-weight: 400;
             font-size: 13px;
             font-style: normal;
             letter-spacing: normal;
@@ -152,6 +144,7 @@
             height: 21px;
             color: $orange;
             font-family: $grotesk-bold;
+            font-weight: 700;
             font-size: 18px;
             font-style: normal;
             letter-spacing: normal;
@@ -397,11 +390,17 @@
   }
 
   @media (min-width: 1280px) {
-    margin-top: 63px;
+    margin-top: 60px;
     padding: 0;
 
     .offers-header {
       width: 1234px;
+
+      .offers-text-wrapper {
+        .offers-title {
+          margin-bottom: 27px;
+        }
+      }
     }
     .offers-wrapper {
       width: 1234px;
@@ -428,6 +427,7 @@
               margin-bottom: 16px;
               color: $dark-blue;
               font-family: $grotesk-bold;
+              font-weight: 700;
               font-style: normal;
               letter-spacing: normal;
               line-height: normal;
@@ -438,6 +438,7 @@
             .offer-transaction {
               color: $light-blue;
               font-family: $grotesk-reg;
+              font-weight: 400;
               font-size: 13px;
               font-style: normal;
               letter-spacing: normal;
@@ -451,6 +452,7 @@
               height: 21px;
               color: $orange;
               font-family: $grotesk-bold;
+              font-weight: 700;
               font-size: 18px;
               font-style: normal;
               letter-spacing: normal;
@@ -492,6 +494,7 @@
                 span {
                   color: $dark-blue;
                   font-family: $grotesk-bold;
+                  font-weight: 700;
                   text-align: right;
                 }
               }

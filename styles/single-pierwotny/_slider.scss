@@ -7,9 +7,9 @@
 
   .slider-wrapper {
     width: 100%;
-    height: auto;
+    height: 360px;
     min-height: calc(100vw * 0.4829);
-    margin-bottom: 59px;
+    margin-bottom: 38px;
     position: relative;
 
     .prev-slide,
@@ -18,19 +18,33 @@
       top: 50%;
       width: 63px;
       height: 63px;
-      transform: translateY(-50%);
+      border: 1px solid #e1e1e1;
+      border-radius: 50%;
+      background-image: url("../../assets/graphics/strzalka-l.svg");
+      background-repeat: no-repeat;
+      background-size: 17px 15px;
+      background-position: center;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out, background-image 0.5s ease-in-out, border-color 0.5s ease-in-out;
+
+      &:hover {
+        background-color: $orange;
+        background-image: url("../../assets/graphics/strzalka-l-white.svg");
+        background-repeat: no-repeat;
+        background-size: 17px 15px;
+        background-position: center;
+        border-color: $orange;
+      }
     }
 
     .prev-slide {
-      left: 34px;
-      background: url("../../assets/graphics/strzalka-l-2.svg");
-      background-size: cover;
+      left: 10px;
+      transform: translateY(-50%) scale(0.75);
     }
 
     .next-slide {
-      right: 34px;
-      background: url("../../assets/graphics/strzalka-r-2.svg");
-      background-size: cover;
+      right: 10px;
+      transform: rotate(180deg) translateY(50%) scale(0.75);
     }
 
     .slide {
@@ -39,14 +53,39 @@
       background: url("../../assets/images/single-pierwotny/single_pierwotny_slide_01.png");
       background-size: cover;
     }
+
+    @media (min-width: 768px) {
+      .prev-slide {
+        left: 46px;
+        transform: translateY(-50%);
+      }
+
+      .next-slide {
+        right: 46px;
+        transform: rotate(180deg) translateY(50%);
+      }
+    }
   }
 
   @media (min-width: 1280px) {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: $light-bg;
+    }
+
     .slider-wrapper {
       width: 100%;
       max-width: 1234px;
       height: auto;
       min-height: 596px;
+      margin: 0;
 
       .slide {
         width: 100%;

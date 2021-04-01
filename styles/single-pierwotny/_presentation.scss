@@ -36,24 +36,25 @@
         font-style: normal;
         letter-spacing: normal;
         line-height: normal;
-        margin-top: 45px;
       }
 
       .article-title {
         color: $dark-blue;
         font-family: $grotesk-bold;
+        font-weight: 700;
         font-size: 24px;
         font-style: normal;
         letter-spacing: normal;
         line-height: 40px;
         text-align: left;
-        margin-top: 36px;
-        margin-bottom: 26px;
+        margin-top: 20px;
+        margin-bottom: 22px;
       }
 
       .article-text {
         color: $dark-blue;
         font-family: $grotesk-reg;
+        font-weight: 400;
         font-size: 13px;
         font-style: normal;
         letter-spacing: normal;
@@ -64,7 +65,7 @@
     }
 
     .image-wrapper {
-      margin-top: 49px;
+      margin-top: 30px;
       position: relative;
       min-width: calc(100% - 29px);
       height: auto;
@@ -101,7 +102,7 @@
   }
 
   @media (min-width: 768px) {
-    padding: 80px 20px 80px;
+    padding: 80px 20px 0;
 
     &:before {
       right: 20px;
@@ -109,7 +110,7 @@
 
     &-wrapper {
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: flex-start;
 
       .text-wrapper {
@@ -119,7 +120,7 @@
       }
 
       .image-wrapper {
-        margin-top: 111px;
+        margin-top: 60px;
         margin-left: 49px;
         width: 40%;
         min-width: unset;
@@ -128,8 +129,9 @@
   }
 
   @media (min-width: 1280px) {
-    height: 714px;
+    height: unset;
     padding: 0;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,9 +143,10 @@
     &-wrapper {
       justify-content: space-between;
       flex-wrap: nowrap;
+      width: 1234px;
 
       .text-wrapper {
-        margin-top: 0px;
+        margin-top: 0;
         margin-left: 0;
         width: 100%;
         max-width: 580px;
@@ -174,6 +177,7 @@
         background-size: cover;
         background-position: top left;
         margin-left: 47px;
+        margin-right: 23px;
         height: 637px;
 
         &:before {
