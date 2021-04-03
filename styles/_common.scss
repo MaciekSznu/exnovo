@@ -40,6 +40,15 @@ body {
     -webkit-appearance: none;
     border-radius: 0;
     -webkit-border-radius: 0;
+
+    &-webkit-autofill,
+    &-webkit-autofill:hover,
+    &-webkit-autofill:focus,
+    &-webkit-autofill:active {
+      box-shadow: $white;
+      -webkit-box-shadow: $white;
+      background: $white;
+    }
   }
 
   select {
