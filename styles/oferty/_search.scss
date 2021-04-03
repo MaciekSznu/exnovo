@@ -9,6 +9,7 @@
 
   .search-wrapper {
     width: 1234px;
+    width: 100%;
 
     .page-adress {
       color: $light-blue;
@@ -21,136 +22,204 @@
     }
 
     .search-form {
+      width: 100%;
       display: grid;
       margin-top: 28px;
       margin-bottom: 40px;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(3, auto);
       gap: 0px 47px;
-      grid-template-areas: "column_01 column_02 column_03";
+      grid-template-areas:
+        "row_01"
+        "row_02"
+        "row_03";
 
-      .column-wrapper-01 {
-        grid-area: column_01;
+      .row-wrapper-01 {
+        grid-area: row_01;
         display: grid;
-        grid-template-columns: minmax(140px, 180px) minmax(140px, 180px);
-        grid-template-rows: 60px 56px 60px 56px 60px;
-        gap: 0px 20px;
-        grid-template-areas:
-          "property property"
-          "price_label price_label"
-          "price_from price_to"
-          "floor_label floor_label"
-          "floor_from floor_to";
+        grid-template-columns: repeat(3, minmax(300px, 380px));
+        grid-template-rows: 60px;
+        gap: 0px 47px;
+        grid-template-areas: "property market transaction";
 
         .property {
           grid-area: property;
         }
 
-        .price_label {
-          grid-area: price_label;
-        }
-
-        .price_from {
-          grid-area: price_from;
-          @include input-number-arrows;
-        }
-
-        .price_to {
-          grid-area: price_to;
-        }
-
-        .floor_label {
-          grid-area: floor_label;
-        }
-
-        .floor_from {
-          grid-area: floor_from;
-        }
-
-        .floor_to {
-          grid-area: floor_to;
-        }
-      }
-
-      .column-wrapper-02 {
-        grid-area: column_02;
-        display: grid;
-        grid-template-columns: minmax(140px, 180px) minmax(140px, 180px);
-        grid-template-rows: 60px 56px 60px 56px 60px;
-        gap: 0px 20px;
-        grid-template-areas:
-          "market market"
-          "area_label area_label"
-          "area_from area_to"
-          "rooms_label rooms_label"
-          "rooms_from rooms_to";
-
         .market {
           grid-area: market;
         }
-
-        .area_label {
-          grid-area: area_label;
-        }
-
-        .area_from {
-          grid-area: area_from;
-        }
-
-        .area_to {
-          grid-area: area_to;
-        }
-
-        .rooms_label {
-          grid-area: rooms_label;
-        }
-
-        .rooms_from {
-          grid-area: rooms_from;
-        }
-
-        .rooms_to {
-          grid-area: rooms_to;
-        }
-      }
-
-      .column-wrapper-03 {
-        grid-area: column_03;
-        display: grid;
-        grid-template-columns: minmax(140px, 180px) minmax(140px, 180px);
-        grid-template-rows: 60px 56px 60px 56px 60px;
-        gap: 0px 20px;
-        grid-template-areas:
-          "transaction transaction"
-          "year_label year_label"
-          "year_from year_to"
-          ". ."
-          "submit submit";
 
         .transaction {
           grid-area: transaction;
         }
 
+        @media (max-width: 979px) {
+          width: auto;
+          justify-content: center;
+          grid-template-columns: minmax(300px, 380px);
+          grid-template-rows: 60px 60px 60px;
+          gap: 13px;
+          grid-template-areas: "property" "market" "transaction";
+        }
+      }
+
+      .row-wrapper-02 {
+        grid-area: row_02;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(300px, 380px));
+        grid-template-rows: 56px 60px;
+        grid-gap: 0 47px;
+        grid-template-areas:
+          "price_label area_label year_label"
+          "price area year";
+
+        .price_label {
+          grid-area: price_label;
+        }
+        .area_label {
+          grid-area: area_label;
+        }
         .year_label {
           grid-area: year_label;
         }
 
-        .year_from {
-          grid-area: year_from;
+        .price-wrapper {
+          grid-area: price;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(140px, 180px));
+          grid-template-rows: 60px;
+          grid-gap: 0 20px;
+          grid-template-areas: "price_from price_to";
+          .price_from {
+            grid-area: price_from;
+            @include input-number-arrows;
+          }
+          .price_to {
+            grid-area: price_to;
+            @include input-number-arrows;
+          }
         }
 
-        .year_to {
-          grid-area: year_to;
+        .area-wrapper {
+          grid-area: area;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(140px, 180px));
+          grid-template-rows: 60px;
+          grid-gap: 0 20px;
+          grid-template-areas: "area_from area_to";
+          .area_from {
+            grid-area: area_from;
+            @include input-number-arrows;
+          }
+          .area_to {
+            grid-area: area_to;
+            @include input-number-arrows;
+          }
         }
 
-        .submit {
-          grid-area: submit;
+        .year-wrapper {
+          grid-area: year;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(140px, 180px));
+          grid-template-rows: 60px;
+          grid-gap: 0 20px;
+          grid-template-areas: "year_from year_to";
+          .year_from {
+            grid-area: year_from;
+            @include input-number-arrows;
+          }
+          .year_to {
+            grid-area: year_to;
+            @include input-number-arrows;
+          }
+        }
+
+        @media (max-width: 979px) {
+          width: auto;
+          justify-content: center;
+          grid-template-columns: minmax(300px, 380px);
+          grid-template-rows: 56px 60px 56px 60px;
+          gap: 0;
+          grid-template-areas: "price_label" "price" "area_label" "area";
+
+          .year_label,
+          .year-wrapper {
+            display: none;
+          }
         }
       }
 
-      .column-wrapper-01,
-      .column-wrapper-02,
-      .column-wrapper-03 {
+      .row-wrapper-03 {
+        grid-area: row_03;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(300px, 380px));
+        grid-template-rows: 56px 60px;
+        grid-gap: 0 47px;
+        grid-template-areas:
+          "floor_label rooms_label ."
+          "floor rooms submit";
+
+        .floor_label {
+          grid-area: floor_label;
+        }
+        .rooms_label {
+          grid-area: rooms_label;
+        }
+        .floor-wrapper {
+          grid-area: floor;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(140px, 180px));
+          grid-template-rows: 60px;
+          grid-gap: 0 20px;
+          grid-template-areas: "floor_from floor_to";
+          .floor_from {
+            grid-area: floor_from;
+            @include input-number-arrows;
+          }
+          .floor_to {
+            grid-area: floor_to;
+            @include input-number-arrows;
+          }
+        }
+        .rooms-wrapper {
+          grid-area: rooms;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(140px, 180px));
+          grid-template-rows: 60px;
+          grid-gap: 0 20px;
+          grid-template-areas: "rooms_from rooms_to";
+          .rooms_from {
+            grid-area: rooms_from;
+            @include input-number-arrows;
+          }
+          .rooms_to {
+            grid-area: rooms_to;
+            @include input-number-arrows;
+          }
+        }
+        .submit {
+          grid-area: submit;
+          @include input-number-arrows;
+        }
+
+        @media (max-width: 979px) {
+          width: auto;
+          justify-content: center;
+          grid-template-columns: minmax(300px, 380px);
+          grid-template-rows: 56px 60px 56px 60px 60px;
+          gap: 0;
+          grid-template-areas: "floor_label" "floor" "rooms_label" "rooms" "submit";
+
+          .submit {
+            margin-top: 13px;
+          }
+        }
+      }
+
+      .row-wrapper-01,
+      .row-wrapper-02,
+      .row-wrapper-03 {
         .input-wrapper {
           height: 100%;
           width: 100%;
@@ -200,6 +269,28 @@
               outline: none;
             }
           }
+
+          select {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #e1e2f4;
+            padding: 21px 32px;
+            color: $mid-blue;
+            font-family: $grotesk-reg;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            outline: none;
+            background-color: $white;
+            background-image: url("../../assets/graphics/menu-item-expander.png");
+            background-repeat: no-repeat;
+            background-size: 10px 7px;
+            background-position-y: center;
+            background-position-x: calc(100% - 23px);
+            cursor: pointer;
+          }
         }
 
         p {
@@ -248,6 +339,12 @@
         outline: none;
         cursor: pointer;
       }
+    }
+  }
+
+  @media (min-width: 1234px) {
+    .search-wrapper {
+      width: 1234px;
     }
   }
 

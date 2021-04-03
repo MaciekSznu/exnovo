@@ -106,7 +106,7 @@
       <div class="search-wrapper">
         <p class="page-adress">Home> Nieruchomosci> Oferta</p>
         <form action="" id="search-form" class="search-form" method="post">
-          <div class="column-wrapper-01">
+          <!-- <div class="column-wrapper-01">
             <div class="input-wrapper property">
               <input
                 id="input-property"
@@ -138,7 +138,6 @@
               <input id="input-market" class="input-market" type="select" name="market" placeholder="Rynek" />
             </div>
             <p class="area_label">Powierzchnia</p>
-
             <div class="input-wrapper area_from">
               <input id="input-area_from" class="input-area_from" type="number" name="area_from" placeholder="Od" />
             </div>
@@ -146,7 +145,6 @@
               <input id="input-area_to" class="input-area_to" type="number" name="area_to" placeholder="Do" />
             </div>
             <p class="rooms_label">Liczba pokoi</p>
-
             <div class="input-wrapper rooms_from">
               <input id="input-rooms_from" class="input-rooms_from" type="number" name="rooms_from" placeholder="Od" />
             </div>
@@ -170,6 +168,114 @@
             </div>
             <div class="input-wrapper year_to">
               <input id="input-year_to" class="input-year_to" type="number" name="year_to" placeholder="Do" />
+            </div>
+            <div class="input-wrapper submit">
+              <input name="submit" class="submit-search" type="submit" value="Szukaj oferty" />
+            </div>
+          </div> -->
+
+          <div class="row-wrapper-01">
+            <div class="input-wrapper property">
+              <select id="input-property" class="input-property" name="property">
+                <option value="">Rodzaj nieruchomości</option>
+              </select>
+            </div>
+            <div class="input-wrapper market">
+              <select id="input-market" class="input-market" name="market">
+                <option value="">Rynek</option>
+              </select>
+            </div>
+            <div class="input-wrapper transaction">
+              <select id="input-transaction" class="input-transaction" name="transaction">
+                <option value="">Typ transakcji</option>
+              </select>
+            </div>
+          </div>
+          <div class="row-wrapper-02">
+            <p class="price_label">Cena</p>
+            <div class="price-wrapper">
+              <div class="input-wrapper price_from">
+                <input
+                  id="input-price_from"
+                  class="input-price_from"
+                  type="number"
+                  name="price_from"
+                  placeholder="Od"
+                />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+              <div class="input-wrapper price_to">
+                <input id="input-price_to" class="input-price_to" type="number" name="price_to" placeholder="Do" />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+            </div>
+            <p class="area_label">Powierzchnia</p>
+            <div class="area-wrapper">
+              <div class="input-wrapper area_from">
+                <input id="input-area_from" class="input-area_from" type="number" name="area_from" placeholder="Od" />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+              <div class="input-wrapper area_to">
+                <input id="input-area_to" class="input-area_to" type="number" name="area_to" placeholder="Do" />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+            </div>
+            <p class="year_label">Rok budowy</p>
+            <div class="year-wrapper">
+              <div class="input-wrapper year_from">
+                <input id="input-year_from" class="input-year_from" type="number" name="year_from" placeholder="Od" />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+              <div class="input-wrapper year_to">
+                <input id="input-year_to" class="input-year_to" type="number" name="year_to" placeholder="Do" />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="row-wrapper-03">
+            <p class="floor_label">Piętro</p>
+            <div class="floor-wrapper">
+              <div class="input-wrapper floor_from">
+                <input
+                  id="input-floor_from"
+                  class="input-floor_from"
+                  type="number"
+                  name="floor_from"
+                  placeholder="Od"
+                />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+              <div class="input-wrapper floor_to">
+                <input id="input-floor_to" class="input-floor_to" type="number" name="floor_to" placeholder="Do" />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+            </div>
+            <p class="rooms_label">Liczba pokoi</p>
+            <div class="rooms-wrapper">
+              <div class="input-wrapper rooms_from">
+                <input
+                  id="input-rooms_from"
+                  class="input-rooms_from"
+                  type="number"
+                  name="rooms_from"
+                  placeholder="Od"
+                />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
+              <div class="input-wrapper rooms_to">
+                <input id="input-rooms_to" class="input-rooms_to" type="number" name="rooms_to" placeholder="Do" />
+                <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+                <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+              </div>
             </div>
             <div class="input-wrapper submit">
               <input name="submit" class="submit-search" type="submit" value="Szukaj oferty" />
@@ -397,7 +503,6 @@
         </p>
       </div>
     </footer>
-
     <script src="./dist/index.js"></script>
   </body>
 </html>
