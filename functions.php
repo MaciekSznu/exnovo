@@ -31,6 +31,9 @@ function page_scripts() {
   elseif ( is_page('uslugi')) :
     wp_enqueue_style( 'uslugi-style', get_template_directory_uri() . '/dist/uslugi.css' );
     
+  elseif ( is_page('finansowanie')) :
+    wp_enqueue_style( 'finansowanie-style', get_template_directory_uri() . '/dist/kredyty.css' );
+
   else :
     null;
   endif;
