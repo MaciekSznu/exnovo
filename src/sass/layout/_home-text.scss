@@ -1,0 +1,190 @@
+.home-text{
+    padding-top: 20px;
+    &__content{
+        .item{
+            padding: 40px 0;
+            .image{
+                position: relative;
+                height: 590px;
+                width: 510px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                @include mw($xl) {
+                    width: 100%;
+                    height: 560px;
+                }
+                @include mw($sm) {
+                    height: 94vw;
+                }
+                &:after,
+                &:before{
+                    content: '';
+                    position: absolute;
+                    background-color: $white;
+                    height: 60px;
+                    width: 60px;
+                    z-index: 1;
+                    @include mw($md) {
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+                &:after{
+                    top: 0;
+                    right: 0;
+                    margin: auto;
+                }
+                &:before{
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                }
+                &__mask{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    &:after,
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        background-color: rgba($blackMask, 0.6);
+                        z-index: 1;
+                    }
+                    &:after{
+                        top: 60px;
+                        right: 0;
+                        margin: auto;
+                        height: calc(100% - 120px);
+                        width: 60px;
+                        @include mw($md) {
+                            top: 30px;
+                            height: calc(100% - 60px);
+                            width: 30px;
+                        }
+                    }
+                    &:before{
+                        bottom: 0;
+                        right: 0;
+                        margin: auto;
+                        height: 60px;
+                        width: calc(100% - 60px);
+                        @include mw($md) {
+                            width: calc(100% - 30px);
+                            height: 30px;
+                        }
+                    }
+                }
+                &__text{
+                    position: absolute;
+                    bottom: 60px;
+                    right: -30px;
+                    margin: auto;
+                    width: 310px;
+                    border: 1px solid $black;
+                    background-color: $white;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 28px;
+                    padding: 30px 35px;
+                    z-index: 1;
+                    @include mw($md) {
+                        font-size: 12px;
+                        line-height: 18px;
+                        bottom: 30px;
+                        padding: 20px 25px;
+                        width: 200px;
+                    }
+                }
+                @include mw($xl) {
+                    &:after{
+                        right: auto;
+                        left: 0;
+                    }
+                    &:before{
+                        left: auto;
+                        right: 0;
+                    }
+                    &__mask{
+                        &:after{
+                            right: auto;
+                            left: 0;
+                        }
+                        &:before{
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                    &__text{
+                        right: auto;
+                        left: 0;
+                    } 
+                }
+            }
+            .content{
+                padding-right: 60px;
+                @include mw($xl) {
+                    padding-top: 30px;
+                    padding-right: 0;
+                }
+                .title{
+                    font-size: 34px;
+                    font-weight: 500;
+                    line-height: 46px;
+                    @include mw($md) {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+                }
+                .text{
+                    padding-top: 10px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 30px;
+                }
+                .link{
+                    padding-top: 20px;
+                }
+            }
+            &:nth-child(2n + 1){
+                .image{
+                    &:after{
+                        right: auto;
+                        left: 0;
+                    }
+                    &:before{
+                        left: auto;
+                        right: 0;
+                    }
+                    &__mask{
+                        &:after{
+                            right: auto;
+                            left: 0;
+                        }
+                        &:before{
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                    &__text{
+                        right: auto;
+                        left: -30px;
+                        @include mw($xl) {
+                            left: 0;
+                        }
+                    } 
+                }
+                .item--end{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                .row{
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+    }
+}

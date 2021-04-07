@@ -1,0 +1,57 @@
+.footer-text{
+    padding-top: 120px;
+    @include mw($md) {
+        padding-top: 40px;
+    }
+    &__content{
+        margin-left: -$marginWide;
+        margin-right: -$marginWide;
+        &--mask{
+            padding-left: $marginWide;
+            padding-right: $marginWide;
+            background-color: rgba($blackMask, 0.8);
+        }
+        .image{
+            height: 790px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            @include margin-top(-90px);
+            @include mw($md) {
+                display: none;
+            }
+        }
+        .content{
+            padding-right: 60px;
+            @include mw($xl) {
+                padding-right: 0;
+            }
+            @include mw($md) {
+                padding: 60px 0;
+            }
+            .title,
+            .text{
+                color: $white;
+            }
+            .title{
+                font-size: 34px;
+                font-weight: 500;
+                line-height: 46px;
+                @include mw($md) {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+            .text{
+                padding-top: 10px;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 30px;
+            }
+            .link{
+                padding-top: 20px;
+            }
+        }
+    }
+}

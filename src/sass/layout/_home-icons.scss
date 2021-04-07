@@ -1,0 +1,31 @@
+.home-icons{
+    padding-top: 80px;
+    @include mw($xl) {
+        padding-top: 40px;
+    }
+    .item{
+        padding: 20px 0;
+        .icon{
+            position: relative;
+            width: 130px;
+            height: 130px;
+            border: 1px solid $black;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .title{
+            padding-top: 18px;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+        .text{
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 30px;
+        }
+    }
+}

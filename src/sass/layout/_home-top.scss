@@ -1,0 +1,161 @@
+.home-top{
+    &__content{
+        .top{
+            margin-left: -$marginWide;
+            margin-right: -$marginWide;
+            &--mask{
+                padding-top: 180px;
+                padding-bottom: 360px;
+                padding-left: $marginWide;
+                padding-right: $marginWide;
+                background-color: rgba($blackMask, 0.8);
+                @include mw($xl) {
+                    padding-bottom: 180px;
+                }
+                @include mw($md) {
+                    padding-top: 140px;
+                    padding-bottom: 60px;
+                }
+            }
+            .title,
+            .smalltitle,
+            .text{
+                color: $white;
+                position: relative;
+                z-index: 1;
+                padding-right: 40px;
+                @include mw($xl) {
+                   padding-right: 0;
+                }
+            }
+            .title{
+                font-size: 34px;
+                font-weight: 500;
+                line-height: 46px;
+                @include mw($md) {
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+            .smalltitle{
+                padding-top: 20px;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 30px;
+            }
+            .text{
+                padding-top: 10px;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 30px;
+            }
+        }
+        .bottom{
+            @include margin-top(-574px);
+            @include mw($xl) {
+                @include margin-top(-30px);
+            }
+            .blocks{
+                &--border{
+                    .item{
+                        border: 1px solid $black;
+                        border-right-width: 0;
+                        border-bottom-width: 0;
+                        @include mw($md) {
+                            border-top-width: 1px !important;
+                            border-bottom-width: 0 !important;
+                            border-left-width: 1px !important;
+                            border-right-width: 1px !important;
+                        }
+                    }
+                    &:nth-last-child(1),
+                    &:nth-last-child(2){
+                        .item{
+                            border-bottom-width: 1px;
+                        }
+                    }
+                    &:nth-child(2n + 2){
+                        .item{
+                            @include mw($xl) {
+                                border-right-width: 1px;
+                            }
+                        }
+                    }
+                    &:last-child{
+                        .item{
+                            @include mw($md) {
+                                border-bottom-width: 1px !important;
+                            }
+                        }
+                    }
+                }
+                .item{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 317px;
+                    width: 100%;
+                    background-color: $white;
+                    transition: box-shadow .2s;
+                    padding: 35px;
+                    @include mw($md) {
+                        height: 240px;
+                        padding: 20px;
+                    }
+                    &__top{
+                        padding-top: 10px;
+                        .title{
+                            color: $black;
+                            font-size: 20px;
+                            font-weight: 500;
+                            line-height: 28px;
+                        }
+                    }
+                    &:hover{
+                        box-shadow: 0 2px 20px $black;
+                        z-index: 2;
+                        .link button,
+                        .link a{
+                            background-color: $black;
+                            color: $white;
+                            &:after{
+                                opacity: 0;
+                            }
+                            &:before{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .image{ 
+                position: relative;
+                height: 890px;
+                width: 100%;
+                background-color: $blackMask;
+                @include mw($xl) {
+                    display: none;
+                }
+                .item{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin: auto;
+                    opacity: 0;
+                    height: 890px;
+                    width: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    transition: opacity .5s;
+                    &.active{
+                        position: relative;
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                } 
+            }
+        }
+    }
+}

@@ -63,7 +63,7 @@
         left: -42px;
         width: 42px;
         height: 58px;
-        background: url("../../assets/graphics/triangles.svg");
+        background: url("../assets/graphics/triangles.svg");
         z-index: 2;
       }
 
@@ -74,7 +74,7 @@
         right: -42px;
         width: 42px;
         height: 58px;
-        background: url("../../assets/graphics/triangles.svg");
+        background: url("../assets/graphics/triangles.svg");
         transform: rotate(180deg);
         transform-origin: center;
         z-index: 2;
@@ -107,7 +107,7 @@
         top: -38px;
         width: 53px;
         height: 73px;
-        background: url("../../assets/graphics/triangles_big.svg");
+        background: url("../assets/graphics/triangles_big.svg");
       }
 
       &:after {
@@ -115,7 +115,7 @@
         bottom: 0;
         width: 53px;
         height: 73px;
-        background: url("../../assets/graphics/triangles_big.svg");
+        background: url("../assets/graphics/triangles_big.svg");
       }
 
       .section-title {
@@ -159,19 +159,19 @@
         width: 100%;
         height: 100%;
         min-height: 313px;
-        background: url("../../assets/images/home/zdjecie-oferta.png");
+        background: url("../assets/img/home/zdjecie-oferta.png");
         background-size: cover;
         transition: transform 0.5s ease-in-out;
       }
 
       &:nth-of-type(2) .image {
-        background: url("../../assets/images/home/finansowanie.png");
+        background: url("../assets/img/home/finansowanie.png");
         background-size: cover;
         background-position-x: center;
       }
 
       &:nth-of-type(3) .image {
-        background: url("../../assets/images/home/sprzedaz.png");
+        background: url("../assets/img/home/sprzedaz.png");
         background-size: cover;
         background-position-x: center;
       }
@@ -299,14 +299,14 @@
           left: 0;
           width: 152px;
           height: 187px;
-          background: url("../../assets/graphics/shape_img_top_left_pink.svg");
+          background: url("../assets/graphics/shape_img_top_left_pink.svg");
           z-index: 2;
         }
 
         &:nth-of-type(2)::before {
           width: 113px;
           height: 138px;
-          background: url("../../assets/graphics/shape_img_top_left_01.svg");
+          background: url("../assets/graphics/shape_img_top_left_01.svg");
         }
 
         &:nth-of-type(3)::before {
@@ -316,7 +316,7 @@
           bottom: 0;
           width: 113px;
           height: 138px;
-          background: url("../../assets/graphics/shape_img_bottom_right_01.svg");
+          background: url("../assets/graphics/shape_img_bottom_right_01.svg");
         }
       }
     }

@@ -1,0 +1,245 @@
+.sub-flats{
+    &__filters{
+        padding-top: 25px;
+        @include mw($md) {
+            padding-top: 5px;
+        }
+        .select{
+            padding-top: 15px;
+            select{
+                width: 100%;
+                height: 60px;
+                border: 1px solid $black;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 58px;
+                padding-left: 20px;
+                padding-right: 20px;
+                background-color: transparent;
+                background-image: url(../images/selectdown.svg);
+                background-position: center right 20px;
+                background-repeat: no-repeat;
+            }
+        }
+        .count{
+            flex: 0 0 auto;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 60px;
+            padding-top: 15px;
+            @include mw($sm) {
+                line-height: 20px;
+            }
+        }
+        .button{
+            padding-top: 15px;
+        }
+    }
+    &__list{
+        padding-top: 20px;
+        .item{
+            padding: 20px 0;
+            &:nth-child(2n + 2){
+                .row{
+                    flex-direction: row-reverse;
+                }
+            }
+            .image{
+                img{
+                    height: 460px;
+                    width: 100%;
+                    object-fit: cover;
+                    vertical-align: top;
+                    @include mw($md) {
+                        height: 360px;
+                    }
+                    @include mw($sm) {
+                        height: 75vw;
+                    }
+                }
+            }
+            .content{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                @include mw($xl) {
+                    padding-top: 8px;
+                }
+                > div{
+                    width: 100%;
+                }
+                &__top{
+                    border-bottom: 1px solid $black;
+                    padding-bottom: 16px;
+                    .title{
+                        font-size: 28px;
+                        font-weight: 500;
+                        line-height: 42px;
+                        @include mw($md) {
+                            font-size: 22px;
+                            line-height: 30px;
+                        }
+                    }
+                    .spec{
+                        padding-top: 6px;
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 22px;
+                        color: $grey;
+                        @include mw($md) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                &__middle{
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $black;
+                    padding: 16px 0;
+                    @include mw($md) {
+                        flex-wrap: wrap;
+                        padding: 10px 0;
+                    }
+                    .info{
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 22px;
+                        @include mw($md) {
+                            font-size: 16px;
+                            width: 50%;
+                            padding: 5px 0;
+                        }
+                        p{
+                            padding: 0 !important;
+                            &.head{ 
+                                color: $grey;
+                            }
+                        } 
+                    }
+                }
+                &__bottom{
+                    padding-top: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    @include mw($md) {
+                        flex-wrap: wrap;
+                        padding-top: 0;
+                    }
+                    .price{
+                        font-size: 32px;
+                        font-weight: 500;
+                        line-height: 60px;
+                        @include mw($md) {
+                            font-size: 30px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__pagination{
+        &--flex-center{
+            display: flex;
+            align-items: center;
+        }
+        .count{
+            flex: 0 0 auto;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 60px;
+            padding-right: 50px;
+        }
+        .line{
+            flex: 1 1 auto;
+            height: 1px;
+            background-color: $black;
+        }
+        .navigation{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -3px;
+            a, span{
+                margin: 3px;
+                flex: 0 0 auto;
+                display: inline-block;
+                vertical-align: top;
+                position: relative;
+                height: 60px;
+                width: 60px;
+                line-height: 58px;
+                background-color: $white;
+                border: 1px solid $black;
+                color: $black;
+                font-size: 14px;
+                font-weight: 400;
+                text-align: center;
+                transition: background-color .3s, color .3s;
+                @include mw($md) {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 38px;
+                }
+                &.current,
+                &:hover{
+                    background-color: $black;
+                    color: $white;
+                }
+                &.prev,
+                &.next{
+                    width: 90px;
+                    @include mw($xl) {
+                        width: 60px;
+                    }
+                    @include mw($md) {
+                        width: 40px;
+                    }
+                    &:after,
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        margin: auto;
+                        display: block;
+                        width: 30px;
+                        height: 16px;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        transition: opacity .3s;
+                    }
+                    &:before{
+                        opacity: 0;
+                    }
+                    &:hover{
+                        &:after{
+                            opacity: 0;
+                        }
+                        &:before{
+                            opacity: 1;
+                        }
+                    }
+                }
+                &.prev{
+                    &:after{
+                        background-image: url(../images/arrow-left-unactive.svg);
+                    }
+                    &:before{
+                        background-image: url(../images/arrow-left-active.svg);
+                    }
+                }
+                &.next{
+                    &:after{
+                        background-image: url(../images/arrow-right-unactive.svg);
+                    }
+                    &:before{
+                        background-image: url(../images/arrow-right-active.svg);
+                    }
+                }
+            }
+        }
+    }
+}

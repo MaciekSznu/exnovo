@@ -1,0 +1,13 @@
+.sub-specialist{
+    padding-top: 40px;
+    &__back{    
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        @include mw($xl) {
+            padding-top: 20px;
+            justify-content: flex-start;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+$footerHeight: 80px;
+.footer{
+    &__content{
+        height: $footerHeight;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        @include mw($lg) {
+            flex-direction: column;
+            height: auto;
+            padding: 10px 0;
+        }
+        img, svg{
+            vertical-align: top;
+            margin-right: 40px;
+            width: 167px;
+            @include mw($xl) {
+                margin-right: 20px;
+            }
+            @include mw($md) {
+                width: 115px;
+            }
+        }
+        .text{
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 26px;
+            p{
+                padding: 0;
+            }
+            @include mw($sm) {
+                span{
+                    padding-top: 10px;
+                    display: block;
+                }
+            }
+            @include mw($lg) {
+                padding: 5px 0;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            &:nth-child(1){
+                width: 50%;
+                @include mw($lg) {
+                    width: 100%;
+                }
+            }
+            &:nth-child(2){
+                padding-left: 15px;
+                width: 25%;
+                @include mw($lg) {
+                    padding-left: 0;
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+            &:nth-child(3){
+                width: 25%;
+                text-align: right;
+                @include mw($lg) {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

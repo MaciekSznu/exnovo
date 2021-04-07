@@ -138,7 +138,7 @@
       justify-content: flex-end;
       margin-bottom: 136px;
       width: 100%;
-      background: url("../../assets/images/home/hero_home_complete_mobile.png") top right -100px no-repeat;
+      background: url("../assets/img/home/hero_home_complete_mobile.png") top right -100px no-repeat;
 
       &:before {
         content: "";
@@ -147,7 +147,7 @@
         right: 10px;
         width: 42px;
         height: 58px;
-        background: url("../../assets/graphics/triangles.svg");
+        background: url("../assets/graphics/triangles.svg");
         z-index: 2;
       }
 
@@ -223,7 +223,7 @@
       @media (min-width: 768px) {
         margin-bottom: unset;
         height: 645px;
-        background: url("../../assets/images/home/hero_home_complete_desktop.png") top right -150px no-repeat;
+        background: url("../assets/img/home/hero_home_complete_desktop.png") top right -150px no-repeat;
 
         &:before {
           top: 25px;
@@ -239,8 +239,8 @@
           width: 200px;
           transform: translate(100%, -100%);
 
-          background: url("../../assets/graphics/label_bg_01.svg") bottom 0px left 10px no-repeat,
-            url("../../assets/graphics/label_bg_02.svg") bottom left no-repeat;
+          background: url("../assets/graphics/label_bg_01.svg") bottom 0px left 10px no-repeat,
+            url("../assets/graphics/label_bg_02.svg") bottom left no-repeat;
 
           .invest-name,
           .invest-price {
@@ -264,14 +264,14 @@
 
       @media (min-width: 1024px) {
         height: 645px;
-        background: url("../../assets/images/home/hero_home_complete_desktop.png") top right no-repeat;
+        background: url("../assets/img/home/hero_home_complete_desktop.png") top right no-repeat;
 
         &:before {
           top: 20px;
           right: 96px;
           width: 53px;
           height: 73px;
-          background: url("../../assets/graphics/triangles_big.svg");
+          background: url("../assets/graphics/triangles_big.svg");
         }
 
         .hero-label-wrapper {
@@ -281,14 +281,14 @@
 
       @media (min-width: 1280px) {
         height: 745px;
-        background: url("../../assets/images/home/hero_home_complete_desktop.png") top right no-repeat;
+        background: url("../assets/img/home/hero_home_complete_desktop.png") top right no-repeat;
 
         &:before {
           top: 20px;
           right: 104px;
           width: 53px;
           height: 73px;
-          background: url("../../assets/graphics/triangles_big.svg");
+          background: url("../assets/graphics/triangles_big.svg");
         }
 
         &:after {
@@ -299,7 +299,7 @@
           transform: translateX(50%);
           width: 53px;
           height: 73px;
-          background: url("../../assets/graphics/triangles_big.svg");
+          background: url("../assets/graphics/triangles_big.svg");
           z-index: 2;
         }
       }

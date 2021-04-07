@@ -1,0 +1,43 @@
+.sub-contact{
+    padding-top: 40px;
+    &__left{
+        .title{
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 32px;
+        }
+        .list{
+            padding: 15px 0;
+            .item{
+                padding: 25px 0;
+                display: flex;
+                .icon{
+                    width: 60px;
+                    flex: 0 0 auto;
+                }
+                .content{
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    p{
+                        padding: 0 !important;
+                        &.head{ 
+                            color: $grey;
+                        }
+                    }    
+                    a:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .specialist{
+            padding-top: 10px;
+        }
+    }
+    &__right{
+        @include mw($xl) {
+            padding-top: 15px;
+        }
+    }
+}

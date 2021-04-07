@@ -1,0 +1,11 @@
+@mixin mw($width){
+    @media (max-width: $width) {
+        @content;
+    }
+}
+@mixin margin-top($top){
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    margin-top: $top;
+}

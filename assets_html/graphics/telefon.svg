@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group 37</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.000121276596 0.139288732 56.8597234 0.139288732 56.8597234 56.5985915 0.000121276596 56.5985915"></polygon>
+        <polygon id="path-3" points="0 56.8607113 56.8597234 56.8607113 56.8597234 0.401408451 0 0.401408451"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Copy" transform="translate(-643.000000, -5138.000000)">
+            <g id="Group-37" transform="translate(643.000000, 5138.000000)">
+                <g id="Group-17-Copy-3" transform="translate(5.000000, 0.000000)" fill="#FFFFFF" opacity="0.932407924">
+                    <g id="Group-16">
+                        <g id="Group-6">
+                            <path d="M42.8709427,0 L43.4,0 L43.9290573,0 C67.6060252,-4.34938844e-15 86.8,19.1939748 86.8,42.8709427 L86.8,71.4427513 C86.7999955,84.7282859 76.0299418,95.4983396 62.7444072,95.4983396 C55.1138229,95.4983396 47.9357755,91.8780534 43.4,85.7418855 C43.4,85.7418855 43.4,85.7418855 43.4,85.7418855 C40.5090437,81.8308909 36.4236691,79.5004596 31.1438761,78.7505914 C13.2772506,76.2130728 2.20998809e-15,60.916865 0,42.8709427 C-2.89959229e-15,19.1939748 19.1939748,4.34938844e-15 42.8709427,0 Z" id="Rectangle"></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-18" transform="translate(0.000000, 12.000000)">
+                    <g id="Group-3" transform="translate(0.000000, 0.262120)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M53.5150362,44.9746056 L16.7233553,44.9746056 L16.7233553,38.3320986 L23.4129723,38.3320986 L23.4129723,8.44202113 L53.5150362,8.44202113 L53.5150362,44.9746056 Z M13.3789511,49.9560845 C13.3789511,51.7877113 11.8783553,53.2777394 10.0341426,53.2777394 C8.18992979,53.2777394 6.68933404,51.7877113 6.68933404,49.9560845 L6.68933404,48.2954577 L13.3789511,48.2954577 L13.3789511,49.9560845 Z M3.34492979,8.44202113 L6.68933404,8.44202113 L6.68933404,38.3320986 L13.3789511,38.3320986 L13.3789511,44.9746056 L3.34492979,44.9746056 L3.34492979,8.44202113 Z M10.0341426,35.0112465 L20.0677596,35.0112465 L20.0677596,3.46014085 L10.0341426,3.46014085 L10.0341426,35.0112465 Z M56.8598447,5.12076761 L23.4129723,5.12076761 L23.4129723,0.139288732 L6.68933404,0.139288732 L6.68933404,5.12076761 L0.000121276596,5.12076761 L0.000121276596,48.2954577 L3.34492979,48.2954577 L3.34492979,49.9560845 C3.34492979,53.6189366 6.34531277,56.5985915 10.0341426,56.5985915 C13.7225681,56.5985915 16.7233553,53.6189366 16.7233553,49.9560845 L16.7233553,48.2954577 L56.8598447,48.2954577 L56.8598447,5.12076761 Z" id="Fill-1" fill="#000000" mask="url(#mask-2)"></path>
+                    </g>
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-5"></g>
+                    <path d="M30.1020638,18.6679014 L46.8257021,18.6679014 L46.8257021,15.3466479 L30.1020638,15.3466479 L30.1020638,18.6679014 Z M26.7576596,21.9887535 L50.1705106,21.9887535 L50.1705106,12.0253944 L26.7576596,12.0253944 L26.7576596,21.9887535 Z" id="Fill-4" fill="#F5812E" mask="url(#mask-4)"></path>
+                    <polygon id="Fill-6" fill="#F5812E" mask="url(#mask-4)" points="26.7576596 28.6304577 30.1020638 28.6304577 30.1020638 25.3096056 26.7576596 25.3096056"></polygon>
+                    <polygon id="Fill-7" fill="#F5812E" mask="url(#mask-4)" points="33.4472766 28.6304577 36.7916809 28.6304577 36.7916809 25.3096056 33.4472766 25.3096056"></polygon>
+                    <polygon id="Fill-8" fill="#F5812E" mask="url(#mask-4)" points="40.1364894 28.6304577 43.4812979 28.6304577 43.4812979 25.3096056 40.1364894 25.3096056"></polygon>
+                    <polygon id="Fill-9" fill="#F5812E" mask="url(#mask-4)" points="46.8257021 28.6304577 50.1701064 28.6304577 50.1701064 25.3096056 46.8257021 25.3096056"></polygon>
+                    <polygon id="Fill-10" fill="#F5812E" mask="url(#mask-4)" points="26.7576596 35.2729648 30.1020638 35.2729648 30.1020638 31.9521127 26.7576596 31.9521127"></polygon>
+                    <polygon id="Fill-11" fill="#F5812E" mask="url(#mask-4)" points="33.4472766 35.2729648 36.7916809 35.2729648 36.7916809 31.9521127 33.4472766 31.9521127"></polygon>
+                    <polygon id="Fill-12" fill="#F5812E" mask="url(#mask-4)" points="40.1364894 35.2729648 43.4812979 35.2729648 43.4812979 31.9521127 40.1364894 31.9521127"></polygon>
+                    <polygon id="Fill-13" fill="#F5812E" mask="url(#mask-4)" points="46.8257021 35.2729648 50.1701064 35.2729648 50.1701064 31.9521127 46.8257021 31.9521127"></polygon>
+                    <polygon id="Fill-14" fill="#F5812E" mask="url(#mask-4)" points="26.7576596 41.9154718 30.1020638 41.9154718 30.1020638 38.5942183 26.7576596 38.5942183"></polygon>
+                    <polygon id="Fill-15" fill="#F5812E" mask="url(#mask-4)" points="33.4472766 41.9154718 36.7916809 41.9154718 36.7916809 38.5942183 33.4472766 38.5942183"></polygon>
+                    <polygon id="Fill-16" fill="#F5812E" mask="url(#mask-4)" points="40.1364894 41.9154718 43.4812979 41.9154718 43.4812979 38.5942183 40.1364894 38.5942183"></polygon>
+                    <polygon id="Fill-17" fill="#F5812E" mask="url(#mask-4)" points="46.8257021 41.9154718 50.1701064 41.9154718 50.1701064 38.5942183 46.8257021 38.5942183"></polygon>
+                </g>
+                <g id="Group-21-Copy-6" transform="translate(73.000000, 0.000000)">
+                    <g id="Triangle-Copy-2"></g>
+                    <g id="Triangle-Copy-6" transform="translate(0.000000, 13.000000)"></g>
+                    <polygon id="Triangle" fill="#F888AE" points="4 0 8 8 0 8"></polygon>
+                    <polygon id="Triangle" fill="#F888AE" points="4 13 8 21 0 21"></polygon>
+                    <polygon id="Triangle" fill="#F888AE" points="4 26 8 34 0 34"></polygon>
+                    <g id="Triangle-Copy-10" transform="translate(0.000000, 39.000000)" fill="#F888AE">
+                        <polygon id="Triangle" points="4 0 8 8 0 8"></polygon>
+                    </g>
+                    <g id="Triangle-Copy-13" transform="translate(0.000000, 52.000000)" fill="#F888AE">
+                        <polygon id="Triangle" points="4 0 8 8 0 8"></polygon>
+                    </g>
+                    <g id="Triangle-Copy-3" transform="translate(15.000000, 13.000000)" fill="#F888AE">
+                        <polygon id="Triangle" points="4 0 8 8 0 8"></polygon>
+                    </g>
+                    <g id="Triangle-Copy-16" transform="translate(15.000000, 26.000000)" fill="#F888AE">
+                        <polygon id="Triangle" points="4 0 8 8 0 8"></polygon>
+                    </g>
+                    <g id="Triangle-Copy-17" transform="translate(15.000000, 39.000000)" fill="#F888AE">
+                        <polygon id="Triangle" points="4 0 8 8 0 8"></polygon>
+                    </g>
+                    <g id="Triangle-Copy-18" transform="translate(15.000000, 52.000000)" fill="#F888AE">
+                        <polygon id="Triangle" points="4 0 8 8 0 8"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
