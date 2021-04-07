@@ -42,10 +42,10 @@ global $currentLangData;
           <a href="" class="nav-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
           <ul class="nav-list--secondary">
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny.html" class="nav-list--item-link">Rynek pierwotny</a>
+              <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny" class="nav-list--item-link">Rynek pierwotny</a>
             </li>
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/oferty.html" class="nav-list--item-link">Rynek wtórny</a>
+              <a href="<?php echo bloginfo('url'); ?>/oferty" class="nav-list--item-link">Rynek wtórny</a>
             </li>
           </ul>
         </li>
@@ -53,20 +53,20 @@ global $currentLangData;
           <a href="" class="nav-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
           <ul class="nav-list--secondary">
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie.html" class="nav-list--item-link">Kredyty hipoteczne</a>
+              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-list--item-link">Kredyty hipoteczne</a>
             </li>
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie.html" class="nav-list--item-link">Kredyty gotówkowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-list--item-link">Kredyty gotówkowe</a>
             </li>
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie.html" class="nav-list--item-link">Kredyty firmowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-list--item-link">Kredyty firmowe</a>
             </li>
           </ul>
         </li>
-        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/uslugi.html" class="nav-list--item-link">Usługi</a></li>
-        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/o-nas.html" class="nav-list--item-link">O nas</a></li>
-        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/blog.html" class="nav-list--item-link">BLOG</a></li>
-        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/kontakt.html" class="nav-list--item-link">Kontakt</a></li>
+        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/uslugi" class="nav-list--item-link">Usługi</a></li>
+        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/o-nas" class="nav-list--item-link">O nas</a></li>
+        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/blog" class="nav-list--item-link">BLOG</a></li>
+        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/kontakt" class="nav-list--item-link">Kontakt</a></li>
       </ul>
       <button class="button-header">Analiza Rynku</button>
     </nav>
@@ -76,10 +76,10 @@ global $currentLangData;
           <a href="" class="nav-desktop-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
           <ul class="nav-desktop-list--secondary">
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny.html" class="nav-desktop-list--item-link">Rynek pierwotny</a>
+              <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny" class="nav-desktop-list--item-link">Rynek pierwotny</a>
             </li>
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/oferty.html" class="nav-desktop-list--item-link">Rynek wtórny</a>
+              <a href="<?php echo bloginfo('url'); ?>/oferty" class="nav-desktop-list--item-link">Rynek wtórny</a>
             </li>
           </ul>
         </li>
@@ -87,21 +87,21 @@ global $currentLangData;
           <a href="" class="nav-desktop-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
           <ul class="nav-desktop-list--secondary">
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie.html" class="nav-desktop-list--item-link">Kredyty hipoteczne</a>
+              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-desktop-list--item-link">Kredyty hipoteczne</a>
             </li>
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie.html" class="nav-desktop-list--item-link">Kredyty gotówkowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-desktop-list--item-link">Kredyty gotówkowe</a>
             </li>
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie.html" class="nav-desktop-list--item-link">Kredyty firmowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-desktop-list--item-link">Kredyty firmowe</a>
             </li>
           </ul>
         </li>
-        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/uslugi.html" class="nav-desktop-list--item-link">Usługi</a></li>
-        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/o-nas.html" class="nav-desktop-list--item-link">O nas</a></li>
-        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/blog.html" class="nav-desktop-list--item-link">BLOG</a></li>
+        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/uslugi" class="nav-desktop-list--item-link">Usługi</a></li>
+        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/o-nas" class="nav-desktop-list--item-link">O nas</a></li>
+        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/blog" class="nav-desktop-list--item-link">BLOG</a></li>
         <li class="nav-desktop-list--item">
-          <a href="<?php echo bloginfo('url'); ?>/kontakt.html" class="nav-desktop-list--item-link">Kontakt</a>
+          <a href="<?php echo bloginfo('url'); ?>/kontakt" class="nav-desktop-list--item-link">Kontakt</a>
         </li>
       </ul>
       <button class="button-header">Analiza Rynku</button>

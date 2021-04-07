@@ -13,7 +13,7 @@
     right: 10px;
     width: 42px;
     height: 58px;
-    background: url("../../assets/graphics/triangles.svg");
+    background: url("../assets/graphics/triangles.svg");
   }
 
   &-wrapper {
@@ -86,7 +86,7 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../../assets/images/uslugi/buy_img_desktop.png");
+      background: url("../assets/img/uslugi/buy_img_desktop.png");
       background-size: cover;
       background-position: top left;
 
@@ -98,7 +98,7 @@
         height: calc(100% - 39px);
         width: auto;
         min-width: 213px;
-        background: url("../../assets/graphics/img_overlay_house.svg");
+        background: url("../assets/graphics/img_overlay_house.svg");
         background-size: cover;
         z-index: 2;
       }
@@ -110,7 +110,7 @@
         right: 0;
         height: 133px;
         width: 109px;
-        background: url("../../assets/graphics/dev_100_img_bottom_right.svg");
+        background: url("../assets/graphics/dev_100_img_bottom_right.svg");
         z-index: 2;
       }
     }
@@ -205,7 +205,7 @@
       .image-wrapper {
         margin-top: 0;
         width: 566px;
-        background: url("../../assets/images/uslugi/buy_img_desktop.png");
+        background: url("../assets/img/uslugi/buy_img_desktop.png");
         background-size: cover;
         background-position: top left;
         margin-left: 23px;
@@ -216,7 +216,7 @@
           top: -38px;
           height: 596px;
           width: 378px;
-          background: url("../../assets/graphics/img_overlay_house_big.svg") no-repeat;
+          background: url("../assets/graphics/img_overlay_house_big.svg") no-repeat;
         }
       }
     }

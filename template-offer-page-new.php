@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Usługi
+ * Template Name: Offer new
  */
 global $pagesData;
 get_header(); ?>
