@@ -37,8 +37,21 @@ function page_scripts() {
   elseif ( is_page('kontakt')) :
     wp_enqueue_style( 'kontakt-style', get_template_directory_uri() . '/dist/kontakt.css' );
 
+  elseif ( is_page('oferty')) :
+    wp_enqueue_style( 'oferty-style', get_template_directory_uri() . '/dist/oferty.css' );
+
+  elseif ( is_singular('mieszkania')) :
+    wp_enqueue_style( 'mieszkania-style', get_template_directory_uri() . '/dist/single-offer.css' );
+    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/src/js/3jquery.chocolat.js', array(), '', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/src/js/1slick.min.js', array(), '', true );
+    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/src/js/main-script.js', array(), '', true );
+
+  elseif ( is_singular('blog')) :
+    wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/single-blog.css' );
+
   else :
     null;
+    
   endif;
 }
 add_action( 'wp_enqueue_scripts', 'page_scripts' );
@@ -145,6 +158,23 @@ function custom3(){
     );
 }
 add_action('init', 'custom3');
+
+function custom4(){
+  register_post_type('blog',
+      [
+          'labels' => [
+              'name' => __( 'Blog' ),
+              'singular_name' => __( 'Blog' )
+          ],
+          'public' => true,
+          'has_archive' => false,
+          'hierarchical' => true,
+          'supports' => ['title', 'page-attributes'],
+          'rewrite' => ['slug' => 'blog']
+      ]
+  );
+}
+add_action('init', 'custom4');
 
 function custom_disable_redirect_canonical( $redirect_url ){
     if(is_singular('inwestycje') ||  is_singular('specjalisci')) $redirect_url = false;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Offer new
+ * Template Name: Offer old
  */
 global $pagesData;
 get_header(); ?>

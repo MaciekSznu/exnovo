@@ -3,6 +3,8 @@
 
 .single-blog-hero {
   width: 100%;
+  max-width: 1234px;
+  margin: 0 auto;
   background-color: $light-bg;
   padding-top: 127px;
   position: relative;
@@ -17,7 +19,7 @@
     top: -30px;
     width: 42px;
     height: 58px;
-    background: url("../../assets/graphics/triangles.svg");
+    background: url("../assets/graphics/triangles.svg");
     background-size: cover;
   }
 
@@ -59,8 +61,13 @@
     }
   }
 
-  @media (min-width: 1232px) {
+  @media (min-width: 1234px) {
     padding-top: 51px;
+    max-width: 1234px;
+
+    &:before {
+      right: 0;
+    }
 
     &:after {
       position: absolute;

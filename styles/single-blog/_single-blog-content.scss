@@ -13,7 +13,7 @@
     width: 100%;
     height: auto;
 
-    .single-blog-article-header {
+    h3 {
       color: $darker-blue;
       font-family: $grotesk-bold;
       font-size: 24px;
@@ -28,7 +28,7 @@
       }
     }
 
-    .single-blog-article-paragraph {
+    p {
       color: $mid-blue;
       font-family: $grotesk-reg;
       font-size: 13px;
@@ -39,10 +39,10 @@
       text-align: left;
     }
 
-    .single-blog-article-ul {
+    ul {
       margin-bottom: 18px;
 
-      .single-blog-article-li {
+      li {
         list-style: disc;
         color: $mid-blue;
         font-family: $grotesk-reg;
@@ -89,22 +89,22 @@
       width: 100%;
       max-width: 806px;
 
-      .single-blog-article-header {
+      h3 {
         margin-bottom: 23px;
         &:not(:first-of-type) {
           margin-top: 70px;
         }
       }
 
-      .single-blog-article-paragraph {
+      p {
         font-size: 15px;
         line-height: 30px;
       }
 
-      .single-blog-article-ul {
+      ul {
         margin-bottom: 18px;
 
-        .single-blog-article-li {
+        li {
           font-size: 15px;
           line-height: 45px;
           margin-left: 25px;

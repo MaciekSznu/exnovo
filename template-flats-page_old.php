@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Oferta mieszkań
+ * Template Name: Oferta mieszkań old
  */
 global $pagesData;
 get_header(); ?>
