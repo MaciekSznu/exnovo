@@ -172,14 +172,11 @@
       }
     }
 
-    .image-wrapper {
+    .map-wrapper {
       max-width: 378px;
       width: 100%;
       height: 100%;
       min-height: 360px;
-      background: url("../../assets/images/single-oferta/mapa.png") no-repeat;
-      background-size: cover;
-      background-position: center;
       margin-bottom: 123px;
     }
 
@@ -206,7 +203,7 @@
         }
       }
 
-      .image-wrapper {
+      .map-wrapper {
         min-height: 545px;
         margin-bottom: 0;
       }
@@ -240,12 +237,10 @@
         }
       }
 
-      .image-wrapper {
+      .map-wrapper {
         width: 50%;
         max-width: 50%;
         max-height: 535px;
-        background-position-x: right;
-        background-repeat: no-repeat;
       }
     }
   }

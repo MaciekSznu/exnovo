@@ -2,135 +2,142 @@
 /**
  * Template Name: Kontakt
  */
+
 global $pagesData;
+$hero = get_field('hero');
+$hero_title = $hero['hero_title'];
+$page_adress = $hero['page_adress'];
+
+$team = get_field('team');
+$team_member = $team['pracownicy'];
+
+$form_group = get_field('form_group');
+$form_group_title = $form_group['title'];
+$form_group_text = $form_group['text'];
+$form = $form_group['form'];
+$form_placeholder_01 = $form['placeholder_01'];
+$form_placeholder_02 = $form['placeholder_02'];
+$form_placeholder_03 = $form['placeholder_03'];
+$form_checkbox_label_01 = $form['checkbox_label_01'];
+$form_checkbox_label_02 = $form['checkbox_label_02'];
+
+$map = get_field('map_datas');
+$latitude = $map['office_latitude'];
+$longitude =$map['office_longitude'];
+
 get_header(); ?>
-<div class="sub-banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="sub-banner__content" style="background-image: url(<?= get_field('banner_image')['sizes']['large']; ?>)">
-                    <div class="sub-banner__content--mask">
-                        <div class="title">
-                            <h1><?= get_field('banner_title'); ?></h1>
-                        </div>
-                    </div>
-                </div>
+
+<section class="page-title-wrapper">
+  <h2 class="page-title">
+    <span class="blue-text"><?= $hero_title['niebieski_tekst']; ?></span>
+    <span class="orange-text"><?= $hero_title['pomaranczowy_tekst']; ?></span>
+  </h2>
+</section>
+<section class="team">
+  <div class="team-members-wrapper">
+  <?php
+      if($team_member) {
+        foreach($team_member as $member) {
+          $photo = $member['photo'];
+          $photo_desktop = $member['photo_desktop'];
+          $name = $member['imie_i_nazwisko'];
+          $function = $member['funkcja'];
+          $phone = $member['telefon'];
+          $email = $member['email'];
+          $oferty = $member['oferty_doradcy'];
+
+          echo
+          '<div class="member">
+            <img
+              class="member-image"
+              src="' . $photo . '"
+              sizes="100vw"
+              alt=""
+              srcset="' . $photo . ' 1279w, ' . $photo_desktop . ' 1280w"
+            />
+            <div class="member-contact-wrapper">
+              <h4 class="member-name">' . $name . '</h4>
+              <p class="member-function">' . $function . '</p>
+              <a href="tel:' . $phone . '" class="member-phone">' . $phone . '</a>
+              <a href="mailto:' . $email . '" class="member-email">' . $email . '</a>
+              <a href="' . $offers . '" class="member-offers">Oferty doradcy</a>
             </div>
+          </div>';
+        }
+      }
+    ?>
+  </div>
+</section>
+<section class="form">
+  <div class="form-wrapper">
+    <div class="text-wrapper">
+      <h2 class="section-title"><?= $form_group_title; ?></h2>
+      <h3 class="section-subtitle"><?= $form_group_text; ?></h3>
+      <form action="" id="contact-form" class="contact-form" method="post">
+        <div class="input-wrapper">
+          <input
+            id="input-name"
+            class="contact-form--input-name"
+            type="text"
+            name="imie"
+            aria-required="true"
+            aria-invalid="false"
+            placeholder="<?= $form_placeholder_01; ?>"
+          />
         </div>
-    </div>
-</div>
-<div class="sub-contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-8">
-                <div class="sub-contact__left">
-                    <div class="title">
-                        <h2><?= get_field('contact_title'); ?></h2>
-                    </div>
-                    <div class="list">
-                        <div class="row">
-                            <?php
-                                $customFields = get_field('contact_data');
-                                foreach($customFields as $key_item => $item):
-                            ?>
-                                <div class="col-md-6">
-                                    <div class="item">
-                                        <div class="icon">
-                                            <?php if($item['icon']['sizes']['medium']): ?>
-                                                <img class="style-svg" src="<?= $item['icon']['sizes']['medium']; ?>">
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="content">
-                                            <p class="head"><?= $item['title']; ?></p>
-                                            <?= $item['text']; ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <div class="title">
-                        <h2><?= get_field('contact_titlespecialist'); ?></h2>
-                    </div>
-                    <div class="specialist">
-                        <ul>
-                            <?php
-                                $args = [
-                                    'post_type' => 'specjalisci',
-                                    'posts_per_page' => -1,
-                                    'orderby' => 'menu_order',
-                                    'order' => 'ASC',
-                                    'post_status' => 'publish',
-                                    'post_parent' => 0,
-                                ];
-                                $query = new WP_Query($args);
-                            ?> 
-                            <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
-                                <li class="item global__specialist">
-                                    <div class="image">
-                                        <img src="<?= get_field('specialist_image')['sizes']['medium']; ?>" alt="<?= get_the_title(); ?>">
-                                    </div>
-                                    <div class="content">
-                                        <div class="row align-content-between">
-                                            <div class="col-12">
-                                                <div class="content--border">
-                                                    <div class="name">
-                                                        <h3><?= get_the_title(); ?></h3>
-                                                    </div>
-                                                    <div class="job">
-                                                        <p><?= get_field('specialist_job'); ?></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="content--border">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="info">
-                                                                <p>
-                                                                    <span class="head">skontaktuj się z agentem</span>
-                                                                    <span><a href="tel:<?= get_field('specialist_phone'); ?>"><?= get_field('specialist_phone'); ?></a></span>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="info">
-                                                                <p>
-                                                                    <span class="head">napisz wiadomość</span>
-                                                                    <span><a href="mailto:<?= get_field('specialist_mail'); ?>"><?= get_field('specialist_mail'); ?></a></span>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <div class="info">
-                                                                <a href="<?= get_the_permalink(); ?>">
-                                                                    <span class="head">zobacz </span>
-                                                                    <span>oferty</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            <?php endwhile; endif; wp_reset_postdata(); ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4">
-                <div class="sub-contact__right global__form">
-                    <div class="title">
-                        <h2><?= get_field('form_title', $pagesData['contact']); ?></h2>
-                    </div>
-                    <div class="form">
-                        <?= do_shortcode('[contact-form-7 id="129" title="Formularz kontaktowy"]'); ?>
-                    </div>
-                </div>
-            </div>
+        <div class="input-wrapper">
+          <input
+            id="input-email"
+            class="contact-form--input-email"
+            type="email"
+            name="email"
+            aria-required="true"
+            aria-invalid="false"
+            placeholder="<?= $form_placeholder_02; ?>"
+          />
         </div>
+        <div class="input-wrapper">
+          <input
+            id="input-phone"
+            class="contact-form--input-phone"
+            type="tel"
+            name="telefon"
+            aria-required="true"
+            aria-invalid="false"
+            placeholder="<?= $form_placeholder_03; ?>"
+          />
+        </div>
+        <div class="disclaimers-wrapper">
+          <div class="disclaimer">
+            <input class="rodo-checkbox" type="checkbox" id="rodo-01" name="rodo-01" />
+            <div class="rodo-custom-checkbox"></div>
+            <label class="rodo-checkbox-label" for="rodo-01"><?= $form_checkbox_label_01; ?></label>
+          </div>
+          <div class="disclaimer">
+            <input class="rodo-checkbox" type="checkbox" id="rodo-02" name="rodo-02" />
+            <div class="rodo-custom-checkbox"></div>
+            <label class="rodo-checkbox-label" for="rodo-02"><?= $form_checkbox_label_02; ?></label>
+          </div>
+        </div>
+        <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
+      </form>
     </div>
-</div>
+    <div class="map-wrapper" id="map">
+    </div>
+    <script>
+        function initMap(){
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: <?= $latitude; ?>, lng: <?= $longitude; ?>},
+                zoom: 15,
+            });
+            var marker = new google.maps.Marker({
+                map: map,
+                position: {lat: <?= $latitude; ?>, lng: <?= $longitude; ?>},
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHmnSXsVL47USPaZyqVs90Hu2bCsa6KVo&callback=initMap" async defer></script>
+  </div>
+</section>
+
 <?php get_footer(); ?>

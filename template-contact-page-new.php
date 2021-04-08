@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Kontakt
+ * Template Name: Kontakt old
  */
 global $pagesData;
 get_header(); ?>
@@ -64,7 +64,7 @@ get_header(); ?>
                                     'post_parent' => 0,
                                 ];
                                 $query = new WP_Query($args);
-                            ?> 
+                            ?>
                             <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
                                 <li class="item global__specialist">
                                     <div class="image">
