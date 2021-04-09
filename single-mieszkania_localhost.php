@@ -22,7 +22,7 @@ get_header();
                     </div>
                     <div class="spec sub-single__top--textright">
                         <p><?= number_format(get_field('flat_pricePermeter'), 0, '', ' '); ?> <?= get_field('flat_priceCurrency'); ?> / m<sup>2</sup></p>
-                    </div>          
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,6 +37,7 @@ get_header();
                             <ul class="slider gallery-slider-js">
                                 <?php
                                     $customFields = get_field('flat_pictures');
+                                    echo var_dump($flat_pictures);
                                     foreach($customFields as $key_item => $item):
                                 ?>
                                     <li class="slide">
@@ -127,7 +128,7 @@ get_header();
                                     });
                                 }
                             </script>
-                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHmnSXsVL47USPaZyqVs90Hu2bCsa6KVo&callback=initMap" async defer></script> 
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHmnSXsVL47USPaZyqVs90Hu2bCsa6KVo&callback=initMap" async defer></script>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -160,7 +161,7 @@ get_header();
                                         
                                     ];
                                     $query = new WP_Query($args);
-                                ?> 
+                                ?>
                                 <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
                                     <div class="image">
                                         <img src="<?= get_field('specialist_image')['sizes']['medium']; ?>" alt="<?= get_the_title(); ?>">
@@ -189,7 +190,7 @@ get_header();
                                     <div class="link global--button">
                                         <a class="black" href="<?= get_the_permalink(); ?>">Zobacz oferty </a>
                                     </div>
-                                <?php endwhile; endif; wp_reset_postdata(); ?>  
+                                <?php endwhile; endif; wp_reset_postdata(); ?>
                             </div>
                         <?php endif; ?>
                         <div class="side__contact">
