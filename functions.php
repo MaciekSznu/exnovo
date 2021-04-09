@@ -40,6 +40,9 @@ function page_scripts() {
   elseif ( is_page('oferty')) :
     wp_enqueue_style( 'oferty-style', get_template_directory_uri() . '/dist/oferty.css' );
 
+  elseif ( is_page('blog')) :
+    wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/blog.css' );
+
   elseif ( is_singular('mieszkania')) :
     wp_enqueue_style( 'mieszkania-style', get_template_directory_uri() . '/dist/single-offer.css' );
     wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/src/js/3jquery.chocolat.js', array(), '', true );
