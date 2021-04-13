@@ -13,19 +13,88 @@
     height: 100vw;
     min-height: 360px;
     max-height: 552px;
-    max-width: 1232px;
+    max-width: 1234px;
     position: relative;
     margin: 0 0 24px;
     overflow: hidden;
 
-    // .single-offer-slider-img {
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   height: 100%;
-    //   width: auto;
-    //   transform: translate(-50%, -50%);
-    // }
+    .slider {
+      height: 100%;
+      width: auto;
+
+      .slick-list {
+        height: 100%;
+        width: auto;
+
+        .slick-track {
+          height: 100%;
+
+          .slick-slide {
+            height: 100%;
+            width: auto;
+
+            div {
+              height: 100%;
+
+              .slide {
+                height: 100%;
+
+                a {
+                  height: 100%;
+
+                  .slide__image {
+                    height: 100vw;
+                    min-height: 360px;
+                    max-height: 100vw;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 552px) {
+        height: auto;
+        max-height: 552px;
+        width: 100%;
+        max-width: 1234px;
+
+        .slick-list {
+          height: auto;
+          width: 100%;
+
+          .slick-track {
+            height: 100%;
+
+            .slick-slide {
+              height: 100%;
+              width: 100vw;
+              max-width: 1234px;
+
+              div {
+                height: 100%;
+                max-width: 1234px;
+
+                .slide {
+                  height: auto;
+                  width: 100%;
+
+                  a {
+                    height: 100%;
+
+                    .slide__image {
+                      height: auto;
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     .slider-button-next,
     .slider-button-prev {

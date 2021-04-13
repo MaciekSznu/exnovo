@@ -48,3 +48,57 @@ secondaryMenuItems.forEach((secondaryMenuItem) => {
     e.stopPropagation();
   });
 });
+
+// INPUTS TYPE NUMBER
+
+const stepUp = (element, step) => {
+  let el = document.querySelector(`[name="${element}"]`);
+  el.value = parseInt(el.value) + step;
+};
+
+const stepDown = (element, step) => {
+  let el = document.querySelector(`[name="${element}"]`);
+  if (parseInt(el.value) > 0) {
+    el.value = parseInt(el.value) - step;
+  }
+};
+
+const stepUpButtons = document.querySelectorAll(".step-up");
+const stepDownButtons = document.querySelectorAll(".step-down");
+
+stepUpButtons.forEach((stepUpButton) => {
+  stepUpButton.addEventListener("click", (e) => {
+    let input;
+
+    if (e.target.tagName === "div") {
+      input = e.target.parentNode.querySelector("[type=number]");
+    } else {
+      input = e.target.parentNode.parentNode.querySelector("[type=number]");
+    }
+    input.value =
+      input.value === "" ? 0 + parseInt(input.dataset.step) : parseInt(input.value) + parseInt(input.dataset.step);
+  });
+});
+
+stepDownButtons.forEach((stepDownButton) => {
+  stepDownButton.addEventListener("click", (e) => {
+    let input;
+
+    if (e.target.tagName === "div") {
+      input = e.target.parentNode.querySelector("[type=number]");
+    } else {
+      input = e.target.parentNode.parentNode.querySelector("[type=number]");
+    }
+
+    if (input.value === "" || input.value == parseInt(input.min)) {
+      input.value = parseInt(input.min);
+    } else if (
+      input.value >= parseInt(input.min) &&
+      input.value <= parseInt(input.dataset.step) + parseInt(input.min)
+    ) {
+      input.value = parseInt(input.min);
+    } else {
+      input.value = parseInt(input.value) - parseInt(input.dataset.step);
+    }
+  });
+});

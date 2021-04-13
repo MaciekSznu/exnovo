@@ -7,33 +7,23 @@
  * @package test
  */
 global $pagesData;
-
-$footer_header = get_field('footer_header');
-$footer_adres = get_field('footer_adres');
-$footer_email = get_field('footer_email');
-$footer_telefon = get_field('footer_telefon');
-$disclaimer = get_field('disclaimer');
 ?>
 
 <footer class="footer" id="footer">
   <div class="footer-wrapper">
     <div class="title-wrapper">
-      <h2 class="footer-title"><?= $footer_header['niebieski_tekst']; ?> <span><?= $footer_header['pomaranczowy_tekst']; ?></span></h2>
+      <h2 class="footer-title">zapraszamy <span>do kontaktu</span></h2>
     </div>
     <div class="contact-wrapper">
       <div class="box">
-        <img class="box-icon" src="<?= $footer_adres['ikona']; ?>" alt="" />
+        <img class="box-icon" src="<?= get_template_directory_uri(); ?>/assets/graphics/adres.svg" alt="" />
         <div class="box-text-wrapper">
-          <p class="box-text"><?= $footer_adres['nazwa_firmy']; ?></p>
-          <p class="box-text">
-          <?= $footer_adres['ulica']; ?>
-            <span>
-            <?= $footer_adres['miasto']; ?>
-            </span>
+          <p class="box-text">Ex Novo Sp. z o.o.</p>
+          <p class="box-text">Jabłoniowa 20/213<span>80-175 Gdańsk</span>
           </p>
           <a
             class="box-text-link direction"
-            href="<?= $footer_adres['dojazd']; ?>"
+            href="https://g.page/ex-novo-sp--z-o-o-?share"
             target="_blank"
             rel="noopener noreferrer"
             >Jak dojechać</a
@@ -41,49 +31,38 @@ $disclaimer = get_field('disclaimer');
         </div>
       </div>
       <div class="box">
-        <img class="box-icon" src="<?= $footer_email['ikona']; ?>" alt="" />
+        <img class="box-icon" src="<?= get_template_directory_uri(); ?>/assets/graphics/mail.svg" alt="" />
         <div class="box-text-wrapper">
-          <p class="box-text"><?= $footer_email['tytul']; ?></p>
-          <a class="box-text-link" href="mailto:<?= $footer_email['adres_email']; ?>"><?= $footer_email['adres_email']; ?> </a>
+          <p class="box-text">napisz wiadomość</p>
+          <a class="box-text-link" href="mailto:biuro@exnovo.pl">biuro@exnovo.pl</a>
         </div>
       </div>
       <div class="box">
-        <img class="box-icon" src="<?= $footer_telefon['ikona']; ?>" alt="" />
+        <img class="box-icon" src="<?= get_template_directory_uri(); ?>/assets/graphics/telefon.svg" alt="" />
         <div class="box-text-wrapper">
-          <p class="box-text"><?= $footer_telefon['tytul']; ?></p>
-          <a class="box-text-link" href="tel:<?= $footer_telefon['numer_telefonu']; ?>"><?= $footer_telefon['numer_telefonu']; ?></a>
+          <p class="box-text">skontaktuj się z agentem</p>
+          <a class="box-text-link" href="tel:+48510363812">+48 510 363 812</a>
         </div>
       </div>
       <div class="social-links-wrapper">
-        <?php
-          $social = get_field('social');
-          $social_item = $social['social_item'];
-
-          if($social_item) {
-            foreach($social_item as $item) {
-              $ikona = $item['ikona'];
-              $link = $item['link'];
-
-              echo '<a class="social-link" href="'. $link. '" target="_blank" rel="noopener noreferrer"><img src="' . $ikona . '" alt=""/>
-          </a>';
-            }
-          }
-        ?>
+        <a class="social-link" href="o	https://pl.linkedin.com/company/ex-novo-inwestycje-i-nieruchomo%C5%9Bci" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/linkedin.svg" alt=""/></a>
+        <a class="social-link" href="o	https://www.facebook.com/ExNovo.sp.zo.o/" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/facebook.svg" alt=""/></a>
+        <a class="social-link" href="" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/instagram.svg" alt=""/></a>
       </div>
     </div>
   </div>
   <div class="disclaimer-wrapper">
-    <p class="disclaimer-text"><?= $disclaimer['tresc']; ?></p>
+    <p class="disclaimer-text">Niniejsza strona ma charakter informacyjny, nie stanowi oferty handlowej w rozumieniu Art. 66 § 1 Kodeksu Cywilnego. Zamieszczone na stronie materiały graficzne w tym animacje, wizualizacje, mają charakter wyłącznie poglądowy, a przedstawione w nich modele budynków oraz zagospodarowania terenu mogą podlegać zmianom na etapie realizacji. Zmianie nie ulegną istotne cechy świadczenia oraz funkcjonalność budynków.</p>
     <div class="logos-wrapper">
-      <a href="http://" target="_blank" rel="noopener noreferrer"
-        ><img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/rzetelna_firma_logo.png" alt=""
-      /></a>
-      <a href="http://" target="_blank" rel="noopener noreferrer"
-        ><img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/sppon_logo.png" alt=""
-      /></a>
-      <a href="http://" target="_blank" rel="noopener noreferrer"
-        ><img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/pfrn_logo.png" alt=""
-      /></a>
+      <a href="http://" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/graphics/rzetelna_firma_logo.png" alt=""/>
+      </a>
+      <a href="http://" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/graphics/sppon_logo.png" alt=""/>
+      </a>
+      <a href="http://" target="_blank" rel="noopener noreferrer">
+        <img src="<?= get_template_directory_uri(); ?>/assets/graphics/pfrn_logo.png" alt=""/>
+      </a>
     </div>
   </div>
   <div class="copyrights">

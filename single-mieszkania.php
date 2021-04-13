@@ -19,6 +19,11 @@ $description = get_field('flat_descriptionWebsite');
 $latitude = get_field('flat_locationLatitude');
 $longitude = get_field('flat_locationLongitude');
 
+$title = get_the_title();
+$city = get_field('flat_locationCityName');
+$alt_title = $city . ', ' . $main_type_id . ' ' . $area . ' m<sup>2</sup> na ' . $transaction;
+$offer_title = $title != '' ? $title : $alt_title;
+
 $contact_id = get_field('flat_contactId');
 
 
@@ -31,8 +36,8 @@ $contact_id = get_field('flat_contactId');
            foreach($flat_pictures as $key_item => $item):
         ?>
           <li class="slide">
-            <a href="<?= $item['sizes']['large']; ?>" class="gallery-image slide__image" style="background-image: url(<?= $item['sizes']['medium']; ?>)">
-              <img class="slide__image" src="<?= $item['sizes']['large']; ?>" alt="<?= $item['title']; ?>" style="width: 100%; height: auto;">
+            <a href="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>" class="gallery-image slide__image" style="background-image: url(<?= wp_get_attachment_image_src( $item, 'medium')[0]; ?>)">
+              <img class="slide__image" src="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>" sizes="100vw" alt="<?= get_the_title() . $item; ?>" srcset="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>, <?= wp_get_attachment_image_src( $item, 'full')[0]; ?> 1280w" style="height: auto;">
             </a>
           </li>
         <?php endforeach; ?>
@@ -45,7 +50,7 @@ $contact_id = get_field('flat_contactId');
     <div class="single-offer-table-wrapper">
       <div class="single-offer-header-wrapper">
         <div class="single-offer-title-wrapper">
-          <h2 class="single-offer-title"><?= get_the_title(); ?></h2>
+          <h2 class="single-offer-title"><?= $offer_title; ?></h2>
           <p class="single-offer-type"><?= $main_type_id; ?> na <?= $transaction; ?></p>
         </div>
         <div class="single-offer-price-wrapper">
@@ -177,7 +182,6 @@ $contact_id = get_field('flat_contactId');
       <div class="description-wrapper">
         <h3 class="description-title">Opis nieruchomości</h3>
         <?= $description; ?>
-        <p class="description-paragraph">Zapraszam na prezentację.</p>
       </div>
       <div class="form-wrapper">
         <div class="text-wrapper">

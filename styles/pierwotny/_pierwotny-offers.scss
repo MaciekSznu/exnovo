@@ -84,7 +84,7 @@
                 top: 4px;
                 width: 15px;
                 height: 15px;
-                background: url("../../assets/graphics/single_offer_row_icon.svg");
+                background: url("../assets/graphics/single_offer_row_icon.svg");
               }
             }
 
@@ -149,7 +149,7 @@
       }
     }
 
-    .pagination-item {
+    .page-numbers {
       height: 41px;
       width: 41px;
       margin: 0;
@@ -157,71 +157,68 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      color: $orange;
+      font-family: $poppins;
+      font-size: 16px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 20px;
+      border: 1px solid #e1e2f4;
+      margin-left: 9px;
 
-      &.back {
-        margin-right: 9px;
-        background: url("../../assets/graphics/strzalka-l-2.svg");
-        background-size: cover;
+      &.prev {
+        margin-left: 0;
+        background: url("../assets/graphics/strzalka-l.svg") no-repeat;
+        background-size: 19px 17px;
+        background-position: center;
       }
 
-      &.forward {
-        margin-left: 9px;
-        background: url("../../assets/graphics/strzalka-r-2.svg");
-        background-size: cover;
+      &.next {
+        background: url("../assets/graphics/strzalka-r.svg") no-repeat;
+        background-size: 19px 17px;
+        background-position: center;
       }
 
-      &.present {
+      &.current {
         border-radius: 20px;
         border: 1px solid $orange;
       }
 
       &.dots {
-        margin: 0 15px;
         border-radius: 20px;
         border: 1px solid #e1e2f4;
-      }
-
-      &.last {
-        border-radius: 20px;
-        border: 1px solid #e1e2f4;
-      }
-
-      &.present,
-      &.dots,
-      &.last {
-        span {
-          color: $orange;
-          font-family: $poppins;
-          font-size: 16px;
-          font-weight: 400;
-          font-style: normal;
-          letter-spacing: normal;
-          line-height: normal;
-          text-align: center;
-        }
       }
 
       @media (min-width: 934px) {
         height: 63px;
         width: 63px;
+        border-radius: 32px;
+        font-size: 25px;
+        margin-left: 16px;
 
-        &.back {
-          margin-right: 16px;
-          background: url("../../assets/graphics/strzalka-l-2.svg");
+        &.prev {
+          margin-left: 0;
+          background: url("../assets/graphics/strzalka-l.svg") no-repeat;
+          background-size: 19px 17px;
+          background-position: center;
         }
 
-        &.forward {
-          margin-left: 16px;
-          background: url("../../assets/graphics/strzalka-r-2.svg");
+        &.next {
+          background: url("../assets/graphics/strzalka-r.svg") no-repeat;
+          background-size: 19px 17px;
+          background-position: center;
         }
 
-        &.present {
+        &.current {
           border-radius: 32px;
           border: 1px solid $orange;
         }
 
         &.dots {
-          margin: 0 25px;
           border-radius: 32px;
           border: 1px solid #e1e2f4;
         }
@@ -229,14 +226,6 @@
         &.last {
           border-radius: 32px;
           border: 1px solid #e1e2f4;
-        }
-
-        &.present,
-        &.dots,
-        &.last {
-          span {
-            font-size: 25px;
-          }
         }
       }
     }
@@ -310,7 +299,7 @@
                   top: 6px;
                   width: 18px;
                   height: 18px;
-                  background: url("../../assets/graphics/single_offer_row_icon_desktop.svg");
+                  background: url("../assets/graphics/single_offer_row_icon_desktop.svg");
                 }
               }
 

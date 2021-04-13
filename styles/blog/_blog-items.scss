@@ -8,6 +8,17 @@
   align-items: center;
   background: $light-bg;
   z-index: 2;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -33px;
+    right: 10px;
+    width: 42px;
+    height: 58px;
+    background: url("../assets/graphics/triangles.svg");
+  }
 
   .page-adress {
     width: 100%;
@@ -93,11 +104,12 @@
   @media (min-width: 768px) {
     padding: 60px 20px 60px;
 
+    &:before {
+      right: 20px;
+    }
+
     .blog-wrapper {
       .blog-item {
-        &:nth-of-type(3) {
-          display: none;
-        }
         &:first-of-type {
           margin-right: 46px;
         }

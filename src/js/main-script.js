@@ -42,13 +42,14 @@ $(document).ready(function() {
 
   $(".single-offer-slider-img-wrapper").Chocolat({
     imageSelector: ".gallery-image",
+    loop: "true",
   });
 
   $(".gallery-slider-js").slick({
     infinite: true,
     arrows: true,
-    dots: true,
     swipe: true,
+    variableWidth: true,
     prevArrow: $(".slider-button-prev"),
     nextArrow: $(".slider-button-next"),
     // asNavFor: '.thumbs-slider-js'

@@ -41,38 +41,60 @@ get_header(); ?>
           'posts_per_page' => -1,
           'post_status' => 'publish'
       ];
-      $filters = ['mainTypeId' => [], 'apartmentRoomNumber' => [], 'locationCityName' => [], 'market' => []];
+      $filters = ['mainTypeId' => [], 'market' => [], 'transaction' => [], 'price' => [], 'area' => [], 'year' => [], 'floor' => [], 'rooms' => []];
       $query = new WP_Query($args);
 
       if($query->have_posts()): while($query->have_posts()) : $query->the_post();
           $mainTypeId = trim(get_field('flat_mainTypeId'));
-          $apartmentRoomNumber = trim(get_field('flat_apartmentRoomNumber'));
-          $locationCityName = trim(get_field('flat_locationCityName'));
           $market = trim(get_field('flat_market'));
+          $transaction = trim(get_field('flat_transaction'));
+          $price = trim(get_field('flat_price'));
+          $area = trim(get_field('flat_areaTotal'));
+          $year = trim(get_field('flat_buildingYear'));
+          $floor = trim(get_field('flat_apartmentFloor'));
+          $rooms = trim(get_field('flat_apartmentRoomNumber'));
 
           if(!in_array($mainTypeId, $filters['mainTypeId']) && $mainTypeId != ''){
               $filters['mainTypeId'][] = $mainTypeId;
           }
-
-          if(!in_array($apartmentRoomNumber, $filters['apartmentRoomNumber']) && $apartmentRoomNumber > 0){
-              $filters['apartmentRoomNumber'][] = $apartmentRoomNumber;
-          }
-
-          if(!in_array($locationCityName, $filters['locationCityName']) && $locationCityName != ''){
-              $filters['locationCityName'][] = $locationCityName;
-          }
-
           if(!in_array($market, $filters['market']) && $market != ''){
-              $filters['market'][] = $market;
+            $filters['market'][] = $market;
+          }
+          if(!in_array($transaction, $filters['transaction']) && $transaction != ''){
+            $filters['transaction'][] = $transaction;
+          }
+          if(!in_array($price, $filters['price']) && $price != ''){
+            $filters['price'][] = $price;
+          }
+          if(!in_array($area, $filters['area']) && $area != ''){
+            $filters['area'][] = $area;
+          }
+          if(!in_array($year, $filters['year']) && $year != ''){
+            $filters['year'][] = $year;
+          }
+          if(!in_array($floor, $filters['floor']) && $floor != ''){
+            $filters['floor'][] = $floor;
+          }
+          if(!in_array($rooms, $filters['rooms']) && $rooms != ''){
+            $filters['rooms'][] = $rooms;
           }
       endwhile; endif; wp_reset_postdata();
 
-      sort($filters['apartmentRoomNumber']);
+      sort($filters['price']);
 
       $mainTypeIdGet = (isset($_GET['mainTypeId']))? $_GET['mainTypeId']: '';
-      $apartmentRoomNumberGet = (isset($_GET['apartmentRoomNumber']))? $_GET['apartmentRoomNumber']: '';
-      $locationCityNameGet = (isset($_GET['locationCityName']))? $_GET['locationCityName']: '';
       $marketGet = (isset($_GET['market']))? $_GET['market']: '';
+      $transactionGet = (isset($_GET['transaction']))? $_GET['transaction']: '';
+      $priceFromGet = (isset($_GET['price_from']))? $_GET['price_from']: '';
+      $priceToGet = (isset($_GET['price_to']))? $_GET['price_to']: '';
+      $areaFromGet = (isset($_GET['area_from']))? $_GET['area_from']: '';
+      $areaToGet = (isset($_GET['area_to']))? $_GET['area_to']: '';
+      $yearFromGet = (isset($_GET['year_from']))? $_GET['year_from']: '';
+      $yearToGet = (isset($_GET['year_to']))? $_GET['year_to']: '';
+      $floorFromGet = (isset($_GET['floor_from']))? $_GET['floor_from']: '';
+      $floorToGet = (isset($_GET['floor_to']))? $_GET['floor_to']: '';
+      $roomsFromGet = (isset($_GET['rooms_from']))? $_GET['rooms_from']: '';
+      $roomsToGet = (isset($_GET['rooms_to']))? $_GET['rooms_to']: '';
       $metaQuery = [];
 
       if($mainTypeIdGet){
@@ -82,25 +104,108 @@ get_header(); ?>
           ];
       }
 
-      if($apartmentRoomNumberGet){
-          $metaQuery[] = [
-              'key'     => 'flat_apartmentRoomNumber',
-              'value'   => $apartmentRoomNumberGet,
-          ];
-      }
-
-      if($locationCityNameGet){
-          $metaQuery[] = [
-              'key'     => 'flat_locationCityName',
-              'value'   => $locationCityNameGet,
-          ];
-      }
-
       if($marketGet){
-          $metaQuery[] = [
-              'key'     => 'flat_market',
-              'value'   => $marketGet,
-          ];
+        $metaQuery[] = [
+            'key'     => 'flat_market',
+            'value'   => $marketGet,
+        ];
+      }
+
+      if($transactionGet){
+        $metaQuery[] = [
+            'key'     => 'flat_transaction',
+            'value'   => $transactionGet,
+        ];
+      }
+
+      if($priceFromGet){
+        $metaQuery[] = [
+            'key'     => 'flat_price',
+            'value_num'   => $priceFromGet,
+            'compare' => '>=',
+            // 'type' => 'NUMERIC',
+        ];
+      }
+
+      if($priceToGet){
+        $metaQuery[] = [
+            'key'     => 'flat_price',
+            'value_num'   => $priceToGet,
+            'compare' => '<=',
+            // 'type' => 'NUMERIC',
+        ];
+      }
+
+      if($areaFromGet){
+        $metaQuery[] = [
+            'key'     => 'flat_areaTotal',
+            'value'   => $areaFromGet,
+            'compare' => '>=',
+            'type' => 'NUMERIC',
+        ];
+      }
+
+      if($areaToGet){
+        $metaQuery[] = [
+            'key'     => 'flat_areaTotal',
+            'value'   => $areaToGet,
+            'compare' => '<=',
+            'type' => 'NUMERIC',
+        ];
+      }
+
+      if($yearFromGet){
+        $metaQuery[] = [
+            'key'     => 'flat_buildingYear',
+            'value'   => $yearFromGet,
+            'compare' => '>=',
+            'type' => 'NUMERIC',
+        ];
+      }
+
+      if($yearToGet){
+        $metaQuery[] = [
+            'key'     => 'flat_buildingYear',
+            'value'   => $yearToGet,
+            'compare' => '<=',
+            'type' => 'NUMERIC',
+        ];
+      }
+
+      if($floorFromGet){
+        $metaQuery[] = [
+            'key'     => 'flat_apartmentFloor',
+            'value'   => $floorFromGet,
+            'compare' => '>=',
+            'type' => 'NUMERIC',
+        ];
+      }
+
+      if($floorToGet){
+        $metaQuery[] = [
+            'key'     => 'flat_apartmentFloor',
+            'value'   => $floorToGet,
+            'compare' => '<=',
+            'type' => 'NUMERIC',
+        ];
+      }
+
+      if($roomsFromGet){
+        $metaQuery[] = [
+            'key'     => 'flat_apartmentRoomNumber',
+            'value'   => $roomsFromGet,
+            'compare' => '>=',
+            'type' => 'NUMERIC',
+        ];
+      }
+
+      if($roomsToGet){
+        $metaQuery[] = [
+            'key'     => 'flat_apartmentRoomNumber',
+            'value'   => $roomsToGet,
+            'compare' => '<=',
+            'type' => 'NUMERIC',
+        ];
       }
 
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
@@ -110,8 +215,12 @@ get_header(); ?>
           'post_parent' => 0,
           'paged' => $paged,
           'meta_query' => $metaQuery,
+          'meta_key' => 'flat_price',
+          'orderby'    => 'meta_value_num',
+          'order' => 'ASC',
       ];
       $query = new WP_Query($args);
+
   ?>
     <form action="<?= get_the_permalink(); ?>" id="search-form" class="search-form" method="get">
       <div class="row-wrapper-01">
@@ -134,6 +243,9 @@ get_header(); ?>
         <div class="input-wrapper transaction">
           <select id="input-transaction" class="input-transaction" name="transaction">
             <option value="">Typ transakcji</option>
+            <?php foreach($filters['transaction'] as $option): ?>
+              <option value="<?= $option ?>" <?= ($transactionGet == $option)? 'selected' : ''; ?>><?= ucfirst($option); ?></option>
+            <?php endforeach; ?>
           </select>
         </div>
       </div>
@@ -145,24 +257,27 @@ get_header(); ?>
               id="input-price_from"
               class="input-price_from"
               type="number"
-              step="10000"
+              data-step="10000"
               name="price_from"
               placeholder="Od"
+              min = "0"
+              <?= ($priceFromGet != '') ? 'value="' . $priceFromGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
           <div class="input-wrapper price_to">
             <input
               id="input-price_to"
               class="input-price_to"
               type="number"
-              step="10000"
+              data-step="10000"
               name="price_to"
               placeholder="Do"
+              <?= ($priceToGet != '') ? 'value="' . $priceToGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
         <p class="area_label">Powierzchnia</p>
@@ -172,24 +287,28 @@ get_header(); ?>
               id="input-area_from"
               class="input-area_from"
               type="number"
-              step="1"
+              data-step="5"
               name="area_from"
               placeholder="Od"
+              min = "1"
+              <?= ($areaFromGet != '') ? 'value="' . $areaFromGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
           <div class="input-wrapper area_to">
             <input
               id="input-area_to"
               class="input-area_to"
               type="number"
-              step="1"
+              data-step="5"
               name="area_to"
               placeholder="Do"
+              min = "1"
+              <?= ($areaToGet != '') ? 'value="' . $areaToGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
         <p class="year_label">Rok budowy</p>
@@ -199,24 +318,27 @@ get_header(); ?>
               id="input-year_from"
               class="input-year_from"
               type="number"
-              step="1"
+              data-step="1"
               name="year_from"
               placeholder="Od"
+              min = "1900"
+              <?= ($yearFromGet != '') ? 'value="' . $yearFromGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
           <div class="input-wrapper year_to">
             <input
               id="input-year_to"
               class="input-year_to"
               type="number"
-              step="1"
+              data-step="1"
               name="year_to"
               placeholder="Do"
+              <?= ($yearToGet != '') ? 'value="' . $yearToGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
       </div>
@@ -228,24 +350,27 @@ get_header(); ?>
               id="input-floor_from"
               class="input-floor_from"
               type="number"
-              step="1"
+              data-step="1"
               name="floor_from"
               placeholder="Od"
+              min = "0"
+              <?= ($floorFromGet != '') ? 'value="' . $floorFromGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
           <div class="input-wrapper floor_to">
             <input
               id="input-floor_to"
               class="input-floor_to"
               type="number"
-              step="1"
+              data-step="1"
               name="floor_to"
               placeholder="Do"
+              <?= ($floorToGet != '') ? 'value="' . $floorToGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
         <p class="rooms_label">Liczba pokoi</p>
@@ -255,26 +380,28 @@ get_header(); ?>
               id="input-rooms_from"
               class="input-rooms_from"
               type="number"
-              min="1"
-              step="1"
+              data-step="1"
               name="rooms_from"
               placeholder="Od"
+              min = "1"
+              <?= ($roomsFromGet != '') ? 'value="' . $roomsFromGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
           <div class="input-wrapper rooms_to">
             <input
               id="input-rooms_to"
               class="input-rooms_to"
               type="number"
-              min="1"
-              step="1"
+              data-step="1"
               name="rooms_to"
               placeholder="Do"
+              min="1"
+              <?= ($roomsToGet != '') ? 'value="' . $roomsToGet . '"' : ''; ?>
             />
-            <div role="button" class="step-up"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
-            <div role="button" class="step-down"><img src="./assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
+            <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
         <div class="input-wrapper submit">
@@ -284,21 +411,34 @@ get_header(); ?>
     </form>
     <div class="sort-wrapper">
       <p class="sort-text">Sortuj:</p>
-      <button class="sort-button">Cena rosnąco</button>
-      <button class="sort-button">Cena malejąco</button>
+      <!-- do podmiany jako elementy array -->
+      <a href="<?php global $wp; $current_url = home_url(esc_url(add_query_arg(array())));?>?meta_key=flat_price&orderby=meta_value_num&order=ASC" class="sort-button">Cena rosnąco</a>
+      <a href="<?php global $wp; $current_url = home_url(esc_url(add_query_arg(array())));?>?meta_key=flat_price&orderby=meta_value_num&order=DESC" class="sort-button">Cena malejąco</a>
+      <!-- <a href="<?php //get_the_permalink(); ?>?orderby=meta_value_num&order=ASC" class="sort-button">Cena rosnąco</a> -->
+      <!-- <a href="<?php //get_the_permalink(); ?>?orderby=meta_value_num&order=DESC" class="sort-button">Cena malejąco</a> -->
     </div>
   </div>
 </section>
 <section class="offers">
   <div class="offers-wrapper">
     <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
+    <?php
+      $title = get_the_title();
+      $type = get_field('flat_mainTypeId');
+      $transaction = get_field('flat_transaction');
+      $area = get_field('flat_areaTotal');
+      $city = get_field('flat_locationCityName');
+      $alt_title = $city . ', ' . $type . ' ' . $area . ' m<sup>2</sup> na ' . $transaction;
+
+      $offer_title = $title != '' ? $title : $alt_title;
+    ?>
     <div class="offer-wrapper">
       <div class="offer-item">
         <img class="offer-image" src="<?= wp_get_attachment_image_src( get_field('flat_pictures')[0], 'large')[0]; ?>" alt="<?= get_the_title(); ?>" />
         <div class="offer-text-wrapper">
-          <h4 class="offer-title"><?= get_the_title(); ?></h4>
+          <h4 class="offer-title"><?= $offer_title; ?></h4>
           <h5 class="offer-transaction"><?= get_field('flat_mainTypeId'); ?> na <?= get_field('flat_transaction'); ?></h5>
-          <h6 class="offer-price">1 200 000 zł</h6>
+          <h6 class="offer-price"><?= number_format(get_field('flat_price'), 0, '', ' '); ?> <?= get_field('flat_priceCurrency'); ?></h6>
           <div class="offer-parameters">
             <p class="offer-area"><?= get_field('flat_areaTotal'); ?> m<sup>2</sup></p>
             <p class="offer-rooms">liczba pokoi: &nbsp;<span><?= get_field('flat_apartmentRoomNumber'); ?></span></p>
@@ -307,7 +447,9 @@ get_header(); ?>
       </div>
       <a href="<?= get_the_permalink(); ?>"><button class="show-offer-button">Zobacz więcej</button></a>
     </div>
-    <?php endwhile; endif; wp_reset_postdata(); ?>
+    <?php endwhile; else: ?>
+      <h4 style="width: 100%; font-weight: 300;">Nasza baza jest bardzo szeroka, jednak tym razem nie znaleźliśmy w niej oferty spełniającej wszystkie kryteria, spróbuj poszukać raz jeszcze.</h4>
+    <?php  endif; wp_reset_postdata(); ?>
   </div>
   <div class="pagination-wrapper">
     <p class="offers-amount">ilość ofert: &nbsp;<span><?= $query->found_posts; ?></span></p>

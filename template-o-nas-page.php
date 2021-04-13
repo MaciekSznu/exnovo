@@ -173,31 +173,37 @@ get_header(); ?>
   <h2 class="section-title"><?= $blog_title; ?></h2>
   <h3 class="section-subtitle"><?= $blog_subtitle; ?></h3>
   <div class="blog-wrapper">
-    <!-- TUTAJ QUERY Z OSTATNIMI 3 POSTAMI BLOGA -->
-    <!-- <div class="blog-item">
-      <img class="blog-image" src="./assets/images/o-nas/blog_image_01.png" alt="" />
-      <div class="blog-text-wrapper">
-        <h4 class="blog-title">Jak przygotować ofertę sprzedaży nieruchomości?</h4>
-        <p class="blog-summary">Jak sprzedać nieruchomość bez pośrednika? Od czego zacząć przygotowanie oferty?</p>
-        <a href="" class="blog-link">Czytaj artykuł</a>
+    <?php
+      $args = [
+        'post_type' => 'blog',
+        'posts_per_page' => 3,
+        'post_status' => 'publish'
+      ];
+      $query = new WP_Query($args);
+
+      function blog_text_excerpt() {
+        $text = get_field('tresc_wpisu');
+        if ( '' != $text ) {
+        $text = strip_shortcodes( $text );
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]>', $text);
+        $excerpt_length = 10;
+        $excerpt_more = apply_filters('excerpt_more', '' . '…');
+        $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+        }
+        return apply_filters('the_excerpt', $text);
+      }
+    ?>
+    <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
+      <div class="blog-item">
+        <img class="blog-image" src="<?= get_field('main_image'); ?>" alt="" />
+        <div class="blog-text-wrapper">
+          <h4 class="blog-title"><?= get_the_title(); ?></h4>
+          <?= blog_text_excerpt(); ?>
+          <a href="<?= get_the_permalink(); ?>" class="blog-link">Czytaj artykuł</a>
+        </div>
       </div>
-    </div>
-    <div class="blog-item">
-      <img class="blog-image" src="./assets/images/o-nas/blog_image_02.png" alt="" />
-      <div class="blog-text-wrapper">
-        <h4 class="blog-title">Jak przygotować ofertę sprzedaży nieruchomości?</h4>
-        <p class="blog-summary">Jak sprzedać nieruchomość bez pośrednika? Od czego zacząć przygotowanie oferty?</p>
-        <a href="" class="blog-link">Czytaj artykuł</a>
-      </div>
-    </div>
-    <div class="blog-item">
-      <img class="blog-image" src="./assets/images/o-nas/blog_image_01.png" alt="" />
-      <div class="blog-text-wrapper">
-        <h4 class="blog-title">Jak przygotować ofertę sprzedaży nieruchomości?</h4>
-        <p class="blog-summary">Jak sprzedać nieruchomość bez pośrednika? Od czego zacząć przygotowanie oferty?</p>
-        <a href="" class="blog-link">Czytaj artykuł</a>
-      </div>
-    </div> -->
+    <?php endwhile; endif; wp_reset_postdata(); ?>
   </div>
 </section>
 

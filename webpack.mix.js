@@ -26,7 +26,8 @@ mix
   .sass("styles/single-blog/single-blog.scss", "dist/single-blog.css")
   .sass("styles/single-offer/single-offer.scss", "dist/single-offer.css")
   .sass("styles/blog/blog.scss", "dist/blog.css")
-  .sass("styles/kontakt/kontakt.scss", "dist/kontakt.css");
+  .sass("styles/kontakt/kontakt.scss", "dist/kontakt.css")
+  .sass("styles/specjalista/specjalista.scss", "dist/specjalista.css");
 
 // .minify('dist/app.css');
 

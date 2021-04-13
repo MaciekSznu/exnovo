@@ -64,7 +64,7 @@
           top: 0;
           width: 31px;
           height: 31px;
-          background: url("../../assets/graphics/checked.svg");
+          background: url("../assets/graphics/checked.svg");
         }
 
         &:not(:nth-of-type(3)) {
@@ -90,7 +90,7 @@
     .image-wrapper {
       max-width: 378px;
       width: 100%;
-      background: url("../../assets/images/home/sylwetka-pracownika.png");
+      background: url("../assets/img/home/sylwetka-pracownika.png");
       background-size: contain;
       background-position-y: top;
       margin-bottom: 123px;

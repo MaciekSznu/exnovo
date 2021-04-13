@@ -8,7 +8,7 @@
   padding: 40px 10px 19px;
 
   @media (min-width: 768px) {
-    padding: 600px 20px 19px;
+    padding: 60px 20px 19px;
   }
 
   @media (min-width: 1280px) {
@@ -60,7 +60,7 @@
         left: -42px;
         width: 42px;
         height: 58px;
-        background: url("../../assets/graphics/triangles.svg");
+        background: url("../assets/graphics/triangles.svg");
         z-index: 2;
       }
 
@@ -71,7 +71,7 @@
         right: -42px;
         width: 42px;
         height: 58px;
-        background: url("../../assets/graphics/triangles.svg");
+        background: url("../assets/graphics/triangles.svg");
         transform: rotate(180deg);
         transform-origin: center;
         z-index: 2;
@@ -104,7 +104,7 @@
         top: -38px;
         width: 53px;
         height: 73px;
-        background: url("../../assets/graphics/triangles_big.svg");
+        background: url("../assets/graphics/triangles_big.svg");
       }
 
       &:after {
@@ -112,7 +112,7 @@
         bottom: 0;
         width: 53px;
         height: 73px;
-        background: url("../../assets/graphics/triangles_big.svg");
+        background: url("../assets/graphics/triangles_big.svg");
       }
 
       .section-title {
@@ -144,32 +144,32 @@
       height: 58px;
       width: 145px;
       margin-left: 30;
-      background: url("../../assets/images/pierwotny/expander-logo.png");
+      background: url("../assets/img/pierwotny/expander-logo.png");
       background-size: cover;
 
       &:nth-of-type(2) {
         width: 127px;
-        background: url("../../assets/images/pierwotny/dekpol-logo.png");
+        background: url("../assets/img/pierwotny/dekpol-logo.png");
         background-size: cover;
       }
       &:nth-of-type(3) {
         width: 145px;
-        background: url("../../assets/images/pierwotny/eurostyl-logo.png");
+        background: url("../assets/img/pierwotny/eurostyl-logo.png");
         background-size: cover;
       }
       &:nth-of-type(4) {
         width: 174px;
-        background: url("../../assets/images/pierwotny/northstar-logo.png");
+        background: url("../assets/img/pierwotny/northstar-logo.png");
         background-size: cover;
       }
       &:nth-of-type(5) {
         width: 174px;
-        background: url("../../assets/images/pierwotny/develia-logo.png");
+        background: url("../assets/img/pierwotny/develia-logo.png");
         background-size: cover;
       }
       &:nth-of-type(6) {
         width: 145px;
-        background: url("../../assets/images/pierwotny/allcon-logo.png");
+        background: url("../assets/img/pierwotny/allcon-logo.png");
         background-size: cover;
       }
     }

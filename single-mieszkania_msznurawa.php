@@ -28,14 +28,11 @@ $contact_id = get_field('flat_contactId');
     <ul class="slider gallery-slider-js">
         <?php
           $flat_pictures = get_field('flat_pictures');
-           echo '<div>';
-           echo var_dump($flat_pictures);
-           echo '</div>';
            foreach($flat_pictures as $key_item => $item):
         ?>
           <li class="slide">
-            <a href="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>" class="gallery-image slide__image" style="background-image: url(<?= wp_get_attachment_image_src( $item, 'medium')[0]; ?>)">
-              <img class="slide__image" src="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>" alt="<?= get_the_title() . $item; ?>" style="width: 100%; height: auto;">
+            <a href="<?= $item['sizes']['large']; ?>" class="gallery-image slide__image" style="background-image: url(<?= $item['sizes']['medium']; ?>)">
+              <img class="slide__image" src="<?= $item['sizes']['large']; ?>" alt="<?= $item['title']; ?>" style="width: 100%; height: auto;">
             </a>
           </li>
         <?php endforeach; ?>

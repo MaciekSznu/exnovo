@@ -77,7 +77,7 @@
         text-align: left;
       }
 
-      background: url("../../assets/graphics/menu-item-expander.png") no-repeat;
+      background: url("../assets/graphics/menu-item-expander.png") no-repeat;
       background-size: 10px 7px;
       background-position-y: center;
       background-position-x: calc(100% - 28px);
@@ -194,7 +194,10 @@
       }
 
       a {
+        opacity: 0;
         text-decoration: none;
+        transition: opacity 0.5s ease-in-out;
+
         .show-offer-button {
           @include button;
 
@@ -207,6 +210,11 @@
             font-size: 15px;
           }
         }
+      }
+
+      &:hover a {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
       }
     }
   }
@@ -235,7 +243,7 @@
       }
     }
 
-    .pagination-item {
+    .page-numbers {
       height: 41px;
       width: 41px;
       margin: 0;
@@ -243,71 +251,68 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      color: $orange;
+      font-family: $poppins;
+      font-size: 16px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 20px;
+      border: 1px solid #e1e2f4;
+      margin-left: 9px;
 
-      &.back {
-        margin-right: 9px;
-        background: url("../../assets/graphics/strzalka-l-2.svg");
-        background-size: cover;
+      &.prev {
+        margin-left: 0;
+        background: url("../assets/graphics/strzalka-l.svg") no-repeat;
+        background-size: 19px 17px;
+        background-position: center;
       }
 
-      &.forward {
-        margin-left: 9px;
-        background: url("../../assets/graphics/strzalka-r-2.svg");
-        background-size: cover;
+      &.next {
+        background: url("../assets/graphics/strzalka-r.svg") no-repeat;
+        background-size: 19px 17px;
+        background-position: center;
       }
 
-      &.present {
+      &.current {
         border-radius: 20px;
         border: 1px solid $orange;
       }
 
       &.dots {
-        margin: 0 15px;
         border-radius: 20px;
         border: 1px solid #e1e2f4;
-      }
-
-      &.last {
-        border-radius: 20px;
-        border: 1px solid #e1e2f4;
-      }
-
-      &.present,
-      &.dots,
-      &.last {
-        span {
-          color: $orange;
-          font-family: $poppins;
-          font-size: 16px;
-          font-weight: 400;
-          font-style: normal;
-          letter-spacing: normal;
-          line-height: normal;
-          text-align: center;
-        }
       }
 
       @media (min-width: 934px) {
         height: 63px;
         width: 63px;
+        border-radius: 32px;
+        font-size: 25px;
+        margin-left: 16px;
 
-        &.back {
-          margin-right: 16px;
-          background: url("../../assets/graphics/strzalka-l-2.svg");
+        &.prev {
+          margin-left: 0;
+          background: url("../assets/graphics/strzalka-l.svg") no-repeat;
+          background-size: 19px 17px;
+          background-position: center;
         }
 
-        &.forward {
-          margin-left: 16px;
-          background: url("../../assets/graphics/strzalka-r-2.svg");
+        &.next {
+          background: url("../assets/graphics/strzalka-r.svg") no-repeat;
+          background-size: 19px 17px;
+          background-position: center;
         }
 
-        &.present {
+        &.current {
           border-radius: 32px;
           border: 1px solid $orange;
         }
 
         &.dots {
-          margin: 0 25px;
           border-radius: 32px;
           border: 1px solid #e1e2f4;
         }
@@ -315,14 +320,6 @@
         &.last {
           border-radius: 32px;
           border: 1px solid #e1e2f4;
-        }
-
-        &.present,
-        &.dots,
-        &.last {
-          span {
-            font-size: 25px;
-          }
         }
       }
     }
