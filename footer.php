@@ -45,8 +45,8 @@ global $pagesData;
         </div>
       </div>
       <div class="social-links-wrapper">
-        <a class="social-link" href="o	https://pl.linkedin.com/company/ex-novo-inwestycje-i-nieruchomo%C5%9Bci" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/linkedin.svg" alt=""/></a>
-        <a class="social-link" href="o	https://www.facebook.com/ExNovo.sp.zo.o/" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/facebook.svg" alt=""/></a>
+        <a class="social-link" href="https://pl.linkedin.com/company/ex-novo-inwestycje-i-nieruchomo%C5%9Bci" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/linkedin.svg" alt=""/></a>
+        <a class="social-link" href="https://www.facebook.com/ExNovo.sp.zo.o" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/facebook.svg" alt=""/></a>
         <a class="social-link" href="" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/instagram.svg" alt=""/></a>
       </div>
     </div>

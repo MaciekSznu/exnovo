@@ -19,7 +19,7 @@
       flex-direction: column;
       align-items: center;
       margin-top: 36px;
-      padding: 0 10px;
+      padding: 0;
       .member-image {
         height: 324px;
         width: 281px;
@@ -113,6 +113,10 @@
         }
         &:first-of-type {
           margin-right: 46px;
+        }
+        .member-image {
+          height: 324px;
+          width: 100%;
         }
       }
     }

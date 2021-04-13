@@ -36,6 +36,7 @@
 
     .search-form {
       width: 100%;
+      max-width: 984px;
       display: grid;
       margin-top: 28px;
       margin-bottom: 40px;
@@ -47,12 +48,15 @@
         "row_02"
         "row_03";
 
+      @media (min-width: 1034px) {
+        max-width: 100%;
+      }
+
       .row-wrapper-01 {
         grid-area: row_01;
         display: grid;
         grid-template-columns: repeat(3, minmax(300px, 380px));
         grid-template-rows: 60px;
-        gap: 0px 47px;
         grid-template-areas: "property market transaction";
 
         .property {
@@ -82,7 +86,6 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(300px, 380px));
         grid-template-rows: 56px 60px;
-        grid-gap: 0 47px;
         grid-template-areas:
           "price_label area_label year_label"
           "price area year";
@@ -168,7 +171,6 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(300px, 380px));
         grid-template-rows: 56px 60px;
-        grid-gap: 0 47px;
         grid-template-areas:
           "floor_label rooms_label ."
           "floor rooms submit";
@@ -233,6 +235,12 @@
       .row-wrapper-01,
       .row-wrapper-02,
       .row-wrapper-03 {
+        gap: 0px 42px;
+
+        @media (min-width: 1034px) {
+          gap: 0px 47px;
+        }
+
         .input-wrapper {
           height: 100%;
           width: 100%;
@@ -371,6 +379,7 @@
   @media (min-width: 1234px) {
     .search-wrapper {
       width: 1234px;
+      max-width: 1234px;
 
       .page-adress {
         margin-top: 0px;
