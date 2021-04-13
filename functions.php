@@ -24,6 +24,9 @@ function page_scripts() {
 
   if ( is_front_page()) :
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/style.css' );
+    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/src/js/3jquery.chocolat.js', array(), '', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/src/js/1slick.min.js', array(), '', true );
+    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/src/js/main-script.js', array(), '', true );
 
   elseif ( is_page('o-nas')) :
     wp_enqueue_style( 'onas-style', get_template_directory_uri() . '/dist/o-nas.css' );

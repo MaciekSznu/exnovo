@@ -48,12 +48,34 @@ $(document).ready(function() {
   $(".gallery-slider-js").slick({
     infinite: true,
     arrows: true,
-    swipe: true,
     variableWidth: true,
     prevArrow: $(".slider-button-prev"),
     nextArrow: $(".slider-button-next"),
     // asNavFor: '.thumbs-slider-js'
   });
+
+  $(".opinions-wrapper").slick({
+    infinite: true,
+    arrows: true,
+    centerMode: true,
+    centerPadding: "0px",
+    mobileFirst: true,
+    // slidesToShow: 2,
+    // slidesToScroll: 1,
+    // variableWidth: true,
+    prevArrow: $(".slider-button-prev"),
+    nextArrow: $(".slider-button-next"),
+    // responsive: [
+    //   {
+    //     breakpoint: 767,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
+  });
+
   // $('.thumbs-slider-js').slick({
   //     infinite: true,
   //     arrows: true,

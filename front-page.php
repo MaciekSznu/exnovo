@@ -132,17 +132,18 @@ get_header(); ?>
           $text = $box['tresc_opinii'];
           $autor = $box['autor'];
 
-          echo '<div class="opinion-box">
-          <p class="opinion-box--text">' . $text . '</p>
-          <h4 class="opinion-box--author">' . $autor . '</h4>
+          echo
+          '<div class="opinion-box">
+            <p class="opinion-box--text">' . $text . '</p>
+            <h4 class="opinion-box--author">' . $autor . '</h4>
           </div>';
         }
       }
     ?>
   </div>
   <div class="arrows-wrapper">
-    <div role="button" class="arrow"></div>
-    <div role="button" class="arrow"></div>
+    <div role="button" class="slider-button-prev"></div>
+    <div role="button" class="slider-button-next"></div>
   </div>
 </section>
 <section class="cooperation">
