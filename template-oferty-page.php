@@ -95,6 +95,7 @@ get_header(); ?>
       $floorToGet = (isset($_GET['floor_to']))? $_GET['floor_to']: '';
       $roomsFromGet = (isset($_GET['rooms_from']))? $_GET['rooms_from']: '';
       $roomsToGet = (isset($_GET['rooms_to']))? $_GET['rooms_to']: '';
+      $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
       $metaQuery = [];
 
       if($mainTypeIdGet){
@@ -208,25 +209,19 @@ get_header(); ?>
         ];
       }
 
+      $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
+
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
-      $order = 'ASC';
       $args = [
           'post_type' => 'mieszkania',
           'post_status' => 'publish',
           'post_parent' => 0,
           'paged' => $paged,
           'meta_query' => $metaQuery,
-          'meta_key' => 'flat_price',
           'orderby'    => 'meta_value_num',
-          'order' => $order,
+          'meta_key' => 'flat_price',
+          'order' => $sortOrder,
       ];
-      var_dump($args['order']);
-      if ( isset( $_GET['order-desc'] ) ) {
-        $args[$order = 'DESC'];
-      }
-      if ( isset( $_GET['order-asc'] ) ) {
-        $args[$order = 'ASC'];
-      }
       $query = new WP_Query($args);
 
   ?>
@@ -416,14 +411,12 @@ get_header(); ?>
           <button class="submit-search" type="submit">Szukaj oferty</button>
         </div>
       </div>
-    </form>
-    <div class="sort-wrapper">
+      <div class="sort-wrapper">
       <p class="sort-text">Sortuj:</p>
-      <!--do zmiany na AJAX -->
-      <a href="<?php esc_attr( add_query_arg( 'order-asc' ) ); ?>" class="sort-button">Cena rosnąco</a>
-      <a href="<?php esc_attr( add_query_arg( 'order-desc' ) ); ?>" class="sort-button">Cena malejąco</a>
-
+      <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
+      <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
     </div>
+    </form>
   </div>
 </section>
 <section class="offers">

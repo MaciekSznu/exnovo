@@ -330,47 +330,50 @@
           text-align: left;
         }
       }
-    }
 
-    .sort-wrapper {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      .sort-text {
-        color: $light-blue;
-        font-family: $poppins;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-        text-align: left;
-        margin-right: 46px;
-      }
+      .sort-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 40px;
 
-      .sort-button {
-        color: $dark-blue;
-        font-family: $poppins;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-        text-align: left;
-        margin-right: 39px;
-        border: none;
-        background: transparent;
-        outline: none;
-        cursor: pointer;
-      }
-
-      @media (max-width: 767px) {
-        flex-wrap: wrap;
-        margin-bottom: 34px;
         .sort-text {
-          width: 100%;
-          margin-right: 0;
-          margin-bottom: 6px;
+          color: $light-blue;
+          font-family: $poppins;
+          font-size: 13px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+          text-align: left;
+          margin-right: 46px;
+        }
+
+        .sort-button {
+          color: $dark-blue;
+          font-family: $poppins;
+          font-size: 13px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: normal;
+          text-align: left;
+          margin-right: 39px;
+          border: none;
+          background: transparent;
+          outline: none;
+          cursor: pointer;
+        }
+
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+          margin-bottom: 34px;
+          margin-top: 20px;
+          .sort-text {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 6px;
+          }
         }
       }
     }
