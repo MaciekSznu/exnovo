@@ -43,11 +43,21 @@
       .slick-track {
         .slick-slide {
           margin: 0 10px;
+          @media (min-width: 768px) {
+            margin: 0 20px;
+          }
+
           div {
+            max-width: 378px;
+
+            @media (min-width: 768px) {
+              margin: 0 auto;
+            }
+
             .opinion-box {
               position: relative;
               width: 100%;
-              max-width: 378px;
+              max-width: 372px;
               height: 300px;
               background: $white;
               box-shadow: 0 2px 99px #edeefb;
@@ -95,7 +105,7 @@
             }
           }
 
-          @media (min-width: 398px) {
+          @media (min-width: 398px) and (max-width: 767px) {
             margin: 0 calc((100vw - 378px) / 2);
           }
         }
@@ -142,98 +152,205 @@
   @media (min-width: 768px) {
     padding: 60px 20px 80px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 65% 35%;
-    gap: 20px 55px;
-    grid-template-areas:
-      "title opinions"
-      "arrows opinions";
+    // display: grid;
+    // grid-template-columns: auto calc(100vw - 335px);
+    // grid-template-rows: 65% 35%;
+    // // gap: 20px 55px;
+    // gap: 20px 0;
+    // grid-template-areas:
+    //   "title opinions"
+    //   "arrows opinions";
 
-    .title-wrapper {
-      grid-area: title;
-      max-width: 345px;
-      margin-top: 45px;
-      padding-left: 20px;
+    // .title-wrapper {
+    //   background: transparent;
+    //   grid-area: title;
+    //   width: 335px;
+    //   max-width: 325px;
+    //   margin-top: 45px;
+    //   // padding-left: 20px;
 
-      .section-title {
-        color: $blue;
-        font-family: $poppins;
-        font-size: 28px;
-        font-weight: 700;
-        line-height: 40px;
-        text-align: left;
-        margin-bottom: 36px;
+    //   .section-title {
+    //     color: $blue;
+    //     font-family: $poppins;
+    //     font-size: 28px;
+    //     font-weight: 700;
+    //     line-height: 40px;
+    //     text-align: left;
+    //     margin-bottom: 36px;
 
-        span {
-          color: inherit;
-          font-family: inherit;
-        }
-      }
+    //     span {
+    //       color: inherit;
+    //       font-family: inherit;
+    //     }
+    //   }
 
-      .section-subtitle {
-        color: $blue;
-        font-family: $poppins;
-        font-size: 18px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 30px;
-        text-align: left;
-      }
-    }
+    //   .section-subtitle {
+    //     color: $blue;
+    //     font-family: $poppins;
+    //     font-size: 18px;
+    //     font-weight: 400;
+    //     font-style: normal;
+    //     letter-spacing: normal;
+    //     line-height: 30px;
+    //     text-align: left;
+    //   }
+    // }
 
-    .opinions-wrapper {
-      grid-area: opinions;
-      padding-right: 20px;
+    // .opinions-wrapper {
+    //   grid-area: opinions;
+    //   padding-right: 0;
+    //   width: 100%;
+    //   .slick-list {
+    //     .slick-track {
+    //       .slick-slide {
+    //         margin: 0 20px;
+    //         margin: 0 calc((100vw - 335px) / 2);
+    //         div {
+    //           .opinion-box {
+    //             position: relative;
+    //             width: 100%;
+    //             max-width: 378px;
+    //             height: 300px;
+    //             background: $white;
+    //             box-shadow: 0 2px 99px #edeefb;
+    //             display: flex !important;
+    //             flex-direction: column;
+    //             justify-content: center;
+    //             align-items: center;
+    //             margin-top: 65px;
+    //             margin-bottom: 65px;
 
-      .opinion-box {
-        margin-top: 0;
-      }
-    }
-    .arrows-wrapper {
-      grid-area: arrows;
-      // justify-content: flex-start;
-    }
+    //             &:before {
+    //               content: "";
+    //               position: absolute;
+    //               top: -33px;
+    //               left: 29px;
+    //               width: 63px;
+    //               height: 63px;
+    //               background: url("../assets/graphics/quote.svg");
+    //               z-index: 2;
+    //             }
+
+    //             &--text {
+    //               color: $blue;
+    //               font-family: $poppins;
+    //               font-weight: 400;
+    //               font-size: 13px;
+    //               font-style: italic;
+    //               letter-spacing: normal;
+    //               line-height: 25px;
+    //               text-align: center;
+    //               margin-bottom: 10px;
+    //               max-width: 254px;
+    //             }
+
+    //             &--author {
+    //               color: $light-blue;
+    //               font-family: $poppins;
+    //               font-size: 18px;
+    //               font-weight: 400;
+    //               font-style: normal;
+    //               letter-spacing: normal;
+    //               line-height: 30px;
+    //               text-align: center;
+    //             }
+    //           }
+    //         }
+
+    //         // @media (min-width: 398px) {
+    //         //   margin: 0 calc((100vw - 378px) / 2);
+    //         // }
+    //       }
+    //     }
+    //   }
+    // }
+    // .arrows-wrapper {
+    //   grid-area: arrows;
+    //   // justify-content: flex-start;
+    // }
   }
 
   @media (min-width: 1280px) {
-    margin: 0 auto;
-    max-width: 1244px;
-    padding: 60px 0 50px;
+    max-width: 1440px;
+    padding: 20px calc((100% - 1234px) / 2) 50px;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 65% 35%;
+    gap: 20px 0;
     grid-template-areas:
       "title opinions opinions"
       "arrows opinions opinions";
 
     .opinions-wrapper {
+      grid-area: opinions;
       padding-right: 0;
-      flex-direction: row;
-      justify-content: space-between;
-      .opinion-box {
-        &:nth-of-type(2) {
-          display: flex;
-        }
+      position: relative;
 
-        &:before {
-          content: "";
-          position: absolute;
-          top: -33px;
-          left: -32px;
-          width: 63px;
-          height: 63px;
-          background: url("../assets/graphics/quote.svg");
-          z-index: 2;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 300px;
+        width: 372px;
+        background: transparent;
+        box-shadow: 0 2px 99px #edeefb;
+        z-index: -1;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 300px;
+        width: 372px;
+        background: transparent;
+        box-shadow: 0 2px 99px #edeefb;
+        z-index: -1;
+      }
+
+      .slick-list {
+        .slick-track {
+          .slick-slide {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            &.opacity-down {
+              opacity: 0;
+            }
+            div {
+              .opinion-box {
+                background: transparent;
+                box-shadow: unset;
+                // &:before {
+                //   content: "";
+                //   position: absolute;
+                //   top: -33px;
+                //   left: -32px;
+                //   width: 63px;
+                //   height: 63px;
+                //   background: url("../assets/graphics/quote.svg");
+                //   z-index: 2;
+                // }
+              }
+            }
+          }
         }
       }
     }
 
     .title-wrapper {
+      grid-area: title;
       padding-left: 0;
+      max-width: 100%;
+      margin: 0 20px;
     }
 
     .arrows-wrapper {
-      align-self: end;
+      grid-area: arrows;
+      align-self: center;
     }
   }
 }

@@ -209,6 +209,7 @@ get_header(); ?>
       }
 
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
+      $order = 'ASC';
       $args = [
           'post_type' => 'mieszkania',
           'post_status' => 'publish',
@@ -217,8 +218,15 @@ get_header(); ?>
           'meta_query' => $metaQuery,
           'meta_key' => 'flat_price',
           'orderby'    => 'meta_value_num',
-          'order' => 'ASC',
+          'order' => $order,
       ];
+      var_dump($args['order']);
+      if ( isset( $_GET['order-desc'] ) ) {
+        $args[$order = 'DESC'];
+      }
+      if ( isset( $_GET['order-asc'] ) ) {
+        $args[$order = 'ASC'];
+      }
       $query = new WP_Query($args);
 
   ?>
@@ -411,11 +419,10 @@ get_header(); ?>
     </form>
     <div class="sort-wrapper">
       <p class="sort-text">Sortuj:</p>
-      <!-- do podmiany jako elementy array -->
-      <a href="<?php global $wp; $current_url = home_url(esc_url(add_query_arg(array())));?>?meta_key=flat_price&orderby=meta_value_num&order=ASC" class="sort-button">Cena rosnąco</a>
-      <a href="<?php global $wp; $current_url = home_url(esc_url(add_query_arg(array())));?>?meta_key=flat_price&orderby=meta_value_num&order=DESC" class="sort-button">Cena malejąco</a>
-      <!-- <a href="<?php //get_the_permalink(); ?>?orderby=meta_value_num&order=ASC" class="sort-button">Cena rosnąco</a> -->
-      <!-- <a href="<?php //get_the_permalink(); ?>?orderby=meta_value_num&order=DESC" class="sort-button">Cena malejąco</a> -->
+      <!--do zmiany na AJAX -->
+      <a href="<?php esc_attr( add_query_arg( 'order-asc' ) ); ?>" class="sort-button">Cena rosnąco</a>
+      <a href="<?php esc_attr( add_query_arg( 'order-desc' ) ); ?>" class="sort-button">Cena malejąco</a>
+
     </div>
   </div>
 </section>
