@@ -31,15 +31,16 @@ $opinion_subtitle = $opinion['podtytul_sekcji'];
 $opinion_box = $opinion['opinia'];
 
 $cooperation = get_field('cooperation');
-$cooperation_title = $cooperation['tytul_sekcji'];
-$cooperation_list = $cooperation['lista'];
-$cooperation_cta_text = $cooperation['cta_text'];
-$cooperation_phone = $cooperation['numer_telefonu'];
-$cooperation_box = $cooperation['box'];
-$cooperation_box_image = $cooperation_box['image'];
-$cooperation_box_text = $cooperation_box['text'];
-$cooperation_box_name = $cooperation_box['imie_i_nazwisko'];
-$cooperation_box_comment = $cooperation_box['komentarz'];
+$cooperation_template = get_field('cooperation', $pagesData['blocks']);
+$cooperation_title = $cooperation['tytul_sekcji'] ? $cooperation['tytul_sekcji'] : $cooperation_template['tytul_sekcji'];
+$cooperation_list = $cooperation['lista'] ? $cooperation['lista'] : $cooperation_template['lista'];
+$cooperation_cta_text = $cooperation['cta_text'] ? $cooperation['cta_text'] : $cooperation_template['cta_text'];
+$cooperation_phone = $cooperation['numer_telefonu'] ? $cooperation['numer_telefonu'] : $cooperation_template['numer_telefonu'];
+$cooperation_box = $cooperation['box'] ;
+$cooperation_box_image = $cooperation_box['image'] ? $cooperation['box_image'] : $cooperation_template['box']['box_image'];
+$cooperation_box_text = $cooperation_box['text'] ? $cooperation['text'] : $cooperation_template['box']['text'];
+$cooperation_box_name = $cooperation_box['imie_i_nazwisko'] ? $cooperation['imie_i_nazwisko'] : $cooperation_template['box']['imie_i_nazwisko'];
+$cooperation_box_comment = $cooperation_box['komentarz'] ? $cooperation['komentarz'] : $cooperation_template['box']['komentarz'];
 
 get_header(); ?>
 

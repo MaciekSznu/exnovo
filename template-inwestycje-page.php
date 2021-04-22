@@ -13,15 +13,16 @@ $partners_text = get_field('partners_text');
 $partners_gallery = get_field('partners_gallery');
 
 $cooperation = get_field('cooperation');
-$cooperation_title = $cooperation['tytul_sekcji'];
-$cooperation_list = $cooperation['lista'];
-$cooperation_cta_text = $cooperation['cta_text'];
-$cooperation_phone = $cooperation['numer_telefonu'];
-$cooperation_box = $cooperation['box'];
-$cooperation_box_image = $cooperation_box['image'];
-$cooperation_box_text = $cooperation_box['text'];
-$cooperation_box_name = $cooperation_box['imie_i_nazwisko'];
-$cooperation_box_comment = $cooperation_box['komentarz'];
+$cooperation_template = get_field('cooperation', $pagesData['blocks']);
+$cooperation_title = $cooperation['tytul_sekcji'] ? $cooperation['tytul_sekcji'] : $cooperation_template['tytul_sekcji'];
+$cooperation_list = $cooperation['lista'] ? $cooperation['lista'] : $cooperation_template['lista'];
+$cooperation_cta_text = $cooperation['cta_text'] ? $cooperation['cta_text'] : $cooperation_template['cta_text'];
+$cooperation_phone = $cooperation['numer_telefonu'] ? $cooperation['numer_telefonu'] : $cooperation_template['numer_telefonu'];
+$cooperation_box = $cooperation['box'] ;
+$cooperation_box_image = $cooperation_box['image'] ? $cooperation['box_image'] : $cooperation_template['box']['box_image'];
+$cooperation_box_text = $cooperation_box['text'] ? $cooperation['text'] : $cooperation_template['box']['text'];
+$cooperation_box_name = $cooperation_box['imie_i_nazwisko'] ? $cooperation['imie_i_nazwisko'] : $cooperation_template['box']['imie_i_nazwisko'];
+$cooperation_box_comment = $cooperation_box['komentarz'] ? $cooperation['komentarz'] : $cooperation_template['box']['komentarz'];
 
 get_header(); ?>
 
@@ -36,104 +37,101 @@ get_header(); ?>
     <p class="page-adress"><?= $page_adress; ?></p>
     <?php
       $args = [
-          'post_type' => 'mieszkania',
+          'post_type' => 'inwestycje',
           'posts_per_page' => -1,
           'post_status' => 'publish',
-          'meta_key'	=> 'flat_market',
-          'meta_value'  => 'pierwotny',
       ];
-      $filters = ['locationCityName' => [], 'investmentId' => []];
+      $filters = ['location_commune_name' => [], 'id' => []];
       $query = new WP_Query($args);
 
       if($query->have_posts()): while($query->have_posts()) : $query->the_post();
-          $locationCityName = trim(get_field('flat_locationCityName'));
-          $investmentId = trim(get_field('flat_investmentId'));
+          $location_commune_name = trim(get_field('investment_location_commune_name'));
+          $id = trim(get_field('investment_id'));
 
-          if(!in_array($locationCityName, $filters['locationCityName']) && $locationCityName != ''){
-              $filters['locationCityName'][] = $locationCityName;
+          if(!in_array($location_commune_name, $filters['location_commune_name']) && $location_commune_name != ''){
+              $filters['location_commune_name'][] = $location_commune_name;
           }
 
-          if(!in_array($investmentId, $filters['investmentId']) && $investmentId != ''){
-            $filters['investmentId'][] = $investmentId;
+          if(!in_array($id, $filters['id']) && $id != ''){
+            $filters['id'][] = $id;
         }
 
       endwhile; endif; wp_reset_postdata();
 
-      sort($filters['locationCityName']);
+      sort($filters['location_commune_name']);
 
-      $locationCityNameGet = (isset($_GET['locationCityName']))? $_GET['locationCityName']: '';
+      $location_commune_nameGet = (isset($_GET['location_commune_name']))? $_GET['location_commune_name']: '';
       $metaQuery = [];
 
-      if($locationCityNameGet){
+      if($location_commune_nameGet){
           $metaQuery[] = [
-              'key'     => 'flat_locationCityName',
-              'value'   => $locationCityNameGet,
+              'key'     => 'investment_location_commune_name',
+              'value'   => $location_commune_nameGet,
           ];
       }
 
-      $filteredIds = $filters['investmentId'];
+      $filteredIds = $filters['id'];
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
       $args = [
-          'post_type' => 'mieszkania',
+          'post_type' => 'inwestycje',
           'post_status' => 'publish',
           'post_parent' => 0,
           'paged' => $paged,
-          'meta_key'	=> 'flat_investmentId',
-          'meta_value'   => $filteredIds,
+          // 'meta_key'	=> 'investment_id',
+          // 'meta_value'   => $filteredIds,
           'meta_query' => $metaQuery,
       ];
       $query = new WP_Query($args);
   ?>
-      <form action="<?= get_the_permalink(); ?>" id="search-form" class="search-form" method="get">
+    <form action="<?= get_the_permalink(); ?>" id="search-form" class="search-form" method="get">
       <div class="row-wrapper-01">
         <div class="input-wrapper property">
-          <select id="input-property" class="input-property" name="locationCityName" onchange="this.form.submit()">
-            <option value="">Lokalizacja</option>
-            <?php foreach($filters['locationCityName'] as $option): ?>
-              <option value="<?= $option ?>" <?= ($locationCityNameGet == $option)? 'selected' : ''; ?>><?= ucfirst($option); ?></option>
+          <select id="input-property" class="input-property" name="location_commune_name" onchange="this.form.submit()">
+            <option value="">Pokaż wszystkie</option>
+            <?php foreach($filters['location_commune_name'] as $option): ?>
+            <option value="<?= $option ?>" <?= ($location_commune_nameGet == $option)? 'selected' : ''; ?>><?= ucfirst($option); ?></option>
             <?php endforeach; ?>
           </select>
+          <div class="cities-wrapper">
+            <button type="submit" name="" value="" class="city-button">Pokaż wszystkie</button>
+            <?php foreach($filters['location_commune_name'] as $button): ?>
+              <button type="submit" name="location_commune_name" value="<?= $button ?>" class="city-button" ><?= ucfirst($button); ?></button>
+            <?php endforeach; ?>
+          </div>
         </div>
+      </div>
     </form>
-    <!-- <div class="sort-wrapper">
-      <p class="sort-text">Sortuj:</p>
-      <button class="sort-button">Cena rosnąco</button>
-      <button class="sort-button">Cena malejąco</button>
-    </div> -->
   </div>
 </section>
 <section class="offers">
   <div class="offers-wrapper">
     <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post();
 
-      $apartmentRoomNumber = trim(get_field('flat_apartmentRoomNumber'));
-      $locationCityName = trim(get_field('flat_locationCityName'));
-
-      $areaTotalArray[] = get_field('flat_areaTotal');
-      $pricePermeterArray[] = get_field('flat_pricePermeter');
-      $priceArray[] = get_field('flat_price');
-      $currency = get_field('flat_priceCurrency');
-    ?>
-    <?php
-      $title = get_the_title();
-      $type = get_field('flat_mainTypeId');
-      $transaction = get_field('flat_transaction');
-      $area = get_field('flat_areaTotal');
-      $city = get_field('flat_locationCityName');
-      $alt_title = $city . ', ' . $type . ' ' . $area . ' m<sup>2</sup> na ' . $transaction;
-
-      $offer_title = $title != '' ? $title : $alt_title;
+      $name = trim(get_field('investment_name'));
+      $city = trim(get_field('investment_location_commune_name'));
+      $price_permeter_from = trim(get_field('investment_price_permeter_from'));
+      $price_permeter_to = trim(get_field('investment_price_permeter_to'));
+      $area_from = trim(get_field('investment_area_from'));
+      $area_to = trim(get_field('investment_area_to'));
+      $room_number_from = trim(get_field('investment_room_number_from'));
+      $room_number_to = trim(get_field('investment_room_number_to'));
     ?>
     <div class="offer-wrapper">
       <div class="offer-item">
-        <img class="offer-image" src="<?= wp_get_attachment_image_src( get_field('flat_pictures')[0], 'large')[0]; ?>" alt="<?= get_the_title(); ?>" />
+        <img class="offer-image" src="" alt="" />
         <div class="offer-text-wrapper">
-          <h4 class="offer-title"><?= $offer_title; ?></h4>
-          <h5 class="offer-transaction"><?= get_field('flat_mainTypeId'); ?> na <?= get_field('flat_transaction'); ?></h5>
-          <h6 class="offer-price"><?= number_format(min($pricePermeterArray), 0, '', ' '); ?> <?= $currency; ?></h6>
-          <div class="offer-parameters">
-            <p class="offer-area"><?= get_field('flat_areaTotal'); ?> m<sup>2</sup></p>
-            <p class="offer-rooms">liczba pokoi: &nbsp;<span><?= get_field('flat_apartmentRoomNumber'); ?></span></p>
+          <h4 class="offer-title"><?= $name; ?>, <?= $city; ?></h4>
+          <div class="rooms-wrapper">
+            <p class="rooms-description">liczba pokoi</p>
+            <p class="rooms-value">od <?= $room_number_from; ?> do <?= $room_number_to; ?></p>
+          </div>
+          <div class="prices-wrapper">
+            <p class="prices-description">cena za m²</p>
+            <p class="prices-value">od <?= number_format($price_permeter_from, 0, '', ' '); ?> PLN do <?= number_format($price_permeter_to, 0, '', ' '); ?> PLN</p>
+          </div>
+          <div class="area-wrapper">
+            <p class="area-description">powierzchnia</p>
+            <p class="area-value">od <?= $area_from; ?> m<sup>2</sup> do <?= $area_to; ?>m<sup>2</sup></p>
           </div>
         </div>
       </div>

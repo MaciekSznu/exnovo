@@ -108,7 +108,10 @@
       }
 
       a {
+        opacity: 0;
         text-decoration: none;
+        transition: opacity 0.5s ease-in-out;
+
         .show-offer-button {
           @include button;
 
@@ -121,6 +124,11 @@
             font-size: 15px;
           }
         }
+      }
+
+      &:hover a {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
       }
     }
   }

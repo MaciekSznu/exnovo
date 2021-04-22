@@ -140,3 +140,120 @@
     }
   }
 }
+
+.search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $light-bg;
+
+  .search-wrapper {
+    width: 100%;
+    padding: 0 10px;
+
+    @media (min-width: 768px) {
+      padding: 0 20px;
+    }
+
+    @media (min-width: 1234px) {
+      padding: 0;
+    }
+
+    .page-adress {
+      width: 100%;
+      max-width: 1234px;
+      color: $light-blue;
+      font-family: $poppins;
+      font-size: 13px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      margin-top: 45px;
+      margin-bottom: 36px;
+    }
+
+    .search-form {
+      width: 100%;
+      max-width: 984px;
+      display: grid;
+      margin-top: 28px;
+      margin-bottom: 40px;
+      grid-template-columns: 100%;
+      grid-template-rows: auto;
+      gap: 0px 47px;
+      grid-template-areas: "row_01";
+
+      @media (min-width: 1034px) {
+        max-width: 100%;
+      }
+
+      .row-wrapper-01 {
+        grid-area: row_01;
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: 60px;
+        grid-template-areas: "property";
+
+        @media (min-width: 400px) {
+          grid-template-columns: minmax(300px, 380px);
+        }
+
+        @media (max-width: 979px) {
+          width: auto;
+          justify-content: center;
+        }
+
+        .property {
+          grid-area: property;
+        }
+
+        .input-wrapper {
+          height: 100%;
+          width: 100%;
+
+          select {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #e1e2f4;
+            padding: 21px 32px;
+            color: $mid-blue;
+            font-family: $grotesk-reg;
+            font-size: 14px;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+            outline: none;
+            background-color: $white;
+            background-image: url("../assets/graphics/menu-item-expander.png");
+            background-repeat: no-repeat;
+            background-size: 10px 7px;
+            background-position-y: center;
+            background-position-x: calc(100% - 23px);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1234px) {
+    .search-wrapper {
+      width: 1234px;
+      max-width: 1234px;
+
+      .page-adress {
+        margin-top: 0px;
+        margin-bottom: 33px;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    // height: 505px;
+    // background-color: #fbfbff;
+    padding-top: 51px;
+  }
+}

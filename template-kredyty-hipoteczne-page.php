@@ -26,20 +26,22 @@ $choice_text = $choice['section_text'];
 $choice_boxes = $choice['boxes'];
 
 $form_group = get_field('form_group');
-$form_group_title = $form_group['title'];
-$form_group_text = $form_group['text'];
+$form_group_template = get_field('form_group', $pagesData['blocks']);
+$form_group_title = $form_group['title'] ? $form_group['title'] : $form_group_template['title'];
+$form_group_text = $form_group['text'] ? $form_group['text'] : $form_group_template['text'];
 $form = $form_group['form'];
-$form_placeholder_01 = $form['placeholder_01'];
-$form_placeholder_02 = $form['placeholder_02'];
-$form_placeholder_03 = $form['placeholder_03'];
-$form_checkbox_label_01 = $form['checkbox_label_01'];
-$form_checkbox_label_02 = $form['checkbox_label_02'];
+$form_placeholder_01 = $form['placeholder_01'] ? $form['placeholder_01'] : $form_group_template['form']['placeholder_01'];
+$form_placeholder_02 = $form['placeholder_02'] ? $form['placeholder_02'] : $form_group_template['form']['placeholder_02'];
+$form_placeholder_03 = $form['placeholder_03'] ? $form['placeholder_03'] : $form_group_template['form']['placeholder_03'];
+$form_checkbox_label_01 = $form['checkbox_label_01'] ? $form['checkbox_label_01'] : $form_group_template['form']['checkbox_label_01'];
+$form_checkbox_label_02 = $form['checkbox_label_02'] ? $form['checkbox_label_02'] : $form_group_template['form']['checkbox_label_02'];
 
 $box = get_field('box');
-$box_image = $box['image'];
-$box_text = $box['text'];
-$box_name = $box['imie_i_nazwisko'];
-$box_comment = $box['komentarz'];
+$box_template = get_field('box', $pagesData['blocks']);
+$box_image = $box['image'] ? $box['image'] : $box_template['image'];
+$box_text = $box['text'] ? $box['text'] : $box_template['text'];
+$box_name = $box['imie_i_nazwisko'] ? $box['imie_i_nazwisko'] : $box_template['imie_i_nazwisko'];
+$box_comment = $box['komentarz'] ? $box['komentarz'] : $box_template['komentarz'];
 
 get_header(); ?>
 

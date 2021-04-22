@@ -53,13 +53,13 @@ global $currentLangData;
           <a href="" class="nav-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
           <ul class="nav-list--secondary">
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-list--item-link">Kredyty hipoteczne</a>
+              <a href="<?php echo bloginfo('url'); ?>/kredyty-hipoteczne" class="nav-list--item-link">Kredyty hipoteczne</a>
             </li>
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-list--item-link">Kredyty gotówkowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/kredyty-gotowkowe" class="nav-list--item-link">Kredyty gotówkowe</a>
             </li>
             <li class="nav-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-list--item-link">Kredyty firmowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/kredyty-firmowe" class="nav-list--item-link">Kredyty firmowe</a>
             </li>
           </ul>
         </li>
@@ -87,13 +87,13 @@ global $currentLangData;
           <a href="" class="nav-desktop-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
           <ul class="nav-desktop-list--secondary">
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-desktop-list--item-link">Kredyty hipoteczne</a>
+              <a href="<?php echo bloginfo('url'); ?>/kredyty-hipoteczne" class="nav-desktop-list--item-link">Kredyty hipoteczne</a>
             </li>
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-desktop-list--item-link">Kredyty gotówkowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/kredyty-gotowkowe" class="nav-desktop-list--item-link">Kredyty gotówkowe</a>
             </li>
             <li class="nav-desktop-list--item secondary">
-              <a href="<?php echo bloginfo('url'); ?>/finansowanie" class="nav-desktop-list--item-link">Kredyty firmowe</a>
+              <a href="<?php echo bloginfo('url'); ?>/kredyty-firmowe" class="nav-desktop-list--item-link">Kredyty firmowe</a>
             </li>
           </ul>
         </li>

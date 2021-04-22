@@ -12,14 +12,15 @@ $team = get_field('team');
 $team_member = $team['pracownicy'];
 
 $form_group = get_field('form_group');
-$form_group_title = $form_group['title'];
-$form_group_text = $form_group['text'];
+$form_group_template = get_field('form_group', $pagesData['blocks']);
+$form_group_title = $form_group['title'] ? $form_group['title'] : $form_group_template['title'];
+$form_group_text = $form_group['text'] ? $form_group['text'] : $form_group_template['text'];
 $form = $form_group['form'];
-$form_placeholder_01 = $form['placeholder_01'];
-$form_placeholder_02 = $form['placeholder_02'];
-$form_placeholder_03 = $form['placeholder_03'];
-$form_checkbox_label_01 = $form['checkbox_label_01'];
-$form_checkbox_label_02 = $form['checkbox_label_02'];
+$form_placeholder_01 = $form['placeholder_01'] ? $form['placeholder_01'] : $form_group_template['form']['placeholder_01'];
+$form_placeholder_02 = $form['placeholder_02'] ? $form['placeholder_02'] : $form_group_template['form']['placeholder_02'];
+$form_placeholder_03 = $form['placeholder_03'] ? $form['placeholder_03'] : $form_group_template['form']['placeholder_03'];
+$form_checkbox_label_01 = $form['checkbox_label_01'] ? $form['checkbox_label_01'] : $form_group_template['form']['checkbox_label_01'];
+$form_checkbox_label_02 = $form['checkbox_label_02'] ? $form['checkbox_label_02'] : $form_group_template['form']['checkbox_label_02'];
 
 $map = get_field('map_datas');
 $latitude = $map['office_latitude'];

@@ -4,9 +4,10 @@ global $pagesData;
 
 //ZMIENNE DLA STRON
 $pagesData = [
-    'home' => 9, //ID STRONA GŁÓWNA
-    'contact' => 18, //ID KONTAKT
-    'flats' => 15, //ID OFERTA MIESZKAŃ
+    // 'home' => 9, //ID STRONA GŁÓWNA
+    // 'contact' => 18, //ID KONTAKT
+    // 'flats' => 15, //ID OFERTA MIESZKAŃ
+    'blocks' => 78472,
 ];
 
 function remove_default_image_sizes( $sizes ) {
@@ -24,9 +25,9 @@ function page_scripts() {
 
   if ( is_front_page()) :
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/style.css' );
-    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/src/js/3jquery.chocolat.js', array(), '', true );
-    wp_enqueue_script( 'slick', get_template_directory_uri() . '/src/js/1slick.min.js', array(), '', true );
-    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/src/js/main-script.js', array(), '', true );
+    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
+    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
 
   elseif ( is_page('o-nas')) :
     wp_enqueue_style( 'onas-style', get_template_directory_uri() . '/dist/o-nas.css' );
@@ -34,8 +35,8 @@ function page_scripts() {
   elseif ( is_page('uslugi')) :
     wp_enqueue_style( 'uslugi-style', get_template_directory_uri() . '/dist/uslugi.css' );
     
-  elseif ( is_page('finansowanie')) :
-    wp_enqueue_style( 'finansowanie-style', get_template_directory_uri() . '/dist/kredyty.css' );
+  elseif ( is_page_template('template-kredyty-hipoteczne-page.php')) :
+    wp_enqueue_style( 'kredyty-style', get_template_directory_uri() . '/dist/kredyty.css' );
   
   elseif ( is_page('kontakt')) :
     wp_enqueue_style( 'kontakt-style', get_template_directory_uri() . '/dist/kontakt.css' );
@@ -51,15 +52,15 @@ function page_scripts() {
 
   elseif ( is_singular('mieszkania')) :
     wp_enqueue_style( 'mieszkania-style', get_template_directory_uri() . '/dist/single-offer.css' );
-    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/src/js/3jquery.chocolat.js', array(), '', true );
-    wp_enqueue_script( 'slick', get_template_directory_uri() . '/src/js/1slick.min.js', array(), '', true );
-    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/src/js/main-script.js', array(), '', true );
+    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
+    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
   
   elseif ( is_singular('inwestycje')) :
     wp_enqueue_style( 'inwestycja-style', get_template_directory_uri() . '/dist/single-pierwotny.css' );
-    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/src/js/3jquery.chocolat.js', array(), '', true );
-    wp_enqueue_script( 'slick', get_template_directory_uri() . '/src/js/1slick.min.js', array(), '', true );
-    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/src/js/main-script.js', array(), '', true );
+    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
+    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
 
   elseif ( is_singular('blog')) :
     wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/single-blog.css' );

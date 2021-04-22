@@ -1,30 +1,40 @@
 <?php
 global $pagesData;
 
-$tytul_wpisu = get_field('tytul_wpisu');
-$page_adress = get_field('page_adress');
-$description = get_field('opis_inwestycji');
+$current_investment = get_field('investment');
+$name = $current_investment['name'];
+$location = $current_investment['location_commune_name'];
+$description = $current_investment['description'];
+$ready_date = $current_investment['ready_date'];
+$price_from = $current_investment['price_from'];
+$price_to = $current_investment['price_to'];
+$area_from = $current_investment['area_from'];
+$area_to = $current_investment['area_to'];
+$price_permeter_from = $current_investment['price_permeter_from'];
+$price_permeter_to = $current_investment['price_permeter_to'];
 
 $form_group = get_field('form_group');
-$form_group_title = $form_group['title'];
-$form_group_text = $form_group['text'];
+$form_group_template = get_field('form_group', $pagesData['blocks']);
+$form_group_title = $form_group['title'] ? $form_group['title'] : $form_group_template['title'];
+$form_group_text = $form_group['text'] ? $form_group['text'] : $form_group_template['text'];
 $form = $form_group['form'];
-$form_placeholder_01 = $form['placeholder_01'];
-$form_placeholder_02 = $form['placeholder_02'];
-$form_placeholder_03 = $form['placeholder_03'];
-$form_checkbox_label_01 = $form['checkbox_label_01'];
-$form_checkbox_label_02 = $form['checkbox_label_02'];
+$form_placeholder_01 = $form['placeholder_01'] ? $form['placeholder_01'] : $form_group_template['form']['placeholder_01'];
+$form_placeholder_02 = $form['placeholder_02'] ? $form['placeholder_02'] : $form_group_template['form']['placeholder_02'];
+$form_placeholder_03 = $form['placeholder_03'] ? $form['placeholder_03'] : $form_group_template['form']['placeholder_03'];
+$form_checkbox_label_01 = $form['checkbox_label_01'] ? $form['checkbox_label_01'] : $form_group_template['form']['checkbox_label_01'];
+$form_checkbox_label_02 = $form['checkbox_label_02'] ? $form['checkbox_label_02'] : $form_group_template['form']['checkbox_label_02'];
 
 $box = get_field('box');
-$box_image = $box['image'];
-$box_text = $box['text'];
-$box_name = $box['imie_i_nazwisko'];
-$box_comment = $box['komentarz'];
+$box_template = get_field('box', $pagesData['blocks']);
+$box_image = $box['image'] ? $box['image'] : $box_template['image'];
+$box_text = $box['text'] ? $box['text'] : $box_template['text'];
+$box_name = $box['imie_i_nazwisko'] ? $box['imie_i_nazwisko'] : $box_template['imie_i_nazwisko'];
+$box_comment = $box['komentarz'] ? $box['komentarz'] : $box_template['komentarz'];
 
 get_header(); ?>
 
 <?php
-    $investmentId = get_field('investment_investmentId');
+    $investmentId = get_field('investment_id');
     $areaTotalArray = [];
     $pricePermeterArray = [];
     $priceArray = [];
@@ -82,14 +92,14 @@ get_header(); ?>
 ?>
 <section class="page-title-wrapper">
   <h2 class="page-title">
-    <span class="blue-text"><?= $tytul_wpisu['linia_01']; ?></span>
-    <span class="orange-text"><?= $locationCityName; ?></span>
+    <span class="blue-text"><?= $name; ?></span>
+    <span class="orange-text"><?= $location; ?></span>
   </h2>
 </section>
 <section class="presentation">
   <div class="presentation-wrapper">
     <article class="text-wrapper">
-      <p class="page-adress"><?= $page_adress; ?></p>
+      <p class="page-adress">Home> Rynek pierwotny> <?= $name; ?> <?= $location; ?></p>
       <?= $description; ?>
     </article>
     <div class="image-wrapper"></div>
@@ -101,25 +111,25 @@ get_header(); ?>
     <div class="summary-column-01">
       <div class="summary-row">
         <p class="description">termin realizacji</p>
-        <p class="value"><?= $year; ?> r.</p>
+        <p class="value"><?= substr($ready_date, 0, -2); ?> r.</p>
       </div>
       <div class="summary-row">
         <p class="description">ceny od</p>
-        <p class="value"><?= number_format(min($priceArray), 0, '', ' '); ?> <?= $currency; ?></p>
+        <p class="value"><?= number_format($price_from, 0, '', ' '); ?> PLN</p>
       </div>
       <div class="summary-row">
         <p class="description">ceny do</p>
-        <p class="value"><?= number_format(max($priceArray), 0, '', ' '); ?> <?= $currency; ?></p>
+        <p class="value"><?= number_format($price_to, 0, '', ' '); ?> PLN</p>
       </div>
     </div>
     <div class="summary-column-02">
       <div class="summary-row">
         <p class="description">Powierzchnie od</p>
-        <p class="value"><?= min($areaTotalArray); ?> m<sup>2</sup></p>
+        <p class="value"><?= $area_from; ?> m<sup>2</sup></p>
       </div>
       <div class="summary-row">
         <p class="description">Powierzchnie do</p>
-        <p class="value"><?= max($areaTotalArray); ?> m<sup>2</sup></p>
+        <p class="value"><?= $area_to; ?> m<sup>2</sup></p>
       </div>
       <div class="summary-row">
         <p class="description">L. pomieszczeń od</p>
@@ -129,15 +139,15 @@ get_header(); ?>
     <div class="summary-column-03">
       <div class="summary-row">
         <p class="description">Ceny za mkw. od</p>
-        <p class="value"><?= number_format(min($pricePermeterArray), 0, '', ' '); ?> <?= $currency; ?></p>
+        <p class="value"><?= number_format($price_permeter_from, 0, '', ' '); ?> PLN</p>
       </div>
       <div class="summary-row">
         <p class="description">Ceny za mkw. do</p>
-        <p class="value"><?= number_format(max($pricePermeterArray), 0, '', ' '); ?> <?= $currency; ?></p>
+        <p class="value"><?= number_format($price_permeter_to, 0, '', ' '); ?> PLN</p>
       </div>
       <div class="summary-row">
         <p class="description">lokalizacja</p>
-        <p class="value"><?= $locationCityName; ?></p>
+        <p class="value"><?= $location; ?></p>
       </div>
     </div>
   </div>
