@@ -162,7 +162,7 @@ get_header(); ?>
       ?>
         <li class="slide">
           <a href="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>" class="gallery-image slide__image" style="background-image: url(<?= wp_get_attachment_image_src( $item, 'medium')[0]; ?>)">
-            <img class="slide__image" src="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>" alt="<?= get_the_title() . $item; ?>" style="width: 100%; height: auto;">
+            <img class="slide__image" src="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>" sizes="100vw" alt="<?= get_the_title() . $item; ?>" srcset="<?= wp_get_attachment_image_src( $item, 'large')[0]; ?>, <?= wp_get_attachment_image_src( $item, 'full')[0]; ?> 1280w" style="height: auto;">
           </a>
         </li>
       <?php endforeach; ?>
