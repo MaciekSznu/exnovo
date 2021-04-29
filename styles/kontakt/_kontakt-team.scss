@@ -7,6 +7,30 @@
   flex-direction: column;
   align-items: center;
   background: $light-bg;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -33px;
+    right: 10px;
+    width: 42px;
+    height: 58px;
+    background: url("../assets/graphics/triangles.svg");
+  }
+
+  .page-adress {
+    width: 100%;
+    max-width: 1234px;
+    color: $light-blue;
+    font-family: $poppins;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-top: 33px;
+  }
 
   .team-members-wrapper {
     display: flex;
@@ -106,6 +130,10 @@
   @media (min-width: 768px) {
     padding: 60px 20px 60px;
 
+    &:before {
+      right: 20px;
+    }
+
     .team-members-wrapper {
       .member {
         &:nth-of-type(3) {
@@ -127,6 +155,17 @@
     position: relative;
     z-index: 2;
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $light-bg;
+      transform: translateX(-50%);
+    }
+
     &:after {
       content: "";
       position: absolute;
@@ -145,12 +184,12 @@
       &:before {
         content: "";
         position: absolute;
-        top: -105px;
+        top: -160px;
         right: 26px;
         width: 53px;
         height: 73px;
         transform: translateX(50%);
-        background: url("../../assets/graphics/triangles_big.svg");
+        background: url("../assets/graphics/triangles_big.svg");
       }
 
       .member {

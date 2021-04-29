@@ -35,6 +35,7 @@ get_header(); ?>
   </h2>
 </section>
 <section class="team">
+  <p class="page-adress"><?= $page_adress; ?></p>
   <div class="team-members-wrapper">
   <?php
       if($team_member) {

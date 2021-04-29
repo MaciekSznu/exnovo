@@ -13,12 +13,15 @@ $hero_contact = $hero['hero_contact'];
 $hero_contact_photo = $hero_contact['photo'];
 $hero_contact_text = $hero_contact['text'];
 $hero_contact_phone = $hero_contact['phone'];
+$hero_image = $hero['image'];
 
 $buy = get_field('buy');
 $buy_text_header = $buy['buy_text_header'];
 $buy_text = $buy['buy_text'];
 $buy_bottom_text = $buy['buy_bottom_text'];
 $buy_cta_text = $buy['buy_cta_text'];
+$buy_image = $buy['image'];
+$buy_cta_link = $buy['buy_cta_link'];
 
 $experience = get_field('experience');
 $experience_title = $experience['tytul_sekcji'];
@@ -70,7 +73,8 @@ get_header(); ?>
         </div>
       </div>
     </article>
-    <div class="image-wrapper"></div>
+    <div class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
+        background-position: top left;"></div>
   </div>
 </section>
 <section class="buy">
@@ -79,9 +83,10 @@ get_header(); ?>
       <h2 class="article-title"><?= $buy_text_header; ?></h2>
       <p class="article-text"><?= $buy_text; ?></p>
       <h3 class="cta-lead-text"><?= $buy_bottom_text; ?></h3>
-      <button class="cta-button"><?= $buy_cta_text; ?></button>
+      <button class="cta-button"><a href="<?= $buy_cta_link; ?>"><?= $buy_cta_text; ?></a></button>
     </article>
-    <div class="image-wrapper"></div>
+    <div class="image-wrapper" style="background: url(<?= $buy_image; ?>); background-size: cover;
+        background-position: top left;"></div>
   </div>
 </section>
 <section class="experience">
@@ -160,7 +165,7 @@ get_header(); ?>
         <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
       </form>
     </div>
-    <div class="image-wrapper">
+    <div class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $box_text; ?></p>
         <p class="image-text--name"><?= $box_name; ?></p>

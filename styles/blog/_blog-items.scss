@@ -115,12 +115,20 @@
   }
 
   @media (min-width: 1280px) {
-    padding: 51px 0 0;
+    padding: 51px 0 30px;
     margin-bottom: 0;
     position: relative;
 
-    &:before {
-      display: none;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $light-bg;
+      transform: translateX(-50%);
+      z-index: -1;
     }
 
     .page-adress {
@@ -147,6 +155,7 @@
         width: 380px;
         max-width: 380px;
         margin-top: 0;
+        margin-bottom: 47px;
         height: 488px;
         position: relative;
         overflow: hidden;
@@ -297,7 +306,7 @@
 
     @media (min-width: 1280px) {
       width: 1234px;
-      padding: 48px 0 0;
+      padding: 32px 0 0;
     }
   }
 }

@@ -82,9 +82,9 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../assets/img/o-nas/hands_image_mobile.png");
-      background-size: cover;
-      background-position: top left;
+      // background: url("../assets/img/o-nas/hands_image_mobile.png");
+      // background-size: cover;
+      // background-position: top left;
 
       &:before {
         content: "";
@@ -145,8 +145,15 @@
     flex-direction: column;
     align-items: center;
 
-    &:before {
-      display: none;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $light-bg;
+      transform: translateX(-50%);
     }
 
     &:after {
@@ -184,7 +191,7 @@
         .article-text {
           font-size: 16px;
           line-height: 30px;
-          margin-bottom: 61px;
+          margin-bottom: 30px;
         }
 
         .cta-lead-text {
@@ -197,9 +204,9 @@
         margin-top: 0;
         width: 566px;
         height: 596px;
-        background: url("../assets/img/o-nas/hands_image.png");
-        background-size: cover;
-        background-position: top left;
+        // background: url("../assets/img/o-nas/hands_image.png");
+        // background-size: cover;
+        // background-position: top left;
         margin-left: 47px;
         margin-right: 26px;
         height: 637px;
@@ -207,7 +214,7 @@
         &:before {
           left: -23px;
           top: -38px;
-          height: 596px;
+          height: 568px;
           width: 378px;
           background: url("../assets/graphics/img_overlay_house_big.svg");
         }

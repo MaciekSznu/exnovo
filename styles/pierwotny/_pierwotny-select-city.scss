@@ -7,6 +7,17 @@
   flex-direction: column;
   align-items: center;
   background: $light-bg;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -33px;
+    right: 10px;
+    width: 42px;
+    height: 58px;
+    background: url("../assets/graphics/triangles.svg");
+  }
 
   .search-wrapper {
     width: 100%;
@@ -20,19 +31,19 @@
       padding: 0;
     }
 
-    // .page-adress {
-    //   width: 100%;
-    //   max-width: 1234px;
-    //   color: $light-blue;
-    //   font-family: $poppins;
-    //   font-size: 13px;
-    //   font-weight: 400;
-    //   font-style: normal;
-    //   letter-spacing: normal;
-    //   line-height: normal;
-    //   margin-top: 45px;
-    //   margin-bottom: 36px;
-    // }
+    .page-adress {
+      width: 100%;
+      max-width: 1234px;
+      color: $light-blue;
+      font-family: $poppins;
+      font-size: 13px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      margin-top: 45px;
+      margin-bottom: 36px;
+    }
 
     .search-form {
       display: flex;
@@ -92,7 +103,7 @@
 
             .city-button {
               background: transparent;
-              border: none;
+              border: 2px solid transparent;
               padding: 20px;
               color: #252942;
               font-family: $grotesk-bold;
@@ -111,6 +122,10 @@
               &:focus {
                 outline: 1px solid $orange;
               }
+
+              &.selected {
+                border: 2px solid $orange;
+              }
             }
           }
         }
@@ -118,11 +133,44 @@
     }
   }
 
+  @media (min-width: 768px) {
+    &:before {
+      right: 20px;
+    }
+  }
+
   @media (min-width: 1234px) {
+    &:before {
+      display: none;
+    }
+
     .search-wrapper {
       width: 1234px;
       max-width: 1234px;
-      // margin-top: 75px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        right: 26px;
+        width: 53px;
+        height: 73px;
+        transform: translateX(50%);
+        background: url("../assets/graphics/triangles_big.svg");
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        height: 100%;
+        background: $light-bg;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
     }
   }
 

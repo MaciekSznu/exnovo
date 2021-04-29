@@ -21,14 +21,15 @@
   @media (min-width: 768px) {
     margin-top: 42px;
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
-      left: 0;
+      left: 50%;
       bottom: 0;
-      width: 100%;
+      width: 100vw;
       height: 367px;
       background: $dark-blue;
+      transform: translateX(-50%);
       z-index: -1;
     }
   }
@@ -109,7 +110,7 @@
       @media (min-width: 1280px) {
         margin-left: calc((100vw - 1234px - 12px) / 2);
         .hero-title {
-          margin-bottom: -90px;
+          margin-bottom: -100px;
           margin-left: 0;
           .blue-text {
             height: 54px;

@@ -9,6 +9,7 @@ $page_adress = $hero['page_adress'];
 $hero_text_header = $hero['hero_text_header'];
 $hero_text = $hero['hero_text'];
 $hero_bottom_text = $hero['hero_bottom_text'];
+$hero_image = $hero['hero_image'];
 
 $experience = get_field('experience');
 $experience_title = $experience['tytul_sekcji'];
@@ -56,7 +57,8 @@ get_header(); ?>
       <p class="article-text"><?= $hero_text; ?></p>
       <h3 class="cta-lead-text"><?= $hero_bottom_text; ?></h3>
     </article>
-    <div class="image-wrapper"></div>
+    <div class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
+        background-position: top left;"></div>
   </div>
 </section>
 <section class="experience">

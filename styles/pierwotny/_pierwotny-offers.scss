@@ -266,6 +266,20 @@
 
   @media (min-width: 1280px) {
     padding: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $light-bg;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
     .offers-wrapper {
       width: 1234px;
 

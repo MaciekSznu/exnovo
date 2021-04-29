@@ -86,9 +86,9 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../assets/img/uslugi/buy_img_desktop.png");
-      background-size: cover;
-      background-position: top left;
+      // background: url("../assets/img/uslugi/buy_img_desktop.png");
+      // background-size: cover;
+      // background-position: top left;
 
       &:before {
         content: "";
@@ -100,17 +100,6 @@
         min-width: 213px;
         background: url("../assets/graphics/img_overlay_house.svg");
         background-size: cover;
-        z-index: 2;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 133px;
-        width: 109px;
-        background: url("../assets/graphics/dev_100_img_bottom_right.svg");
         z-index: 2;
       }
     }
@@ -156,15 +145,22 @@
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1234px) {
     height: 806px;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    &:before {
-      display: none;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $light-bg;
+      transform: translateX(-50%);
     }
 
     &-wrapper {
@@ -205,9 +201,9 @@
       .image-wrapper {
         margin-top: 0;
         width: 566px;
-        background: url("../assets/img/uslugi/buy_img_desktop.png");
-        background-size: cover;
-        background-position: top left;
+        // background: url("../assets/img/uslugi/buy_img_desktop.png");
+        // background-size: cover;
+        // background-position: top left;
         margin-left: 23px;
         height: 637px;
 

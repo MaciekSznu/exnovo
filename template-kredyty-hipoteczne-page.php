@@ -9,6 +9,7 @@ $page_adress = $hero['page_adress'];
 $hero_text_header = $hero['hero_text_header'];
 $hero_text = $hero['hero_text'];
 $hero_bottom_text = $hero['hero_bottom_text'];
+$hero_image = $hero['hero_image'];
 
 $benefits = get_field('benefits');
 $benefits_title = $benefits['tytul_sekcji'];
@@ -59,7 +60,8 @@ get_header(); ?>
       <p class="article-text"><?= $hero_text; ?></p>
       <h3 class="cta-lead-text"><?= $hero_bottom_text; ?></h3>
     </article>
-    <div class="image-wrapper"></div>
+    <div class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
+        background-position: top left;"></div>
   </div>
 </section>
 <section class="benefits">
@@ -207,7 +209,7 @@ get_header(); ?>
         <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
       </form>
     </div>
-    <div class="image-wrapper">
+    <div class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $box_text; ?></p>
         <p class="image-text--name"><?= $box_name; ?></p>

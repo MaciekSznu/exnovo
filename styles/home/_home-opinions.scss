@@ -218,12 +218,26 @@
       grid-area: title;
       padding-left: 0;
       max-width: 100%;
-      margin: 0 20px;
+      margin: 0;
+      margin-right: 20px;
+
+      .section-title {
+        text-align: left;
+      }
+
+      .section-subtitle {
+        text-align: left;
+      }
     }
 
     .arrows-wrapper {
       grid-area: arrows;
-      align-self: center;
+      align-self: flex-start;
+      justify-content: flex-start;
+
+      .slider-button-prev {
+        margin-left: 0px;
+      }
     }
   }
 }

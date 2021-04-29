@@ -34,7 +34,6 @@ menuItems.forEach((menuItem) => {
 });
 
 const menuItemsExpandable = document.querySelectorAll(".nav-list--item.expandable");
-
 menuItemsExpandable.forEach((menuItemExpandable) => {
   menuItemExpandable.addEventListener("click", (e) => {
     e.preventDefault();
@@ -42,15 +41,13 @@ menuItemsExpandable.forEach((menuItemExpandable) => {
 });
 
 const secondaryMenuItems = document.querySelectorAll(".nav-list--item.secondary");
-
 secondaryMenuItems.forEach((secondaryMenuItem) => {
   secondaryMenuItem.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 });
 
-// INPUTS TYPE NUMBER
-
+/* INPUTS TYPE NUMBER */
 const stepUp = (element, step) => {
   let el = document.querySelector(`[name="${element}"]`);
   el.value = parseInt(el.value) + step;
@@ -69,7 +66,6 @@ const stepDownButtons = document.querySelectorAll(".step-down");
 stepUpButtons.forEach((stepUpButton) => {
   stepUpButton.addEventListener("click", (e) => {
     let input;
-
     if (e.target.tagName === "div") {
       input = e.target.parentNode.querySelector("[type=number]");
     } else {
@@ -83,7 +79,6 @@ stepUpButtons.forEach((stepUpButton) => {
 stepDownButtons.forEach((stepDownButton) => {
   stepDownButton.addEventListener("click", (e) => {
     let input;
-
     if (e.target.tagName === "div") {
       input = e.target.parentNode.querySelector("[type=number]");
     } else {
@@ -101,4 +96,39 @@ stepDownButtons.forEach((stepDownButton) => {
       input.value = parseInt(input.value) - parseInt(input.dataset.step);
     }
   });
+});
+
+/* CITIES BUTTONS */
+
+const citiesButtons = document.querySelectorAll(".city-button");
+const allCities = document.querySelector("#allCities");
+
+const initSessionStorage = () => {
+  let activeButton = sessionStorage.getItem("city");
+  if (!activeButton) {
+    activeButton = allCities;
+    sessionStorage.setItem("city", allCities.id);
+  }
+};
+
+citiesButtons.forEach((cityButton) => {
+  cityButton.addEventListener("click", (e) => {
+    let activeButton = sessionStorage.getItem("city");
+    if (activeButton) {
+      let newActiveButton = e.target.id;
+      sessionStorage.setItem("city", newActiveButton);
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  initSessionStorage();
+  const presentActiveButtonId = sessionStorage.getItem("city");
+  const setActiveButton = presentActiveButtonId
+    ? document.getElementById(`${presentActiveButtonId}`)
+    : document.getElementById(`${allCities}`);
+  citiesButtons.forEach((cityButton) => {
+    cityButton.classList.remove("selected");
+  });
+  setActiveButton.classList.add("selected");
 });

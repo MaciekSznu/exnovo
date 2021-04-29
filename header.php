@@ -8,6 +8,10 @@
  */
 global $pagesData;
 global $currentLangData;
+
+$menu_button_link = get_field('menu_button_link', $pagesData['blocks']);
+$menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -39,7 +43,7 @@ global $currentLangData;
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-list--item expandable">
-          <a href="" class="nav-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
+          <span class="nav-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-list--secondary">
             <li class="nav-list--item secondary">
               <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny" class="nav-list--item-link">Rynek pierwotny</a>
@@ -50,7 +54,7 @@ global $currentLangData;
           </ul>
         </li>
         <li class="nav-list--item expandable">
-          <a href="" class="nav-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
+          <span class="nav-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-list--secondary">
             <li class="nav-list--item secondary">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-hipoteczne" class="nav-list--item-link">Kredyty hipoteczne</a>
@@ -68,12 +72,12 @@ global $currentLangData;
         <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/blog" class="nav-list--item-link">BLOG</a></li>
         <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/kontakt" class="nav-list--item-link">Kontakt</a></li>
       </ul>
-      <button class="button-header">Analiza Rynku</button>
+      <button class="button-header"><a href="<?= $menu_button_link; ?>"><?= $menu_button_text; ?></a></button>
     </nav>
     <nav data-aos="fade-down" class="nav-desktop">
       <ul class="nav-desktop-list">
         <li class="nav-desktop-list--item expandable">
-          <a href="" class="nav-desktop-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
+          <span class="nav-desktop-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-desktop-list--secondary">
             <li class="nav-desktop-list--item secondary">
               <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny" class="nav-desktop-list--item-link">Rynek pierwotny</a>
@@ -84,7 +88,7 @@ global $currentLangData;
           </ul>
         </li>
         <li class="nav-desktop-list--item expandable">
-          <a href="" class="nav-desktop-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></a>
+          <span class="nav-desktop-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-desktop-list--secondary">
             <li class="nav-desktop-list--item secondary">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-hipoteczne" class="nav-desktop-list--item-link">Kredyty hipoteczne</a>
@@ -104,7 +108,7 @@ global $currentLangData;
           <a href="<?php echo bloginfo('url'); ?>/kontakt" class="nav-desktop-list--item-link">Kontakt</a>
         </li>
       </ul>
-      <button class="button-header">Analiza Rynku</button>
+      <button class="button-header"><a href="<?= $menu_button_link; ?>"><?= $menu_button_text; ?></a></button>
     </nav>
     <div data-aos="fade-down" class="hamburger-wrapper" role="button">
       <span class="hamburger-line"></span>

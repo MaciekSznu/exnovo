@@ -37,9 +37,9 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../assets/img/home/girl.png");
-      background-size: cover;
-      background-position: center center;
+      // background: url("../assets/img/home/girl.png");
+      // background-size: cover;
+      // background-position: center center;
 
       &:before {
         content: "";
@@ -54,16 +54,16 @@
         z-index: 2;
       }
 
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 133px;
-        width: 109px;
-        background: url("../assets/graphics/dev_100_img_bottom_right.svg");
-        z-index: 2;
-      }
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   bottom: 0;
+      //   right: 0;
+      //   height: 133px;
+      //   width: 109px;
+      //   background: url("../assets/graphics/dev_100_img_bottom_right.svg");
+      //   z-index: 2;
+      // }
     }
 
     .text-wrapper {
@@ -169,6 +169,18 @@
       gap: 0px 50px;
       grid-template-areas: "image text";
 
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 100vw;
+        height: 568px;
+        background: $dark-blue;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+
       .image-wrapper {
         margin-top: 0;
         grid-area: image;
@@ -183,15 +195,15 @@
           background: url("../assets/graphics/img_overlay_house_big.svg");
         }
 
-        &:after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          height: 236px;
-          width: 192px;
-          background: url("../assets/graphics/dev_100_img_bottom_right_big.svg");
-        }
+        // &:after {
+        //   content: "";
+        //   position: absolute;
+        //   bottom: 0;
+        //   right: 0;
+        //   height: 236px;
+        //   width: 192px;
+        //   background: url("../assets/graphics/dev_100_img_bottom_right_big.svg");
+        // }
       }
 
       .text-wrapper {

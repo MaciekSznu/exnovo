@@ -85,9 +85,9 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../assets/img/o-nas/hands_image_mobile.png");
-      background-size: cover;
-      background-position: top left;
+      // background: url("../assets/img/o-nas/hands_image_mobile.png");
+      // background-size: cover;
+      // background-position: top left;
 
       &:before {
         content: "";
@@ -141,15 +141,22 @@
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1234px) {
     height: 714px;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    &:before {
-      display: none;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $light-bg;
+      transform: translateX(-50%);
     }
 
     &:after {
@@ -200,9 +207,9 @@
         margin-top: 0;
         width: 566px;
         height: 596px;
-        background: url("../assets/img/o-nas/hands_image.png");
-        background-size: cover;
-        background-position: top left;
+        // background: url("../assets/img/o-nas/hands_image.png");
+        // background-size: cover;
+        // background-position: top left;
         margin-left: 47px;
         margin-right: 26px;
         height: 637px;

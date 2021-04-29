@@ -34,7 +34,7 @@ get_header(); ?>
 </section>
 <section class="search">
   <div class="search-wrapper">
-    <!-- <p class="page-adress"><?= $page_adress; ?></p> -->
+    <p class="page-adress"><?= $page_adress; ?></p>
     <?php
       $args = [
           'post_type' => 'inwestycje',
@@ -83,7 +83,7 @@ get_header(); ?>
       ];
       $query = new WP_Query($args);
   ?>
-    <form action="<?= get_the_permalink(); ?>" id="search-form" class="search-form" method="get">
+    <form action="<?= get_the_permalink(); ?>" id="search-form" class="search-form cities" method="get">
         <div class="input-wrapper">
           <select id="input-property" class="input-property" name="location_commune_name" onchange="this.form.submit()">
             <option value="">Pokaż wszystkie</option>
@@ -92,9 +92,9 @@ get_header(); ?>
             <?php endforeach; ?>
           </select>
           <div class="cities-wrapper">
-            <button type="submit" name="location_commune_name" value="" class="city-button">Pokaż wszystkie</button>
+            <button type="submit" name="location_commune_name" value="" class="city-button" id="allCities">Pokaż wszystkie</button>
             <?php foreach($filters['location_commune_name'] as $button): ?>
-              <button type="submit" name="<?= ($location_commune_nameGet == $button) ? '' : 'location_commune_name'; ?>" value="<?= $button ?>" class="city-button" ><?= ucfirst($button); ?></button>
+              <button type="submit" name="<?= ($location_commune_nameGet == $button) ? '' : 'location_commune_name'; ?>" value="<?= $button ?>" class="city-button" id="<?= $button ?>"><?= ucfirst($button); ?></button>
             <?php endforeach; ?>
           </div>
         </div>

@@ -8,12 +8,15 @@ $hero_title = $hero['hero_title'];
 $hero_text = $hero['hero_text'];
 $hero_cta_title = $hero['hero_cta_title'];
 $hero_cta_text = $hero['hero_cta_text'];
+$hero_cta_link = $hero['hero_cta_link'];
 
 $dev_100 = get_field('dev_100');
 $dev_100_title = $dev_100['title'];
 $dev_100_text = $dev_100['text'];
 $dev_100_cta_title = $dev_100['cta_title'];
 $dev_100_cta_text = $dev_100['cta_text'];
+$dev_100_cta_link = $dev_100['cta_link'];
+$dev_100_image = $dev_100['image'];
 
 $dreams = get_field('marzenia');
 $dreams_title = $dreams['tytul_sekcji'];
@@ -35,12 +38,13 @@ $cooperation_template = get_field('cooperation', $pagesData['blocks']);
 $cooperation_title = $cooperation['tytul_sekcji'] ? $cooperation['tytul_sekcji'] : $cooperation_template['tytul_sekcji'];
 $cooperation_list = $cooperation['lista'] ? $cooperation['lista'] : $cooperation_template['lista'];
 $cooperation_cta_text = $cooperation['cta_text'] ? $cooperation['cta_text'] : $cooperation_template['cta_text'];
+$cooperation_cta_link = $cooperation['cta_link'] ? $cooperation['cta_link'] : $cooperation_template['cta_link'];
 $cooperation_phone = $cooperation['numer_telefonu'] ? $cooperation['numer_telefonu'] : $cooperation_template['numer_telefonu'];
 $cooperation_box = $cooperation['box'] ;
-$cooperation_box_image = $cooperation_box['image'] ? $cooperation['box_image'] : $cooperation_template['box']['box_image'];
-$cooperation_box_text = $cooperation_box['text'] ? $cooperation['text'] : $cooperation_template['box']['text'];
-$cooperation_box_name = $cooperation_box['imie_i_nazwisko'] ? $cooperation['imie_i_nazwisko'] : $cooperation_template['box']['imie_i_nazwisko'];
-$cooperation_box_comment = $cooperation_box['komentarz'] ? $cooperation['komentarz'] : $cooperation_template['box']['komentarz'];
+$cooperation_box_image = $cooperation_box['image'] ? $cooperation_box['image'] : $cooperation_template['box']['image'];
+$cooperation_box_text = $cooperation_box['text'] ? $cooperation_box['text'] : $cooperation_template['box']['text'];
+$cooperation_box_name = $cooperation_box['imie_i_nazwisko'] ? $cooperation_box['imie_i_nazwisko'] : $cooperation_template['box']['imie_i_nazwisko'];
+$cooperation_box_comment = $cooperation_box['komentarz'] ? $cooperation_box['komentarz'] : $cooperation_template['box']['komentarz'];
 
 get_header(); ?>
 
@@ -56,7 +60,7 @@ get_header(); ?>
       <div data-aos="fade-up" data-aos-delay="750" class="hero-text-wrapper">
         <p class="hero-text"><?= $hero_text; ?></p>
         <h3 class="cta-lead-text"><?= $hero_cta_title; ?></h3>
-        <button class="button-hero"><?= $hero_cta_text; ?></button>
+        <button class="button-hero"><a href="<?= $hero_cta_link; ?>"><?= $hero_cta_text; ?></a></button>
       </div>
       <div data-aos="fade-up" data-aos-delay="1500" class="hero-label-wrapper">
         <p class="invest-name">Nazwa inwestycji</p>
@@ -67,12 +71,13 @@ get_header(); ?>
 </section>
 <section class="dev-100">
   <div class="dev-100-wrapper">
-    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper"></div>
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $dev_100_image; ?>); background-size: cover;
+        background-position: center center;"></div>
     <article class="text-wrapper">
       <h2 class="article-title"><?= $dev_100_title; ?></h2>
       <p class="article-text"><?= $dev_100_text; ?></p>
       <h3 class="cta-lead-text"><?= $dev_100_cta_title; ?></h3>
-      <button class="button-dev-100"><?= $dev_100_cta_text; ?></button>
+      <button class="button-dev-100"><a href="<?= $dev_100_cta_link; ?>"><?= $dev_100_cta_text; ?></a></button>
     </article>
   </div>
 </section>
@@ -110,11 +115,12 @@ get_header(); ?>
           $photo = $box['photo'];
           $title = $box['tytul'];
           $text = $box['cta_text'];
+          $link = $box['link'];
 
           echo '<div data-aos="fade-up" class="image-box">
           <div class="image"></div>
           <h4 class="image-box--title">' . $title . '</h4>
-          <button class="image-box--button">' . $text . '</button>
+          <button class="image-box--button"><a href="' . $link . '">' . $text . '</a></button>
           </div>';
         }
       }
@@ -162,11 +168,11 @@ get_header(); ?>
         }
       ?>
       <div class="contact-wrapper">
-        <button class="button-contact"><?= $cooperation_cta_text; ?></button>
+        <button class="button-contact"><a href="<?= $cooperation_cta_link; ?>"><?= $cooperation_cta_text; ?></a></button>
         <a class="tel" href="tel:+48510912123"><?= $cooperation_phone; ?></a>
       </div>
     </div>
-    <div data-aos="fade-up" class="image-wrapper">
+    <div data-aos="fade-up" class="image-wrapper" style="background: url(<?= $cooperation_box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $cooperation_box_text; ?></p>
         <p class="image-text--name"><?= $cooperation_box_name; ?></p>
