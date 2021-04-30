@@ -17,13 +17,14 @@
 
       .article-title {
         color: $dark-blue;
-        font-family: $grotesk-bold;
+        font-family: $grotesk-reg;
+        font-weight: 700;
         font-size: 24px;
         font-style: normal;
         letter-spacing: normal;
         line-height: 40px;
         text-align: left;
-        margin-bottom: 21px;
+        margin-bottom: 30px;
       }
 
       .article-text {
@@ -34,7 +35,7 @@
         letter-spacing: normal;
         line-height: 20px;
         text-align: left;
-        margin-bottom: 33px;
+        margin-bottom: 30px;
       }
       .button-offers {
         @include button;
@@ -75,7 +76,8 @@
           .offer-title {
             width: 100%;
             color: $dark-blue;
-            font-family: $grotesk-bold;
+            font-family: $grotesk-reg;
+            font-weight: 700;
             font-size: 13px;
             font-style: normal;
             letter-spacing: normal;
@@ -111,7 +113,8 @@
             .prices-value,
             .area-value {
               color: $dark-blue;
-              font-family: $grotesk-bold;
+              font-family: $grotesk-reg;
+              font-weight: 700;
               font-size: 8px;
               font-style: normal;
               letter-spacing: normal;
@@ -153,11 +156,11 @@
         align-self: unset;
 
         .article-title {
-          margin-bottom: 15px;
+          margin-bottom: 30px;
         }
 
         .article-text {
-          margin-bottom: 31px;
+          margin-bottom: 30px;
         }
 
         .button-offers {
@@ -201,13 +204,13 @@
         .article-title {
           font-size: 34px;
           line-height: 47px;
-          margin-bottom: 15px;
+          margin-bottom: 30px;
         }
 
         .article-text {
           font-size: 16px;
           line-height: 30px;
-          margin-bottom: 31px;
+          margin-bottom: 30px;
         }
 
         .button-offers {

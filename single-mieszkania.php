@@ -26,7 +26,6 @@ $offer_title = $title != '' ? $title : $alt_title;
 
 $contact_id = get_field('flat_contactId');
 
-
 ?>
   <section class="single-offer-slider">
     <div class="single-offer-slider-img-wrapper">
@@ -151,19 +150,11 @@ $contact_id = get_field('flat_contactId');
           <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post();
             $contact = get_field('specialist');
             $contact_img = $contact['image'];
-            $contact_img_mobile = $contact['image_mobile'];
-            $contact_img_desktop = $contact['image_desktop'];
             $contact_phone = $contact['phone'];
             $contact_mail = $contact['mail'];
             $contact_function = $contact['job'];
           ?>
-            <img
-            class="member-image"
-            src="<?= $contact_img_mobile; ?>"
-            sizes="100vw"
-            alt=""
-            srcset="<?= $contact_img_mobile; ?>, <?= $contact_img_desktop; ?> 1280w"
-            />
+            <img class="member-image" src="<?= $contact_img; ?>" alt="" />
             <div class="member-contact-wrapper">
               <h4 class="member-name"><?= get_the_title(); ?></h4>
               <p class="member-function"><?= $contact_function; ?></p>

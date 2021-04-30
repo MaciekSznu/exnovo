@@ -60,7 +60,7 @@ get_header(); ?>
       <p class="article-text"><?= $hero_text; ?></p>
       <h3 class="cta-lead-text"><?= $hero_bottom_text; ?></h3>
     </article>
-    <div class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
         background-position: top left;"></div>
   </div>
 </section>
@@ -106,7 +106,7 @@ get_header(); ?>
       ?>
       </div>
     </div>
-    <div class="image-wrapper">
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper">
       <div class="image">
         <div class="image-text-wrapper">
           <div class="amount-wrapper">
@@ -141,7 +141,7 @@ get_header(); ?>
       if($choice_boxes) {
         foreach($choice_boxes as $box) {
           $ikona = $box['ikona'];
-          $title = $box['tytul'];
+          $title = $box['title'];
           $text = $box['text'];
 
           echo
@@ -209,7 +209,7 @@ get_header(); ?>
         <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
       </form>
     </div>
-    <div class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $box_text; ?></p>
         <p class="image-text--name"><?= $box_name; ?></p>

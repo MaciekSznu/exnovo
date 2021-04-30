@@ -42,7 +42,7 @@
             line-height: 20px;
             margin-bottom: 16px;
             color: $dark-blue;
-            font-family: $grotesk-bold;
+            font-family: $grotesk-reg;
             font-weight: 700;
             font-style: normal;
             letter-spacing: normal;
@@ -67,7 +67,7 @@
           .offer-price {
             height: 21px;
             color: $orange;
-            font-family: $grotesk-bold;
+            font-family: $grotesk-reg;
             font-weight: 700;
             font-size: 18px;
             font-style: normal;
@@ -109,7 +109,8 @@
 
               span {
                 color: $dark-blue;
-                font-family: $grotesk-bold;
+                font-family: $grotesk-reg;
+                font-weight: 700;
                 text-align: right;
               }
             }
@@ -301,7 +302,7 @@
               line-height: 20px;
               margin-bottom: 16px;
               color: $dark-blue;
-              font-family: $grotesk-bold;
+              font-family: $grotesk-reg;
               font-weight: 700;
               font-style: normal;
               letter-spacing: normal;
@@ -326,7 +327,7 @@
             .offer-price {
               height: 21px;
               color: $orange;
-              font-family: $grotesk-bold;
+              font-family: $grotesk-reg;
               font-weight: 700;
 
               font-size: 18px;
@@ -369,7 +370,8 @@
 
                 span {
                   color: $dark-blue;
-                  font-family: $grotesk-bold;
+                  font-family: $grotesk-reg;
+                  font-weight: 700;
                   text-align: right;
                 }
               }

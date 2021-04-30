@@ -73,7 +73,7 @@ get_header(); ?>
         </div>
       </div>
     </article>
-    <div class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
         background-position: top left;"></div>
   </div>
 </section>
@@ -85,7 +85,7 @@ get_header(); ?>
       <h3 class="cta-lead-text"><?= $buy_bottom_text; ?></h3>
       <button class="cta-button"><a href="<?= $buy_cta_link; ?>"><?= $buy_cta_text; ?></a></button>
     </article>
-    <div class="image-wrapper" style="background: url(<?= $buy_image; ?>); background-size: cover;
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $buy_image; ?>); background-size: cover;
         background-position: top left;"></div>
   </div>
 </section>
@@ -165,7 +165,7 @@ get_header(); ?>
         <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
       </form>
     </div>
-    <div class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $box_text; ?></p>
         <p class="image-text--name"><?= $box_name; ?></p>

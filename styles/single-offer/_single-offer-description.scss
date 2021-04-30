@@ -38,13 +38,14 @@
       margin-bottom: 25px;
 
       strong {
-        font-family: $grotesk-bold;
+        font-family: $grotesk-reg;
+        font-weight: 700;
         font-size: 16px;
       }
 
       .description-title {
         color: $darker-blue;
-        font-family: $grotesk-bold;
+        font-family: $grotesk-reg;
         font-size: 24px;
         font-weight: 700;
         font-style: normal;
@@ -76,7 +77,8 @@
 
         .section-title {
           color: $dark-blue;
-          font-family: $grotesk-bold;
+          font-family: $grotesk-reg;
+          font-weight: 700;
           font-size: 24px;
           font-style: normal;
           letter-spacing: normal;

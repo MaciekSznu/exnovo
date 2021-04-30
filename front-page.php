@@ -115,7 +115,7 @@ get_header(); ?>
           $photo = $box['photo'];
           $title = $box['tytul'];
           $text = $box['cta_text'];
-          $link = $box['link'];
+          $link = $box['cta_link'];
 
           echo '<div data-aos="fade-up" class="image-box">
           <div class="image"></div>

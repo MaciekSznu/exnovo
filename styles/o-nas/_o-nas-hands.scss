@@ -41,14 +41,15 @@
 
       .article-title {
         color: $dark-blue;
-        font-family: $grotesk-bold;
+        font-family: $grotesk-reg;
+        font-weight: 700;
         font-size: 24px;
         font-style: normal;
         letter-spacing: normal;
         line-height: 40px;
         text-align: left;
         margin-top: 36px;
-        margin-bottom: 26px;
+        margin-bottom: 30px;
       }
 
       .article-text {
@@ -59,19 +60,20 @@
         letter-spacing: normal;
         line-height: 20px;
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
 
       .cta-lead-text {
         color: $dark-blue;
-        font-family: $grotesk-bold;
+        font-family: $grotesk-reg;
+        font-weight: 700;
         font-size: 13px;
         font-style: normal;
         letter-spacing: normal;
         line-height: normal;
         line-height: normal;
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
     }
 
@@ -185,7 +187,7 @@
           font-size: 34px;
           line-height: 47px;
           margin-top: 84px;
-          margin-bottom: 31px;
+          margin-bottom: 30px;
         }
 
         .article-text {
@@ -197,6 +199,7 @@
         .cta-lead-text {
           font-size: 16px;
           line-height: 30px;
+          margin-bottom: 30px;
         }
       }
 

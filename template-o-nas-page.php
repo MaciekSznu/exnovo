@@ -30,6 +30,7 @@ $offers = get_field('oferty');
 $offers_title = $offers['tytul_sekcji'];
 $offers_subtitle = $offers['podtytul_sekcji'];
 $offers_cta_text = $offers['cta_text'];
+$offers_cta_link = $offers['cta_link'];
 $oferta = $offers['oferta'];
 $oferta_nazwa = $oferta['nazwa_inwestycji'];
 $oferta_pokoje = $oferta['liczba_pokoi'];
@@ -57,7 +58,7 @@ get_header(); ?>
       <p class="article-text"><?= $hero_text; ?></p>
       <h3 class="cta-lead-text"><?= $hero_bottom_text; ?></h3>
     </article>
-    <div class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $hero_image; ?>); background-size: cover;
         background-position: top left;"></div>
   </div>
 </section>
@@ -147,9 +148,9 @@ get_header(); ?>
     <article class="text-wrapper">
       <h2 class="article-title"><?= $offers_title; ?></h2>
       <p class="article-text"><?= $offers_subtitle; ?></p>
-      <button class="button-offers"><?= $offers_cta_text; ?></button>
+      <button class="button-offers"><a href="<?= $offers_cta_link; ?>"><?= $offers_cta_text; ?></a></button>
     </article>
-    <div class="offer-wrapper">
+    <div data-aos="fade-up" data-aos-delay="500" class="offer-wrapper">
       <div class="offer-item">
         <img class="offer-image" src="<?= $oferta_photo; ?>" alt="" />
         <div class="offer-text-wrapper">

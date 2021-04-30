@@ -27,7 +27,7 @@
     @media (max-width: 1024px) {
       max-width: 100%;
       grid-template-columns: auto;
-      grid-template-rows: auto auto auto;
+      grid-template-rows: auto auto 486px;
       grid-template-areas:
         "header"
         "data"
@@ -69,7 +69,7 @@
         .single-offer-price {
           height: 47px;
           color: $orange;
-          font-family: $grotesk-bold;
+          font-family: $grotesk-reg;
           font-size: 28px;
           font-weight: 700;
           font-style: normal;
@@ -197,7 +197,7 @@
 
           .data-value {
             color: $darker-blue;
-            font-family: $grotesk-bold;
+            font-family: $grotesk-reg;
             font-weight: 700;
             font-style: normal;
             letter-spacing: normal;
@@ -244,7 +244,8 @@
             font-style: normal;
             letter-spacing: normal;
             line-height: 39px;
-            text-align: left;
+            // text-align: left;
+            text-align: right;
           }
         }
       }
@@ -255,9 +256,9 @@
             width: 155px;
           }
 
-          .data-value {
-            width: 155px;
-          }
+          // .data-value {
+          //   // width: 155px;
+          // }
         }
       }
 
@@ -265,11 +266,11 @@
         width: 376px;
         padding-left: 95px;
 
-        .data-row {
-          .data-value {
-            width: 64px;
-          }
-        }
+        // .data-row {
+        //   .data-value {
+        //     // width: 64px;
+        //   }
+        // }
       }
 
       @media (max-width: 767px) {
@@ -312,7 +313,7 @@
 
             .data-value {
               color: $darker-blue;
-              font-family: $grotesk-bold;
+              font-family: $grotesk-reg;
               font-size: 14px;
               font-weight: 700;
               font-style: normal;
@@ -398,18 +399,28 @@
     .single-offer-employee-wrapper {
       grid-area: employee;
       .member {
+        width: 300px;
         max-width: 300px;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 36px;
         padding: 0 10px;
+        position: relative;
         .member-image {
-          height: 324px;
-          width: 281px;
-          margin-bottom: -133px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          // height: 324px;
+          // width: 281px;
+          // margin-bottom: -133px;
         }
         .member-contact-wrapper {
+          position: absolute;
+          left: 0;
+          bottom: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -467,7 +478,8 @@
           .member-offers {
             margin-top: 38px;
             color: $orange;
-            font-family: $grotesk-bold;
+            font-family: $grotesk-reg;
+            font-weight: 700;
             font-size: 14px;
             font-style: normal;
             letter-spacing: normal;
@@ -502,11 +514,11 @@
           max-width: 380px;
           height: 486px;
 
-          .member-image {
-            height: 362px;
-            width: 347px;
-            margin-bottom: -125px;
-          }
+          // .member-image {
+          //   // height: 362px;
+          //   // width: 347px;
+          //   // margin-bottom: -125px;
+          // }
           .member-contact-wrapper {
             width: 380px;
             padding-bottom: 25px;

@@ -27,7 +27,7 @@
 
     .orange-text {
       color: $dark-blue;
-      font-family: $grotesk-bold;
+      font-family: $grotesk-reg;
       font-weight: 700;
       font-size: 36px;
       font-style: normal;
@@ -58,7 +58,8 @@
       }
 
       .orange-text {
-        font-family: $grotesk-bold;
+        font-family: $grotesk-reg;
+        font-weight: 700;
         font-size: 45px;
         line-height: normal;
       }

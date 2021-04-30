@@ -44,7 +44,8 @@
           .offer-title {
             width: 100%;
             color: $dark-blue;
-            font-family: $grotesk-bold;
+            font-family: $grotesk-reg;
+            font-weight: 700;
             font-size: 16px;
             font-style: normal;
             letter-spacing: normal;
@@ -92,7 +93,8 @@
             .prices-value,
             .area-value {
               color: $dark-blue;
-              font-family: $grotesk-bold;
+              font-family: $grotesk-reg;
+              font-weight: 700;
               font-size: 12px;
               font-style: normal;
               letter-spacing: normal;
