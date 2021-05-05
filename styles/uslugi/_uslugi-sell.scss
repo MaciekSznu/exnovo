@@ -25,19 +25,7 @@
     .text-wrapper {
       margin-top: 48px;
       z-index: 2;
-      max-width: 300px;
       align-self: flex-start;
-
-      .page-adress {
-        color: $light-blue;
-        font-family: $poppins;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-        margin-top: 45px;
-      }
 
       .article-title {
         color: $dark-blue;
@@ -121,15 +109,12 @@
     }
 
     .image-wrapper {
-      margin-top: 49px;
+      margin-top: 87px;
       position: relative;
       min-width: calc(100% - 29px);
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      // background: url("../assets/img/uslugi/sell_img_mobile.png");
-      // background-size: cover;
-      // background-position: top left;
       box-shadow: 0 2px 100px #e1e2f4;
 
       &:before {
@@ -142,17 +127,6 @@
         min-width: 213px;
         background: url("../assets/graphics/img_overlay_house.svg");
         background-size: cover;
-        z-index: 2;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 133px;
-        width: 109px;
-        background: url("../assets/graphics/dev_100_img_bottom_right.svg");
         z-index: 2;
       }
     }
@@ -212,10 +186,6 @@
         margin-left: 0;
         width: 100%;
         max-width: 593px;
-
-        .page-adress {
-          margin-top: 51px;
-        }
 
         .article-title {
           font-size: 34px;

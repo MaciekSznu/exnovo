@@ -23,18 +23,6 @@
     background-size: cover;
   }
 
-  .page-adress {
-    color: $light-blue;
-    font-family: $poppins;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: normal;
-    line-height: normal;
-    width: 100%;
-    padding: 0 10px;
-  }
-
   .single-blog-hero-img-wrapper {
     width: 100vw;
     height: 100vw;
@@ -52,12 +40,6 @@
       height: 100%;
       width: auto;
       transform: translate(-50%, -50%);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .page-adress {
-      padding: 0 20px;
     }
   }
 
@@ -81,11 +63,6 @@
 
     .single-blog-hero-img-wrapper {
       z-index: 2;
-    }
-
-    .page-adress {
-      max-width: 1232px;
-      padding: 0;
     }
   }
 }

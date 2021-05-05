@@ -33,10 +33,10 @@ get_header(); ?>
     <span class="blue-text"><?= $hero_title['niebieski_tekst']; ?></span>
     <span class="orange-text"><?= $hero_title['pomaranczowy_tekst']; ?></span>
   </h2>
+  <p class="page-adress"><?= $page_adress; ?></p>
 </section>
 <section class="search">
   <div class="search-wrapper">
-    <p class="page-adress"><?= $page_adress; ?></p>
     <?php
       $args = [
           'post_type' => 'mieszkania',

@@ -19,26 +19,14 @@
     background: url("../assets/graphics/triangles.svg");
   }
 
-  .page-adress {
-    width: 100%;
-    max-width: 1234px;
-    color: $light-blue;
-    font-family: $poppins;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: normal;
-    line-height: normal;
-    margin-top: 33px;
-  }
-
   .team-members-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     .member {
-      max-width: 300px;
+      width: 100%;
+      max-width: 380px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -46,7 +34,7 @@
       padding: 0;
       .member-image {
         height: 324px;
-        width: 281px;
+        width: auto;
         margin-bottom: -133px;
       }
       .member-contact-wrapper {
@@ -54,7 +42,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        width: 300px;
+        width: 100%;
         padding-bottom: 31px;
         background: $white;
         box-shadow: 0 2px 100px #e1e2f4;
@@ -133,6 +121,7 @@
 
     &:before {
       right: 20px;
+      top: -30px;
     }
 
     .team-members-wrapper {
@@ -185,7 +174,7 @@
       &:before {
         content: "";
         position: absolute;
-        top: -160px;
+        top: -108px;
         right: 26px;
         width: 53px;
         height: 73px;

@@ -1,18 +1,6 @@
 <?php
 global $pagesData;
 
-$current_investment = get_field('investment');
-$name = $current_investment['name'];
-$location = $current_investment['location_commune_name'];
-$description = $current_investment['description'];
-$ready_date = $current_investment['ready_date'];
-$price_from = $current_investment['price_from'];
-$price_to = $current_investment['price_to'];
-$area_from = $current_investment['area_from'];
-$area_to = $current_investment['area_to'];
-$price_permeter_from = $current_investment['price_permeter_from'];
-$price_permeter_to = $current_investment['price_permeter_to'];
-
 $form_group = get_field('form_group');
 $form_group_template = get_field('form_group', $pagesData['blocks']);
 $form_group_title = $form_group['title'] ? $form_group['title'] : $form_group_template['title'];
@@ -31,14 +19,40 @@ $box_text = $box['text'] ? $box['text'] : $box_template['text'];
 $box_name = $box['imie_i_nazwisko'] ? $box['imie_i_nazwisko'] : $box_template['imie_i_nazwisko'];
 $box_comment = $box['komentarz'] ? $box['komentarz'] : $box_template['komentarz'];
 
+// $current_investment = get_field('investment');
+// $name = $current_investment['name'];
+// $location = $current_investment['location_commune_name'];
+// $description = $current_investment['description'];
+// $ready_date = $current_investment['ready_date'];
+// $price_from = $current_investment['price_from'];
+// $price_to = $current_investment['price_to'];
+// $area_from = $current_investment['area_from'];
+// $area_to = $current_investment['area_to'];
+// $price_permeter_from = $current_investment['price_permeter_from'];
+// $price_permeter_to = $current_investment['price_permeter_to'];
+
+$name = trim(get_field('investment_name'));
+$city = trim(get_field('investment_location_commune_name'));
+$description = trim(get_field('investment_description'));
+$ready_date = trim(get_field('investment_ready_date'));
+$price_from = trim(get_field('investment_price_from'));
+$price_to = trim(get_field('investment_price_to'));
+$price_permeter_from = trim(get_field('investment_price_permeter_from'));
+$price_permeter_to = trim(get_field('investment_price_permeter_to'));
+$area_from = trim(get_field('investment_area_from'));
+$area_to = trim(get_field('investment_area_to'));
+$room_number_from = trim(get_field('investment_room_number_from'));
+$room_number_to = trim(get_field('investment_room_number_to'));
+$photos = explode(',', trim(get_field('investment_photo_list')));
+$photos_path = 'https://static.esticrm.pl/public/images/investments/2167/';
+$id = trim(get_field('investment_id'));
+
+$short_description = html_cut($description, 400);
+
 get_header(); ?>
 
 <?php
     $investmentId = get_field('investment_id');
-    $areaTotalArray = [];
-    $pricePermeterArray = [];
-    $priceArray = [];
-    $currency = '';
     $args = [
         'post_type' => 'mieszkania',
         'posts_per_page' => -1,
@@ -47,62 +61,21 @@ get_header(); ?>
         'post_parent' => 0,
         'post_status' => 'publish',
     ];
-    $filters = ['mainTypeId' => [], 'apartmentRoomNumber' => []];
     $query = new WP_Query($args);
-
-    if($query->have_posts()): while($query->have_posts()) : $query->the_post();
-        $mainTypeId = trim(get_field('flat_mainTypeId'));
-        $apartmentRoomNumber = trim(get_field('flat_apartmentRoomNumber'));
-        $locationCityName = trim(get_field('flat_locationCityName'));
-        $year = trim(get_field('flat_buildingYear'));
-
-        $areaTotalArray[] = get_field('flat_areaTotal');
-        $pricePermeterArray[] = get_field('flat_pricePermeter');
-        $priceArray[] = get_field('flat_price');
-        $currency = get_field('flat_priceCurrency');
-
-        if(!in_array($mainTypeId, $filters['mainTypeId']) && $mainTypeId != ''){
-            $filters['mainTypeId'][] = $mainTypeId;
-        }
-
-        if(!in_array($apartmentRoomNumber, $filters['apartmentRoomNumber']) && $apartmentRoomNumber > 0){
-            $filters['apartmentRoomNumber'][] = $apartmentRoomNumber;
-        }
-    endwhile; endif; wp_reset_postdata();
-
-    sort($filters['apartmentRoomNumber']);
-
-    $mainTypeIdGet = (isset($_GET['mainTypeId']))? $_GET['mainTypeId']: '';
-    $apartmentRoomNumberGet = (isset($_GET['apartmentRoomNumber']))? $_GET['apartmentRoomNumber']: '';
-    $metaQuery = '';
-
-    if($mainTypeIdGet){
-        $metaQuery[] = [
-            'key'     => 'flat_mainTypeId',
-            'value'   => $mainTypeIdGet,
-        ];
-    }
-
-    if($apartmentRoomNumberGet){
-        $metaQuery[] = [
-            'key'     => 'flat_apartmentRoomNumber',
-            'value'   => $apartmentRoomNumberGet,
-        ];
-    }
 ?>
 <section class="page-title-wrapper">
   <h2 class="page-title">
     <span class="blue-text"><?= $name; ?></span>
-    <span class="orange-text"><?= $location; ?></span>
+    <span class="orange-text"><?= $city; ?></span>
   </h2>
+  <p class="page-adress">Home> Rynek pierwotny></p>
 </section>
 <section class="presentation">
   <div class="presentation-wrapper">
     <article class="text-wrapper">
-      <p class="page-adress">Home> Rynek pierwotny> <?= $name; ?> <?= $location; ?></p>
-      <?= $description; ?>
+      <?= $short_description; ?>
     </article>
-    <div class="image-wrapper"></div>
+    <div class="image-wrapper" style="background: url(<?= $photos_path . $investmentId . '/' . $photos[0] . '_max.jpg' ?>); background-position-x: center; background-repeat: no-repeat; background-size: cover;"></div>
   </div>
 </section>
 <section class="summary">
@@ -111,7 +84,7 @@ get_header(); ?>
     <div class="summary-column-01">
       <div class="summary-row">
         <p class="description">termin realizacji</p>
-        <p class="value"><?= substr($ready_date, 0, -2); ?> r.</p>
+        <p class="value"><?= substr($ready_date, 0, 4); ?> r.</p>
       </div>
       <div class="summary-row">
         <p class="description">ceny od</p>
@@ -133,7 +106,7 @@ get_header(); ?>
       </div>
       <div class="summary-row">
         <p class="description">L. pomieszczeń od</p>
-        <p class="value">???</p>
+        <p class="value"><?= $room_number_from; ?></p>
       </div>
     </div>
     <div class="summary-column-03">
@@ -147,7 +120,7 @@ get_header(); ?>
       </div>
       <div class="summary-row">
         <p class="description">lokalizacja</p>
-        <p class="value"><?= $location; ?></p>
+        <p class="value"><?= $city; ?></p>
       </div>
     </div>
   </div>
@@ -180,28 +153,49 @@ get_header(); ?>
         obsługę w
       </p>
     </div>
-    <select name="sort" id="offers-sort" class="offers-sort">
-      <option value="">Sortowanie</option>
-      <option value="price-z-a">Oferty według ceny malejąco</option>
-      <option value="price-a-z">Oferty według ceny rosnąco</option>
-      <option value="rooms-a-z">Liczba pomieszczeń rosnąco</option>
-      <option value="rooms-z-a">Liczba pomieszczeń malejąco</option>
-    </select>
-  </div>
-  <div class="offers-wrapper">
     <?php
+      $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
+      $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
+      $sortRoomsAsc = (isset($_GET['rooms_asc']))? $_GET['rooms_asc']: '';
+      $sortRoomsDesc = (isset($_GET['rooms_desc']))? $_GET['rooms_desc']: '';
+
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
+      $investmentId = get_field('investment_id');
+
+      
+      $sortProperty = ($sortRoomsAsc || $sortRoomsDesc) ? 'flat_apartmentRoomNumber' : 'flat_price';
+
+      $sortOrder = ($sortRoomsDesc || $sortPriceDesc) ? 'desc' : 'asc';
+      
       $args = [
           'post_type' => 'mieszkania',
-          'meta_key'		=> 'flat_investmentId',
-          'meta_value'	=> $investmentId,
+          'meta_query' => array(
+            array(
+              'key' => 'flat_investmentId',
+              'value'	=> $investmentId,
+            )
+          ),
           'post_parent' => 0,
           'post_status' => 'publish',
           'paged' => $paged,
-          'meta_query' => $metaQuery,
+          'orderby'    => 'meta_value_num',
+          'meta_key' => $sortProperty,
+          'order' => $sortOrder,
       ];
       $query = new WP_Query($args);
     ?>
+    <form action="<?= get_the_permalink(); ?>" id="sort-form" class="sort-form" method="get">
+      <select name="sort" id="offers-sort" class="offers-sort" onchange="this.form.submit()">
+        <option value="">Sortowanie</option>
+        <option type="submit" name="price_desc" value="price_desc">Oferty według ceny malejąco</option>
+        <option type="submit" name="price_asc" value="price_asc">Oferty według ceny rosnąco</option>
+        <option type="submit" name="rooms_asc" value="rooms_asc">Liczba pomieszczeń rosnąco</option>
+        <option type="submit" name="rooms_desc" value="rooms_desc">Liczba pomieszczeń malejąco</option>
+      </select>
+    </form>
+  </div>
+  <div class="offers-wrapper">
+
     <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post();
       $title = get_the_title();
       $city = get_field('flat_locationCityName');
@@ -219,7 +213,7 @@ get_header(); ?>
           <h6 class="offer-price"><?= number_format(get_field('flat_price'), 0, '', ' '); ?> <?= get_field('flat_priceCurrency'); ?></h6>
           <div class="offer-parameters">
             <p class="offer-area"><?= get_field('flat_areaTotal'); ?> m<sup>2</sup></p>
-            <p class="offer-rooms">liczna pokoi: &nbsp;<span><?= get_field('flat_apartmentRoomNumber'); ?></span></p>
+            <p class="offer-rooms">liczba pokoi: &nbsp;<span><?= get_field('flat_apartmentRoomNumber'); ?></span></p>
           </div>
         </div>
       </div>

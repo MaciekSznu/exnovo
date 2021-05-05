@@ -90,6 +90,18 @@
 
     .contact-wrapper {
       padding-top: 55px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -29px;
+        right: 0;
+        width: 42px;
+        height: 58px;
+        background: url("../assets/graphics/triangles.svg");
+        z-index: 2;
+      }
 
       .box {
         display: flex;
@@ -203,6 +215,16 @@
       @media (min-width: 1280px) {
         justify-content: flex-start;
         align-items: flex-start;
+        &:before {
+          content: "";
+          position: absolute;
+          top: -37px;
+          right: 0;
+          width: 53px;
+          height: 73px;
+          background: url(../assets/graphics/triangles_big.svg);
+          z-index: 2;
+        }
         .box {
           margin-bottom: 52px;
           margin-right: 55px;
@@ -272,7 +294,7 @@
 
     .logos-wrapper {
       z-index: 1;
-      a {
+      span {
         display: inline-block;
         background-color: transparent;
         height: 51px;
@@ -301,6 +323,7 @@
       max-width: 1234px;
       padding-top: 24px;
       padding-bottom: 33px;
+      z-index: 1;
 
       .disclaimer-text {
         font-size: 14px;

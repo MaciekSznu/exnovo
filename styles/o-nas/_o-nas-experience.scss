@@ -27,7 +27,7 @@
   }
 
   .section-subtitle {
-    max-width: 284px;
+    // max-width: 284px;
     color: $dark-blue;
     font-family: $grotesk-reg;
     font-size: 15px;
@@ -44,7 +44,7 @@
     justify-content: center;
 
     .box {
-      max-width: 203px;
+      max-width: 177px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -97,6 +97,7 @@
 
     .experience-boxes-wrapper {
       .box {
+        max-width: 203px;
         margin-bottom: 40px;
 
         &:nth-of-type(odd) {

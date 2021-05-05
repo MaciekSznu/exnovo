@@ -51,11 +51,11 @@ get_header(); ?>
     <span class="blue-text"><?= $hero_title['niebieski_tekst']; ?></span>
     <span class="orange-text"><?= $hero_title['pomaranczowy_tekst']; ?></span>
   </h2>
+  <p class="page-adress"><?= $page_adress; ?></p>
 </section>
 <section class="hero-credits">
   <div class="hero-credits-wrapper">
     <article class="text-wrapper">
-      <p class="page-adress"><?= $page_adress; ?></p>
       <h2 class="article-title"><?= $hero_text_header; ?></h2>
       <p class="article-text"><?= $hero_text; ?></p>
       <h3 class="cta-lead-text"><?= $hero_bottom_text; ?></h3>

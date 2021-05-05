@@ -31,20 +31,6 @@
       padding: 0;
     }
 
-    .page-adress {
-      width: 100%;
-      max-width: 1234px;
-      color: $light-blue;
-      font-family: $poppins;
-      font-size: 13px;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: normal;
-      margin-top: 45px;
-      margin-bottom: 36px;
-    }
-
     .search-form {
       display: flex;
       justify-content: center;
@@ -55,7 +41,7 @@
 
       @media (min-width: 1034px) {
         max-width: 100%;
-        margin-top: 75px;
+        // margin-top: 75px;
       }
       .input-wrapper {
         height: 100%;

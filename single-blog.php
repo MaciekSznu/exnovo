@@ -33,9 +33,9 @@ get_header(); ?>
     <span class="blue-text"><?= $title['linia_01']; ?></span>
     <span class="orange-text"><?= $title['linia_02']; ?></span>
   </h2>
+  <p class="page-adress"><?= $page_adress; ?></p>
 </section>
 <section class="single-blog-hero">
-  <p class="page-adress"><?= $page_adress; ?></p>
   <div class="single-blog-hero-img-wrapper">
     <img class="single-blog-hero-img" src="<?= $main_image; ?>" alt="" srcset="" />
   </div>

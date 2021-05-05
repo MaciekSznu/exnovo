@@ -2,6 +2,7 @@
 @import "../mixins";
 
 .presentation {
+  width: 100%;
   background: $light-bg;
   padding: 0 10px 0;
   position: relative;
@@ -18,25 +19,18 @@
 
   &-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     background-color: $light-bg;
 
     .text-wrapper {
       margin-top: 48px;
       z-index: 2;
-      max-width: 300px;
       align-self: flex-start;
-
-      .page-adress {
-        color: $light-blue;
-        font-family: $poppins;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-      }
+      font-family: $grotesk-reg;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
 
       .article-title {
         color: $dark-blue;
@@ -63,18 +57,21 @@
         text-align: left;
         margin-bottom: 20px;
       }
+
+      strong {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
+      }
     }
 
     .image-wrapper {
-      margin-top: 30px;
+      margin-top: 80px;
       position: relative;
       min-width: calc(100% - 29px);
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      background: url("../assets/img/single-pierwotny/presentation_img_desktop.png");
-      background-size: cover;
-      background-position: top left;
 
       &:before {
         content: "";
@@ -86,17 +83,6 @@
         min-width: 213px;
         background: url("../assets/graphics/img_overlay_house.svg");
         background-size: cover;
-        z-index: 2;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 133px;
-        width: 109px;
-        background: url("../assets/graphics/dev_100_img_bottom_right.svg");
         z-index: 2;
       }
     }
@@ -137,8 +123,15 @@
     flex-direction: column;
     align-items: center;
 
-    &:before {
-      display: none;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background: $light-bg;
+      transform: translateX(-50%);
     }
 
     &-wrapper {
@@ -147,14 +140,10 @@
       width: 1234px;
 
       .text-wrapper {
-        margin-top: 0;
+        margin-top: 60px;
         margin-left: 0;
         width: 100%;
         max-width: 580px;
-
-        .page-adress {
-          margin-top: 51px;
-        }
 
         .article-title {
           font-size: 34px;
@@ -174,10 +163,6 @@
       .image-wrapper {
         margin-top: 0;
         width: 566px;
-        height: 596px;
-        background: url("../assets/img/single-pierwotny/presentation_img_desktop.png");
-        background-size: cover;
-        background-position: top left;
         margin-left: 47px;
         margin-right: 23px;
         height: 637px;
@@ -185,7 +170,7 @@
         &:before {
           left: -23px;
           top: -38px;
-          height: 596px;
+          height: 568px;
           width: 378px;
           background: url("../assets/graphics/img_overlay_house_big.svg");
         }

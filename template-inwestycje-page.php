@@ -6,7 +6,7 @@ global $pagesData;
 
 $hero = get_field('hero');
 $hero_title = $hero['hero_title'];
-$page_adress = $hero['page_adress'];
+$page_address = $hero['page_address'];
 
 $partners_title = get_field('partners_title');
 $partners_text = get_field('partners_text');
@@ -17,6 +17,7 @@ $cooperation_template = get_field('cooperation', $pagesData['blocks']);
 $cooperation_title = $cooperation['tytul_sekcji'] ? $cooperation['tytul_sekcji'] : $cooperation_template['tytul_sekcji'];
 $cooperation_list = $cooperation['lista'] ? $cooperation['lista'] : $cooperation_template['lista'];
 $cooperation_cta_text = $cooperation['cta_text'] ? $cooperation['cta_text'] : $cooperation_template['cta_text'];
+$cooperation_cta_link = $cooperation['cta_link'] ? $cooperation['cta_link'] : $cooperation_template['cta_link'];
 $cooperation_phone = $cooperation['numer_telefonu'] ? $cooperation['numer_telefonu'] : $cooperation_template['numer_telefonu'];
 $cooperation_box = $cooperation['box'] ;
 $cooperation_box_image = $cooperation_box['image'] ? $cooperation['box_image'] : $cooperation_template['box']['box_image'];
@@ -31,10 +32,10 @@ get_header(); ?>
     <span class="blue-text"><?= $hero_title['niebieski_tekst']; ?></span>
     <span class="orange-text"><?= $hero_title['pomaranczowy_tekst']; ?></span>
   </h2>
+  <p class="page-adress"><?= $page_address; ?></p>
 </section>
 <section class="search">
   <div class="search-wrapper">
-    <p class="page-adress"><?= $page_adress; ?></p>
     <?php
       $args = [
           'post_type' => 'inwestycje',
@@ -113,10 +114,14 @@ get_header(); ?>
       $area_to = trim(get_field('investment_area_to'));
       $room_number_from = trim(get_field('investment_room_number_from'));
       $room_number_to = trim(get_field('investment_room_number_to'));
+      $photos = explode(',', trim(get_field('investment_photo_list')));
+      $photos_path = 'https://static.esticrm.pl/public/images/investments/2167/';
+      $id = trim(get_field('investment_id'));
+
     ?>
     <div class="offer-wrapper">
       <div class="offer-item">
-        <img class="offer-image" src="" alt="" />
+        <div class="offer-image-wrapper"><img class="offer-image" src="<?= $photos_path . $id . '/' . $photos[0] . '_max.jpg' ?>" alt="" /></div>
         <div class="offer-text-wrapper">
           <h4 class="offer-title"><?= $name; ?>, <?= $city; ?></h4>
           <div class="rooms-wrapper">
@@ -125,7 +130,7 @@ get_header(); ?>
           </div>
           <div class="prices-wrapper">
             <p class="prices-description">cena za m²</p>
-            <p class="prices-value">od <?= number_format($price_permeter_from, 0, '', ' '); ?> PLN do <?= number_format($price_permeter_to, 0, '', ' '); ?> PLN</p>
+            <p class="prices-value">od <?= number_format(floatval($price_permeter_from), 0, '', ' '); ?> PLN do <?= number_format(floatval($price_permeter_to), 0, '', ' '); ?> PLN</p>
           </div>
           <div class="area-wrapper">
             <p class="area-description">powierzchnia</p>
@@ -181,11 +186,11 @@ get_header(); ?>
         }
       ?>
       <div class="contact-wrapper">
-        <button class="button-contact"><?= $cooperation_cta_text; ?></button>
+        <button class="button-contact"><a href="<?= $cooperation_cta_link; ?>"><?= $cooperation_cta_text; ?></a></button>
         <a class="tel" href="tel:+48510912123"><?= $cooperation_phone; ?></a>
       </div>
     </div>
-    <div data-aos="fade-up" class="image-wrapper">
+    <div data-aos="fade-up" class="image-wrapper" style="background: url(<?= $cooperation_box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $cooperation_box_text; ?></p>
         <p class="image-text--name"><?= $cooperation_box_name; ?></p>

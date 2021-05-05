@@ -33,9 +33,9 @@ get_header(); ?>
     <span class="blue-text"><?= $hero_title['niebieski_tekst']; ?></span>
     <span class="orange-text"><?= $hero_title['pomaranczowy_tekst']; ?></span>
   </h2>
+  <p class="page-adress"><?= $page_adress; ?></p>
 </section>
 <section class="blog-items">
-  <p class="page-adress"><?= $page_adress; ?></p>
   <div class="blog-wrapper">
     <?php
       $paged = get_query_var('paged')? get_query_var('paged') : 1;

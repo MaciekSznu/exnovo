@@ -8,7 +8,7 @@
   align-items: center;
 
   .section-title {
-    max-width: 270px;
+    // max-width: 270px;
     color: $dark-blue;
     font-family: $grotesk-reg;
     font-weight: 700;
@@ -27,7 +27,7 @@
   }
 
   .section-subtitle {
-    max-width: 284px;
+    // max-width: 284px;
     color: $dark-blue;
     font-family: $grotesk-reg;
     font-size: 15px;
@@ -45,7 +45,7 @@
 
     .box {
       width: 100%;
-      max-width: 203px;
+      max-width: 177px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -99,6 +99,7 @@
     .choice-boxes-wrapper {
       max-width: 880px;
       .box {
+        max-width: 203px;
         padding: 0;
         margin-bottom: 40px;
 

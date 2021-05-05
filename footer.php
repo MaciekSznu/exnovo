@@ -7,6 +7,16 @@
  * @package test
  */
 global $pagesData;
+
+$footer_data = get_field('footer', $pagesData['blocks']);
+$facebook_link = $footer_data['facebook_link'];
+$linkedin_link = $footer_data['linkedin_link'];
+$instagram_link = $footer_data['instagram_link'];
+$logo_01 = $footer_data['logo_partnera_01'];
+$logo_02 = $footer_data['logo_partnera_02'];
+$logo_03 = $footer_data['logo_partnera_03'];
+$rodo_link = $footer_data['rodo_link'];
+
 ?>
 
 <footer class="footer" id="footer">
@@ -45,30 +55,29 @@ global $pagesData;
         </div>
       </div>
       <div class="social-links-wrapper">
-        <a class="social-link" href="https://pl.linkedin.com/company/ex-novo-inwestycje-i-nieruchomo%C5%9Bci" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/linkedin.svg" alt=""/></a>
-        <a class="social-link" href="https://www.facebook.com/ExNovo.sp.zo.o" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/facebook.svg" alt=""/></a>
-        <a class="social-link" href="" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/instagram.svg" alt=""/></a>
+        <a class="social-link" href="<?= $linkedin_link; ?>" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/linkedin.svg" alt=""/></a>
+        <a class="social-link" href="<?= $facebook_link; ?>" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/facebook.svg" alt=""/></a>
+        <a class="social-link" href="<?= $instagram_link; ?>" target="_blank" rel="noopener noreferrer"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/instagram.svg" alt=""/></a>
       </div>
     </div>
   </div>
   <div class="disclaimer-wrapper">
     <p class="disclaimer-text">Niniejsza strona ma charakter informacyjny, nie stanowi oferty handlowej w rozumieniu Art. 66 § 1 Kodeksu Cywilnego. Zamieszczone na stronie materiały graficzne w tym animacje, wizualizacje, mają charakter wyłącznie poglądowy, a przedstawione w nich modele budynków oraz zagospodarowania terenu mogą podlegać zmianom na etapie realizacji. Zmianie nie ulegną istotne cechy świadczenia oraz funkcjonalność budynków.</p>
     <div class="logos-wrapper">
-      <a href="http://" target="_blank" rel="noopener noreferrer">
-        <img src="<?= get_template_directory_uri(); ?>/assets/graphics/rzetelna_firma_logo.png" alt=""/>
-      </a>
-      <a href="http://" target="_blank" rel="noopener noreferrer">
-        <img src="<?= get_template_directory_uri(); ?>/assets/graphics/sppon_logo.png" alt=""/>
-      </a>
-      <a href="http://" target="_blank" rel="noopener noreferrer">
-        <img src="<?= get_template_directory_uri(); ?>/assets/graphics/pfrn_logo.png" alt=""/>
-      </a>
+      <span>
+        <img src="<?= $logo_01; ?>" alt=""/>
+      </span>
+      <span>
+        <img src="<?= $logo_02; ?>" alt=""/>
+      </span>
+      <span>
+        <img src="<?= $logo_03; ?>" alt=""/>
+      </span>
     </div>
   </div>
   <div class="copyrights">
     <p class="copyrights-text">Copyright © ExNovo</p>
-    <!-- HREF DO POPRAWY -->
-    <a class="copyrights-text-link" href="http://" target="_blank" rel="noopener noreferrer">Regulamin/Rodo</a>
+    <a class="copyrights-text-link" href="<?= $rodo_link; ?>" target="_blank" rel="noopener noreferrer">Regulamin/Rodo</a>
     <p class="copyrights-text">
       wykonanie:
       <a class="copyrights-text-link" href="https://beechstudio.pl/" target="_blank" rel="noopener noreferrer"

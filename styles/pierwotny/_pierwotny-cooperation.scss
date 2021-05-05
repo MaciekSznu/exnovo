@@ -10,7 +10,7 @@
   }
 
   @media (min-width: 1280px) {
-    padding: 20px 0 162px;
+    padding: 0 0 162px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,6 +51,7 @@
         margin-bottom: 16px;
         color: $blue;
         font-family: $grotesk-reg;
+        font-weight: 400;
         font-size: 13px;
         height: 31px;
         font-style: normal;
@@ -91,9 +92,6 @@
     .image-wrapper {
       max-width: 378px;
       width: 100%;
-      background: url("../assets/img/home/sylwetka-pracownika.png");
-      background-size: contain;
-      background-position-y: top;
       margin-bottom: 123px;
 
       .image-text-wrapper {
@@ -159,8 +157,10 @@
       }
     }
 
-    @media (min-width: 1280px) {
+    @media (min-width: 1244px) {
+      width: 100%;
       max-width: 1244px;
+      align-items: center;
 
       .text-wrapper {
         width: 50%;
@@ -207,6 +207,12 @@
             line-height: normal;
             text-align: left;
             text-decoration: none;
+            transition: color 0.5s ease-in-out;
+
+            &:hover {
+              color: #e16c19;
+              transition: color 0.5s ease-in-out;
+            }
           }
         }
       }
@@ -215,8 +221,6 @@
         width: 50%;
         max-width: 50%;
         max-height: 535px;
-        background-position-x: right;
-        background-repeat: no-repeat;
 
         .image-text-wrapper {
           margin-top: 340px;

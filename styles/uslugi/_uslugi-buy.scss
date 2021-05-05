@@ -18,14 +18,13 @@
 
   &-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     background-color: $light-bg;
 
     .text-wrapper {
       margin-top: 48px;
       z-index: 2;
-      max-width: 300px;
       align-self: flex-start;
 
       .page-adress {
@@ -82,15 +81,12 @@
     }
 
     .image-wrapper {
-      margin-top: 41px;
+      margin-top: 87px;
       position: relative;
       min-width: calc(100% - 29px);
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      // background: url("../assets/img/uslugi/buy_img_desktop.png");
-      // background-size: cover;
-      // background-position: top left;
 
       &:before {
         content: "";
@@ -204,9 +200,6 @@
       .image-wrapper {
         margin-top: 0;
         width: 566px;
-        // background: url("../assets/img/uslugi/buy_img_desktop.png");
-        // background-size: cover;
-        // background-position: top left;
         margin-left: 23px;
         height: 637px;
 

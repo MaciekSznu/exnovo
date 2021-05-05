@@ -22,27 +22,16 @@
   .search-wrapper {
     width: 100%;
     padding: 0 10px;
+    margin-top: 50px;
 
     @media (min-width: 768px) {
       padding: 0 20px;
+      margin-top: 60px;
     }
 
     @media (min-width: 1234px) {
       padding: 0;
-    }
-
-    .page-adress {
-      width: 100%;
-      max-width: 1234px;
-      color: $light-blue;
-      font-family: $poppins;
-      font-size: 13px;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: normal;
-      margin-top: 45px;
-      margin-bottom: 36px;
+      margin-top: 10px;
     }
 
     .search-form {
@@ -68,6 +57,7 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(300px, 380px));
         grid-template-rows: 60px;
+        grid-gap: 20px 0;
         grid-template-areas: "property market transaction";
 
         .property {
@@ -343,6 +333,14 @@
         }
       }
 
+      .row-wrapper-01 {
+        gap: 20px 42px;
+
+        @media (min-width: 1034px) {
+          gap: 0px 47px;
+        }
+      }
+
       .sort-wrapper {
         display: flex;
         justify-content: flex-start;
@@ -379,8 +377,6 @@
 
         @media (max-width: 767px) {
           flex-wrap: wrap;
-          margin-bottom: 34px;
-          margin-top: 20px;
           .sort-text {
             width: 100%;
             margin-right: 0;
@@ -415,15 +411,10 @@
       max-width: 1234px;
       position: relative;
 
-      .page-adress {
-        margin-top: 0px;
-        margin-bottom: 33px;
-      }
-
       &:after {
         content: "";
         position: absolute;
-        top: -87px;
+        top: -97px;
         right: 0;
         width: 53px;
         height: 73px;
