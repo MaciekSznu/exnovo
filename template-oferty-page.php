@@ -44,6 +44,7 @@ get_header(); ?>
           'post_status' => 'publish'
       ];
       $filters = ['mainTypeId' => [], 'market' => [], 'transaction' => [], 'price' => [], 'area' => [], 'year' => [], 'floor' => [], 'rooms' => []];
+
       $query = new WP_Query($args);
 
       if($query->have_posts()): while($query->have_posts()) : $query->the_post();
@@ -97,7 +98,6 @@ get_header(); ?>
       $floorToGet = (isset($_GET['floor_to']))? $_GET['floor_to']: '';
       $roomsFromGet = (isset($_GET['rooms_from']))? $_GET['rooms_from']: '';
       $roomsToGet = (isset($_GET['rooms_to']))? $_GET['rooms_to']: '';
-      $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
       $metaQuery = [];
 
       if($mainTypeIdGet){
@@ -211,6 +211,14 @@ get_header(); ?>
         ];
       }
 
+      // $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
+      // $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
+      // $sortAreaAsc = (isset($_GET['area_asc']))? $_GET['area_asc']: '';
+      // $sortAreaDesc = (isset($_GET['area_desc']))? $_GET['area_desc']: '';
+      // $sortProperty = ($sortAreaAsc || $sortAreaDesc) ? 'flat_areaTotal' : 'flat_price';
+      // $sortOrder = ($sortAreaDesc || $sortPriceDesc) ? 'desc' : 'asc';
+
+      $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
       $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
 
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
@@ -224,6 +232,17 @@ get_header(); ?>
           'meta_key' => 'flat_price',
           'order' => $sortOrder,
       ];
+
+      // $modificators = [
+      //   'meta_key' => $sortProperty,
+      //   'order' => $sortOrder,
+      // ];
+
+      // $new_args = array_merge(
+      //   $args,
+      //   $modificators,
+      // );
+
       $query = new WP_Query($args);
 
   ?>
@@ -414,10 +433,14 @@ get_header(); ?>
         </div>
       </div>
       <div class="sort-wrapper">
-      <p class="sort-text">Sortuj:</p>
-      <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
-      <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
-    </div>
+        <p class="sort-text">Sortuj:</p>
+        <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
+        <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
+        <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
+        <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
+        <button type="submit" name="area_desc" value="area_desc" class="sort-button">Powierzchnia malejąco</button>
+        <button type="submit" name="area_asc" value="rooms_asc" class="sort-button">Powierzchnia rosnąco</button> -->
+      </div>
     </form>
   </div>
 </section>
@@ -436,7 +459,9 @@ get_header(); ?>
     ?>
     <div class="offer-wrapper">
       <div class="offer-item">
+        <div class="offer-image-wrapper">
         <img class="offer-image" src="<?= wp_get_attachment_image_src( get_field('flat_pictures')[0], 'large')[0]; ?>" alt="<?= get_the_title(); ?>" />
+        </div>
         <div class="offer-text-wrapper">
           <h4 class="offer-title"><?= $offer_title; ?></h4>
           <h5 class="offer-transaction"><?= get_field('flat_mainTypeId'); ?> na <?= get_field('flat_transaction'); ?></h5>

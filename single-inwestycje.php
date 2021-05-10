@@ -61,7 +61,9 @@ get_header(); ?>
         'post_parent' => 0,
         'post_status' => 'publish',
     ];
+
     $query = new WP_Query($args);
+
 ?>
 <section class="page-title-wrapper">
   <h2 class="page-title">
@@ -154,44 +156,57 @@ get_header(); ?>
       </p>
     </div>
     <?php
-      $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
-      $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
-      $sortRoomsAsc = (isset($_GET['rooms_asc']))? $_GET['rooms_asc']: '';
-      $sortRoomsDesc = (isset($_GET['rooms_desc']))? $_GET['rooms_desc']: '';
+
+      // $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
+      // $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
+      // $sortRoomsAsc = (isset($_GET['rooms_asc']))? $_GET['rooms_asc']: '';
+      // $sortRoomsDesc = (isset($_GET['rooms_desc']))? $_GET['rooms_desc']: '';
+
+      // $sortProperty = ($sortRoomsAsc || $sortRoomsDesc) ? 'flat_apartmentRoomNumber' : 'flat_price';
+      // $sortOrder = ($sortRoomsDesc || $sortPriceDesc) ? 'desc' : 'asc';
+
+      $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
+      $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
 
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
       $investmentId = get_field('investment_id');
 
-      
-      $sortProperty = ($sortRoomsAsc || $sortRoomsDesc) ? 'flat_apartmentRoomNumber' : 'flat_price';
-
-      $sortOrder = ($sortRoomsDesc || $sortPriceDesc) ? 'desc' : 'asc';
-      
       $args = [
           'post_type' => 'mieszkania',
           'meta_query' => array(
             array(
               'key' => 'flat_investmentId',
               'value'	=> $investmentId,
-            )
+            ),
           ),
           'post_parent' => 0,
           'post_status' => 'publish',
           'paged' => $paged,
           'orderby'    => 'meta_value_num',
-          'meta_key' => $sortProperty,
+          'meta_key' => 'flat_price',
           'order' => $sortOrder,
       ];
+
+      // $modificators = [
+      //   'meta_key' => $sortProperty,
+      //   'order' => $sortOrder,
+      // ];
+
+      // $new_args = array_merge(
+      //   $args,
+      //   $modificators,
+      // );
+
       $query = new WP_Query($args);
     ?>
-    <form action="<?= get_the_permalink(); ?>" id="sort-form" class="sort-form" method="get">
-      <select name="sort" id="offers-sort" class="offers-sort" onchange="this.form.submit()">
-        <option value="">Sortowanie</option>
-        <option type="submit" name="price_desc" value="price_desc">Oferty według ceny malejąco</option>
-        <option type="submit" name="price_asc" value="price_asc">Oferty według ceny rosnąco</option>
-        <option type="submit" name="rooms_asc" value="rooms_asc">Liczba pomieszczeń rosnąco</option>
-        <option type="submit" name="rooms_desc" value="rooms_desc">Liczba pomieszczeń malejąco</option>
-      </select>
+    <form action="<?= get_the_permalink(); ?>" id="sort-form" class="sort-wrapper" method="get">
+        <p class="sort-text">Sortuj:</p>
+        <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
+        <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
+        <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
+        <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
+        <button type="submit" name="rooms_desc" value="rooms_desc" class="sort-button">Liczba pokoi malejąco</button>
+        <button type="submit" name="rooms_asc" value="rooms_asc" class="sort-button">Liczba pokoi rosnąco</button> -->
     </form>
   </div>
   <div class="offers-wrapper">
@@ -206,7 +221,9 @@ get_header(); ?>
     ?>
     <div class="offer-wrapper">
       <div class="offer-item">
+        <div class="offer-image-wrapper">
         <img class="offer-image" src="<?= wp_get_attachment_image_src( get_field('flat_pictures')[0], 'large')[0]; ?>" alt="<?= $offer_title; ?>"/>
+        </div>
         <div class="offer-text-wrapper">
           <h4 class="offer-title"><?= $offer_title; ?>, <span><?= $tytul_wpisu['linia_01']; ?></span></h4>
           <h5 class="offer-transaction"><?= get_field('flat_mainTypeId'); ?> na <?= get_field('flat_transaction'); ?></h5>

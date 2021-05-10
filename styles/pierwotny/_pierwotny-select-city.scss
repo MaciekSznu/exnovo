@@ -36,12 +36,15 @@
       justify-content: center;
       width: 100%;
       max-width: 984px;
-      margin-top: 90px; // do zmiany jeśli dojdzie page adress
-      margin-bottom: 40px;
+      margin-top: 90px;
+      margin-bottom: 12px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 40px;
+      }
 
       @media (min-width: 1034px) {
         max-width: 100%;
-        // margin-top: 75px;
       }
       .input-wrapper {
         height: 100%;

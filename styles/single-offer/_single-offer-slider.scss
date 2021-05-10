@@ -46,6 +46,7 @@
                     height: 100vw;
                     min-height: 360px;
                     max-height: 100vw;
+                    cursor: zoom-in;
                   }
                 }
               }
@@ -86,6 +87,7 @@
                     .slide__image {
                       height: auto;
                       width: 100%;
+                      cursor: zoom-in;
                     }
                   }
                 }

@@ -1,20 +1,93 @@
 <?php
 global $pagesData;
-get_header(); ?>
+get_header();
+
+$specialist = get_field('specialist');
+$specialist_page = get_field('specialist_page');
+
+?>
 
 <?php
-    $paged = get_query_var('paged')? get_query_var('paged') : 1;
-    $contactId = (get_field('specialist_contactId'))? get_field('specialist_contactId'): 0;
-    $args = [
-        'post_type' => 'mieszkania',
-        'meta_key'		=> 'flat_contactId',
-        'meta_value'	=> $contactId,
-        'post_parent' => 0,
-        'post_status' => 'publish',
-        'paged' => $paged,
-    ];
-    $query = new WP_Query($args);
+
+  // $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
+  // $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
+  // $sortAreaAsc = (isset($_GET['area_asc']))? $_GET['area_asc']: '';
+  // $sortAreaDesc = (isset($_GET['area_desc']))? $_GET['area_desc']: '';
+
+  // $sortProperty = ($sortAreaAsc || $sortAreaDesc) ? 'flat_areaTotal' : 'flat_price';
+  // $sortOrder = ($sortAreaDesc || $sortPriceDesc) ? 'desc' : 'asc';
+
+  $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
+  $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
+
+  $paged = get_query_var('paged')? get_query_var('paged') : 1;
+  $contactId = (get_field('specialist_contactId'))? get_field('specialist_contactId'): 0;
+  $args = [
+      'post_type' => 'mieszkania',
+      // 'meta_key'		=> 'flat_contactId',
+      // 'meta_value'	=> $contactId,
+      'meta_query' => array(
+        array(
+          'key' => 'flat_contactId',
+          'value'	=> $contactId,
+        ),
+      ),
+      'post_parent' => 0,
+      'post_status' => 'publish',
+      'paged' => $paged,
+      'orderby'    => 'meta_value_num',
+      'meta_key' => 'flat_price',
+      'order' => $sortOrder,
+  ];
+
+  // $modificators = [
+  //   'meta_key' => $sortProperty,
+  //   'order' => $sortOrder,
+  // ];
+
+  // $new_args = array_merge(
+  //   $args,
+  //   $modificators,
+  // );
+
+  $query = new WP_Query($args);
 ?>
+<section class="page-title-wrapper">
+  <h2 class="page-title">
+    <span class="blue-text"><?= $specialist_page['title']; ?></span>
+    <!-- <span class="blue-text">Oferty</span> -->
+    <span class="orange-text"><?= $specialist['name']; ?></span>
+  </h2>
+  <p class="page-adress"><?= $specialist_page['page_address']; ?></p>
+  <!-- <p class="page-adress">Home> Marcin Fałek</p> -->
+</section>
+<section class="specialist-data">
+  <div class="specialist-data-wrapper">
+    <div class="phone-wrapper">
+      <img src="<?= $specialist_page['phone_icon']; ?>" alt="">
+      <a href="tel:<?= $specialist['phone']; ?>"><?= $specialist['phone']; ?></a>
+      <!-- <img src="../../wp-content/themes/exnovo/assets/graphics/single_offer_row_icon.svg" alt=""> -->
+      <!-- <a href="tel:+48 123 456 789">+48 123 456 789</a> -->
+    </div>
+    <div class="mail-wrapper">
+      <img src="<?= $specialist_page['mail_icon']; ?>" alt="">
+      <a href="mailto:<?= $specialist['mail']; ?>"><?= $specialist['mail']; ?></a>
+    </div>
+  </div>
+</section>
+<section class="sort">
+  <form action="<?= get_the_permalink(); ?>" id="search-form" class="search-form" method="get">
+    <div class="sort-wrapper">
+      <p class="sort-text">Sortuj:</p>
+      <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
+      <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
+      <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
+      <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
+      <button type="submit" name="area_desc" value="area_desc" class="sort-button">Powierzchnia malejąco</button>
+      <button type="submit" name="area_asc" value="rooms_asc" class="sort-button">Powierzchnia rosnąco</button> -->
+    </div>
+  </form>
+</section>
 <section class="offers">
   <div class="offers-wrapper">
     <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
@@ -30,7 +103,9 @@ get_header(); ?>
     ?>
     <div class="offer-wrapper">
       <div class="offer-item">
+        <div class="offer-image-wrapper">
         <img class="offer-image" src="<?= wp_get_attachment_image_src( get_field('flat_pictures')[0], 'large')[0]; ?>" alt="<?= get_the_title(); ?>" />
+        </div>
         <div class="offer-text-wrapper">
           <h4 class="offer-title"><?= $offer_title; ?></h4>
           <h5 class="offer-transaction"><?= get_field('flat_mainTypeId'); ?> na <?= get_field('flat_transaction'); ?></h5>
