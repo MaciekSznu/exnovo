@@ -6,7 +6,8 @@
   max-width: 1234px;
   margin: 0 auto;
   background-color: $light-bg;
-  padding-top: 127px;
+  padding-top: 80px;
+  margin-top: -80px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -46,6 +47,7 @@
   @media (min-width: 1234px) {
     padding-top: 51px;
     max-width: 1234px;
+    margin-top: 0;
 
     &:before {
       right: 0;

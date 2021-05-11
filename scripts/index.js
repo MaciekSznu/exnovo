@@ -132,3 +132,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
   setActiveButton.classList.add("selected");
 });
+
+// TOP MENU HIDDING
+let prevScrollPosition = window.pageYOffset;
+const header = document.querySelector(".header");
+
+window.onscroll = () => {
+  let currentScrollPosition = window.pageYOffset;
+  const headerComputedStyles = getComputedStyle(header);
+  let headerHeight = headerComputedStyles.height;
+  prevScrollPosition >= currentScrollPosition ? (header.style.top = "0") : (header.style.top = `-${headerHeight}`);
+  prevScrollPosition = currentScrollPosition;
+};

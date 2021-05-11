@@ -131,7 +131,7 @@ $contact_id = get_field('flat_contactId');
           </div>
         </div>
       </div>
-      <div class="single-offer-employee-wrapper">
+      <div data-aos="fade-up" data-aos-delay="500" class="single-offer-employee-wrapper">
       <?php if($contact_id): ?>
         <div class="member">
           <?php

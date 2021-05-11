@@ -141,7 +141,7 @@ get_header(); ?>
         <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
       </form>
     </div>
-    <div class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $box_text; ?></p>
         <p class="image-text--name"><?= $box_name; ?></p>

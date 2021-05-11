@@ -190,7 +190,7 @@ get_header(); ?>
         <a class="tel" href="tel:+48510912123"><?= $cooperation_phone; ?></a>
       </div>
     </div>
-    <div data-aos="fade-up" class="image-wrapper" style="background: url(<?= $cooperation_box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $cooperation_box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
       <div class="image-text-wrapper">
         <p class="image-text--header"><?= $cooperation_box_text; ?></p>
         <p class="image-text--name"><?= $cooperation_box_name; ?></p>
