@@ -40,6 +40,9 @@ function page_scripts() {
   
   elseif ( is_page('kontakt')) :
     wp_enqueue_style( 'kontakt-style', get_template_directory_uri() . '/dist/kontakt.css' );
+  
+  elseif ( is_page('rodo')) :
+    wp_enqueue_style( 'rodo-style', get_template_directory_uri() . '/dist/rodo.css' );
 
   elseif ( is_page('oferty')) :
     wp_enqueue_style( 'oferty-style', get_template_directory_uri() . '/dist/oferty.css' );

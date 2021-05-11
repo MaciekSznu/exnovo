@@ -43,7 +43,7 @@ get_header(); ?>
           'posts_per_page' => -1,
           'post_status' => 'publish'
       ];
-      $filters = ['mainTypeId' => [], 'market' => [], 'transaction' => [], 'price' => [], 'area' => [], 'year' => [], 'floor' => [], 'rooms' => []];
+      $filters = ['mainTypeId' => [], 'market' => [], 'transaction' => [], 'locationCityName' => [], 'price' => [], 'area' => [], 'year' => [], 'floor' => [], 'rooms' => []];
 
       $query = new WP_Query($args);
 
@@ -51,6 +51,7 @@ get_header(); ?>
           $mainTypeId = trim(get_field('flat_mainTypeId'));
           $market = trim(get_field('flat_market'));
           $transaction = trim(get_field('flat_transaction'));
+          $locationCityName = trim(get_field('flat_locationCityName'));
           $price = trim(get_field('flat_price'));
           $area = trim(get_field('flat_areaTotal'));
           $year = trim(get_field('flat_buildingYear'));
@@ -65,6 +66,9 @@ get_header(); ?>
           }
           if(!in_array($transaction, $filters['transaction']) && $transaction != ''){
             $filters['transaction'][] = $transaction;
+          }
+          if(!in_array($locationCityName, $filters['locationCityName']) && $locationCityName != ''){
+            $filters['locationCityName'][] = $locationCityName;
           }
           if(!in_array($price, $filters['price']) && $price != ''){
             $filters['price'][] = $price;
@@ -88,6 +92,7 @@ get_header(); ?>
       $mainTypeIdGet = (isset($_GET['mainTypeId']))? $_GET['mainTypeId']: '';
       $marketGet = (isset($_GET['market']))? $_GET['market']: '';
       $transactionGet = (isset($_GET['transaction']))? $_GET['transaction']: '';
+      $locationCityNameGet = (isset($_GET['locationCityName']))? $_GET['locationCityName']: '';
       $priceFromGet = (isset($_GET['price_from']))? $_GET['price_from']: '';
       $priceToGet = (isset($_GET['price_to']))? $_GET['price_to']: '';
       $areaFromGet = (isset($_GET['area_from']))? $_GET['area_from']: '';
@@ -118,6 +123,13 @@ get_header(); ?>
         $metaQuery[] = [
             'key'     => 'flat_transaction',
             'value'   => $transactionGet,
+        ];
+      }
+
+      if($locationCityNameGet){
+        $metaQuery[] = [
+            'key'     => 'flat_locationCityName',
+            'value'   => $locationCityNameGet,
         ];
       }
 
@@ -274,6 +286,15 @@ get_header(); ?>
         </div>
       </div>
       <div class="row-wrapper-02">
+        <p class="city_label">Miasto</p>
+        <div class="input-wrapper city">
+          <select id="input-city" class="input-city" name="locationCityName">
+            <option value="">Miasto</option>
+            <?php foreach($filters['locationCityName'] as $option): ?>
+              <option value="<?= $option ?>" <?= ($locationCityNameGet == $option)? 'selected' : ''; ?>><?= ucfirst($option); ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
         <p class="price_label">Cena</p>
         <div class="price-wrapper">
           <div class="input-wrapper price_from">
@@ -335,6 +356,8 @@ get_header(); ?>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
+      </div>
+      <div class="row-wrapper-03">
         <p class="year_label">Rok budowy</p>
         <div class="year-wrapper">
           <div class="input-wrapper year_from">
@@ -365,8 +388,6 @@ get_header(); ?>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
-      </div>
-      <div class="row-wrapper-03">
         <p class="floor_label">Piętro</p>
         <div class="floor-wrapper">
           <div class="input-wrapper floor_from">
@@ -428,18 +449,20 @@ get_header(); ?>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
         </div>
+      </div>
+      <div class="row-wrapper-04">
         <div class="input-wrapper submit">
           <button class="submit-search" type="submit">Szukaj oferty</button>
         </div>
-      </div>
-      <div class="sort-wrapper">
-        <p class="sort-text">Sortuj:</p>
-        <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
-        <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
-        <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
-        <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
-        <button type="submit" name="area_desc" value="area_desc" class="sort-button">Powierzchnia malejąco</button>
-        <button type="submit" name="area_asc" value="rooms_asc" class="sort-button">Powierzchnia rosnąco</button> -->
+        <div class="sort-wrapper">
+          <p class="sort-text">Sortuj:</p>
+          <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
+          <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
+          <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
+          <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
+          <button type="submit" name="area_desc" value="area_desc" class="sort-button">Powierzchnia malejąco</button>
+          <button type="submit" name="area_asc" value="rooms_asc" class="sort-button">Powierzchnia rosnąco</button> -->
+        </div>
       </div>
     </form>
   </div>
