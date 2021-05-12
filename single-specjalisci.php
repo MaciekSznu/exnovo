@@ -17,8 +17,7 @@ $specialist_page = get_field('specialist_page');
   // $sortProperty = ($sortAreaAsc || $sortAreaDesc) ? 'flat_areaTotal' : 'flat_price';
   // $sortOrder = ($sortAreaDesc || $sortPriceDesc) ? 'desc' : 'asc';
 
-  $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
-  $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
+  $sortOrder = (isset($_GET['sortOrder'])) ? $_GET['sortOrder']: '';
 
   $paged = get_query_var('paged')? get_query_var('paged') : 1;
   $contactId = (get_field('specialist_contactId'))? get_field('specialist_contactId'): 0;
@@ -74,18 +73,12 @@ $specialist_page = get_field('specialist_page');
       <a href="mailto:<?= $specialist['mail']; ?>"><?= $specialist['mail']; ?></a>
     </div>
   </div>
-</section>
-<section class="sort">
-  <form action="<?= get_the_permalink(); ?>" id="search-form" class="search-form" method="get">
-    <div class="sort-wrapper">
-      <p class="sort-text">Sortuj:</p>
-      <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
-      <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
-      <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
-      <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
-      <button type="submit" name="area_desc" value="area_desc" class="sort-button">Powierzchnia malejąco</button>
-      <button type="submit" name="area_asc" value="rooms_asc" class="sort-button">Powierzchnia rosnąco</button> -->
-    </div>
+  <form action="<?= get_the_permalink(); ?>" id="sort-form" class="sort-wrapper" method="get">
+    <select name="sortOrder" id="" class="sort-select" onchange="this.form.submit()">
+      <option value="">Sortowanie</option>
+      <option value="asc" class="sort-option">Cena rosnąco</option>
+      <option value="desc" class="sort-option">Cena malejąco</option>
+    </select>
   </form>
 </section>
 <section class="offers">

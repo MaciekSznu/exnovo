@@ -307,7 +307,7 @@ get_header(); ?>
               placeholder="Od"
               min = "0"
               <?= ($priceFromGet != '') ? 'value="' . $priceFromGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -320,7 +320,7 @@ get_header(); ?>
               name="price_to"
               placeholder="Do"
               <?= ($priceToGet != '') ? 'value="' . $priceToGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -337,7 +337,7 @@ get_header(); ?>
               placeholder="Od"
               min = "1"
               <?= ($areaFromGet != '') ? 'value="' . $areaFromGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -351,7 +351,7 @@ get_header(); ?>
               placeholder="Do"
               min = "1"
               <?= ($areaToGet != '') ? 'value="' . $areaToGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -370,7 +370,7 @@ get_header(); ?>
               placeholder="Od"
               min = "1900"
               <?= ($yearFromGet != '') ? 'value="' . $yearFromGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -383,7 +383,7 @@ get_header(); ?>
               name="year_to"
               placeholder="Do"
               <?= ($yearToGet != '') ? 'value="' . $yearToGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -400,7 +400,7 @@ get_header(); ?>
               placeholder="Od"
               min = "0"
               <?= ($floorFromGet != '') ? 'value="' . $floorFromGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -413,7 +413,7 @@ get_header(); ?>
               name="floor_to"
               placeholder="Do"
               <?= ($floorToGet != '') ? 'value="' . $floorToGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -430,7 +430,7 @@ get_header(); ?>
               placeholder="Od"
               min = "1"
               <?= ($roomsFromGet != '') ? 'value="' . $roomsFromGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -444,7 +444,7 @@ get_header(); ?>
               placeholder="Do"
               min="1"
               <?= ($roomsToGet != '') ? 'value="' . $roomsToGet . '"' : ''; ?>
-            />
+          />
             <div role="button" class="step-up"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
             <div role="button" class="step-down"><img src="<?= get_template_directory_uri(); ?>/assets/graphics/menu-item-expander.png" alt="" /></div>
           </div>
@@ -531,7 +531,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_01; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -542,7 +542,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_02; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -553,7 +553,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_03; ?>"
-          />
+        />
         </div>
         <div class="disclaimers-wrapper">
           <div class="disclaimer">

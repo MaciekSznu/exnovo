@@ -56,7 +56,7 @@ get_header(); ?>
               sizes="100vw"
               alt=""
               srcset="' . $photo . ' 1279w, ' . $photo_desktop . ' 1280w"
-            />
+          />
             <div class="member-contact-wrapper">
               <h4 class="member-name">' . $name . '</h4>
               <p class="member-function">' . $function . '</p>
@@ -85,7 +85,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_01; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -96,7 +96,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_02; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -107,7 +107,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_03; ?>"
-          />
+        />
         </div>
         <div class="disclaimers-wrapper">
           <div class="disclaimer">

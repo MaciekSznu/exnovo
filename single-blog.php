@@ -37,7 +37,7 @@ get_header(); ?>
 </section>
 <section class="single-blog-hero">
   <div class="single-blog-hero-img-wrapper">
-    <img class="single-blog-hero-img" src="<?= $main_image; ?>" alt="" srcset="" />
+    <img class="single-blog-hero-img" src="<?= $main_image; ?>" alt="<?= get_the_title(); ?>" />
   </div>
 </section>
 <section class="single-blog-content">
@@ -48,9 +48,9 @@ get_header(); ?>
     <img
       class="single-blog-bottom-img"
       src="<?= $bottom_image; ?>"
-      alt=""
-      srcset=""
-    />
+      alt="<?= get_the_title(); ?>"
+     
+  />
   </div>
 </section>
 <section class="form">
@@ -68,7 +68,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_01; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -79,7 +79,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_02; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -90,7 +90,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_03; ?>"
-          />
+        />
         </div>
         <div class="disclaimers-wrapper">
           <div class="disclaimer">

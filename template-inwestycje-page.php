@@ -20,10 +20,10 @@ $cooperation_cta_text = $cooperation['cta_text'] ? $cooperation['cta_text'] : $c
 $cooperation_cta_link = $cooperation['cta_link'] ? $cooperation['cta_link'] : $cooperation_template['cta_link'];
 $cooperation_phone = $cooperation['numer_telefonu'] ? $cooperation['numer_telefonu'] : $cooperation_template['numer_telefonu'];
 $cooperation_box = $cooperation['box'] ;
-$cooperation_box_image = $cooperation_box['image'] ? $cooperation['box_image'] : $cooperation_template['box']['box_image'];
-$cooperation_box_text = $cooperation_box['text'] ? $cooperation['text'] : $cooperation_template['box']['text'];
-$cooperation_box_name = $cooperation_box['imie_i_nazwisko'] ? $cooperation['imie_i_nazwisko'] : $cooperation_template['box']['imie_i_nazwisko'];
-$cooperation_box_comment = $cooperation_box['komentarz'] ? $cooperation['komentarz'] : $cooperation_template['box']['komentarz'];
+$cooperation_box_image = $cooperation_box['image'] ? $cooperation_box['image'] : $cooperation_template['box']['image'];
+$cooperation_box_text = $cooperation_box['text'] ? $cooperation_box['text'] : $cooperation_template['box']['text'];
+$cooperation_box_name = $cooperation_box['imie_i_nazwisko'] ? $cooperation_box['imie_i_nazwisko'] : $cooperation_template['box']['imie_i_nazwisko'];
+$cooperation_box_comment = $cooperation_box['komentarz'] ? $cooperation_box['komentarz'] : $cooperation_template['box']['komentarz'];
 
 get_header(); ?>
 
@@ -121,7 +121,7 @@ get_header(); ?>
     ?>
     <div class="offer-wrapper">
       <div class="offer-item">
-        <div class="offer-image-wrapper"><img class="offer-image" src="<?= $photos_path . $id . '/' . $photos[0] . '_max.jpg' ?>" alt="" /></div>
+        <div class="offer-image-wrapper"><img class="offer-image" src="<?= $photos_path . $id . '/' . $photos[0] . '_max.jpg' ?>" alt="<?= $name; ?>" /></div>
         <div class="offer-text-wrapper">
           <h4 class="offer-title"><?= $name; ?>, <?= $city; ?></h4>
           <div class="rooms-wrapper">

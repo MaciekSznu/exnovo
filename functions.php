@@ -58,6 +58,7 @@ function page_scripts() {
     wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
     wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
+    wp_enqueue_script( 'contact', get_template_directory_uri() . '/dist/contact.js', array(), '', true );
   
   elseif ( is_singular('inwestycje')) :
     wp_enqueue_style( 'inwestycja-style', get_template_directory_uri() . '/dist/single-pierwotny.css' );
@@ -69,7 +70,7 @@ function page_scripts() {
     wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/single-blog.css' );
 
   elseif ( is_singular('specjalisci')) :
-    wp_enqueue_style( 'specjalista-style', get_template_directory_uri() . '/dist/specjalista.css' );
+    wp_enqueue_style( 'specjalist-style', get_template_directory_uri() . '/dist/specjalist.css' );
 
   else :
     null;

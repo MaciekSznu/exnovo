@@ -95,6 +95,29 @@
           margin-bottom: 6px;
         }
       }
+
+      select {
+        margin-top: 26px;
+        height: 100%;
+        width: 247px;
+        border: 1px solid #e1e2f4;
+        padding: 20px 32px;
+        color: $mid-blue;
+        font-family: $grotesk-reg;
+        font-size: 14px;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: normal;
+        text-align: left;
+        outline: none;
+        background-color: $white;
+        background-image: url("../assets/graphics/menu-item-expander.png");
+        background-repeat: no-repeat;
+        background-size: 10px 7px;
+        background-position-y: center;
+        background-position-x: calc(100% - 23px);
+        cursor: pointer;
+      }
     }
   }
 
@@ -359,19 +382,18 @@
       justify-content: flex-end;
       .page-numbers {
         margin: 20px;
-        margin-top: 28px;
-        margin-bottom: 52px;
+        margin-top: 0;
+        margin-bottom: 27px;
         margin-left: 16px;
       }
     }
 
     @media (min-width: 1280px) {
       width: 1234px;
-      // padding: 48px 0 52px;
       .page-numbers {
         margin: 0;
-        margin-top: 28px;
-        margin-bottom: 52px;
+        margin-top: 0;
+        margin-bottom: 27px;
         margin-left: 16px;
       }
     }
@@ -427,9 +449,15 @@
       width: 934px;
     }
   }
+  @media (min-width: 1234px) {
+    padding: 0;
+    .offers-wrapper {
+      justify-content: space-between;
+    }
+  }
 
   @media (min-width: 1280px) {
-    margin-top: 60px;
+    margin-top: 24px;
     padding: 0;
 
     .offers-header {

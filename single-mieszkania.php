@@ -174,13 +174,35 @@ $contact_id = get_field('flat_contactId');
         <h3 class="description-title">Opis nieruchomości</h3>
         <?= $description; ?>
       </div>
-      <div class="form-wrapper">
+      <div class="form-wrapper" id="contact-form-wrapper">
         <div class="text-wrapper">
           <h2 class="section-title">Zapytaj <span>o ofertę</span></h2>
           <h3 class="section-subtitle">
-            Wyślij kontakt, a odpowiemy w ciągu 24h
+          <?php
+            if (!isset($_POST['submit-form'])) {
+              echo 'Wyślij kontakt, a odpowiemy w ciągu 24h';
+            }
+            elseif (isset($_POST['submit-form'])) {
+              $imie = $_POST['imie'];
+              $formemail = $_POST['email'];
+              $formtelefon = $_POST['telefon'];
+              $link = get_permalink();
+              $message = " Oferta: $link\n Imię: $imie\n Email: $formemail\n Telefon: $formtelefon ";
+              $to = 'msznurawa@gmail.com';
+              // $to = 'kontakt@inwestycjewgorach.pl';
+              $subject = 'Wiadomość z formularza kontaktowego Exnovo';
+              $from = '-f test_form@exnovo.pl';
+              // $from = '-f form@inwestycjewgorach.pl';
+              $headers = ['From' => $from, 'Reply-To' => $formemail, 'Content-type' => 'text/html; charset=iso-8859-1'];
+              if (wp_mail($to, $subject, $message, $headers, $from, $link)) {
+                  echo 'Twoja wiadomośc została wysłana';
+                } else {
+                  echo 'Coś poszło nie tak, spróbuj raz jeszcze';
+                }
+            }
+          ?>
           </h3>
-          <form action="" id="contact-form" class="contact-form" method="post">
+          <form action="<?php echo get_permalink(); ?>#contact-form-wrapper" id="contact-form" class="contact-form" method="post">
             <div class="input-wrapper">
               <input
                 id="input-name"
@@ -190,7 +212,7 @@ $contact_id = get_field('flat_contactId');
                 aria-required="true"
                 aria-invalid="false"
                 placeholder="Imię i nazwisko"
-              />
+            />
             </div>
             <div class="input-wrapper">
               <input
@@ -201,7 +223,7 @@ $contact_id = get_field('flat_contactId');
                 aria-required="true"
                 aria-invalid="false"
                 placeholder="E-mail"
-              />
+            />
             </div>
             <div class="input-wrapper">
               <input
@@ -212,7 +234,7 @@ $contact_id = get_field('flat_contactId');
                 aria-required="true"
                 aria-invalid="false"
                 placeholder="Telefon"
-              />
+            />
             </div>
             <div class="disclaimers-wrapper">
               <div class="disclaimer">

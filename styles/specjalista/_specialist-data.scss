@@ -5,7 +5,7 @@
   padding: 0 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   background: $light-bg;
   position: relative;
 
@@ -54,8 +54,40 @@
     }
   }
 
+  .sort-wrapper {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+
+    select {
+      // margin-top: 26px;
+      height: 100%;
+      width: 247px;
+      border: 1px solid #e1e2f4;
+      padding: 20px 32px;
+      color: $mid-blue;
+      font-family: $grotesk-reg;
+      font-size: 14px;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: left;
+      outline: none;
+      background-color: $white;
+      background-image: url("../assets/graphics/menu-item-expander.png");
+      background-repeat: no-repeat;
+      background-size: 10px 7px;
+      background-position-y: center;
+      background-position-x: calc(100% - 23px);
+      cursor: pointer;
+    }
+  }
+
   @media (min-width: 617px) {
     padding: 0 20px;
+    align-items: center;
+
     &:before {
       right: 20px;
     }
@@ -82,14 +114,35 @@
         }
       }
     }
+
+    .sort-wrapper {
+      select {
+        width: 380px;
+      }
+    }
   }
 
-  // @media (min-width: 934px) {
-  //   .specialist-data-wrapper {
-  //   }
-  // }
+  @media (min-width: 1024px) {
+    padding: 0 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .sort-wrapper {
+      select {
+        margin-top: 40px;
+        width: 247px;
+      }
+    }
+  }
 
   @media (min-width: 1234px) {
+    width: 1234px;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
     &:before {
       content: "";
       position: absolute;
@@ -102,18 +155,13 @@
       z-index: -1;
     }
 
-    padding: 0;
-    padding-top: 20px;
-
-    .specialist-data-wrapper {
-      width: 1234px;
-      max-width: 1234px;
+    .sort-wrapper {
       position: relative;
 
       &:after {
         content: "";
         position: absolute;
-        top: -137px;
+        top: -77px;
         right: 0;
         width: 53px;
         height: 73px;

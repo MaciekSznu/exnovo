@@ -63,7 +63,7 @@ get_header(); ?>
     ?>
     <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
       <div class="blog-item">
-        <img class="blog-image" src="<?= get_field('main_image'); ?>" alt="" />
+        <img class="blog-image" src="<?= get_field('main_image'); ?>" alt="<?= get_the_title(); ?>" />
         <div class="blog-text-wrapper">
           <h4 class="blog-title"><?= get_the_title(); ?></h4>
           <?= blog_text_excerpt(); ?>
@@ -102,7 +102,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_01; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -113,7 +113,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_02; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -124,7 +124,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_03; ?>"
-          />
+        />
         </div>
         <div class="disclaimers-wrapper">
           <div class="disclaimer">

@@ -56,27 +56,43 @@
 }
 .chocolat-wrapper .chocolat-left {
   position: absolute;
-  left: 20px;
+  left: 10px;
   width: 65px;
   height: 100px;
   top: 50%;
   margin-top: -50px;
   cursor: pointer;
   background: url(../assets/graphics/strzalka-l-2.svg) 50% 50% no-repeat;
+  transform: scale(0.75);
+  transform-origin: left center;
   z-index: 17;
   display: none;
+  @media (min-width: 768px) {
+    transform: none;
+  }
+  @media (min-width: 1234px) {
+    left: 60px;
+  }
 }
 .chocolat-wrapper .chocolat-right {
   position: absolute;
-  right: 20px;
+  right: 10px;
   width: 65px;
   height: 100px;
   top: 50%;
   margin-top: -50px;
   cursor: pointer;
   background: url(../assets/graphics/strzalka-r-2.svg) 50% 50% no-repeat;
+  transform: scale(0.75);
+  transform-origin: right center;
   z-index: 17;
   display: none;
+  @media (min-width: 768px) {
+    transform: none;
+  }
+  @media (min-width: 1234px) {
+    right: 60px;
+  }
 }
 .chocolat-wrapper .chocolat-right.active {
   display: block;
@@ -102,7 +118,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: url(../images/close.png) 50% 50% no-repeat;
+  background: url(../assets/graphics/close_icon.svg) 50% 50% no-repeat;
 }
 .chocolat-wrapper .chocolat-bottom {
   position: absolute;

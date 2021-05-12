@@ -170,7 +170,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_01; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -181,7 +181,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_02; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -192,7 +192,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_03; ?>"
-          />
+        />
         </div>
         <div class="disclaimers-wrapper">
           <div class="disclaimer">

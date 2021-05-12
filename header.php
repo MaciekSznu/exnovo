@@ -38,7 +38,7 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
 <body>
   <header class="header">
     <h1 data-aos="fade-down" class="logo">
-      <a href="<?php echo bloginfo('url'); ?>" class="header-link"><img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/logo.svg" alt="Exnovo" /></a>
+      <a href="<?php echo bloginfo('url'); ?>" class="header-link"><img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/logo.svg" alt="Exnovo - planujesz sprzedać lub kupić nieruchomość w Trójmieście? Wiesz jakie to absorbujące? Dlatego chętnie Ci pomożemy." /></a>
     </h1>
     <nav class="nav">
       <ul class="nav-list">

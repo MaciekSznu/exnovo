@@ -107,7 +107,7 @@ get_header(); ?>
               sizes="100vw"
               alt=""
               srcset="' . $photo . ' 1279w, ' . $photo_desktop . ' 1280w"
-            />
+          />
             <div class="member-contact-wrapper">
               <h4 class="member-name">' . $name . '</h4>
               <p class="member-function">' . $function . '</p>
@@ -152,7 +152,7 @@ get_header(); ?>
     </article>
     <div data-aos="fade-up" data-aos-delay="500" class="offer-wrapper">
       <div class="offer-item">
-        <img class="offer-image" src="<?= $oferta_photo; ?>" alt="" />
+        <img class="offer-image" src="<?= $oferta_photo; ?>" alt="<?= $oferta_nazwa; ?>" />
         <div class="offer-text-wrapper">
           <h4 class="offer-title"><?= $oferta_nazwa; ?></h4>
           <div class="rooms-wrapper">
@@ -199,7 +199,7 @@ get_header(); ?>
     ?>
     <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
       <div class="blog-item">
-        <img class="blog-image" src="<?= get_field('main_image'); ?>" alt="" />
+        <img class="blog-image" src="<?= get_field('main_image'); ?>" alt="<?= get_the_title(); ?>" />
         <div class="blog-text-wrapper">
           <h4 class="blog-title"><?= get_the_title(); ?></h4>
           <?= blog_text_excerpt(); ?>

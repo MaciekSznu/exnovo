@@ -16,6 +16,7 @@ mix
     processCssUrls: false,
   })
   .js("scripts/index.js", "dist/")
+  .js("scripts/contact.js", "dist/")
   .sass("styles/home/style.scss", "dist/style.css")
   .sass("styles/o-nas/o-nas.scss", "dist/o-nas.css")
   .sass("styles/kredyty/kredyty.scss", "dist/kredyty.css")
@@ -27,7 +28,7 @@ mix
   .sass("styles/single-offer/single-offer.scss", "dist/single-offer.css")
   .sass("styles/blog/blog.scss", "dist/blog.css")
   .sass("styles/kontakt/kontakt.scss", "dist/kontakt.css")
-  .sass("styles/specjalista/specjalista.scss", "dist/specjalista.css")
+  .sass("styles/specjalista/specjalist.scss", "dist/specjalist.css")
   .sass("styles/rodo/rodo.scss", "dist/rodo.css");
 
 // .minify('dist/app.css');

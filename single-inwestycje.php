@@ -47,7 +47,8 @@ $photos = explode(',', trim(get_field('investment_photo_list')));
 $photos_path = 'https://static.esticrm.pl/public/images/investments/2167/';
 $id = trim(get_field('investment_id'));
 
-$short_description = html_cut($description, 400);
+$clear_description = html_cut($description, 500);
+$short_description = preg_replace('/\s+?(\S+)?$/', '', substr($clear_description, 0, 401));
 
 get_header(); ?>
 
@@ -164,9 +165,9 @@ get_header(); ?>
 
       // $sortProperty = ($sortRoomsAsc || $sortRoomsDesc) ? 'flat_apartmentRoomNumber' : 'flat_price';
       // $sortOrder = ($sortRoomsDesc || $sortPriceDesc) ? 'desc' : 'asc';
-
-      $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
-      $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
+      $sortOrder = (isset($_GET['sortOrder'])) ? $_GET['sortOrder']: '';
+      // $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
+      // $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
 
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
       $investmentId = get_field('investment_id');
@@ -199,14 +200,13 @@ get_header(); ?>
 
       $query = new WP_Query($args);
     ?>
+
     <form action="<?= get_the_permalink(); ?>" id="sort-form" class="sort-wrapper" method="get">
-        <p class="sort-text">Sortuj:</p>
-        <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
-        <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
-        <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
-        <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
-        <button type="submit" name="rooms_desc" value="rooms_desc" class="sort-button">Liczba pokoi malejąco</button>
-        <button type="submit" name="rooms_asc" value="rooms_asc" class="sort-button">Liczba pokoi rosnąco</button> -->
+        <select name="sortOrder" id="" class="sort-select" onchange="this.form.submit()">
+          <option value="">Sortowanie</option>
+          <option value="asc" class="sort-option">Cena rosnąco</option>
+          <option value="desc" class="sort-option">Cena malejąco</option>
+        </select>
     </form>
   </div>
   <div class="offers-wrapper">
@@ -268,7 +268,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_01; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -279,7 +279,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_02; ?>"
-          />
+        />
         </div>
         <div class="input-wrapper">
           <input
@@ -290,7 +290,7 @@ get_header(); ?>
             aria-required="true"
             aria-invalid="false"
             placeholder="<?= $form_placeholder_03; ?>"
-          />
+        />
         </div>
         <div class="disclaimers-wrapper">
           <div class="disclaimer">
