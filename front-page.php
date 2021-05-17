@@ -120,7 +120,7 @@ get_header(); ?>
           echo '<div data-aos="fade-up" class="image-box">
           <div class="image"></div>
           <h4 class="image-box--title">' . $title . '</h4>
-          <button class="image-box--button"><a href="' . $link . '">' . $text . '</a></button>
+          <a href="' . $link . '"><button class="image-box--button">' . $text . '</button></a>
           </div>';
         }
       }

@@ -120,7 +120,7 @@ get_header(); ?>
 
     ?>
     <div class="offer-wrapper">
-      <div class="offer-item">
+      <a class="offer-item" href="<?= get_the_permalink(); ?>">
         <div class="offer-image-wrapper"><img class="offer-image" src="<?= $photos_path . $id . '/' . $photos[0] . '_max.jpg' ?>" alt="<?= $name; ?>" /></div>
         <div class="offer-text-wrapper">
           <h4 class="offer-title"><?= $name; ?>, <?= $city; ?></h4>
@@ -137,8 +137,7 @@ get_header(); ?>
             <p class="area-value">od <?= $area_from; ?> m<sup>2</sup> do <?= $area_to; ?>m<sup>2</sup></p>
           </div>
         </div>
-      </div>
-      <a href="<?= get_the_permalink(); ?>"><button class="show-offer-button">Zobacz więcej</button></a>
+      </a>
     </div>
     <?php endwhile; endif; wp_reset_postdata(); ?>
   </div>

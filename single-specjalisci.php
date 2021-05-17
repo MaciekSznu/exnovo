@@ -95,7 +95,7 @@ $specialist_page = get_field('specialist_page');
       $offer_title = $title != '' ? $title : $alt_title;
     ?>
     <div class="offer-wrapper">
-      <div class="offer-item">
+      <a class="offer-item" href="<?= get_the_permalink(); ?>">
         <div class="offer-image-wrapper">
         <img class="offer-image" src="<?= wp_get_attachment_image_src( get_field('flat_pictures')[0], 'large')[0]; ?>" alt="<?= get_the_title(); ?>" />
         </div>
@@ -108,8 +108,7 @@ $specialist_page = get_field('specialist_page');
             <p class="offer-rooms">liczba pokoi: &nbsp;<span><?= get_field('flat_apartmentRoomNumber'); ?></span></p>
           </div>
         </div>
-      </div>
-      <a href="<?= get_the_permalink(); ?>"><button class="show-offer-button">Zobacz więcej</button></a>
+      </a>
     </div>
     <?php endwhile; endif; wp_reset_postdata(); ?>
   </div>

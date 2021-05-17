@@ -134,6 +134,8 @@
       position: relative;
 
       .offer-item {
+        text-decoration: none;
+        color: unset;
         width: 100%;
         height: 100%;
         box-shadow: 0 2px 76px #e1e2f4;
@@ -242,30 +244,6 @@
             }
           }
         }
-      }
-
-      a {
-        opacity: 0;
-        text-decoration: none;
-        transition: opacity 0.5s ease-in-out;
-
-        .show-offer-button {
-          @include button;
-
-          position: absolute;
-          left: 50%;
-          bottom: 16.2%;
-          transform: translateX(-50%);
-
-          @media (max-width: 934px) {
-            font-size: 15px;
-          }
-        }
-      }
-
-      &:hover a {
-        transition: opacity 0.5s ease-in-out;
-        opacity: 1;
       }
     }
   }
@@ -477,6 +455,8 @@
         height: 488px;
 
         .offer-item {
+          text-decoration: none;
+          color: unset;
           width: 100%;
           height: 100%;
 

@@ -191,16 +191,25 @@
         text-align: left;
       }
 
-      .image-box--button {
-        opacity: 0;
+      a {
+        display: block;
+        text-decoration: none;
+        // opacity: 0;
         position: absolute;
         bottom: 40px;
         left: 30px;
-        @include button;
-        transition: opacity 0.5s ease-in-out, background 0.5s ease-in-out;
+
+        .image-box--button {
+          opacity: 0;
+          // position: absolute;
+          // bottom: 40px;
+          // left: 30px;
+          @include button;
+          transition: opacity 0.5s ease-in-out, background 0.5s ease-in-out;
+        }
       }
 
-      &:hover .image-box--button {
+      &:hover a .image-box--button {
         transition: opacity 0.5s ease-in-out, background 0.5s ease-in-out;
         opacity: 1;
       }
