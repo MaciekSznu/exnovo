@@ -1,17 +1,13 @@
 <?php
 /**
- * Template Name: Kontakt
+ * Template Name: Formularz kontaktowy
  */
-
 global $pagesData;
-$hero = get_field('hero');
+$hero = get_field('hero_form');
 $hero_title = $hero['hero_title'];
 $page_adress = $hero['page_adress'];
 
-$team = get_field('team');
-$team_member = $team['pracownicy'];
-
-$form_group = get_field('form_group');
+$form_group = get_field('form_group_page');
 $form_group_template = get_field('form_group', $pagesData['blocks']);
 $form_group_title = $form_group['title'] ? $form_group['title'] : $form_group_template['title'];
 $form_group_text = $form_group['text'] ? $form_group['text'] : $form_group_template['text'];
@@ -22,9 +18,12 @@ $form_placeholder_03 = $form['placeholder_03'] ? $form['placeholder_03'] : $form
 $form_checkbox_label_01 = $form['checkbox_label_01'] ? $form['checkbox_label_01'] : $form_group_template['form']['checkbox_label_01'];
 $form_checkbox_label_02 = $form['checkbox_label_02'] ? $form['checkbox_label_02'] : $form_group_template['form']['checkbox_label_02'];
 
-$map = get_field('map_datas');
-$latitude = $map['office_latitude'];
-$longitude =$map['office_longitude'];
+$box = get_field('box_page');
+$box_template = get_field('box', $pagesData['blocks']);
+$box_image = $box['image'] ? $box['image'] : $box_template['image'];
+$box_text = $box['text'] ? $box['text'] : $box_template['text'];
+$box_name = $box['imie_i_nazwisko'] ? $box['imie_i_nazwisko'] : $box_template['imie_i_nazwisko'];
+$box_comment = $box['komentarz'] ? $box['komentarz'] : $box_template['komentarz'];
 
 get_header(); ?>
 
@@ -34,41 +33,6 @@ get_header(); ?>
     <span class="orange-text"><?= $hero_title['pomaranczowy_tekst']; ?></span>
   </h2>
   <p class="page-adress"><?= $page_adress; ?></p>
-</section>
-<section class="team">
-  <div class="team-members-wrapper">
-  <?php
-      if($team_member) {
-        foreach($team_member as $member) {
-          $photo = $member['photo'];
-          $photo_desktop = $member['photo_desktop'];
-          $name = $member['imie_i_nazwisko'];
-          $function = $member['funkcja'];
-          $phone = $member['telefon'];
-          $email = $member['email'];
-          $oferty = $member['oferty_doradcy'];
-
-          echo
-          '<div class="member">
-            <img
-              class="member-image"
-              src="' . $photo . '"
-              sizes="100vw"
-              alt=""
-              srcset="' . $photo . ' 1279w, ' . $photo_desktop . ' 1280w"
-          />
-            <div class="member-contact-wrapper">
-              <h4 class="member-name">' . $name . '</h4>
-              <p class="member-function">' . $function . '</p>
-              <a href="tel:' . $phone . '" class="member-phone">' . $phone . '</a>
-              <a href="mailto:' . $email . '" class="member-email">' . $email . '</a>
-              <a href="' . $offers . '" class="member-offers">Oferty doradcy</a>
-            </div>
-          </div>';
-        }
-      }
-    ?>
-  </div>
 </section>
 <section class="form">
   <div class="form-wrapper">
@@ -148,21 +112,13 @@ get_header(); ?>
             <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />
           </form>
     </div>
-    <div class="map-wrapper" id="map">
+    <div data-aos="fade-up" data-aos-delay="500" class="image-wrapper" style="background: url(<?= $box_image; ?>); background-size: contain; background-position-y: top; background-position-x: center; background-repeat: no-repeat;">
+      <div class="image-text-wrapper">
+        <p class="image-text--header"><?= $box_text; ?></p>
+        <p class="image-text--name"><?= $box_name; ?></p>
+        <p class="image-text--data"><?= $box_comment; ?></p>
+      </div>
     </div>
-    <script>
-        function initMap(){
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: <?= $latitude; ?>, lng: <?= $longitude; ?>},
-                zoom: 15,
-            });
-            var marker = new google.maps.Marker({
-                map: map,
-                position: {lat: <?= $latitude; ?>, lng: <?= $longitude; ?>},
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHmnSXsVL47USPaZyqVs90Hu2bCsa6KVo&callback=initMap" async defer></script>
   </div>
 </section>
 

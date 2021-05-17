@@ -26,6 +26,17 @@ $offer_title = $title != '' ? $title : $alt_title;
 
 $contact_id = get_field('flat_contactId');
 
+$form_group = get_field('form_group');
+$form_group_template = get_field('form_group', $pagesData['blocks']);
+$form_group_title = $form_group['title'] ? $form_group['title'] : $form_group_template['title'];
+$form_group_text = $form_group['text'] ? $form_group['text'] : $form_group_template['text'];
+$form = $form_group['form'];
+$form_placeholder_01 = $form['placeholder_01'] ? $form['placeholder_01'] : $form_group_template['form']['placeholder_01'];
+$form_placeholder_02 = $form['placeholder_02'] ? $form['placeholder_02'] : $form_group_template['form']['placeholder_02'];
+$form_placeholder_03 = $form['placeholder_03'] ? $form['placeholder_03'] : $form_group_template['form']['placeholder_03'];
+$form_checkbox_label_01 = $form['checkbox_label_01'] ? $form['checkbox_label_01'] : $form_group_template['form']['checkbox_label_01'];
+$form_checkbox_label_02 = $form['checkbox_label_02'] ? $form['checkbox_label_02'] : $form_group_template['form']['checkbox_label_02'];
+
 ?>
   <section class="single-offer-slider">
     <div class="single-offer-slider-img-wrapper">
@@ -186,13 +197,13 @@ $contact_id = get_field('flat_contactId');
               $imie = $_POST['imie'];
               $formemail = $_POST['email'];
               $formtelefon = $_POST['telefon'];
+              $rodo_01 = $_POST['rodo-01'];
+              $rodo_02 = $_POST['rodo-02'];
               $link = get_permalink();
-              $message = " Oferta: $link\n Imię: $imie\n Email: $formemail\n Telefon: $formtelefon ";
+              $message = " Oferta: $link\n Imię i nazwisko: $imie\n Email: $formemail\n Telefon: $formtelefon\n $rodo_01\n $rodo_02 ";
               $to = 'msznurawa@gmail.com';
-              // $to = 'kontakt@inwestycjewgorach.pl';
               $subject = 'Wiadomość z formularza kontaktowego Exnovo';
               $from = '-f test_form@exnovo.pl';
-              // $from = '-f form@inwestycjewgorach.pl';
               $headers = ['From' => $from, 'Reply-To' => $formemail, 'Content-type' => 'text/html; charset=iso-8859-1'];
               if (wp_mail($to, $subject, $message, $headers, $from, $link)) {
                   echo 'Twoja wiadomośc została wysłana';
@@ -211,7 +222,7 @@ $contact_id = get_field('flat_contactId');
                 name="imie"
                 aria-required="true"
                 aria-invalid="false"
-                placeholder="Imię i nazwisko"
+                placeholder="<?= $form_placeholder_01; ?>"
             />
             </div>
             <div class="input-wrapper">
@@ -222,7 +233,7 @@ $contact_id = get_field('flat_contactId');
                 name="email"
                 aria-required="true"
                 aria-invalid="false"
-                placeholder="E-mail"
+                placeholder="<?= $form_placeholder_02; ?>"
             />
             </div>
             <div class="input-wrapper">
@@ -233,29 +244,19 @@ $contact_id = get_field('flat_contactId');
                 name="telefon"
                 aria-required="true"
                 aria-invalid="false"
-                placeholder="Telefon"
+                placeholder="<?= $form_placeholder_03; ?>"
             />
             </div>
             <div class="disclaimers-wrapper">
               <div class="disclaimer">
-                <input class="rodo-checkbox" type="checkbox" id="rodo-01" name="rodo-01" />
+                <input class="rodo-checkbox" type="checkbox" id="rodo-01" name="rodo-01" value="<?= $form_checkbox_label_01; ?>" />
                 <div class="rodo-custom-checkbox"></div>
-                <label class="rodo-checkbox-label" for="rodo-01">
-                  TAK, zgadzam się na przetwarzanie moich danych osobowych przez podmioty z Grupy Kapitałowej J.W.
-                  Construction Holding S.A. w celu przesyłania informacji handlowych w drodze korespondencji e-mail
-                  zgodnie z art. 6 ust. 1 lit a RODO w zw. z art. 10 ust. 2 ustawy o świadczeniu usług drogą
-                  elektroniczną.
-                </label>
+                <label class="rodo-checkbox-label" for="rodo-01"><?= $form_checkbox_label_01; ?></label>
               </div>
               <div class="disclaimer">
-                <input class="rodo-checkbox" type="checkbox" id="rodo-02" name="rodo-02" />
+                <input class="rodo-checkbox" type="checkbox" id="rodo-02" name="rodo-02" value="<?= $form_checkbox_label_02; ?>" />
                 <div class="rodo-custom-checkbox"></div>
-                <label class="rodo-checkbox-label" for="rodo-02">
-                  TAK, zgadzam się na przetwarzanie moich danych osobowych przez podmioty z Grupy Kapitałowej J.W.
-                  Construction Holding S.A. w celu przesyłania informacji handlowych w drodze korespondencji e-mail
-                  zgodnie z art. 6 ust. 1 lit a RODO w zw. z art. 10 ust. 2 ustawy o świadczeniu usług drogą
-                  elektroniczną.
-                </label>
+                <label class="rodo-checkbox-label" for="rodo-02"><?= $form_checkbox_label_02; ?></label>
               </div>
             </div>
             <input name="submit-form" class="contact-form--input-submit" type="submit" value="Wyślij zapytanie" />

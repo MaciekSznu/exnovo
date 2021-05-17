@@ -22,6 +22,7 @@ function page_scripts() {
   wp_enqueue_style( 'aos-style', get_template_directory_uri() . '/dist/libs/aos.css' );
   wp_enqueue_script( 'main-script', get_template_directory_uri() . '/dist/index.js', array(), '', true );
   wp_enqueue_script( 'aos-script', get_template_directory_uri() . '/dist/libs/aos.js', array(), '', true );
+  wp_enqueue_script( 'contact', get_template_directory_uri() . '/dist/contact.js', array(), '', true );
 
   if ( is_front_page()) :
     wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/style.css' );
@@ -37,6 +38,9 @@ function page_scripts() {
     
   elseif ( is_page_template('template-kredyty-hipoteczne-page.php')) :
     wp_enqueue_style( 'kredyty-style', get_template_directory_uri() . '/dist/kredyty.css' );
+
+  elseif ( is_page_template('template-form-page.php')) :
+    wp_enqueue_style( 'form-style', get_template_directory_uri() . '/dist/form.css' );
   
   elseif ( is_page('kontakt')) :
     wp_enqueue_style( 'kontakt-style', get_template_directory_uri() . '/dist/kontakt.css' );

@@ -105,33 +105,39 @@ const allCities = document.querySelector("#allCities");
 
 const initSessionStorage = () => {
   let activeButton = sessionStorage.getItem("city");
-  if (!activeButton) {
+  if (!activeButton && allCities !== null && allCities !== undefined) {
     activeButton = allCities;
     sessionStorage.setItem("city", allCities.id);
   }
 };
 
-citiesButtons.forEach((cityButton) => {
-  cityButton.addEventListener("click", (e) => {
-    let activeButton = sessionStorage.getItem("city");
-    if (activeButton) {
-      let newActiveButton = e.target.id;
-      sessionStorage.setItem("city", newActiveButton);
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", (e) => {
-  initSessionStorage();
-  const presentActiveButtonId = sessionStorage.getItem("city");
-  const setActiveButton = presentActiveButtonId
-    ? document.getElementById(`${presentActiveButtonId}`)
-    : document.getElementById(`${allCities}`);
+if (citiesButtons !== null && citiesButtons !== undefined) {
   citiesButtons.forEach((cityButton) => {
-    cityButton.classList.remove("selected");
+    cityButton.addEventListener("click", (e) => {
+      let activeButton = sessionStorage.getItem("city");
+      if (activeButton) {
+        let newActiveButton = e.target.id;
+        sessionStorage.setItem("city", newActiveButton);
+      }
+    });
   });
-  setActiveButton.classList.add("selected");
-});
+}
+
+if (citiesButtons !== null && citiesButtons !== undefined) {
+  document.addEventListener("DOMContentLoaded", (e) => {
+    initSessionStorage();
+    const presentActiveButtonId = sessionStorage.getItem("city");
+    const setActiveButton = presentActiveButtonId
+      ? document.getElementById(`${presentActiveButtonId}`)
+      : document.getElementById(`${allCities}`);
+    if (citiesButtons !== null && citiesButtons !== undefined) {
+      citiesButtons.forEach((cityButton) => {
+        cityButton.classList.remove("selected");
+      });
+    }
+    setActiveButton ? setActiveButton.classList.add("selected") : null;
+  });
+}
 
 // TOP MENU HIDDING
 let prevScrollPosition = window.pageYOffset;

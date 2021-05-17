@@ -13,5 +13,6 @@
     "/dist/blog.css": "/dist/blog.css",
     "/dist/kontakt.css": "/dist/kontakt.css",
     "/dist/specjalist.css": "/dist/specjalist.css",
-    "/dist/rodo.css": "/dist/rodo.css"
+    "/dist/rodo.css": "/dist/rodo.css",
+    "/dist/form.css": "/dist/form.css"
 }

@@ -1,7 +1,7 @@
 @import "../variables";
 @import "../mixins";
 
-.sell {
+.hero-credits {
   background: $light-bg;
   padding: 0 10px 0;
   position: relative;
@@ -43,6 +43,7 @@
       .article-text {
         color: $dark-blue;
         font-family: $grotesk-reg;
+        font-weight: 400;
         font-size: 13px;
         font-style: normal;
         letter-spacing: normal;
@@ -63,49 +64,6 @@
         text-align: left;
         margin-bottom: 30px;
       }
-
-      .cta-wrapper {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: center;
-
-        .cta-img {
-          border-radius: 50%;
-          box-shadow: 0 2px 30px #e1e2f4;
-          margin-right: 24px;
-        }
-
-        .cta-text-wrapper {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-
-          .cta-text {
-            color: $mid-blue;
-            font-family: $grotesk-reg;
-            font-weight: 700;
-            font-size: 16px;
-            font-style: normal;
-            letter-spacing: normal;
-            line-height: normal;
-            text-align: left;
-            margin-bottom: 5px;
-          }
-          .cta-link {
-            color: $orange;
-            font-family: $grotesk-reg;
-            font-weight: 700;
-            font-size: 16px;
-            font-style: normal;
-            letter-spacing: normal;
-            line-height: normal;
-            text-align: left;
-            text-decoration: none;
-          }
-        }
-      }
     }
 
     .image-wrapper {
@@ -115,7 +73,6 @@
       height: auto;
       min-height: 360px;
       margin-left: 29px;
-      box-shadow: 0 2px 100px #e1e2f4;
 
       &:before {
         content: "";
@@ -159,7 +116,7 @@
   }
 
   @media (min-width: 1234px) {
-    // height: 714px;
+    height: 714px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -176,10 +133,20 @@
       transform: translateX(-50%);
     }
 
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 603px;
+      height: 370px;
+      background: url("../assets/graphics/hands_overlay_bottom_left.svg");
+    }
+
     &-wrapper {
+      width: 1234px;
       justify-content: space-between;
       flex-wrap: nowrap;
-      width: 1234px;
 
       .text-wrapper {
         margin-top: 0px;
@@ -203,6 +170,7 @@
         .cta-lead-text {
           font-size: 16px;
           line-height: 30px;
+          margin-bottom: 30px;
         }
       }
 
@@ -210,12 +178,12 @@
         margin-top: 0;
         width: 566px;
         height: 596px;
-        // background: url("../assets/img/uslugi/sell_img_desktop.png");
+        // background: url("../assets/img/o-nas/hands_image.png");
         // background-size: cover;
         // background-position: top left;
         margin-left: 47px;
-        height: 637px;
         margin-right: 26px;
+        height: 637px;
 
         &:before {
           left: -23px;
