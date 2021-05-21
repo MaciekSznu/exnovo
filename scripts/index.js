@@ -147,6 +147,8 @@ window.onscroll = () => {
   let currentScrollPosition = window.pageYOffset;
   const headerComputedStyles = getComputedStyle(header);
   let headerHeight = headerComputedStyles.height;
-  prevScrollPosition >= currentScrollPosition ? (header.style.top = "0") : (header.style.top = `-${headerHeight}`);
-  prevScrollPosition = currentScrollPosition;
+  if (!mainMenu.classList.contains("visible")) {
+    prevScrollPosition >= currentScrollPosition ? (header.style.top = "0") : (header.style.top = `-${headerHeight}`);
+    prevScrollPosition = currentScrollPosition;
+  }
 };

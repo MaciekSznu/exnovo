@@ -45,10 +45,10 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
         <li class="nav-list--item expandable">
           <span class="nav-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-list--secondary">
-            <li class="nav-list--item secondary">
+            <li class="nav-list--item secondary primary-market">
               <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny" class="nav-list--item-link">Rynek pierwotny</a>
             </li>
-            <li class="nav-list--item secondary">
+            <li class="nav-list--item secondary secondary-market">
               <a href="<?php echo bloginfo('url'); ?>/oferty" class="nav-list--item-link">Rynek wtórny</a>
             </li>
           </ul>
@@ -56,13 +56,13 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
         <li class="nav-list--item expandable">
           <span class="nav-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-list--secondary">
-            <li class="nav-list--item secondary">
+            <li class="nav-list--item secondary mortgage">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-hipoteczne" class="nav-list--item-link">Kredyty hipoteczne</a>
             </li>
-            <li class="nav-list--item secondary">
+            <li class="nav-list--item secondary cash">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-gotowkowe" class="nav-list--item-link">Kredyty gotówkowe</a>
             </li>
-            <li class="nav-list--item secondary">
+            <li class="nav-list--item secondary company">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-firmowe" class="nav-list--item-link">Kredyty firmowe</a>
             </li>
           </ul>
@@ -79,10 +79,10 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
         <li class="nav-desktop-list--item expandable">
           <span class="nav-desktop-list--item-link-expandable">Nieruchomości<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-desktop-list--secondary">
-            <li class="nav-desktop-list--item secondary">
+            <li class="nav-desktop-list--item secondary primary-market">
               <a href="<?php echo bloginfo('url'); ?>/rynek-pierwotny" class="nav-desktop-list--item-link">Rynek pierwotny</a>
             </li>
-            <li class="nav-desktop-list--item secondary">
+            <li class="nav-desktop-list--item secondary secondary-market">
               <a href="<?php echo bloginfo('url'); ?>/oferty" class="nav-desktop-list--item-link">Rynek wtórny</a>
             </li>
           </ul>
@@ -90,13 +90,13 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
         <li class="nav-desktop-list--item expandable">
           <span class="nav-desktop-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-desktop-list--secondary">
-            <li class="nav-desktop-list--item secondary">
+            <li class="nav-desktop-list--item secondary mortgage">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-hipoteczne" class="nav-desktop-list--item-link">Kredyty hipoteczne</a>
             </li>
-            <li class="nav-desktop-list--item secondary">
+            <li class="nav-desktop-list--item secondary cash">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-gotowkowe" class="nav-desktop-list--item-link">Kredyty gotówkowe</a>
             </li>
-            <li class="nav-desktop-list--item secondary">
+            <li class="nav-desktop-list--item secondary company">
               <a href="<?php echo bloginfo('url'); ?>/kredyty-firmowe" class="nav-desktop-list--item-link">Kredyty firmowe</a>
             </li>
           </ul>

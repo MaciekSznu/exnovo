@@ -287,3 +287,57 @@ function html_cut($text, $max_length)
       $result .= "</".array_pop($tags).">";
   return $result;
 }
+
+// BREADCRUMBS
+function get_breadcrumb($par_id = '') {
+  global $post;
+  echo '<div class="breadCrumbs">';
+  echo '<div class="breadcrumbs-content">';
+    echo '<a href="'.home_url().'" rel="nofollow">Home &#x3E; </a>';
+    
+    
+    if ( $post->post_parent ) {
+    echo '<a href="';
+    echo get_permalink( $post->post_parent );
+    echo '>';
+    echo get_the_title( $post->post_parent );
+    echo '</a> &#x3E; ';
+  }
+    
+    if (is_category() || is_single()) {
+      if($par_id) {
+      echo '<a href="';
+      echo get_permalink($par_id);
+      echo '">';
+      echo get_the_title($par_id);
+      echo '</a>';
+    }
+
+    if(get_the_category()) {
+      $cat = get_the_category();
+      
+      echo '<span>'.$cat[0]->slug.'</span>';
+      echo '<span> &#x3E; <span>';
+    }
+    
+    if (is_single()) {
+      echo '<a href="';
+      echo get_permalink();
+      echo '">';
+      echo $post->post_name;
+      echo '</a>';
+    }
+    } elseif (is_page()) {
+        echo '<a href="'.get_permalink().'">'.$post->post_name.'</a>';
+  } elseif (is_home()) {
+    echo '<a href="/blog">Blog</a>';
+    } elseif (is_search()) {
+        echo "&nbsp;/&nbsp;Search Results for... ";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"';
+    };
+    echo '</div></div>';
+}
+
+// użycie <?php get_breadcrumb();

@@ -146,16 +146,74 @@
               margin-bottom: 0;
               padding-left: calc((81 / 320) * 100%);
 
-              &:before {
-                content: "";
-                position: absolute;
-                left: calc((43 / 320) * 100%);
-                top: 50%;
-                transform: translateY(-50%);
-                width: 17px;
-                height: 16px;
-                background: url("../assets/graphics/submenu_home_icon.svg");
-                background-size: cover;
+              &.secondary-market {
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: calc((43 / 320) * 100%);
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 19px;
+                  height: 19px;
+                  background: url("../assets/graphics/ikona_oferty_rynek_wtorny.svg");
+                  background-size: cover;
+                }
+              }
+
+              &.primary-market {
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: calc((43 / 320) * 100%);
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 19px;
+                  height: 19px;
+                  background: url("../assets/graphics/ikona_oferty_rynek_pierwotny.svg");
+                  background-size: cover;
+                }
+              }
+
+              &.mortgage {
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: calc((43 / 320) * 100%);
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 17px;
+                  height: 16px;
+                  background: url("../assets/graphics/kredyty_hipoteczne.svg");
+                  background-size: cover;
+                }
+              }
+
+              &.cash {
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: calc((43 / 320) * 100%);
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 19px;
+                  height: 16px;
+                  background: url("../assets/graphics/kredyty_gotowkowe.svg");
+                  background-size: cover;
+                }
+              }
+
+              &.company {
+                &:before {
+                  content: "";
+                  position: absolute;
+                  left: calc((43 / 320) * 100%);
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 19px;
+                  height: 16px;
+                  background: url("../assets/graphics/kredyty_firmowe.svg");
+                  background-size: cover;
+                }
               }
 
               &:not(:last-of-type) {
@@ -315,16 +373,74 @@
                 margin-bottom: 0;
                 padding-left: 81px;
 
-                &:before {
-                  content: "";
-                  position: absolute;
-                  left: 43px;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  width: 17px;
-                  height: 16px;
-                  background: url("../assets/graphics/submenu_home_icon.svg");
-                  background-size: cover;
+                &.secondary-market {
+                  &:before {
+                    content: "";
+                    position: absolute;
+                    left: calc((43 / 320) * 100%);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 19px;
+                    height: 19px;
+                    background: url("../assets/graphics/ikona_oferty_rynek_wtorny.svg");
+                    background-size: cover;
+                  }
+                }
+
+                &.primary-market {
+                  &:before {
+                    content: "";
+                    position: absolute;
+                    left: calc((43 / 320) * 100%);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 19px;
+                    height: 19px;
+                    background: url("../assets/graphics/ikona_oferty_rynek_pierwotny.svg");
+                    background-size: cover;
+                  }
+                }
+
+                &.mortgage {
+                  &:before {
+                    content: "";
+                    position: absolute;
+                    left: calc((43 / 320) * 100%);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 17px;
+                    height: 16px;
+                    background: url("../assets/graphics/kredyty_hipoteczne.svg");
+                    background-size: cover;
+                  }
+                }
+
+                &.cash {
+                  &:before {
+                    content: "";
+                    position: absolute;
+                    left: calc((43 / 320) * 100%);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 19px;
+                    height: 16px;
+                    background: url("../assets/graphics/kredyty_gotowkowe.svg");
+                    background-size: cover;
+                  }
+                }
+
+                &.company {
+                  &:before {
+                    content: "";
+                    position: absolute;
+                    left: calc((43 / 320) * 100%);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 19px;
+                    height: 16px;
+                    background: url("../assets/graphics/kredyty_firmowe.svg");
+                    background-size: cover;
+                  }
                 }
 
                 &:not(:last-of-type) {
