@@ -88,37 +88,41 @@ get_header(); ?>
   <h2 class="section-title"><?= $team_title; ?></h2>
   <h3 class="section-subtitle"><?= $team_text; ?></h3>
   <div class="team-members-wrapper">
-  <?php
-      if($team_member) {
-        foreach($team_member as $member) {
-          $photo = $member['photo'];
-          $photo_desktop = $member['photo_desktop'];
-          $name = $member['imie_i_nazwisko'];
-          $function = $member['funkcja'];
-          $phone = $member['telefon'];
-          $email = $member['email'];
-          $oferty = $member['oferty_doradcy'];
+    <?php if($team_member) : ?>
 
-          echo
-          '<div class="member">
-            <img
-              class="member-image"
-              src="' . $photo . '"
-              sizes="100vw"
-              alt=""
-              srcset="' . $photo . ' 1279w, ' . $photo_desktop . ' 1280w"
-          />
-            <div class="member-contact-wrapper">
-              <h4 class="member-name">' . $name . '</h4>
-              <p class="member-function">' . $function . '</p>
-              <a href="tel:' . $phone . '" class="member-phone">' . $phone . '</a>
-              <a href="mailto:' . $email . '" class="member-email">' . $email . '</a>
-              <a href="' . $offers . '" class="member-offers">Oferty doradcy</a>
-            </div>
-          </div>';
-        }
-      }
-    ?>
+      <?php foreach($team_member as $member) :
+        $photo = $member['photo'];
+        $photo_desktop = $member['photo_desktop'];
+        $name = $member['imie_i_nazwisko'];
+        $function = $member['funkcja'];
+        $phone = $member['telefon'];
+        $email = $member['email'];
+        $oferty = $member['oferty_doradcy'];
+      ?>
+
+        
+      <div class="member">
+        <img
+          class="member-image"
+          src="<?= $photo; ?>"
+          sizes="100vw"
+          alt=""
+          srcset="<?= $photo; ?> 1279w, <?= $photo_desktop; ?> 1280w"
+      />
+        <div class="member-contact-wrapper">
+          <h4 class="member-name"><?= $name; ?></h4>
+          <p class="member-function"><?= $function; ?></p>
+          <a href="tel:<?= $phone; ?>" class="member-phone"><?= $phone; ?></a>
+          <a href="mailto:<?= $email; ?>" class="member-email"><?= $email; ?></a>
+          <?php
+            if ($oferty != '') {
+              echo '<a href="' . $oferty .  '" class="member-offers">Oferty doradcy</a>';
+            }
+          ?>
+        </div>
+      </div>
+    <?php endforeach; ?>
+    <?php endif; ?>
   </div>
 </section>
 <section class="how">

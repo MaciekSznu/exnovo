@@ -92,20 +92,30 @@
               letter-spacing: normal;
               line-height: 23px;
               text-align: left;
-              padding-left: 24px;
+              padding-left: 31px;
               position: relative;
 
               &:before {
                 content: "";
                 position: absolute;
                 left: 0;
-                top: 4px;
-                width: 15px;
-                height: 15px;
-                background: url("../assets/graphics/offer_icon.svg");
-                background-size: 90%;
-                background-repeat: no-repeat;
+                top: 3px;
+                width: 20px;
+                height: 20px;
+                // background: url("../assets/graphics/offer_icon.svg");
+                // background-size: 90%;
+                // background-repeat: no-repeat;
               }
+            }
+
+            .rooms-description:before {
+              background: url("../assets/graphics/l.pokoi_box.svg") no-repeat;
+            }
+            .prices-description:before {
+              background: url("../assets/graphics/kasa_box.svg") no-repeat;
+            }
+            .area-description:before {
+              background: url("../assets/graphics/powierzchnia_box.svg") no-repeat;
             }
 
             .rooms-value,
@@ -343,10 +353,10 @@
                 position: relative;
 
                 &:before {
-                  top: 6px;
-                  width: 18px;
-                  height: 18px;
-                  background: url("../assets/graphics/single_offer_row_icon_desktop.svg");
+                  top: 5px;
+                  width: 20px;
+                  height: 20px;
+                  // background: url("../assets/graphics/single_offer_row_icon_desktop.svg");
                 }
               }
 

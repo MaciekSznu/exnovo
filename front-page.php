@@ -118,7 +118,7 @@ get_header(); ?>
           $link = $box['cta_link'];
 
           echo '<div data-aos="fade-up" class="image-box">
-          <div class="image"></div>
+          <div class="image" style="background: url(' . $photo . '); background-size: cover;"></div>
           <h4 class="image-box--title">' . $title . '</h4>
           <a href="' . $link . '"><button class="image-box--button">' . $text . '</button></a>
           </div>';

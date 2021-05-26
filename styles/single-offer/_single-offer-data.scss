@@ -166,18 +166,30 @@
 
       .data-cell.area {
         grid-area: area;
+        .icon-wrapper {
+          background: url("../assets/graphics/powierzchnia.svg") no-repeat;
+        }
       }
 
       .data-cell.rooms {
         grid-area: rooms;
+        .icon-wrapper {
+          background: url("../assets/graphics/l.pokoi.svg") no-repeat;
+        }
       }
 
       .data-cell.year {
         grid-area: year;
+        .icon-wrapper {
+          background: url("../assets/graphics/rok-budowy.svg") no-repeat;
+        }
       }
 
       .data-cell.offer_id {
         grid-area: offer_id;
+        .icon-wrapper {
+          background: url("../assets/graphics/id-oferty.svg") no-repeat;
+        }
       }
 
       .data-cell {
@@ -190,7 +202,6 @@
           width: 26px;
           height: 26px;
           margin-right: 26px;
-          background: url("../assets/graphics/offer_icon.svg") no-repeat;
           background-size: cover;
         }
         .data-wrapper {

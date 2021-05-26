@@ -39,6 +39,7 @@
       box-shadow: 0 2px 100px #e1e2f4;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
       .blog-image {
         position: absolute;
         top: 0;
@@ -78,6 +79,7 @@
           margin-bottom: 15px;
         }
         .blog-link {
+          display: none;
           color: $dark-blue;
           font-family: $grotesk-reg;
           font-size: 13px;
@@ -122,6 +124,7 @@
     }
 
     .blog-wrapper {
+      width: 100%;
       max-width: 1234px;
       position: relative;
       margin-top: 45px;
@@ -173,6 +176,7 @@
             margin-bottom: 24px;
           }
           .blog-link {
+            display: none;
             color: $dark-blue;
           }
         }

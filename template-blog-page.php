@@ -62,14 +62,14 @@ get_header(); ?>
       }
     ?>
     <?php if($query->have_posts()): while($query->have_posts()) : $query->the_post(); ?>
-      <div class="blog-item">
+      <a class="blog-item" href="<?= get_the_permalink(); ?>">
         <img class="blog-image" src="<?= get_field('main_image'); ?>" alt="<?= get_the_title(); ?>" />
         <div class="blog-text-wrapper">
           <h4 class="blog-title"><?= get_the_title(); ?></h4>
           <?= blog_text_excerpt(); ?>
-          <a href="<?= get_the_permalink(); ?>" class="blog-link">Czytaj artykuł</a>
+          <span class="blog-link">Czytaj artykuł</span>
         </div>
-      </div>
+      </a>
     <?php endwhile; endif; wp_reset_postdata(); ?>
   </div>
   <div class="pagination-wrapper">
