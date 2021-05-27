@@ -15,7 +15,7 @@
     max-height: 552px;
     max-width: 1234px;
     position: relative;
-    margin: 0 0 24px;
+    margin: 0 0 16px;
     overflow: hidden;
 
     .slider {
@@ -136,6 +136,7 @@
 
   @media (min-width: 768px) {
     .single-offer-slider-img-wrapper {
+      margin: 0 0 24px;
       .slider-button-prev {
         left: 46px;
         transform: translateY(-50%);

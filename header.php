@@ -53,7 +53,7 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
             </li>
           </ul>
         </li>
-        <li class="nav-list--item expandable">
+        <li class="nav-list--item expandable loans">
           <span class="nav-list--item-link-expandable">Kredyty<img src="<?php echo bloginfo('template_url'); ?>/assets/graphics/menu-item-expander.png" alt="" /></span>
           <ul class="nav-list--secondary">
             <li class="nav-list--item secondary mortgage">

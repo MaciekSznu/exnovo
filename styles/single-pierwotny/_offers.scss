@@ -55,47 +55,6 @@
       align-items: center;
       // margin-top: 40px;
 
-      .sort-text {
-        color: $light-blue;
-        font-family: $poppins;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-        text-align: left;
-        margin-right: 46px;
-      }
-
-      .sort-button {
-        color: $dark-blue;
-        font-family: $poppins;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: normal;
-        text-align: left;
-        margin-right: 39px;
-        border: none;
-        background: transparent;
-        outline: none;
-        cursor: pointer;
-      }
-
-      @media (max-width: 767px) {
-        flex-wrap: wrap;
-        .sort-text {
-          width: 100%;
-          margin-right: 0;
-          margin-bottom: 6px;
-        }
-        .sort-button {
-          margin-right: 30px;
-          margin-bottom: 6px;
-        }
-      }
-
       select {
         margin-top: 26px;
         height: 100%;
@@ -117,6 +76,16 @@
         background-position-y: center;
         background-position-x: calc(100% - 23px);
         cursor: pointer;
+      }
+
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 380px;
+
+        select {
+          width: 100%;
+        }
       }
     }
   }

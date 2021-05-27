@@ -55,7 +55,7 @@
       z-index: 3;
       .hero-title {
         font-family: $grotesk-reg;
-        max-width: 190px;
+        max-width: calc(100vw - 80px);
         margin-left: 10px;
         margin-bottom: -50px;
 
