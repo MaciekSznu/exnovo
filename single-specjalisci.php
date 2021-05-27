@@ -54,11 +54,9 @@ $specialist_page = get_field('specialist_page');
 <section class="page-title-wrapper">
   <h2 class="page-title">
     <span class="blue-text"><?= $specialist_page['title']; ?></span>
-    <!-- <span class="blue-text">Oferty</span> -->
     <span class="orange-text"><?= $specialist['name']; ?></span>
   </h2>
-  <p class="page-adress"><?= $specialist_page['page_address']; ?></p>
-  <!-- <p class="page-adress">Home> Marcin Fałek</p> -->
+  <?php get_breadcrumb(); ?>
 </section>
 <section class="specialist-data">
   <div class="specialist-data-wrapper">

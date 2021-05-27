@@ -73,8 +73,12 @@
       }
     }
 
-    .page-adress a {
+    .page-adress {
       margin-left: 0;
+
+      a {
+        margin-left: 0;
+      }
     }
   }
   @media (min-width: 1280px) {
@@ -100,7 +104,7 @@
       }
     }
 
-    .page-adress a {
+    .page-adress {
       justify-self: flex-start;
       width: 1234px;
       max-width: 1234px;

@@ -286,7 +286,6 @@ function html_cut($text, $max_length)
       $result .= "</".array_pop($tags).">";
   return $result;
 }
-
 // BREADCRUMBS
 function get_breadcrumb($par_id = '') {
   global $post;
@@ -298,23 +297,24 @@ function get_breadcrumb($par_id = '') {
     echo '<a href="';
     echo get_permalink( $post->post_parent );
     echo '>';
-    echo get_the_title( $post->post_parent );
+    echo ucfirst(str_replace("-"," ",get_the_title( $post->post_parent )));
     echo '</a> &#x3E; ';
   }
     
     if (is_category() || is_single()) {
       if($par_id) {
+        
       echo '<a href="';
       echo get_permalink($par_id);
       echo '">';
-      echo get_the_title($par_id);
+      echo ucfirst(str_replace("-"," ",get_the_title($par_id)));
       echo '</a>';
     }
 
     if(get_the_category()) {
       $cat = get_the_category();
       
-      echo '<span>'.$cat[0]->slug.'</span>';
+      echo '<span>'; echo ucfirst(str_replace("-"," ", $cat[0]->slug)); echo '</span>';
       echo '<span> &#x3E; <span>';
     }
     
@@ -322,13 +322,15 @@ function get_breadcrumb($par_id = '') {
       echo '<a href="';
       echo get_permalink();
       echo '">';
-      echo $post->post_name;
+      echo ucfirst(str_replace("-"," ",get_post_type($post_id)));
+      echo '>';
+      echo ucfirst(str_replace("-"," ", $post->post_name));
       echo '</a>';
     }
     } elseif (is_page()) {
-        echo '<a href="'.get_permalink().'">'.$post->post_name.'</a>';
+        echo '<a href="'.get_permalink().'">'; echo ucfirst(str_replace("-"," ", $post->post_name)); echo '</a>';
     } elseif (is_home()) {
-    echo '<a href="/blog">Blog</a>';
+    echo '<a href="/">Home</a>';
     } elseif (is_search()) {
         echo "&nbsp;/&nbsp;Search Results for... ";
         echo '"<em>';

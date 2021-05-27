@@ -71,7 +71,7 @@ get_header(); ?>
     <span class="blue-text"><?= $name; ?></span>
     <span class="orange-text"><?= $city; ?></span>
   </h2>
-  <p class="page-adress">Home> Rynek pierwotny></p>
+  <?php get_breadcrumb(); ?>
 </section>
 <section class="presentation">
   <div class="presentation-wrapper">

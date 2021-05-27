@@ -33,7 +33,7 @@ get_header(); ?>
     <span class="blue-text"><?= $title['linia_01']; ?></span>
     <span class="orange-text"><?= $title['linia_02']; ?></span>
   </h2>
-  <p class="page-adress"><?= $page_adress; ?></p>
+  <?php get_breadcrumb(); ?>
 </section>
 <section class="single-blog-hero">
   <div class="single-blog-hero-img-wrapper">
