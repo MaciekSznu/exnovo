@@ -83,7 +83,6 @@ function page_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'page_scripts' );
 
-
 //add_filter('site_transient_update_plugins', '__return_false');
 add_filter('show_admin_bar', '__return_false');
 
@@ -291,8 +290,7 @@ function html_cut($text, $max_length)
 // BREADCRUMBS
 function get_breadcrumb($par_id = '') {
   global $post;
-  echo '<div class="breadCrumbs">';
-  echo '<div class="breadcrumbs-content">';
+    echo '<p class="page-adress">';
     echo '<a href="'.home_url().'" rel="nofollow">Home &#x3E; </a>';
     
     
@@ -329,7 +327,7 @@ function get_breadcrumb($par_id = '') {
     }
     } elseif (is_page()) {
         echo '<a href="'.get_permalink().'">'.$post->post_name.'</a>';
-  } elseif (is_home()) {
+    } elseif (is_home()) {
     echo '<a href="/blog">Blog</a>';
     } elseif (is_search()) {
         echo "&nbsp;/&nbsp;Search Results for... ";
@@ -337,7 +335,7 @@ function get_breadcrumb($par_id = '') {
         echo the_search_query();
         echo '</em>"';
     };
-    echo '</div></div>';
+    echo '</p>';
 }
 
 // użycie <?php get_breadcrumb();

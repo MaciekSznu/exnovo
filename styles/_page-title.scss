@@ -42,7 +42,7 @@
     }
   }
 
-  .page-adress {
+  .page-adress a {
     color: $light-blue;
     font-family: $poppins;
     font-size: 13px;
@@ -52,6 +52,7 @@
     line-height: normal;
     margin-top: 20px;
     margin-left: 10px;
+    text-decoration: none;
   }
 
   @media (min-width: 768px) {
@@ -72,7 +73,7 @@
       }
     }
 
-    .page-adress {
+    .page-adress a {
       margin-left: 0;
     }
   }
@@ -99,7 +100,7 @@
       }
     }
 
-    .page-adress {
+    .page-adress a {
       justify-self: flex-start;
       width: 1234px;
       max-width: 1234px;

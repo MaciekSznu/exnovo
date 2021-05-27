@@ -49,7 +49,11 @@ get_header(); ?>
     <span class="blue-text"><?= $hero_title['niebieski_tekst']; ?></span>
     <span class="orange-text"><?= $hero_title['pomaranczowy_tekst']; ?></span>
   </h2>
-  <p class="page-adress"><?= $page_adress; ?></p>
+  <!-- <p class="page-adress"></?= $page_adress; ?></p> -->
+  <!-- <p class="page-adress"><?php //get_breadcrumb(); ?></p> -->
+  <?php get_breadcrumb(); ?>
+
+
 </section>
 <section class="hands">
   <div class="hands-wrapper">
