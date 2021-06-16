@@ -25,56 +25,59 @@ function page_scripts() {
   wp_enqueue_script( 'contact', get_template_directory_uri() . '/dist/contact.js', array(), '', true );
 
   if ( is_front_page()) :
-    wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/style.css' );
+    wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/style.css', [], 2, 'all' );
     wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
     wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
 
   elseif ( is_page('o-nas')) :
-    wp_enqueue_style( 'onas-style', get_template_directory_uri() . '/dist/o-nas.css' );
+    wp_enqueue_style( 'onas-style', get_template_directory_uri() . '/dist/o-nas.css', [], 2, 'all' );
 
-  elseif ( is_page('uslugi')) :
-    wp_enqueue_style( 'uslugi-style', get_template_directory_uri() . '/dist/uslugi.css' );
+  elseif ( is_page_template('template-uslugi-page.php')) :
+    wp_enqueue_style( 'uslugi-style', get_template_directory_uri() . '/dist/uslugi.css', [], 2, 'all' );
     
   elseif ( is_page_template('template-kredyty-hipoteczne-page.php')) :
-    wp_enqueue_style( 'kredyty-style', get_template_directory_uri() . '/dist/kredyty.css' );
+    wp_enqueue_style( 'kredyty-style', get_template_directory_uri() . '/dist/kredyty.css', [], 2, 'all' );
 
   elseif ( is_page_template('template-form-page.php')) :
-    wp_enqueue_style( 'form-style', get_template_directory_uri() . '/dist/form.css' );
+    wp_enqueue_style( 'form-style', get_template_directory_uri() . '/dist/form.css', [], 2, 'all' );
   
   elseif ( is_page('kontakt')) :
-    wp_enqueue_style( 'kontakt-style', get_template_directory_uri() . '/dist/kontakt.css' );
+    wp_enqueue_style( 'kontakt-style', get_template_directory_uri() . '/dist/kontakt.css', [], 2, 'all' );
   
   elseif ( is_page('rodo')) :
-    wp_enqueue_style( 'rodo-style', get_template_directory_uri() . '/dist/rodo.css' );
+    wp_enqueue_style( 'rodo-style', get_template_directory_uri() . '/dist/rodo.css', [], 2, 'all' );
 
   elseif ( is_page('oferty')) :
-    wp_enqueue_style( 'oferty-style', get_template_directory_uri() . '/dist/oferty.css' );
+    wp_enqueue_style( 'oferty-style', get_template_directory_uri() . '/dist/oferty.css', [], 2, 'all' );
 
   elseif ( is_page('blog')) :
-    wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/blog.css' );
+    wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/blog.css', [], 2, 'all' );
 
   elseif ( is_page('rynek-pierwotny')) :
-    wp_enqueue_style( 'rynek-pierwotny-style', get_template_directory_uri() . '/dist/pierwotny.css' );
+    wp_enqueue_style( 'rynek-pierwotny-style', get_template_directory_uri() . '/dist/pierwotny.css', [], 2, 'all' );
+    wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
+    wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
 
   elseif ( is_singular('mieszkania')) :
-    wp_enqueue_style( 'mieszkania-style', get_template_directory_uri() . '/dist/single-offer.css' );
+    wp_enqueue_style( 'mieszkania-style', get_template_directory_uri() . '/dist/single-offer.css', [], 2, 'all' );
     wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
     wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
     wp_enqueue_script( 'contact', get_template_directory_uri() . '/dist/contact.js', array(), '', true );
   
   elseif ( is_singular('inwestycje')) :
-    wp_enqueue_style( 'inwestycja-style', get_template_directory_uri() . '/dist/single-pierwotny.css' );
+    wp_enqueue_style( 'inwestycja-style', get_template_directory_uri() . '/dist/single-pierwotny.css', [], 2, 'all' );
     wp_enqueue_script( 'chocolat', get_template_directory_uri() . '/dist/libs/3jquery.chocolat.js', array(), '', true );
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/libs/1slick.min.js', array(), '', true );
     wp_enqueue_script( 'old-script', get_template_directory_uri() . '/dist/libs/main-script.js', array(), '', true );
 
   elseif ( is_singular('blog')) :
-    wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/single-blog.css' );
+    wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/dist/single-blog.css', [], 2, 'all' );
 
   elseif ( is_singular('specjalisci')) :
-    wp_enqueue_style( 'specjalist-style', get_template_directory_uri() . '/dist/specjalist.css' );
+    wp_enqueue_style( 'specjalist-style', get_template_directory_uri() . '/dist/specjalist.css', [], 2, 'all' );
 
   else :
     null;
@@ -323,7 +326,7 @@ function get_breadcrumb($par_id = '') {
       echo get_permalink();
       echo '">';
       echo ucfirst(str_replace("-"," ",get_post_type($post_id)));
-      echo '>';
+      echo ' > ';
       echo ucfirst(str_replace("-"," ", $post->post_name));
       echo '</a>';
     }

@@ -137,44 +137,38 @@
   }
 
   .partners-logos-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // width: 100%;
 
-    .partner-logo {
-      height: 58px;
-      width: 145px;
-      margin-left: 30;
-      background: url("../assets/img/pierwotny/expander-logo.png");
-      background-size: cover;
+    // .partner-logo {
+    //   height: 58px;
+    //   width: 145px;
+    //   margin-left: 30px;
+    //   background-size: cover;
 
-      &:nth-of-type(2) {
-        width: 127px;
-        background: url("../assets/img/pierwotny/dekpol-logo.png");
-        background-size: cover;
-      }
-      &:nth-of-type(3) {
-        width: 145px;
-        background: url("../assets/img/pierwotny/eurostyl-logo.png");
-        background-size: cover;
-      }
-      &:nth-of-type(4) {
-        width: 174px;
-        background: url("../assets/img/pierwotny/northstar-logo.png");
-        background-size: cover;
-      }
-      &:nth-of-type(5) {
-        width: 174px;
-        background: url("../assets/img/pierwotny/develia-logo.png");
-        background-size: cover;
-      }
-      &:nth-of-type(6) {
-        width: 145px;
-        background: url("../assets/img/pierwotny/allcon-logo.png");
-        background-size: cover;
-      }
-    }
+    //   &:nth-of-type(2) {
+    //     width: 127px;
+    //     background-size: cover;
+    //   }
+    //   &:nth-of-type(3) {
+    //     width: 145px;
+    //     background-size: cover;
+    //   }
+    //   &:nth-of-type(4) {
+    //     width: 174px;
+    //     background-size: cover;
+    //   }
+    //   &:nth-of-type(5) {
+    //     width: 174px;
+    //     background-size: cover;
+    //   }
+    //   &:nth-of-type(6) {
+    //     width: 145px;
+    //     background-size: cover;
+    //   }
+    // }
 
     @media (min-width: 768px) {
       max-width: 80%;
@@ -190,22 +184,29 @@
         grid-area: logo_01;
         justify-self: center;
         margin-left: 0;
+        height: 58px;
+        width: 145px;
 
         &:nth-of-type(2) {
           grid-area: logo_02;
+          width: 127px;
         }
 
         &:nth-of-type(3) {
           grid-area: logo_03;
+          width: 145px;
         }
         &:nth-of-type(4) {
           grid-area: logo_04;
+          width: 174px;
         }
         &:nth-of-type(5) {
           grid-area: logo_05;
+          width: 174px;
         }
         &:nth-of-type(6) {
           grid-area: logo_06;
+          width: 145px;
         }
       }
     }
@@ -216,6 +217,16 @@
       grid-template-rows: 1fr;
       gap: 30px 30px;
       grid-template-areas: "logo_01 logo_02 logo_03 logo_04 logo_05 logo_06";
+    }
+
+    &.partners-logos-slider {
+      width: 100%;
+
+      .partner-logo {
+        img {
+          margin: 0 auto;
+        }
+      }
     }
   }
 }

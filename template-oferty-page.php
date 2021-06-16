@@ -57,6 +57,8 @@ get_header(); ?>
           $year = trim(get_field('flat_buildingYear'));
           $floor = trim(get_field('flat_apartmentFloor'));
           $rooms = trim(get_field('flat_apartmentRoomNumber'));
+          $pricePermeter = trim(get_field('flat_pricePermeter'));
+
 
           if(!in_array($mainTypeId, $filters['mainTypeId']) && $mainTypeId != ''){
               $filters['mainTypeId'][] = $mainTypeId;
@@ -136,18 +138,18 @@ get_header(); ?>
       if($priceFromGet){
         $metaQuery[] = [
             'key'     => 'flat_price',
-            'value_num'   => $priceFromGet,
+            'value'   => $priceFromGet,
             'compare' => '>=',
-            // 'type' => 'NUMERIC',
+            'type' => 'NUMERIC',
         ];
       }
 
       if($priceToGet){
         $metaQuery[] = [
             'key'     => 'flat_price',
-            'value_num'   => $priceToGet,
+            'value'   => $priceToGet,
             'compare' => '<=',
-            // 'type' => 'NUMERIC',
+            'type' => 'NUMERIC',
         ];
       }
 
@@ -223,15 +225,12 @@ get_header(); ?>
         ];
       }
 
-      // $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
-      // $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
-      // $sortAreaAsc = (isset($_GET['area_asc']))? $_GET['area_asc']: '';
-      // $sortAreaDesc = (isset($_GET['area_desc']))? $_GET['area_desc']: '';
-      // $sortProperty = ($sortAreaAsc || $sortAreaDesc) ? 'flat_areaTotal' : 'flat_price';
-      // $sortOrder = ($sortAreaDesc || $sortPriceDesc) ? 'desc' : 'asc';
-
-      $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
-      $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
+      $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
+      $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
+      $sortPricePermeterAsc = (isset($_GET['pricePermeter_asc']))? $_GET['pricePermeter_asc']: '';
+      $sortPricePermeterDesc = (isset($_GET['pricePermeter_desc']))? $_GET['pricePermeter_desc']: '';
+      $sortProperty = ($sortPricePermeterAsc || $sortPricePermeterDesc) ? 'flat_pricePermeter' : 'flat_price';
+      $sortOrder = ($sortPricePermeterDesc || $sortPriceDesc) ? 'DESC' : 'ASC';
 
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
       $args = [
@@ -241,19 +240,9 @@ get_header(); ?>
           'paged' => $paged,
           'meta_query' => $metaQuery,
           'orderby'    => 'meta_value_num',
-          'meta_key' => 'flat_price',
+          'meta_key' => $sortProperty,
           'order' => $sortOrder,
       ];
-
-      // $modificators = [
-      //   'meta_key' => $sortProperty,
-      //   'order' => $sortOrder,
-      // ];
-
-      // $new_args = array_merge(
-      //   $args,
-      //   $modificators,
-      // );
 
       $query = new WP_Query($args);
 
@@ -456,12 +445,10 @@ get_header(); ?>
         </div>
         <div class="sort-wrapper">
           <p class="sort-text">Sortuj:</p>
-          <button type="submit" name="sort_asc" value="asc" class="sort-button">Cena rosnąco</button>
-          <button type="submit" name="sort_desc" value="desc" class="sort-button">Cena malejąco</button>
-          <!-- <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
+          <button type="submit" name="price_desc" value="price_desc" class="sort-button">Cena malejąco</button>
           <button type="submit" name="price_asc" value="price_asc" class="sort-button">Cena rosnąco</button>
-          <button type="submit" name="area_desc" value="area_desc" class="sort-button">Powierzchnia malejąco</button>
-          <button type="submit" name="area_asc" value="rooms_asc" class="sort-button">Powierzchnia rosnąco</button> -->
+          <button type="submit" name="pricePermeter_asc" value="pricePermeter_asc" class="sort-button">Cena m<sup>2</sup> rosnąco</button>
+          <button type="submit" name="pricePermeter_desc" value="pricePermeter_desc" class="sort-button">Cena m<sup>2</sup> malejąco</button>
         </div>
       </div>
     </form>
@@ -495,7 +482,6 @@ get_header(); ?>
           </div>
         </div>
       </a>
-      <!-- <a href="</?= get_the_permalink(); ?>"><button class="show-offer-button">Zobacz więcej</button></a> -->
     </div>
     <?php endwhile; else: ?>
       <h4 style="width: 100%; font-weight: 300;">Nasza baza jest bardzo szeroka, jednak tym razem nie znaleźliśmy w niej oferty spełniającej wszystkie kryteria, spróbuj poszukać raz jeszcze.</h4>

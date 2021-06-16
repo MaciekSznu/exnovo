@@ -9,6 +9,8 @@ $hero_text = $hero['hero_text'];
 $hero_cta_title = $hero['hero_cta_title'];
 $hero_cta_text = $hero['hero_cta_text'];
 $hero_cta_link = $hero['hero_cta_link'];
+$hero_label_text = $hero['hero_label_text'];
+$hero_label_text_orange = $hero['hero_label_text_orange'];
 
 $dev_100 = get_field('dev_100');
 $dev_100_title = $dev_100['title'];
@@ -63,8 +65,8 @@ get_header(); ?>
         <button class="button-hero"><a href="<?= $hero_cta_link; ?>"><?= $hero_cta_text; ?></a></button>
       </div>
       <div data-aos="fade-up" data-aos-delay="1500" class="hero-label-wrapper">
-        <p class="invest-name">Nazwa inwestycji</p>
-        <p class="invest-price">Ceny od 340 000 zł</p>
+        <p class="invest-name"><?= $hero_label_text; ?></p>
+        <p class="invest-price"><?= $hero_label_text_orange; ?></p>
       </div>
     </div>
   </div>

@@ -161,13 +161,22 @@ get_header(); ?>
     <h2 class="section-title"><?= $partners_title; ?></h2>
     <h3 class="section-subtitle"><?= $partners_text; ?></h3>
   </div>
-  <div class="partners-logos-wrapper">
+  <div class="partners-logos-wrapper partners-logos-slider">
+    <?php
+    if ($partners_gallery) {
+      foreach ($partners_gallery as $image) {
+        $image_url = esc_url($image['url']);
+        // echo '<div class="partner-logo" style="background-image: url(' . $image_url . ')"></div>';
+        echo '<div class="partner-logo"><img src="' . $image_url . '"/></div>';
+      }
+    }
+    ?>
+    <!-- <div class="partner-logo"></div>
     <div class="partner-logo"></div>
     <div class="partner-logo"></div>
     <div class="partner-logo"></div>
     <div class="partner-logo"></div>
-    <div class="partner-logo"></div>
-    <div class="partner-logo"></div>
+    <div class="partner-logo"></div> -->
   </div>
 </section>
 <section class="cooperation">

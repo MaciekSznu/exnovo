@@ -30,4 +30,25 @@ $(document).ready(function() {
       },
     ],
   });
+
+  if ($(window).width() < 768) {
+    $(".partners-logos-slider").slick({
+      mobileFirst: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      speed: 500,
+      responsive: [
+        {
+          breakpoint: 414,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+      ],
+    });
+  }
 });

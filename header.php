@@ -67,7 +67,7 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
             </li>
           </ul>
         </li>
-        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/uslugi" class="nav-list--item-link">Usługi</a></li>
+        <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/nasze-uslugi" class="nav-list--item-link">Usługi</a></li>
         <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/o-nas" class="nav-list--item-link">O nas</a></li>
         <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/blog" class="nav-list--item-link">BLOG</a></li>
         <li class="nav-list--item"><a href="<?php echo bloginfo('url'); ?>/kontakt" class="nav-list--item-link">Kontakt</a></li>
@@ -101,7 +101,7 @@ $menu_button_text = get_field('menu_button_text', $pagesData['blocks']);
             </li>
           </ul>
         </li>
-        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/uslugi" class="nav-desktop-list--item-link">Usługi</a></li>
+        <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/nasze-uslugi" class="nav-desktop-list--item-link">Usługi</a></li>
         <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/o-nas" class="nav-desktop-list--item-link">O nas</a></li>
         <li class="nav-desktop-list--item"><a href="<?php echo bloginfo('url'); ?>/blog" class="nav-desktop-list--item-link">BLOG</a></li>
         <li class="nav-desktop-list--item">

@@ -23,6 +23,7 @@
     background-color: $light-bg;
 
     .text-wrapper {
+      padding-bottom: 40px;
       margin-top: 48px;
       z-index: 2;
       align-self: flex-start;
@@ -145,6 +146,7 @@
       align-items: flex-start;
 
       .text-wrapper {
+        padding-bottom: 0;
         margin-top: 0;
         width: 340px;
       }

@@ -47,8 +47,8 @@ $photos = explode(',', trim(get_field('investment_photo_list')));
 $photos_path = 'https://static.esticrm.pl/public/images/investments/2167/';
 $id = trim(get_field('investment_id'));
 
-$clear_description = html_cut($description, 500);
-$short_description = preg_replace('/\s+?(\S+)?$/', '', substr($clear_description, 0, 401));
+$clear_description = html_cut($description, 4000);
+$short_description = preg_replace('/\s+?(\S+)?$/', '', substr($clear_description, 0, 1601));
 
 get_header(); ?>
 
@@ -76,7 +76,7 @@ get_header(); ?>
 <section class="presentation">
   <div class="presentation-wrapper">
     <article class="text-wrapper">
-      <?= $short_description; ?>
+      <?= $clear_description; ?>
     </article>
     <div class="image-wrapper" style="background: url(<?= $photos_path . $investmentId . '/' . $photos[0] . '_max.jpg' ?>); background-position-x: center; background-repeat: no-repeat; background-size: cover;"></div>
   </div>

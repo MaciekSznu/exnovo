@@ -32,21 +32,20 @@
       font-size: 13px;
       line-height: 20px;
 
-      .article-title {
-        color: $dark-blue;
-        font-family: $grotesk-reg;
-        font-weight: 700;
-        font-size: 24px;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 40px;
-        text-align: left;
-        margin-top: 20px;
-        margin-bottom: 22px;
-      }
-
-      p,
-      .article-text {
+      // .article-title {
+      //   color: $dark-blue;
+      //   font-family: $grotesk-reg;
+      //   font-weight: 700;
+      //   font-size: 24px;
+      //   font-style: normal;
+      //   letter-spacing: normal;
+      //   line-height: 40px;
+      //   text-align: left;
+      //   margin-top: 20px;
+      //   margin-bottom: 22px;
+      // }
+      // .article-text
+      p {
         color: $dark-blue;
         font-family: $grotesk-reg;
         font-weight: 400;
@@ -60,8 +59,31 @@
 
       strong {
         font-weight: 700;
-        font-size: 24px;
-        line-height: 40px;
+        font-size: 13px;
+        line-height: 20px;
+      }
+
+      ul {
+        margin-bottom: 18px;
+
+        li {
+          list-style: disc;
+          color: $dark-blue;
+          font-family: $grotesk-reg;
+          font-size: 13px;
+          font-weight: 400;
+          font-style: normal;
+          letter-spacing: normal;
+          line-height: 20px;
+          text-align: left;
+          margin-left: 26px;
+
+          &::marker {
+            padding-top: 10px;
+            color: $dark-blue;
+            font-size: 25px;
+          }
+        }
       }
     }
 
@@ -146,18 +168,33 @@
         width: 100%;
         max-width: 580px;
 
-        .article-title {
-          font-size: 34px;
-          line-height: 47px;
-          margin-top: 84px;
-          margin-bottom: 31px;
-        }
+        // .article-title {
+        //   font-size: 34px;
+        //   line-height: 47px;
+        //   margin-top: 84px;
+        //   margin-bottom: 31px;
+        // }
 
-        p,
-        .article-text {
+        p {
           font-size: 16px;
           line-height: 30px;
-          margin-bottom: 61px;
+          margin-bottom: 30px;
+        }
+
+        strong {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 30px;
+        }
+
+        ul {
+          margin-bottom: 18px;
+
+          li {
+            font-size: 16px;
+            line-height: 30px;
+            margin-left: 25px;
+          }
         }
       }
 
