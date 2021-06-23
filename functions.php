@@ -342,5 +342,3 @@ function get_breadcrumb($par_id = '') {
     };
     echo '</p>';
 }
-
-// użycie <?php get_breadcrumb();

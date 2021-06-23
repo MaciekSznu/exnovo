@@ -9,22 +9,12 @@ $specialist_page = get_field('specialist_page');
 
 <?php
 
-  // $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
-  // $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
-  // $sortAreaAsc = (isset($_GET['area_asc']))? $_GET['area_asc']: '';
-  // $sortAreaDesc = (isset($_GET['area_desc']))? $_GET['area_desc']: '';
-
-  // $sortProperty = ($sortAreaAsc || $sortAreaDesc) ? 'flat_areaTotal' : 'flat_price';
-  // $sortOrder = ($sortAreaDesc || $sortPriceDesc) ? 'desc' : 'asc';
-
   $sortOrder = (isset($_GET['sortOrder'])) ? $_GET['sortOrder']: '';
 
   $paged = get_query_var('paged')? get_query_var('paged') : 1;
   $contactId = (get_field('specialist_contactId'))? get_field('specialist_contactId'): 0;
   $args = [
       'post_type' => 'mieszkania',
-      // 'meta_key'		=> 'flat_contactId',
-      // 'meta_value'	=> $contactId,
       'meta_query' => array(
         array(
           'key' => 'flat_contactId',
@@ -38,16 +28,6 @@ $specialist_page = get_field('specialist_page');
       'meta_key' => 'flat_price',
       'order' => $sortOrder,
   ];
-
-  // $modificators = [
-  //   'meta_key' => $sortProperty,
-  //   'order' => $sortOrder,
-  // ];
-
-  // $new_args = array_merge(
-  //   $args,
-  //   $modificators,
-  // );
 
   $query = new WP_Query($args);
 ?>
@@ -63,8 +43,6 @@ $specialist_page = get_field('specialist_page');
     <div class="phone-wrapper">
       <img src="<?= $specialist_page['phone_icon']; ?>" alt="">
       <a href="tel:<?= $specialist['phone']; ?>"><?= $specialist['phone']; ?></a>
-      <!-- <img src="../../wp-content/themes/exnovo/assets/graphics/single_offer_row_icon.svg" alt=""> -->
-      <!-- <a href="tel:+48 123 456 789">+48 123 456 789</a> -->
     </div>
     <div class="mail-wrapper">
       <img src="<?= $specialist_page['mail_icon']; ?>" alt="">

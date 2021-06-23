@@ -19,18 +19,6 @@ $box_text = $box['text'] ? $box['text'] : $box_template['text'];
 $box_name = $box['imie_i_nazwisko'] ? $box['imie_i_nazwisko'] : $box_template['imie_i_nazwisko'];
 $box_comment = $box['komentarz'] ? $box['komentarz'] : $box_template['komentarz'];
 
-// $current_investment = get_field('investment');
-// $name = $current_investment['name'];
-// $location = $current_investment['location_commune_name'];
-// $description = $current_investment['description'];
-// $ready_date = $current_investment['ready_date'];
-// $price_from = $current_investment['price_from'];
-// $price_to = $current_investment['price_to'];
-// $area_from = $current_investment['area_from'];
-// $area_to = $current_investment['area_to'];
-// $price_permeter_from = $current_investment['price_permeter_from'];
-// $price_permeter_to = $current_investment['price_permeter_to'];
-
 $name = trim(get_field('investment_name'));
 $city = trim(get_field('investment_location_commune_name'));
 $description = trim(get_field('investment_description'));
@@ -46,9 +34,10 @@ $room_number_to = trim(get_field('investment_room_number_to'));
 $photos = explode(',', trim(get_field('investment_photo_list')));
 $photos_path = 'https://static.esticrm.pl/public/images/investments/2167/';
 $id = trim(get_field('investment_id'));
+$description_cut = trim(get_field('investment_description_cut'));
 
-$clear_description = html_cut($description, 4000);
-$short_description = preg_replace('/\s+?(\S+)?$/', '', substr($clear_description, 0, 1601));
+$description_length = mb_strlen($description, 'UTF-8');
+$clear_description = $description_cut ? html_cut($description, $description_cut) : html_cut($description, $description_length);
 
 get_header(); ?>
 
@@ -158,16 +147,7 @@ get_header(); ?>
     </div>
     <?php
 
-      // $sortPriceAsc = (isset($_GET['price_asc']))? $_GET['price_asc']: '';
-      // $sortPriceDesc = (isset($_GET['price_desc']))? $_GET['price_desc']: '';
-      // $sortRoomsAsc = (isset($_GET['rooms_asc']))? $_GET['rooms_asc']: '';
-      // $sortRoomsDesc = (isset($_GET['rooms_desc']))? $_GET['rooms_desc']: '';
-
-      // $sortProperty = ($sortRoomsAsc || $sortRoomsDesc) ? 'flat_apartmentRoomNumber' : 'flat_price';
-      // $sortOrder = ($sortRoomsDesc || $sortPriceDesc) ? 'desc' : 'asc';
       $sortOrder = (isset($_GET['sortOrder'])) ? $_GET['sortOrder']: '';
-      // $sortOrderDesc = (isset($_GET['sort_desc']))? $_GET['sort_desc']: '';
-      // $sortOrder = $sortOrderDesc ? $sortOrderDesc : 'ASC';
 
       $paged = get_query_var('paged')? get_query_var('paged') : 1;
       $investmentId = get_field('investment_id');
@@ -187,16 +167,6 @@ get_header(); ?>
           'meta_key' => 'flat_price',
           'order' => $sortOrder,
       ];
-
-      // $modificators = [
-      //   'meta_key' => $sortProperty,
-      //   'order' => $sortOrder,
-      // ];
-
-      // $new_args = array_merge(
-      //   $args,
-      //   $modificators,
-      // );
 
       $query = new WP_Query($args);
     ?>
@@ -259,7 +229,7 @@ get_header(); ?>
       <h3 class="section-subtitle">
           <?php
             if (!isset($_POST['submit-form'])) {
-              echo 'Wyślij kontakt, a odpowiemy w ciągu 24h';
+              echo $form_group_text;
             }
             elseif (isset($_POST['submit-form'])) {
               $imie = $_POST['imie'];
@@ -339,6 +309,5 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
 
 <?php get_footer(); ?>

@@ -41,7 +41,7 @@ get_header(); ?>
       <h3 class="section-subtitle">
           <?php
             if (!isset($_POST['submit-form'])) {
-              echo 'Wyślij kontakt, a odpowiemy w ciągu 24h';
+              echo $form_group_text;
             }
             elseif (isset($_POST['submit-form'])) {
               $imie = $_POST['imie'];

@@ -78,8 +78,6 @@ get_header(); ?>
           'post_status' => 'publish',
           'post_parent' => 0,
           'paged' => $paged,
-          // 'meta_key'	=> 'investment_id',
-          // 'meta_value'   => $filteredIds,
           'meta_query' => $metaQuery,
       ];
       $query = new WP_Query($args);
@@ -166,17 +164,10 @@ get_header(); ?>
     if ($partners_gallery) {
       foreach ($partners_gallery as $image) {
         $image_url = esc_url($image['url']);
-        // echo '<div class="partner-logo" style="background-image: url(' . $image_url . ')"></div>';
         echo '<div class="partner-logo"><img src="' . $image_url . '"/></div>';
       }
     }
     ?>
-    <!-- <div class="partner-logo"></div>
-    <div class="partner-logo"></div>
-    <div class="partner-logo"></div>
-    <div class="partner-logo"></div>
-    <div class="partner-logo"></div>
-    <div class="partner-logo"></div> -->
   </div>
 </section>
 <section class="cooperation">
